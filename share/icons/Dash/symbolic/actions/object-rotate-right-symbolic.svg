@@ -1,0 +1,9 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="object-rotate-right">
+<g id=".rotate-clockwise">
+<path id="Union" d="M10.5 2C11.8807 2 13 3.11929 13 4.5V6H15L12.5 8.5L10 6H12V4.5C12 3.67157 11.3284 3 10.5 3H8V2H10.5Z" fill="black"/>
+<path id="Union_2" opacity="0.5" d="M6 10H15V15H1V1H6V10ZM2 14H14V11H2V14ZM2 10H5V2H2V10Z" fill="black"/>
+<rect class="warning" width="14" height="5" transform="matrix(-1 0 0 1 15 10)" fill="#0A8BFF"/>
+</g>
+</g>
+</svg>

@@ -1,0 +1,196 @@
+// SPDX-License-Identifier: GPL-2.0-or-later
+/** \file
+ * Implementation of tangent-to-curve LPE.
+ */
+
+/*
+ * Authors:
+ *   Johan Engelen
+ *   Maximilian Albert
+ *
+ * Copyright (C) Johan Engelen 2007 <j.b.c.engelen@utwente.nl>
+ * Copyright (C) Maximilian Albert 2008 <maximilian.albert@gmail.com>
+ *
+ * Released under GNU GPL v2+, read the file 'COPYING' for more information.
+ */
+
+#include "lpe-tangent_to_curve.h"
+
+#include "path/path-curve.h"
+
+#include "object/sp-shape.h"
+#include "object/sp-object-group.h"
+#include "ui/knot/knot-holder.h"
+#include "ui/knot/knot-holder-entity.h"
+
+// TODO due to internal breakage in glibmm headers, this must be last:
+#include <glibmm/i18n.h>
+
+namespace Inkscape {
+namespace LivePathEffect {
+
+namespace TtC {
+
+class KnotHolderEntityAttachPt : public LPEKnotHolderEntity<LPETangentToCurve> {
+public:
+    KnotHolderEntityAttachPt(LPETangentToCurve *effect) : LPEKnotHolderEntity(effect) {};
+    void knot_set(Geom::Point const &p, Geom::Point const &origin, guint state) override;
+    Geom::Point knot_get() const override;
+};
+
+class KnotHolderEntityLeftEnd : public LPEKnotHolderEntity<LPETangentToCurve> {
+public:
+    KnotHolderEntityLeftEnd(LPETangentToCurve *effect) : LPEKnotHolderEntity(effect) {};
+    void knot_set(Geom::Point const &p, Geom::Point const &origin, guint state) override;
+    Geom::Point knot_get() const override;
+};
+
+class KnotHolderEntityRightEnd : public LPEKnotHolderEntity<LPETangentToCurve>
+{
+public:
+    KnotHolderEntityRightEnd(LPETangentToCurve *effect) : LPEKnotHolderEntity(effect) {};
+    void knot_set(Geom::Point const &p, Geom::Point const &origin, guint state) override;
+    Geom::Point knot_get() const override;
+};
+
+} // namespace TtC
+
+LPETangentToCurve::LPETangentToCurve(LivePathEffectObject *lpeobject) :
+    Effect(lpeobject),
+    angle(_("Angle:"), _("Additional angle between tangent and curve"), "angle", &wr, this, 0.0),
+    t_attach(_("Location along curve:"), _("Location of the point of attachment along the curve (between 0.0 and number-of-segments)"), "t_attach", &wr, this, 0.5),
+    length_left(_("Length left:"), _("Specifies the left end of the tangent"), "length-left", &wr, this, 150),
+    length_right(_("Length right:"), _("Specifies the right end of the tangent"), "length-right", &wr, this, 150)
+{
+    show_orig_path = true;
+    _provides_knotholder_entities = true;
+
+    registerParameter(&angle);
+    registerParameter(&t_attach);
+    registerParameter(&length_left);
+    registerParameter(&length_right);
+}
+
+LPETangentToCurve::~LPETangentToCurve() = default;
+
+Geom::Piecewise<Geom::D2<Geom::SBasis> >
+LPETangentToCurve::doEffect_pwd2 (Geom::Piecewise<Geom::D2<Geom::SBasis> > const & pwd2_in)
+{
+    using namespace Geom;
+    Piecewise<D2<SBasis> > output;
+
+    ptA = pwd2_in.valueAt(t_attach);
+    derivA = unit_vector(derivative(pwd2_in).valueAt(t_attach));
+
+    // TODO: Why are positive angles measured clockwise, not counterclockwise?
+    Geom::Rotate rot(Geom::Rotate::from_degrees(-angle));
+    derivA = derivA * rot;
+
+    C = ptA - derivA * length_left;
+    D = ptA + derivA * length_right;
+
+    output = Piecewise<D2<SBasis> >(D2<SBasis>(SBasis(C[X], D[X]), SBasis(C[Y], D[Y])));
+
+    return output;
+}
+
+void
+LPETangentToCurve::addKnotHolderEntities(KnotHolder *knotholder, SPItem *item) {
+    {
+        KnotHolderEntity *e = new TtC::KnotHolderEntityAttachPt(this);
+        e->create(nullptr, item, knotholder, Inkscape::CANVAS_ITEM_CTRL_TYPE_LPE, "LPE:TangentToCurvePT",
+                  _("Adjust the point of attachment of the tangent"));
+        knotholder->add(e);
+    }
+    {
+        KnotHolderEntity *e = new TtC::KnotHolderEntityLeftEnd(this);
+        e->create(nullptr, item, knotholder, Inkscape::CANVAS_ITEM_CTRL_TYPE_LPE, "LPE:TangentToCurveLeftEnd",
+                  _("Adjust the <b>left</b> end of the tangent"));
+        knotholder->add(e);
+    }
+    {
+        KnotHolderEntity *e = new TtC::KnotHolderEntityRightEnd(this);
+        e->create(nullptr, item, knotholder, Inkscape::CANVAS_ITEM_CTRL_TYPE_LPE, "LPE:TangetToCurveRightEnd",
+                  _("Adjust the <b>right</b> end of the tangent"));
+        knotholder->add(e);
+    }
+};
+
+namespace TtC {
+
+void
+KnotHolderEntityAttachPt::knot_set(Geom::Point const &p, Geom::Point const &/*origin*/, guint state)
+{
+    using namespace Geom;
+
+    Geom::Point const s = snap_knot_position(p, state);
+
+    if ( !is<SPShape>(_effect->sp_lpe_item) ) {
+        //lpe->t_attach.param_set_value(0);
+        g_warning("LPEItem is not a path! %s:%d\n", __FILE__, __LINE__);
+        return;
+    }
+    Piecewise<D2<SBasis> > pwd2 = paths_to_pw( _effect->pathvector_before_effect );
+    
+    double t0 = nearest_time(s, pwd2);
+    _effect->t_attach.param_set_value(t0);
+
+    // FIXME: this should not directly ask for updating the item. It should write to SVG, which triggers updating.
+    sp_lpe_item_update_patheffect (cast<SPLPEItem>(item), false, true);
+}
+
+void
+KnotHolderEntityLeftEnd::knot_set(Geom::Point const &p, Geom::Point const &/*origin*/, guint state)
+{
+    Geom::Point const s = snap_knot_position(p, state);
+
+    double lambda = Geom::nearest_time(s, _effect->ptA, _effect->derivA);
+    _effect->length_left.param_set_value(-lambda);
+
+    sp_lpe_item_update_patheffect (cast<SPLPEItem>(item), false, true);
+}
+
+void
+KnotHolderEntityRightEnd::knot_set(Geom::Point const &p, Geom::Point const &/*origin*/, guint state)
+{
+    Geom::Point const s = snap_knot_position(p, state);
+
+    double lambda = Geom::nearest_time(s, _effect->ptA, _effect->derivA);
+    _effect->length_right.param_set_value(lambda);
+
+    sp_lpe_item_update_patheffect (cast<SPLPEItem>(item), false, true);
+}
+
+Geom::Point
+KnotHolderEntityAttachPt::knot_get() const
+{
+    return _effect->ptA;
+}
+
+Geom::Point
+KnotHolderEntityLeftEnd::knot_get() const
+{
+    return _effect->C;
+}
+
+Geom::Point
+KnotHolderEntityRightEnd::knot_get() const
+{
+    return _effect->D;
+}
+
+} // namespace TtC
+
+} //namespace LivePathEffect
+} /* namespace Inkscape */
+
+/*
+  Local Variables:
+  mode:c++
+  c-file-style:"stroustrup"
+  c-file-offsets:((innamespace . 0)(inline-open . 0)(case-label . +))
+  indent-tabs-mode:nil
+  fill-column:99
+  End:
+*/
+// vim: filetype=cpp:expandtab:shiftwidth=4:tabstop=8:softtabstop=4 :

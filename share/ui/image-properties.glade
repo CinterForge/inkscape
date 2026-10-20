@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <placeholder width="314" height="209"></placeholder>
+  <requires lib="gtk" version="4.0"></requires>
+  <object class="GtkGrid" id="main">
+    <property name="row-spacing">4</property>
+    <property name="column-spacing">0</property>
+    <child>
+      <object class="GtkBox">
+        <property name="spacing">5</property>
+        <child>
+          <object class="GtkBox">
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkDrawingArea" id="preview">
+                <property name="width-request">120</property>
+                <property name="height-request">80</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="name">
+                <property name="margin-top">1</property>
+                <property name="label" translatable="no">&lt;small&gt;#label&lt;/small&gt;</property>
+                <property name="use-markup">True</property>
+                <property name="ellipsize">end</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel" id="info">
+            <property name="label" translatable="no">&lt;small&gt;123 x 345 px
+Embedded (29.6kB)
+Linked&lt;/small&gt;</property>
+            <property name="use-markup">True</property>
+            <property name="ellipsize">end</property>
+            <property name="yalign">0</property>
+          </object>
+        </child>
+        <layout>
+          <property name="column">2</property>
+          <property name="row">0</property>
+          <property name="column-span">2</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="GtkLabel" id="url">
+        <property name="margin-end">4</property>
+        <property name="halign">start</property>
+        <property name="xalign">0</property>
+        <property name="label" translatable="yes">URL</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="row">1</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <style>
+          <class name="linked"></class>
+        </style>
+        <child>
+          <object class="gtkmm__CustomObject_TextEntry" id="href">
+            <property name="max-width-chars">5</property>
+            <property name="focusable">True</property>
+            <property name="hexpand">True</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="change-img">
+            <property name="focusable">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Link image...</property>
+            <property name="icon-name">document-open</property>
+          </object>
+        </child>
+        <layout>
+          <property name="column">2</property>
+          <property name="row">1</property>
+          <property name="column-span">2</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="embed">
+        <property name="halign">fill</property>
+        <property name="margin-end">0</property>
+        <property name="margin-start">0</property>
+        <property name="hexpand">false</property>
+        <property name="hexpand-set">true</property>
+        <property name="focusable">True</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Embed image in the document</property>
+        <child>
+          <object class="GtkBox">
+            <property name="halign">center</property>
+            <property name="spacing">4</property>
+            <child>
+              <object class="GtkImage">
+                <property name="icon-name">shape-image</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">Embed</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <layout>
+          <property name="column">2</property>
+          <property name="row">2</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="export">
+        <property name="halign">fill</property>
+        <property name="margin-end">0</property>
+        <property name="margin-start">0</property>
+        <property name="hexpand">false</property>
+        <property name="hexpand-set">true</property>
+        <property name="focusable">True</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Save a copy of this image to a file</property>
+        <child>
+          <object class="GtkBox">
+            <property name="halign">center</property>
+            <property name="spacing">4</property>
+            <child>
+              <object class="GtkImage">
+                <property name="icon-name">document-export</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">Save copy...</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <layout>
+          <property name="column">3</property>
+          <property name="row">2</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="GtkLabel" id="aspect-ratio">
+        <property name="margin-end">4</property>
+        <property name="halign">start</property>
+        <property name="xalign">0</property>
+        <property name="label" translatable="yes">Aspect ratio</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="row">3</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="margin-top">3</property>
+        <property name="margin-bottom">3</property>
+        <property name="spacing">4</property>
+        <child>
+          <object class="GtkCheckButton" id="preserve">
+            <property name="label" translatable="yes">Preserve</property>
+            <property name="focusable">True</property>
+            <property name="active">False</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="stretch">
+            <property name="label" translatable="yes">Stretch image</property>
+            <property name="focusable">True</property>
+            <property name="active">False</property>
+            <property name="group">preserve</property>
+          </object>
+        </child>
+        <layout>
+          <property name="column">2</property>
+          <property name="row">3</property>
+          <property name="column-span">2</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="GtkLabel" id="render">
+        <property name="margin-end">4</property>
+        <property name="halign">start</property>
+        <property name="xalign">0</property>
+        <property name="label" translatable="yes">Rendering</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="row">4</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="GtkDropDown" id="rendering">
+        <property name="margin-start">0</property>
+        <property name="halign">fill</property>
+        <property name="margin-end">0</property>
+        <property name="model">
+          <object class="GtkStringList">
+            <items>
+              <item>Automatic</item>
+              <item>Optimize speed</item>
+              <item>Optimize quality</item>
+              <item>Crisp edges</item>
+              <item>Pixelated</item>
+            </items>
+          </object>
+        </property>
+        <layout>
+          <property name="column">2</property>
+          <property name="row">4</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="gtkmm__CustomObject_InkSpinButton" id="dpi">
+        <property name="halign">fill</property>
+        <property name="margin-end">0</property>
+        <property name="margin-start">0</property>
+        <property name="tooltip-text" translatable="yes">Image resolution in dots per inch.
+Useful when rendering linked SVG images.</property>
+        <property name="label" translatable="yes" context="dots-per-inch">DPI</property>
+        <property name="digits">4</property>
+        <property name="max-value">2400.000000</property>
+        <property name="min-value">1.000000</property>
+        <layout>
+          <property name="column">3</property>
+          <property name="row">4</property>
+        </layout>
+      </object>
+    </child>
+    <!--dim: 4, 3-->
+  </object>
+</interface>

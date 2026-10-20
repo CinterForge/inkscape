@@ -1,0 +1,13 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="text_line_spacing">
+<g id=".text-spacing-line" clip-path="url(#clip0_3684_42776)">
+<path id="neutral" d="M15 8.5H1V7.5H15V8.5Z" fill="black"/>
+<path id="Union" d="M7.9707 14.6028H8.02539L9.43359 10.1819H10.7979L8.79199 16.0002H7.20703L5.19824 10.1819H6.56445L7.9707 14.6028ZM10.7979 6.00024H9.47949L9.04883 4.6731H6.94824L6.5166 6.00024H5.19824L7.20703 0.181885H8.79199L10.7979 6.00024ZM7.26074 3.71313H8.7373L8.02246 1.51099H7.97656L7.26074 3.71313Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42776">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

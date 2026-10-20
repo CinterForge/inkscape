@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="object-flip-horizontal">
+<g id=".flip-horizontal">
+<path id="Union" opacity="0.5" d="M7 13.9999H1L5.5 1.99988H7V13.9999ZM10.5 1.99988L15 13.9999H9V1.99988H10.5ZM2.44336 12.9999H6V3.5155L2.44336 12.9999ZM10 12.9999H13.5566L10 3.5155V12.9999Z" fill="black"/>
+<path class="warning" d="M7 1.99988V13.9999H1L5.5 1.99988H7Z" fill="#0A8BFF"/>
+</g>
+</g>
+</svg>

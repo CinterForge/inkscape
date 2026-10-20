@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkBox" id="main_box">
+    <property name="margin-bottom">8</property>
+    <property name="margin-end">8</property>
+    <property name="margin-start">8</property>
+    <property name="margin-top">8</property>
+    <property name="name">align-and-distribute-box</property>
+    <property name="orientation">vertical</property>
+    <property name="spacing">6</property>
+    <child>
+      <object class="GtkBox" id="banner_hbox">
+        <child>
+          <object class="GtkLabel" id="banner_label">
+            <property name="label" translatable="yes">&lt;b&gt;Press Start&lt;/b&gt; to check spelling</property>
+            <property name="use_markup">True</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="suggestion_hbox">
+        <property name="vexpand">True</property>
+        <property name="spacing">4</property>
+        <child>
+          <object class="GtkFrame">
+            <child>
+              <object class="GtkScrolledWindow">
+                <child>
+                  <object class="GtkColumnView" id="column_view">
+                    <property name="height-request">96</property>
+                    <property name="hexpand">True</property>
+                    <property name="width-request">120</property>
+                    <property name="reorderable">False</property>
+                    <child>
+                      <object class="GtkColumnViewColumn">
+                        <property name="title" translatable="yes">Suggestions</property>
+                        <property name="expand">True</property>
+                        <property name="factory">
+                          <object class="GtkBuilderListItemFactory">
+                            <property name="bytes"><![CDATA[
+                              <?xml version="1.0" encoding="UTF-8"?>
+                                <interface>
+                                  <template class="GtkColumnViewCell">
+                                    <property name="child">
+                                      <object class="GtkLabel">
+                                        <property name="xalign">0</property>
+                                        <binding name="label">
+                                          <lookup name="string" type="GtkStringObject">
+                                            <lookup name="item">GtkColumnViewCell</lookup>
+                                          </lookup>
+                                        </binding>
+                                      </object>
+                                    </property>
+                                  </template>
+                                </interface>
+                              ]]>
+                            </property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+            </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="changebutton_vbox">
+            <property name="orientation">vertical</property>
+            <property name="spacing">4</property>
+            <child>
+              <object class="GtkButton" id="accept_button">
+                <property name="label" translatable="yes">_Accept</property>
+                <property name="tooltip-text">Accept the chosen suggestion</property>
+                <property name="use-underline">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="ignoreonce_button">
+                <property name="label" translatable="yes">_Ignore once</property>
+                <property name="tooltip-text">Ignore this word only once</property>
+                <property name="use-underline">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="ignore_button">
+                <property name="label" translatable="yes">_Ignore</property>
+                <property name="tooltip-text">Ignore this word in this session</property>
+                <property name="use-underline">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="add_button">
+                <property name="label" translatable="yes">A_dd</property>
+                <property name="tooltip-text">Add this word to the chosen dictionary</property>
+                <property name="use-underline">True</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="dictionary_hbox">
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Language</property>
+            <property name="margin-end">6</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkDropDown" id="dictionary_combo">
+            <property name="hexpand">True</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="pref_button">
+            <property name="icon-name">preferences-system</property>
+            <property name="tooltip-text">Preferences</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator"/>
+    </child>
+    <child>
+      <object class="GtkBox" id="actionbutton_hbox">
+        <property name="halign">end</property>
+        <property name="homogeneous">True</property>
+        <property name="spacing">4</property>
+        <child>
+          <object class="GtkButton" id="stop_button">
+            <property name="label" translatable="yes">_Stop</property>
+            <property name="tooltip-text">Stop the check</property>
+            <property name="use-underline">True</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="start_button">
+            <property name="label" translatable="yes">_Start</property>
+            <property name="tooltip-text">Start the check</property>
+            <property name="use-underline">True</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

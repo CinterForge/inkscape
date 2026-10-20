@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="stroke-join-bevel">
+<g id=".stroke-join-bevel">
+<path id="Union" d="M16 9H9V16H7V7H16V9Z" fill="black"/>
+<path id="Subtract" opacity="0.35" d="M7 7L7 16L-6.99382e-07 16L-4.37114e-07 10L10 -2.62268e-07L16 0L16 7L7 7Z" fill="black"/>
+</g>
+</g>
+</svg>

@@ -1,0 +1,194 @@
+Source: inkscape
+Maintainer: Inkscape developers <inkscape-devel@lists.inkscape.org>
+Uploaders: Marc Jeanmougin <marc.jeanmougin@telecom-paris.fr>
+Build-Depends: cmake (>=3.15), dh-cmake, dh-sequence-cpack, debhelper (>=11), debhelper-compat (=13), dh-cmake-compat (=1), dh-python, dh-sequence-python3, python3, ninja-build
+Build-Depends-Arch:
+ bc,
+ fonts-dejavu,
+ ghostscript,
+ imagemagick,
+ libboost-dev,
+ libboost-filesystem-dev,
+ libboost-stacktrace-dev,
+ libcdr-dev,
+ libdouble-conversion-dev,
+ libepoxy-dev,
+ libfontconfig-dev,
+ libgc-dev,
+ libgraphicsmagick++1-dev,
+ libgsl-dev,
+ libgtest-dev,
+ libgmock-dev,
+ libgtk-4-dev,
+ libgtkmm-4.0-dev (>=4.13.3),
+ libgtksourceview-5-dev,
+ libjpeg-dev,
+ liblcms2-dev,
+ libpango1.0-dev,
+ libpng-dev,
+ libpoppler-glib-dev,
+ libpoppler-private-dev,
+ libpotrace-dev,
+ libreadline-dev,
+ librsvg2-common,
+ libsigc++-3.0-dev,
+ libspelling-1-dev,
+ libtool,
+ libvisio-dev,
+ libwpg-dev,
+ libxml2-dev,
+ libxml-parser-perl,
+ libxslt1-dev,
+ meson,
+ pkgconf,
+ python3-lxml,
+ ragel,
+ zlib1g-dev
+Section: graphics
+Priority: optional
+Standards-Version: 4.6.2
+Homepage: https://inkscape.org
+Vcs-Git: https://gitlab.com/inkscape/inkscape.git
+
+Package: inkscape
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, librsvg2-common
+Recommends: aspell, imagemagick, libwmf-bin, inkscape-extensions, inkscape-translations, inkscape-themes
+Suggests: dia, pstoedit, scribus
+Description: vector-based drawing program
+ Inkscape is an illustration editor which has everything needed to
+ create professional-quality computer art. You can use it to make
+ diagrams and illustrations, technical drawings, web graphics, clip art,
+ icons and logos. A collection of hands-on tutorials show you how to
+ combine lines, shapes and text of different types and styles to build
+ up a picture.
+ .
+ A selection of powerful vector graphics editing tools comes as
+ standard. There is excellent support for paths, gradients, layers,
+ alpha transparency and text flow control. An extensive library of
+ filters allow you to apply realistic effects and extensions allow you
+ to work with bitmaps, barcodes and printing marks, amongst other things.
+ .
+ Most of the common vector formats are supported, including PDF, Adobe
+ Illustrator and AutoCAD files, and it has unrivalled support for the
+ SVG web graphics standard.
+
+Package: inkscape-extensions
+Architecture: any
+Depends: ${misc:Depends}, ${python3:Depends},
+ python3-cairo-dev,
+ python3-cssselect,
+ python3-gi-cairo,
+ python-gi-dev,
+ python3-lxml,
+ python3-numpy,
+ python3-packaging,
+ python3-pillow,
+ python3-pyparsing,
+ python3-serial,
+ python3-scour,
+ python3-six,
+ python3-tinycss2,
+ python3-webencodings
+Recommends: inkscape-extension-manager, inkscape
+Description: vector-based drawing program - extensions
+ Inkscape is an illustration editor which has everything needed to
+ create professional-quality computer art. You can use it to make
+ diagrams and illustrations, technical drawings, web graphics, clip art,
+ icons and logos. A collection of hands-on tutorials show you how to
+ combine lines, shapes and text of different types and styles to build
+ up a picture.
+ .
+ This package contains all extensions, and the inkex library.
+
+Package: inkscape-extension-manager
+Architecture: any
+Depends: ${misc:Depends}, ${python3:Depends}, inkscape-extensions,
+ python3-platformdirs,
+ python3-cachecontrol,
+ python3-certifi,
+ python3-charset-normalizer,
+ python3-filelock,
+ python3-idna,
+ python3-msgpack,
+ python3-requests,
+ python3-urllib3
+Description: vector-based drawing program - extension manager
+ Inkscape is an illustration editor which has everything needed to
+ create professional-quality computer art. You can use it to make
+ diagrams and illustrations, technical drawings, web graphics, clip art,
+ icons and logos. A collection of hands-on tutorials show you how to
+ combine lines, shapes and text of different types and styles to build
+ up a picture.
+ .
+ This package contains the extension manager.
+
+Package: lib2geom1.5.0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: robust computational geometry framework -- shared library
+ 2Geom is a C++ 2D geometry library geared towards robust processing of
+ computational geometry data associated with vector graphics. The primary
+ design consideration is ease of use and clarity. It is dual-licensed
+ under LGPL 2.1 and MPL 1.1.
+ .
+ The library is descended from a set of geometric routines present in
+ Inkscape, a vector graphics editor based around the Scalable Vector
+ Graphics format, the most widespread vector graphics interchange format
+ on the Web and a W3C Recommendation. Due to this legacy, not all parts
+ of the API form a coherent whole (yet).
+ .
+ Rendering is outside the scope of this library, and it is assumed
+ something like libcairo or similar is employed for this.  2geom
+ concentrates on higher level algorithms and geometric computations.
+ .
+ This package contains the shared library.
+
+Package: inkscape-themes
+Architecture: any
+Depends: ${misc:Depends}
+Description: vector-based drawing program - themes
+ Inkscape is an illustration editor which has everything needed to
+ create professional-quality computer art. You can use it to make
+ diagrams and illustrations, technical drawings, web graphics, clip art,
+ icons and logos. A collection of hands-on tutorials show you how to
+ combine lines, shapes and text of different types and styles to build
+ up a picture.
+ .
+ This package contains the Minwaita theme and the Dash and
+ multicolor icon sets.
+
+Package: inkscape-translations
+Architecture: any
+Depends: ${misc:Depends}
+Description: vector-based drawing program - translations
+ Inkscape is an illustration editor which has everything needed to
+ create professional-quality computer art. You can use it to make
+ diagrams and illustrations, technical drawings, web graphics, clip art,
+ icons and logos. A collection of hands-on tutorials show you how to
+ combine lines, shapes and text of different types and styles to build
+ up a picture.
+ .
+ This package contains translations for 88 languages : interface,
+ templates, and tutorials.
+
+Package: lib2geom-dev
+Architecture: any
+Depends: ${misc:Depends}, lib2geom1.5.0 (= ${binary:Version})
+Description: robust computational geometry framework -- development library
+ 2Geom is a C++ 2D geometry library geared towards robust processing of
+ computational geometry data associated with vector graphics. The primary
+ design consideration is ease of use and clarity. It is dual-licensed
+ under LGPL 2.1 and MPL 1.1.
+ .
+ The library is descended from a set of geometric routines present in
+ Inkscape, a vector graphics editor based around the Scalable Vector
+ Graphics format, the most widespread vector graphics interchange format
+ on the Web and a W3C Recommendation. Due to this legacy, not all parts
+ of the API form a coherent whole (yet).
+ .
+ Rendering is outside the scope of this library, and it is assumed
+ something like libcairo or similar is employed for this.  2geom
+ concentrates on higher level algorithms and geometric computations.
+ .
+ This package contains the development files needed to build against 2geom.

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk+" version="4.0"/>
+  <object class="GtkLabel" id="messages">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="label" translatable="yes">Loading ...</property>
+  </object>
+
+  <object class="GtkWindowHandle" id="banner">
+    <child>
+      <object class="GtkOverlay" id="banner-overlay">
+        <property name="width-request">700</property>
+        <property name="height-request">220</property>
+        <property name="child">
+          <object class="GtkStack" id="banner-stack">
+            <property name="transition-duration">1500</property>
+            <property name="transition-type">crossfade</property>
+            <child>
+              <object class="GtkOverlay" id="start-welcome-overlay">
+                <child>
+                  <object class="GtkPicture" id="start-welcome">
+                    <property name="width-request">700</property>
+                    <property name="height-request">220</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkStackPage">
+                <property name="child">
+                  <object class="GtkPicture" id="start-support">
+                  </object>
+                </property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkStackPage">
+                <property name="child">
+                  <object class="GtkPicture" id="start-splash">
+                    <property name="width-request">700</property>
+                    <property name="height-request">220</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </property>
+        <child type="overlay">
+          <object class="GtkButton" id="close_window">
+            <property name="focusable">True</property>
+            <property name="halign">end</property>
+            <property name="valign">start</property>
+            <property name="hexpand">True</property>
+            <child>
+              <object class="GtkImage">
+                <property name="icon-name">window-close</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+
+</interface>

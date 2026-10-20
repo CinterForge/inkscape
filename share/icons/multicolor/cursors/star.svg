@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="32"
+   height="32"
+   x="-5.5"
+   y="-5.5"
+   style="fill:gray;stroke:black"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="star.svg"
+   inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="9.9452033"
+     inkscape:cx="26.595736"
+     inkscape:cy="4.6253453"
+     inkscape:window-width="1488"
+     inkscape:window-height="848"
+     inkscape:window-x="12"
+     inkscape:window-y="44"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g181" />
+  <style
+     id="style1">@import './cursors.css';</style>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:highlight-color="#000000"
+     transform="translate(-87.999999,-128)">
+    <g
+       id="g181"
+       inkscape:label="star">
+      <g
+         id="cross-43"
+         transform="translate(89,129)"
+         style="stroke:#000000">
+        <path
+           d="M 4.5,9 V 0"
+           stroke="#ffffff"
+           stroke-width="3"
+           id="path1-77" />
+        <path
+           d="M 9,4.5 H 0"
+           stroke="#ffffff"
+           stroke-width="3"
+           id="path2-51" />
+        <path
+           d="M 0,4.5 H 9"
+           stroke="#000000"
+           id="path3-26" />
+        <path
+           d="M 4.5,0 V 9"
+           stroke="#000000"
+           id="path4-65" />
+      </g>
+      <g
+         id="cursor-41"
+         class="drop-shadow"
+         style="stroke:#000000;stroke-linejoin:miter;stroke-miterlimit:10"
+         transform="translate(85.833026,128.236)">
+        <path
+           d="M 18.2939,10.5955 18,10.382 l -0.2939,0.2135 -6.6574,4.8369 -0.2939,0.2135 0.1123,0.3455 2.5429,7.8262 0.1122,0.3455 h 0.3633 8.229 0.3633 l 0.1122,-0.3455 2.5429,-7.8262 0.1123,-0.3455 -0.2939,-0.2135 z"
+           style="fill-opacity:0;stroke:#ffffff;stroke-width:3;stroke-opacity:1;fill:#ffffff;stroke-dasharray:none"
+           id="path5-7" />
+        <path
+           d="M 18.2939,10.5955 18,10.382 l -0.2939,0.2135 -6.6574,4.8369 -0.2939,0.2135 0.1123,0.3455 2.5429,7.8262 0.1122,0.3455 h 0.3633 8.229 0.3633 l 0.1122,-0.3455 2.5429,-7.8262 0.1123,-0.3455 -0.2939,-0.2135 z"
+           style="fill-opacity:1;stroke-width:1px"
+           id="path6-13" />
+      </g>
+    </g>
+  </g>
+</svg>

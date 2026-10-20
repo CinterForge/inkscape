@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json",
+            // compile_commands.json overrides these next two settings.
+            "compilerPath": "C:/msys64/ucrt64/bin/g++.exe",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "windows-gcc-x64",
+            "browse": {
+                "path": ["${workspaceFolder}/**"],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        }
+    ],
+    "version": 4
+}

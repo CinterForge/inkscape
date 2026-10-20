@@ -1,0 +1,1531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkPopover" id="advanced">
+    <property name="name">SnapPopover</property>
+    <property name="css-classes">background</property>
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <child>           <!-- Header -->
+          <object class="GtkBox">
+            <property name="css-classes">popover-header</property>
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkCheckButton" id="snap-toggle">
+                <property name="focusable">True</property>
+                <property name="action-name">win.snap-global-toggle</property>
+                <property name="child">
+                  <object class="GtkLabel">
+                    <property name="halign">start</property>
+                    <property name="label" translatable="yes">Enable snapping</property>
+                    <attributes>
+                      <attribute name="weight" value="bold"/>
+                    </attributes>
+                  </object>
+                  </property>
+                </object>
+              </child>
+            </object>
+          </child>
+        <child>           <!-- Body -->
+          <object class="GtkScrolledWindow">
+            <property name="vexpand">True</property>
+            <property name="hscrollbar-policy">never</property>
+            <property name="vscrollbar-policy">external</property>
+            <property name="propagate-natural-height">True</property>
+            <child>
+              <object class="GtkBox">
+              <property name="orientation">vertical</property>
+              <child>           <!-- Section 1: Bounding boxes -->
+                <object class="GtkGrid">
+                  <property name="row-spacing">4</property>
+                  <property name="css-classes">snap-section</property>
+                  <child>       <!-- 0|0 Subheader -->
+                    <object class="GtkCheckButton" id="snap-bbox">
+                      <property name="focusable">True</property>
+                      <property name="halign">fill</property>
+                      <property name="hexpand">True</property>
+                      <property name="action-name">win.snap-bbox</property>
+                      <property name="child">
+                        <object class="GtkLabel">
+                          <property name="label" translatable="yes">Bounding boxes</property>
+                          <attributes>
+                            <attribute name="weight" value="bold"/>
+                          </attributes>
+                        </object>
+                        </property>
+                      <layout>
+                        <property name="column">0</property>
+                        <property name="row">0</property>
+                      </layout>
+                    </object>
+                    </child>
+                  <child>       <!-- 0|1 Subheader icon -->
+                    <object class="GtkImage">
+                      <property name="halign">start</property>
+                      <property name="valign">center</property>
+                      <property name="icon-name">snap-bounding-box</property>
+                      <layout>
+                        <property name="column">1</property>
+                        <property name="row">0</property>
+                      </layout>
+                    </object>
+                    </child>
+                  <child>       <!-- 2|0 -->
+                    <object class="GtkCheckButton" id="snap-bbox-edge">
+                      <property name="focusable">True</property>
+                      <property name="halign">fill</property>
+                      <property name="hexpand">True</property>
+                      <property name="action-name">win.snap-bbox-edge</property>
+                      <property name="child">
+                        <object class="GtkLabel">
+                          <property name="label" translatable="yes">Edges</property>
+                        </object>
+                        </property>
+                      <layout>
+                        <property name="column">0</property>
+                        <property name="row">2</property>
+                      </layout>
+                    </object>
+                    </child>
+                  <child>       <!-- 2|1 -->
+                    <object class="GtkImage">
+                    <property name="halign">start</property>
+                    <property name="valign">center</property>
+                    <property name="icon-name">snap-bounding-box-edges</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">2</property>
+                    </layout>
+                    </object>
+                    </child>
+                  <child>       <!-- 3|0  -->
+                    <object class="GtkCheckButton" id="snap-bbox-corner">
+                      <property name="focusable">True</property>
+                      <property name="halign">fill</property>
+                      <property name="hexpand">True</property>
+                      <property name="action-name">win.snap-bbox-corner</property>
+                      <property name="child">
+                        <object class="GtkLabel">
+                          <property name="label" translatable="yes">Corners</property>
+                        </object>
+                        </property>
+                      <layout>
+                        <property name="column">0</property>
+                        <property name="row">3</property>
+                      </layout>
+                    </object>
+                    </child>
+                  <child>       <!-- 3|1  -->
+                    <object class="GtkImage">
+                      <property name="halign">start</property>
+                      <property name="valign">center</property>
+                      <property name="icon-name">snap-bounding-box-corners</property>
+                      <layout>
+                        <property name="column">1</property>
+                        <property name="row">3</property>
+                      </layout>
+                    </object>
+                    </child>            
+                  <child>       <!-- 4|0  -->
+                    <object class="GtkCheckButton" id="snap-bbox-midpoint">
+                      <property name="focusable">True</property>
+                      <property name="halign">fill</property>
+                      <property name="hexpand">True</property>
+                      <property name="action-name">win.snap-bbox-edge-midpoint</property>
+                      <property name="child">
+                        <object class="GtkLabel">
+                          <property name="label" translatable="yes">Edge midpoints</property>
+                        </object>
+                        </property>
+                      <layout>
+                        <property name="column">0</property>
+                        <property name="row">4</property>
+                      </layout>
+                    </object>
+                      </child>
+                  <child>       <!-- 4|1  -->
+                    <object class="GtkImage">
+                      <property name="halign">start</property>
+                      <property name="valign">center</property>
+                      <property name="icon-name">snap-bounding-box-midpoints</property>
+                      <layout>
+                        <property name="column">1</property>
+                        <property name="row">4</property>
+                      </layout>
+                    </object>
+                    </child>
+                  <child>       <!-- 5|0  -->
+                    <object class="GtkCheckButton" id="snap-bbox-center">
+                      <property name="focusable">True</property>
+                      <property name="halign">fill</property>
+                      <property name="hexpand">True</property>
+                      <property name="action-name">win.snap-bbox-center</property>
+                      <property name="child">
+                        <object class="GtkLabel">
+                          <property name="label" translatable="yes">Centers</property>
+                        </object>
+                        </property>
+                      <layout>
+                        <property name="column">0</property>
+                        <property name="row">5</property>
+                      </layout>
+                    </object>
+                    </child>
+                  <child>       <!-- 5|1  -->
+                    <object class="GtkImage">
+                      <property name="halign">start</property>
+                      <property name="valign">center</property>
+                      <property name="icon-name">snap-bounding-box-center</property>
+                      <layout>
+                        <property name="column">1</property>
+                        <property name="row">5</property>
+                      </layout>
+                    </object>
+                    </child>
+                  </object>
+                </child>
+              <child>           <!-- Section 2: Nodes -->
+                <object class="GtkGrid">
+                  <property name="row-spacing">4</property>
+                  <property name="css-classes">snap-section</property>
+                  <child>       <!-- 0|0 Subheader -->
+                    <object class="GtkCheckButton" id="snap-nodes">
+                      <property name="focusable">True</property>
+                      <property name="halign">fill</property>
+                      <property name="hexpand">True</property>
+                      <property name="action-name">win.snap-node-category</property>
+                      <property name="child">
+                        <object class="GtkLabel">
+                          <property name="label" translatable="yes">Nodes</property>
+                          <attributes>
+                            <attribute name="weight" value="bold"/>
+                          </attributes>
+                        </object>
+                        </property>
+                      <layout>
+                        <property name="column">0</property>
+                        <property name="row">0</property>
+                      </layout>
+                    </object>
+                    </child>
+                  <child>       <!-- 0|1 Subheader icon -->
+                    <object class="GtkImage">
+                      <property name="halign">start</property>
+                      <property name="valign">center</property>
+                      <property name="icon-name">snap-nodes</property>
+                      <layout>
+                        <property name="column">1</property>
+                        <property name="row">0</property>
+                      </layout>
+                    </object>
+                    </child>          
+                  <child>       <!-- 2|0 -->
+                    <object class="GtkCheckButton">
+                      <property name="focusable">True</property>
+                      <property name="halign">fill</property>
+                      <property name="hexpand">True</property>
+                      <property name="action-name">win.snap-path</property>
+                      <property name="child">
+                        <object class="GtkLabel">
+                          <property name="label" translatable="yes">Paths</property>
+                        </object>
+                        </property>
+                      <layout>
+                        <property name="column">0</property>
+                        <property name="row">2</property>
+                      </layout>
+                    </object>
+                    </child>
+                  <child>       <!-- 2|1 -->
+                    <object class="GtkImage">
+                      <property name="halign">start</property>
+                      <property name="valign">center</property>
+                      <property name="icon-name">snap-nodes-path</property>
+                      <layout>
+                        <property name="column">1</property>
+                        <property name="row">2</property>
+                      </layout>
+                    </object>
+                    </child>
+                  
+                  <child>       <!-- 3|0 -->
+                    <object class="GtkCheckButton">
+                      <property name="focusable">True</property>
+                      <property name="halign">fill</property>
+                      <property name="hexpand">True</property>
+                      <property name="action-name">win.snap-path-intersection</property>
+                      <property name="child">
+                        <object class="GtkLabel">
+                          <property name="label" translatable="yes">Path intersection</property>
+                        </object>
+                        </property>
+                      <layout>
+                        <property name="column">0</property>
+                        <property name="row">3</property>
+                      </layout>
+                    </object>
+                    </child>
+                  <child>       <!-- 3|1 -->
+                    <object class="GtkImage">
+                      <property name="halign">start</property>
+                      <property name="valign">center</property>
+                      <property name="icon-name">snap-nodes-intersection</property>
+                      <layout>
+                        <property name="column">1</property>
+                        <property name="row">3</property>
+                      </layout>
+                    </object>
+                    </child>
+                    
+                  <child>       <!-- 4|0 -->
+                    <object class="GtkCheckButton">
+                      <property name="focusable">True</property>
+                      <property name="halign">fill</property>
+                      <property name="hexpand">True</property>
+                      <property name="action-name">win.snap-node-cusp</property>
+                      <property name="child">
+                        <object class="GtkLabel">
+                          <property name="label" translatable="yes">Cusp nodes</property>
+                        </object>
+                        </property>
+                      <layout>
+                        <property name="column">0</property>
+                        <property name="row">4</property>
+                      </layout>
+                    </object>
+                    </child>
+                  <child>       <!-- 4|1 -->
+                    <object class="GtkImage">
+                      <property name="halign">start</property>
+                      <property name="valign">center</property>
+                      <property name="icon-name">snap-nodes-cusp</property>
+                      <layout>
+                        <property name="column">1</property>
+                        <property name="row">4</property>
+                      </layout>
+                    </object>
+                    </child>
+
+                  <child>       <!-- 5|0 -->
+                    <object class="GtkCheckButton">
+                      <property name="focusable">True</property>
+                      <property name="halign">fill</property>
+                      <property name="hexpand">True</property>
+                      <property name="action-name">win.snap-node-smooth</property>
+                      <property name="child">
+                        <object class="GtkLabel">
+                          <property name="label" translatable="yes">Smooth nodes</property>
+                        </object>
+                        </property>
+                      <layout>
+                        <property name="column">0</property>
+                        <property name="row">5</property>
+                      </layout>
+                    </object>
+                    </child>
+
+                  <child>       <!-- 5|1 -->
+                    <object class="GtkImage">
+                      <property name="halign">start</property>
+                      <property name="valign">center</property>
+                      <property name="icon-name">snap-nodes-smooth</property>
+                      <layout>
+                        <property name="column">1</property>
+                        <property name="row">5</property>
+                      </layout>
+                    </object>
+                    </child>
+                  
+                  <child>       <!-- 6|0 -->
+                    <object class="GtkCheckButton">
+                      <property name="focusable">True</property>
+                      <property name="halign">fill</property>
+                      <property name="hexpand">True</property>
+                      <property name="action-name">win.snap-line-midpoint</property>
+                      <property name="child">
+                        <object class="GtkLabel">
+                          <property name="label" translatable="yes">Line midpoints</property>
+                        </object>
+                        </property>
+                      <layout>
+                        <property name="column">0</property>
+                        <property name="row">6</property>
+                      </layout>
+                    </object>
+                    </child>           
+                  <child>       <!-- 6|1 -->
+                    <object class="GtkImage">
+                      <property name="halign">start</property>
+                      <property name="valign">center</property>
+                      <property name="icon-name">snap-nodes-midpoint</property>
+                      <layout>
+                        <property name="column">1</property>
+                        <property name="row">6</property>
+                      </layout>
+                    </object>
+                    </child>
+                  
+                  <child>       <!-- 7|0 -->
+                    <object class="GtkCheckButton">
+                      <property name="focusable">True</property>
+                      <property name="halign">fill</property>
+                      <property name="hexpand">True</property>
+                      <property name="action-name">win.snap-line-perpendicular</property>
+                      <property name="child">
+                        <object class="GtkLabel">
+                          <property name="label" translatable="yes">Perpendicular lines</property>
+                        </object>
+                        </property>
+                      <layout>
+                        <property name="column">0</property>
+                        <property name="row">7</property>
+                      </layout>
+                    </object>
+                    </child>            
+                  <child>       <!-- 7|1 -->
+                    <object class="GtkImage">
+                      <property name="halign">start</property>
+                      <property name="valign">center</property>
+                      <property name="icon-name">snap-lines-perpendicular</property>
+                      <layout>
+                        <property name="column">1</property>
+                        <property name="row">7</property>
+                      </layout>
+                    </object>
+                    </child>
+                  
+                  <child>       <!-- 8|0 -->
+                    <object class="GtkCheckButton">
+                      <property name="focusable">True</property>
+                      <property name="halign">fill</property>
+                      <property name="hexpand">True</property>
+                      <property name="action-name">win.snap-line-tangential</property>
+                      <property name="child">
+                        <object class="GtkLabel">
+                          <property name="label" translatable="yes">Tangential lines</property>
+                        </object>
+                        </property>
+                      <layout>
+                        <property name="column">0</property>
+                        <property name="row">8</property>
+                      </layout>
+                    </object>
+                    </child>
+                  <child>       <!-- 8|1 -->
+                    <object class="GtkImage">
+                      <property name="halign">start</property>
+                      <property name="valign">center</property>
+                      <property name="icon-name">snap-lines-tangential</property>
+                      <layout>
+                        <property name="column">1</property>
+                        <property name="row">8</property>
+                      </layout>
+                    </object>
+                    </child>
+                  </object>
+                </child>
+              <child>           <!-- Section 3: Alignment -->
+                <object class="GtkGrid">
+                <property name="row-spacing">4</property>
+                <property name="css-classes">snap-section</property>
+                <child>        <!-- 0|0 Subheader -->
+                  <object class="GtkCheckButton" id="align-sna">
+                    <property name="focusable">True</property>
+                    <property name="halign">fill</property>
+                    <property name="hexpand">True</property>
+                    <property name="action-name">win.snap-alignment</property>
+                    <property name="child">
+                      <object class="GtkLabel">
+                        <property name="label" translatable="yes">Alignment</property>
+                        <attributes>
+                          <attribute name="weight" value="bold"/>
+                        </attributes>
+                      </object>
+                      </property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">0</property>
+                      
+                    </layout>
+                  </object>
+                  </child>
+                <child>        <!-- 0|1 Subheader icon -->
+                  <object class="GtkImage">
+                    <property name="halign">start</property>
+                    <property name="valign">center</property>
+                    <property name="icon-name">snap-alignment</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">0</property>
+                    </layout>
+                  </object>
+                  </child>
+                <child>        <!-- 2|0 -->
+                  <object class="GtkCheckButton" id="align-snap-self">
+                    <property name="focusable">True</property>
+                    <property name="halign">fill</property>
+                    <property name="hexpand">True</property>
+                    <property name="action-name">win.snap-alignment-self</property>
+                    <property name="child">
+                      <object class="GtkLabel">
+                        <property name="label" translatable="yes">Nodes in same path</property>
+                      </object>
+                      </property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">2</property>
+                    </layout>
+                  </object>
+                  </child>
+                <child>        <!-- 2|1 -->
+                  <object class="GtkImage">
+                    <property name="halign">start</property>
+                    <property name="valign">center</property>
+                    <property name="icon-name">snap-alignment-self</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">2</property>
+                    </layout>
+                  </object>
+                  </child>
+                <child>        <!-- 3|0 -->
+                  <object class="GtkCheckButton">
+                    <property name="label" translatable="yes">Same distances</property>
+                    <property name="focusable">True</property>
+                    <property name="halign">fill</property>
+                    <property name="hexpand">True</property>
+                    <property name="action-name">win.snap-distribution</property>
+                    <property name="child">
+                      <object class="GtkLabel">
+                        <property name="label" translatable="yes">Same distances</property>
+                      </object>
+                      </property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">3</property>
+                    </layout>
+                  </object>
+                  </child>
+                <child>        <!-- 3|1 -->
+                  <object class="GtkImage">
+                    <property name="halign">start</property>
+                    <property name="valign">center</property>
+                    <property name="icon-name">snap-distribution</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">3</property>
+                    </layout>
+                  </object>
+                  </child>
+                </object>
+                </child>
+              
+              <child>           <!-- Section 4: Other points -->
+                <object class="GtkGrid">
+                <property name="row-spacing">4</property>
+                <property name="css-classes">snap-section</property>
+                <child>        <!-- 0|0 Subheader -->
+                  <object class="GtkCheckButton" id="snap-other">
+                    <property name="focusable">True</property>
+                    <property name="halign">fill</property>
+                    <property name="hexpand">True</property>
+                    <property name="action-name">win.snap-others</property>
+                    <property name="child">
+                      <object class="GtkLabel">
+                        <property name="label" translatable="yes">Other points</property>
+                        <attributes>
+                          <attribute name="weight" value="bold"/>
+                        </attributes>
+                      </object>
+                      </property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">0</property>
+                      <property name="column-span">3</property>
+                    </layout>
+                  </object>
+                  </child>
+                <child>        <!-- 0|1 Subheader icon -->
+                    <object class="GtkImage">
+                      <property name="halign">start</property>
+                      <property name="valign">center</property>
+                      <property name="icon-name">snap-others</property>
+                      <layout>
+                        <property name="column">1</property>
+                        <property name="row">0</property>
+                      </layout>
+                    </object>
+                    </child> 
+                <child>        <!-- 2|0 -->
+                  <object class="GtkCheckButton">
+                    <property name="focusable">True</property>
+                    <property name="halign">fill</property>
+                    <property name="hexpand">True</property>
+                    <property name="action-name">win.snap-object-midpoint</property>
+                    <property name="child">
+                      <object class="GtkLabel">
+                        <property name="label" translatable="yes">Object midpoints</property>
+                      </object>
+                      </property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">2</property>
+                    </layout>
+                  </object>
+                  </child>
+                <child>        <!-- 2|1 -->
+                  <object class="GtkImage">
+                    <property name="halign">start</property>
+                    <property name="valign">center</property>
+                    <property name="icon-name">snap-nodes-center</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">2</property>
+                    </layout>
+                  </object>
+                  </child>
+                <child>        <!-- 3|0 -->
+                  <object class="GtkCheckButton">
+                    <property name="focusable">True</property>
+                    <property name="halign">fill</property>
+                    <property name="hexpand">True</property>
+                    <property name="action-name">win.snap-rotation-center</property>
+                    <property name="child">
+                      <object class="GtkLabel">
+                        <property name="label" translatable="yes">Object rotation centers</property>
+                      </object>
+                      </property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">3</property>
+                    </layout>
+                  </object>
+                  </child>
+                <child>        <!-- 3|1 -->
+                  <object class="GtkImage">
+                    <property name="halign">start</property>
+                    <property name="valign">center</property>
+                    <property name="icon-name">snap-nodes-rotation-center</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">3</property>
+                    </layout>
+                  </object>
+                  </child>
+                <child>        <!-- 4|0 -->
+                  <object class="GtkCheckButton">
+                    <property name="focusable">True</property>
+                    <property name="halign">fill</property>
+                    <property name="hexpand">True</property>
+                    <property name="action-name">win.snap-text-baseline</property>
+                    <property name="child">
+                      <object class="GtkLabel">
+                        <property name="label" translatable="yes">Text baselines and anchors</property>
+                      </object>
+                      </property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">4</property>
+                    </layout>
+                  </object>
+                  </child>
+                <child>        <!-- 4|1 -->
+                  <object class="GtkImage">
+                    <property name="halign">start</property>
+                    <property name="valign">center</property>
+                    <property name="icon-name">snap-text-baseline</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">4</property>
+                    </layout>
+                  </object>
+                  </child>
+                <child>        <!-- 5|0 -->
+                  <object class="GtkCheckButton">
+                    <property name="focusable">True</property>
+                    <property name="halign">fill</property>
+                    <property name="hexpand">True</property>
+                    <property name="action-name">win.snap-path-mask</property>
+                    <property name="child">
+                      <object class="GtkLabel">
+                        <property name="label" translatable="yes">Masks</property>
+                      </object>
+                      </property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">5</property>
+                    </layout>
+                  </object>
+                  </child>
+                <child>        <!-- 5|1 -->
+                  <object class="GtkImage">
+                    <property name="halign">start</property>
+                    <property name="valign">center</property>
+                    <property name="icon-name">snap-mask</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">5</property>
+                    </layout>
+                  </object>
+                  </child>
+                <child>        <!-- 6|0 -->
+                  <object class="GtkCheckButton">
+                    <property name="focusable">True</property>
+                    <property name="halign">fill</property>
+                    <property name="hexpand">True</property>
+                    <property name="action-name">win.snap-path-clip</property>
+                    <property name="child">
+                      <object class="GtkLabel">
+                        <property name="label" translatable="yes">Clips</property>
+                      </object>
+                      </property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">6</property>
+                    </layout>
+                  </object>
+                  </child>
+                <child>        <!-- 6|1 -->
+                  <object class="GtkImage">
+                    <property name="halign">start</property>
+                    <property name="valign">center</property>
+                    <property name="icon-name">snap-clip</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">6</property>
+                    </layout>
+                  </object>
+                  </child>
+
+                </object>
+                </child>
+              <child>           <!-- Section 5: Grids -->
+                <object class="GtkGrid">
+                <property name="row-spacing">4</property>
+                <property name="css-classes">snap-section</property>
+                <child>         <!-- 0|0 Subheader -->
+                  <object class="GtkCheckButton" id="snap-grid">
+                      <property name="focusable">True</property>
+                      <property name="halign">fill</property>
+                      <property name="hexpand">True</property>
+                      <property name="action-name">win.snap-grid</property>
+                      <property name="child">
+                        <object class="GtkLabel">
+                          <property name="label" translatable="yes">Grid intersections</property>
+                          <attributes>
+                            <attribute name="weight" value="bold"/>
+                          </attributes>
+                        </object>
+                        </property>
+                      <layout>
+                        <property name="column">0</property>
+                        <property name="row">0</property>
+                      </layout>
+                    </object>
+                  </child>
+                <child>         <!-- 0|1 Subheader icon -->
+                    <object class="GtkImage">
+                      <property name="halign">start</property>
+                      <property name="valign">center</property>
+                      <property name="icon-name">snap-grid-intersection</property>
+                      <layout>
+                        <property name="column">1</property>
+                        <property name="row">0</property>
+                      </layout>
+                    </object>
+                    </child> 
+                <child>         <!-- 2|0 -->
+                  <object class="GtkCheckButton" id="snap-grid-line">
+                    <property name="focusable">True</property>
+                    <property name="halign">fill</property>
+                    <property name="hexpand">True</property>
+                    <property name="action-name">win.snap-grid-line</property>
+                    <property name="child">
+                      <object class="GtkLabel">
+                        <property name="label" translatable="yes">Grid lines</property>
+                      </object>
+                      </property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">2</property>
+                    </layout>
+                  </object>
+                  </child>
+                <child>         <!-- 2|1 -->
+                  <object class="GtkImage">
+                    <property name="halign">start</property>
+                    <property name="valign">center</property>
+                    <property name="icon-name">snap-grid-lines</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">2</property>
+                    </layout>
+                  </object>
+                  </child>
+                  </object>
+                  </child>
+              <child>           <!-- Section 6: Guides, Borders, Margins -->
+                <object class="GtkGrid">
+                <property name="row-spacing">4</property>
+                <property name="css-classes">snap-section-last</property>
+                <child>        <!-- 0|0 -->
+                  <object class="GtkCheckButton" id="snap-guides">
+                    <property name="focusable">True</property>
+                    <property name="halign">fill</property>
+                    <property name="hexpand">True</property>
+                    <property name="action-name">win.snap-guide</property>
+                    <property name="child">
+                      <object class="GtkLabel">
+                        <property name="label" translatable="yes">Guides</property>
+                      </object>
+                      </property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">0</property>
+                    </layout>
+                  </object>
+                  </child>
+                <child>        <!-- 0|1 -->
+                  <object class="GtkImage">
+                    <property name="halign">start</property>
+                    <property name="valign">center</property>
+                    <property name="icon-name">snap-guides</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">0</property>
+                    </layout>
+                  </object>
+                  </child>
+                <child>        <!-- 1|0 -->
+                  <object class="GtkCheckButton" id="snap-page-border">
+                    <property name="focusable">True</property>
+                    <property name="halign">fill</property>
+                    <property name="hexpand">True</property>
+                    <property name="action-name">win.snap-page-border</property>
+                    <property name="child">
+                      <object class="GtkLabel">
+                        <property name="label" translatable="yes">Page borders</property>
+                      </object>
+                      </property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">1</property>
+                    </layout>
+                  </object>
+                  </child>
+                <child>        <!-- 1|1 -->
+                  <object class="GtkImage">
+                    <property name="halign">start</property>
+                    <property name="valign">center</property>
+                    <property name="icon-name">snap-page</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">1</property>
+                    </layout>
+                  </object>
+                  </child>
+                <child>        <!-- 2|0 -->
+                  <object class="GtkCheckButton" id="snap-page-margin">
+                    <property name="focusable">True</property>
+                    <property name="halign">fill</property>
+                    <property name="hexpand">True</property>
+                    <property name="action-name">win.snap-page-margin</property>
+                    <property name="child">
+                      <object class="GtkLabel">
+                        <property name="label" translatable="yes">Page margins</property>
+                      </object>
+                      </property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">2</property>
+                    </layout>
+                  </object>
+                  </child>
+                <child>        <!-- 2|1 -->
+                  <object class="GtkImage">
+                    <property name="halign">start</property>
+                    <property name="valign">center</property>
+                    <property name="icon-name">snap-page-margins</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">2</property>
+                    </layout>
+                  </object>
+                  </child>
+                </object>
+                </child>
+              </object>
+              </child>
+            </object>
+          </child>
+        <child>           <!-- Footer -->
+          <object class="GtkBox">
+          <property name="css-classes">popover-footer</property>
+          <property name="orientation">vertical</property>
+          <property name="halign">fill</property>
+          <property name="valign">start</property>
+          <child>
+            <object class="GtkLinkButton" id="link-simple">
+              <property name="focusable">True</property>
+              <property name="hexpand">True</property>
+              <property name="receives-default">True</property>
+              <property name="has-frame">False</property>  
+              <property name="child">
+                <object class="GtkLabel">
+                  <property name="label" translatable="yes">Simple mode</property>
+                </object>
+                </property>  
+              </object>
+            </child>  
+          </object>
+        </child>
+        </object>
+      </child>
+    </object>
+  <object class="GtkPopover" id="simple">
+    <property name="css-classes">background</property>
+    <property name="name">SnapPopover</property>
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <child>               <!-- Header -->
+          <object class="GtkBox">
+            <property name="css-classes">popover-header</property>
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkCheckButton" id="simple-snap-toggle">
+                <property name="focusable">True</property>
+                <property name="action-name">win.snap-global-toggle</property>
+                <property name="child">
+                  <object class="GtkLabel">
+                    <property name="halign">start</property>
+                    <property name="label" translatable="yes">Enable snapping</property>
+                    <attributes>
+                      <attribute name="weight" value="bold"/>
+                    </attributes>
+                  </object>
+                  </property>
+                </object>
+              </child>
+            </object>
+          </child>
+        <child>               <!-- Body 1 -->
+          <object class="GtkGrid"> 
+            <property name="row-spacing">4</property>
+            <property name="css-classes">snap-section</property>
+            <child>           <!-- Label -->
+              <object class="GtkCheckButton" id="simple-snap-bbox">
+                <property name="focusable">True</property>
+                <property name="halign">fill</property>
+                <property name="hexpand">True</property>
+                <property name="action-name">win.simple-snap-bbox</property>
+                <property name="child">
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes">Bounding boxes</property>
+                  </object>
+                  </property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+              </child>
+            <child>           <!-- Icon -->
+              <object class="GtkImage">
+                <property name="halign">start</property>
+                <property name="valign">center</property>
+                <property name="icon-name">snap-bounding-box</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+              </child>            
+            </object> 
+          </child>         
+        <child>               <!-- Body 2 -->
+          <object class="GtkGrid"> 
+            <property name="row-spacing">4</property>
+            <property name="css-classes">snap-section</property>
+            <child>           <!-- Label -->
+              <object class="GtkCheckButton" id="simple-snap-nodes">
+                <property name="focusable">True</property>
+                <property name="halign">fill</property>
+                <property name="hexpand">True</property>
+                <property name="action-name">win.simple-snap-nodes</property>
+                <property name="child">
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes">Nodes</property>
+                  </object>
+                  </property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+              </child>
+            <child>           <!-- Icon -->
+              <object class="GtkImage">
+                <property name="halign">start</property>
+                <property name="valign">center</property>
+                <property name="icon-name">snap-nodes</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+              </child>            
+            </object> 
+          </child>         
+        <child>               <!-- Body 3 -->
+          <object class="GtkGrid"> 
+            <property name="row-spacing">4</property>
+            <property name="css-classes">snap-section-last</property>
+            <child>           <!-- Label -->
+              <object class="GtkCheckButton" id="align-snap">
+                <property name="focusable">True</property>
+                <property name="halign">fill</property>
+                <property name="hexpand">True</property>
+                <property name="action-name">win.simple-snap-alignment</property>
+                <property name="child">
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes">Alignment</property>
+                  </object>
+                  </property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+                </child>
+            <child>           <!-- Icon -->
+              <object class="GtkImage">
+                <property name="halign">start</property>
+                <property name="valign">center</property>
+                <property name="icon-name">snap-alignment</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+              </child>
+
+            </object> 
+          </child>         
+        <child>               <!-- Footer -->
+          <object class="GtkBox">
+            <property name="css-classes">popover-footer</property>
+            <property name="orientation">vertical</property>
+            <property name="halign">fill</property>
+            <property name="valign">start</property>
+            <child>
+            <object class="GtkLinkButton" id="link-advanced">
+              <property name="focusable">True</property>
+              <property name="hexpand">True</property>
+              <property name="receives-default">True</property>
+              <property name="has-frame">False</property>  
+              <property name="child">
+                <object class="GtkLabel">
+                  <property name="label" translatable="yes">Advanced mode</property>
+                  </object>
+                </property>  
+              </object>
+            </child>
+            </object>
+          </child>
+        </object>
+      </child>
+    </object> 
+  <object class="GtkBox" id="snap-toolbar">
+    <property name="name">SnapToolbar</property>
+    <property name="halign">start</property>
+    <property name="valign">start</property>
+    <property name="spacing">0</property>
+    <property name="margin-end">0</property>
+    <property name="css-classes">inkscape-toolbar</property>
+      <child>                   <!-- Buttons -->
+       <object class="GtkBox">
+<!--        <property name="css-classes">linked</property> -->
+        <child>                   <!-- Button Global Snap  -->
+          <object class="GtkToggleButton">
+            <property name="focus-on-click">False</property>
+            <property name="action-name">win.snap-global-toggle</property>
+            <property name="has-frame">False</property>
+            <child>
+              <object class="GtkImage">
+                <property name="halign">fill</property>
+                <property name="valign">center</property>
+                <property name="icon-name">snap</property>
+              </object>
+            </child>
+            </object>
+          </child>
+        <child>                   <!-- Button Advanced  -->
+          <object class="GtkMenuButton" id="btn-advanced">
+            <property name="css-classes">snap-popover</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="direction">down</property>
+            <property name="popover">advanced</property>
+            <property name="has-frame">False</property>
+            </object>
+          </child>
+        <child>                   <!-- Button Simple  -->
+          <object class="GtkMenuButton" id="btn-simple">
+            <property name="css-classes">snap-popover</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="direction">down</property>
+            <property name="popover">simple</property>
+            <property name="has-frame">False</property>
+            </object>
+          </child>
+        </object>
+       </child>
+      <child>                   <!-- Permanent Toolbar -->
+        <object class="GtkScrolledWindow" id="scroll-permanent">
+            <property name="css-classes">snap-section</property>
+            <property name="vexpand">True</property>
+            <property name="hscrollbar-policy">never</property>
+            <property name="vscrollbar-policy">external</property>
+            <property name="propagate-natural-height">True</property>
+            <property name="child">
+              <object class="GtkBox" id="box-permanent">
+                <property name="orientation">vertical</property>
+                  <child>         <!-- Box: Bounding boxes --> 
+                    <object class="GtkBox">
+                      <property name="css-classes">snap-section</property>
+                      <property name="orientation">vertical</property>
+                      <child>     <!-- Subheader: Bounding box -->
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-bbox</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-bounding-box</property>
+                            </object>
+                          </child>
+                        </object>
+                        </child>
+                      <child>
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-bbox-edge</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-bounding-box-edges</property>
+                            </object>
+                          </child>
+                        </object>
+                        </child>
+                      <child>
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-bbox-corner</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-bounding-box-corners</property>
+                            </object>
+                          </child>
+                        </object>
+                      </child>
+                      <child>
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-bbox-edge-midpoint</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-bounding-box-midpoints</property>
+                            </object>
+                          </child>
+                        </object>
+                        </child>
+                      <child>
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-bbox-center</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-bounding-box-center</property>
+                            </object>
+                          </child>
+                        </object>
+                        </child>
+                      </object>
+                  </child>
+
+                  <child>         <!-- Box: Nodes --> 
+                    <object class="GtkBox">
+                      <property name="css-classes">snap-section</property>
+                      <property name="orientation">vertical</property>
+                      <child>     <!-- Subheader: Nodes -->
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-node-category</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-nodes</property>
+                            </object>
+                          </child>
+                        </object>
+                        </child>
+                      <child>
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-path</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-nodes-path</property>
+                            </object>
+                          </child>
+                        </object>
+                        </child>
+                      <child>
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-path-intersection</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-nodes-intersection</property>
+                            </object>
+                          </child>
+                        </object>
+                        </child>
+                      <child>
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-node-cusp</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-nodes-cusp</property>
+                            </object>
+                          </child>
+                        </object>
+                        </child>
+                      <child>
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-node-smooth</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-nodes-smooth</property>
+                            </object>
+                          </child>
+                        </object>
+                        </child>
+                      <child>
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-line-midpoint</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-nodes-midpoint</property>
+                            </object>
+                          </child>
+                        </object>
+                        </child>
+                      <child>
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-line-perpendicular</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-lines-perpendicular</property>
+                            </object>
+                          </child>
+                        </object>
+                        </child>
+                      <child>
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-line-tangential</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-lines-tangential</property>
+                            </object>
+                          </child>
+                        </object>
+                        </child>
+                        </object>
+                    </child>
+
+                  <child>         <!-- Box: Other objects --> 
+                    <object class="GtkBox">
+                      <property name="css-classes">snap-section</property>
+                      <property name="orientation">vertical</property>
+                      <child>       <!-- Subheader: Other -->
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-others</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-others</property>
+                            </object>
+                          </child>
+                        </object>
+                      </child>
+                      <child>
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-object-midpoint</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-nodes-center</property>
+                            </object>
+                          </child>
+                        </object>
+                        </child>
+                      <child>
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-rotation-center</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-nodes-rotation-center</property>
+                            </object>
+                          </child>
+                        </object>
+                        </child>
+                      <child>
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-text-baseline</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-text-baseline</property>
+                            </object>
+                          </child>
+                        </object>
+                        </child>
+                      <child>
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-path-mask</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-mask</property>
+                            </object>
+                          </child>
+                        </object>
+                      </child>
+                      <child>
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-path-clip</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-clip</property>
+                            </object>
+                          </child>
+                        </object>
+                        </child>
+
+                      </object>
+                    </child>
+
+
+                  <child>         <!-- Box: Alignment --> 
+                    <object class="GtkBox">
+                      <property name="css-classes">snap-section</property>
+                      <property name="orientation">vertical</property>
+                      <child>       <!-- Subheader: Alignment -->
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-alignment</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-alignment</property>
+                            </object>
+                          </child>
+                        </object>
+                        </child>
+                      <child>
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-alignment-self</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-alignment-self</property>
+                            </object>
+                          </child>
+                        </object>
+                      </child>
+                      <child>
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-distribution</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-distribution</property>
+                            </object>
+                          </child>
+                        </object>
+                      </child>
+
+
+
+                      </object>
+                  </child>
+
+                  <child>         <!-- Box: Grids --> 
+                    <object class="GtkBox">
+                      <property name="css-classes">snap-section</property>
+                      <property name="orientation">vertical</property>
+                      <child>       <!-- Subheader: Grid -->
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-grid</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-grid-intersection</property>
+                            </object>
+                          </child>
+                        </object>
+                        </child>
+                      <child>
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-grid-line</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-grid-lines</property>
+                            </object>
+                          </child>
+                        </object>
+                      </child>
+
+                      </object>
+                    </child>
+
+                  <child>         <!-- Box: Guides and pages --> 
+                    <object class="GtkBox">
+                      <property name="css-classes">snap-section-last</property>
+                      <property name="orientation">vertical</property>
+                      <child>
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-guide</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-guides</property>
+                            </object>
+                          </child>
+                        </object>
+                        </child>
+                      <child>
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-page-border</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-page</property>
+                            </object>
+                          </child>
+                        </object>
+                        </child>
+                      <child>
+                        <object class="GtkToggleButton">
+                          <property name="focus-on-click">False</property>
+                          <property name="action-name">win.snap-page-margin</property>
+                          <property name="has-frame">False</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="halign">fill</property>
+                              <property name="valign">center</property>
+                              <property name="icon-name">snap-page-margins</property>
+                            </object>
+                          </child>
+                        </object>
+                        </child>
+
+                      </object>
+                    </child>
+
+                </object>
+              </property>
+            </object>
+        </child>
+    </object>
+</interface>

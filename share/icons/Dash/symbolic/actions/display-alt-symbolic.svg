@@ -1,0 +1,40 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="display-alt">
+<g id="mask">
+<mask id="mask0_3684_42664" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+<path id="Subtract" d="M11.3555 0C10.5246 0.73296 10 1.80496 10 3C10 5.20914 11.7909 7 14 7C14.7289 7 15.4115 6.80354 16 6.46289V16H0V0H11.3555Z" fill="black"/>
+</mask>
+<g mask="url(#mask0_3684_42664)">
+<g id="Group 284">
+<g id=".display">
+<g id="sky" opacity="0.9">
+<rect id="Rectangle 800" opacity="0.45" x="2" y="3" width="12" height="1" fill="black"/>
+<rect id="Rectangle 801" opacity="0.4" x="2" y="4" width="12" height="1" fill="black"/>
+<rect id="Rectangle 802" opacity="0.35" x="2" y="5" width="12" height="1" fill="black"/>
+<rect id="Rectangle 803" opacity="0.3" x="2" y="6" width="12" height="1" fill="black"/>
+<rect id="Rectangle 804" opacity="0.25" x="2" y="7" width="12" height="1" fill="black"/>
+<rect id="Rectangle 805" opacity="0.2" x="2" y="8" width="12" height="1" fill="black"/>
+<rect id="Rectangle 806" opacity="0.1" x="2" y="9" width="12" height="1" fill="black"/>
+<path id="Vector 680" opacity="0.1" d="M2 4V3H3L2 4Z" fill="black"/>
+<path id="Vector 683" opacity="0.1" d="M14 4V3H13L14 4Z" fill="black"/>
+<path id="Vector 681" opacity="0.1" d="M2 5V3H4L2 5Z" fill="black"/>
+<path id="Vector 684" opacity="0.1" d="M14 5V3H12L14 5Z" fill="black"/>
+<path id="Vector 682" opacity="0.1" d="M2 6V3H5L2 6Z" fill="black"/>
+<path id="Vector 685" opacity="0.1" d="M14 6V3H11L14 6Z" fill="black"/>
+</g>
+<path id="Union" d="M15.001 12H9.00098V13H12.001V14H4.00098V13H7.00098V12H1.00098V2H15.001V12ZM2.00098 11H14.001V3H2.00098V11Z" fill="black"/>
+<path id="Vector 672" opacity="0.7" d="M11 5L7 9L9.5 11.5H14.5V8.5L11 5Z" fill="black"/>
+<path id="Vector 671" opacity="0.6" d="M9.5 11.5L5 7L1.5 10.5V11.5H9.5Z" fill="black"/>
+<path id="Vector 673" opacity="0.4" d="M4 8L5 7L6 8H4Z" fill="black"/>
+<path id="Vector 676" opacity="0.4" d="M10 6L11 5L12 6H10Z" fill="black"/>
+<path id="Vector 674" opacity="0.3" d="M7 9H3L4 8H6L7 9Z" fill="black"/>
+<path id="Vector 677" opacity="0.3" d="M13 7H9L10 6H12L13 7Z" fill="black"/>
+<path id="Vector 675" opacity="0.2" d="M8 10H2L3 9H7L8 10Z" fill="black"/>
+<path id="Vector 678" opacity="0.2" d="M14 8H8L9 7H13L14 8Z" fill="black"/>
+</g>
+</g>
+</g>
+</g>
+<circle id="Ellipse 368" cx="14" cy="3" r="2" fill="black"/>
+</g>
+</svg>

@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+[Desktop Entry]
+Version=1.0
+Name=Inkscape
+GenericName=Vector Graphics Editor
+X-GNOME-FullName=Inkscape Vector Graphics Editor
+Comment=Create and edit Scalable Vector Graphics images
+Keywords=image;editor;vector;drawing;
+Type=Application
+Categories=Graphics;VectorGraphics;GTK;
+MimeType=${INKSCAPE_MIMETYPE}
+Exec=inkscape %F
+TryExec=inkscape
+Terminal=false
+StartupNotify=true
+Icon=${INKSCAPE_ICONPATH}
+Actions=new-window;
+
+[Desktop Action new-window]
+Name=Open a New Window
+Exec=inkscape

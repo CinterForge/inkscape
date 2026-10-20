@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="rows">
+<g id=".offset-rows">
+<path id="Union" opacity="0.3" d="M12 15H1V12H12V15ZM12 4H1V1H12V4Z" fill="black"/>
+<path id="Union_2" d="M1 4L1 0.999999L12 1L12 4L1 4ZM0.999999 15L1 12L12 12L12 15L0.999999 15ZM2 2L2 3L11 3L11 2L2 2ZM2 13L2 14L11 14L11 13L2 13ZM4 10L4 6L15 6L15 10L4 10ZM5 7L5 9L14 9L14 7L5 7Z" fill="black"/>
+</g>
+</g>
+</svg>

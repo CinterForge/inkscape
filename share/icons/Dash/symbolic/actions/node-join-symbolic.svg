@@ -1,0 +1,9 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="node-join">
+<g id=".node-operation-join">
+<path id="neutral" d="M10 12H16V13H10L8 15L6 13H0V12H6L8 10L10 12Z" fill="black"/>
+<path id="Union" d="M6.5 2.5L4 5L2 3H0V2H2L4 0L6.5 2.5ZM14 2H16V3H14L12 5L9.5 2.5L12 0L14 2ZM2.67773 2.5L4 3.82227L5.32227 2.5L4 1.17773L2.67773 2.5ZM10.6777 2.5L12 3.82227L13.3223 2.5L12 1.17773L10.6777 2.5Z" fill="black"/>
+<path id="Subtract" opacity="0.6" d="M8 8L6 6H7L8 7L9 6H10L8 8Z" fill="black"/>
+</g>
+</g>
+</svg>

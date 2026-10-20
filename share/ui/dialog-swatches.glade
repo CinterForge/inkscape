@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkBox" id="main">
+    <property name="orientation">vertical</property>
+    <property name="hexpand">True</property>
+    <property name="vexpand">True</property>
+    <child>
+      <object class="GtkBox" id="header">
+        <property name="margin-start">4</property>
+        <property name="margin-end">4</property>
+        <property name="margin-top">4</property>
+        <property name="margin-bottom">4</property>
+        <property name="spacing">4</property>
+        <child>
+          <object class="GtkLabel" id="swatch-fill">
+            <property name="visible">False</property>
+            <property name="hexpand">True</property>
+            <property name="halign">start</property>
+            <property name="valign">center</property>
+            <property name="label" translatable="yes">Swatch fill</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkMenuButton" id="selector">
+            <property name="hexpand">True</property>
+            <property name="focusable">True</property>
+            <child>
+              <object class="GtkBox">
+                <property name="spacing">2</property>
+                <child>
+                  <object class="GtkLabel" id="selector-label">
+                    <style>
+                      <class name="padded-label"/>
+                    </style>
+                    <property name="hexpand">True</property>
+                    <property name="xalign">0.0</property>
+                    <property name="ellipsize">middle</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkImage">
+                    <property name="icon-name">pan-down-symbolic</property>
+                    <style>
+                      <class name="arrow"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkMenuButton" id="settings2">
+            <property name="visible">False</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Settings</property>
+            <property name="has-frame">False</property>
+            <property name="direction">down</property>
+            <property name="icon-name">gear</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkSearchEntry" id="search">
+            <property name="focusable">True</property>
+            <property name="hexpand">True</property>
+            <property name="tooltip-text" translatable="yes">Search colors by their name</property>
+            <property name="max-width-chars">6</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <style>
+          <class name="thin"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="content">
+        <property name="margin-start">4</property>
+        <property name="margin-end">4</property>
+        <property name="hexpand">True</property>
+        <property name="vexpand">True</property>
+        <child>
+          <placeholder/>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <style>
+          <class name="thin"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="footer">
+        <property name="margin-start">4</property>
+        <property name="margin-end">4</property>
+        <property name="margin-top">2</property>
+        <property name="margin-bottom">2</property>
+        <property name="spacing">3</property>
+        <child>
+          <object class="GtkButton" id="open">
+            <property name="focusable">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Load palette of colors or swatches</property>
+            <property name="has-frame">False</property>
+            <property name="icon-name">document-open</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="new">
+            <property name="focusable">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">New swatch</property>
+            <property name="has-frame">False</property>
+            <property name="icon-name">list-add</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="delete">
+            <property name="focusable">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Delete swatch</property>
+            <property name="has-frame">False</property>
+            <property name="icon-name">list-remove</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="import">
+            <property name="focusable">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Import swatches</property>
+            <property name="has-frame">False</property>
+            <property name="icon-name">import</property>
+            <property name="margin-start">10</property>
+            <property name="margin-end">10</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="list">
+            <property name="focusable">True</property>
+            <property name="hexpand">True</property>
+            <property name="halign">end</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Show colors with names</property>
+            <property name="has-frame">False</property>
+            <property name="group">grid</property>
+            <property name="icon-name">layout-list</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="grid">
+            <property name="focusable">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Show colors in a grid</property>
+            <property name="has-frame">False</property>
+            <property name="icon-name">layout-grid</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkSeparator">
+          </object>
+        </child>
+        <child>
+          <object class="GtkMenuButton" id="settings">
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Settings</property>
+            <property name="margin-start">3</property>
+            <property name="has-frame">False</property>
+            <property name="direction">up</property>
+            <property name="icon-name">gear</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

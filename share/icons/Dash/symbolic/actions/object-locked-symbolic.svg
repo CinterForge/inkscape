@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="object-locked">
+<g id=".lock-closed">
+<path id="Subtract" d="M8 2C10.2091 2 12 3.79086 12 6V8H13V15H3V8H4V6C4 3.79086 5.79086 2 8 2ZM4 14H12V9H4V14ZM8 3C6.39489 3 5.08421 4.26056 5.00391 5.8457L5 6V8H11V6C11 4.34315 9.65685 3 8 3Z" fill="black"/>
+<rect id="Rectangle 776" opacity="0.3" x="4" y="9" width="8" height="5" fill="black"/>
+</g>
+</g>
+</svg>

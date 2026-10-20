@@ -1,0 +1,13 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="transform-affect-stroke">
+<g id=".transform-property-stroke" clip-path="url(#clip0_3684_42806)">
+<path id="Union" d="M5 16H3V13H0V11H5V16ZM11 16H7V9H0V5H11V16Z" fill="black"/>
+<path id="neutral" opacity="0.5" d="M16 4H15V1.70703L12 4.70703L11.293 4L14.293 1H12V0H16V4Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42806">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkAdjustment" id="start-offset-adj">
+    <property name="lower">-100</property>
+    <property name="upper">100</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkBox" id="popover-box">
+    <property name="valign">center</property>
+    <property name="orientation">vertical</property>
+    <property name="spacing">4</property>
+    <property name="homogeneous">1</property>
+    <child>
+      <object class="GtkBox" id="start-offset-box">
+        <property name="spacing">4</property>
+        <property name="homogeneous">1</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="halign">start</property>
+            <property name="label" translatable="1">Start Offset (%)</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="start-offset-sb">
+            <property name="focusable">1</property>
+            <property name="adjustment">start-offset-adj</property>
+            <property name="digits">3</property>
+            <property name="tooltip-text" translatable="yes">Adjust the startOffset attribute of the textPath</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="flip-box">
+        <property name="spacing">4</property>
+        <property name="homogeneous">1</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="halign">start</property>
+            <property name="label" translatable="1">Flip</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="spacing">4</property>
+            <child>
+              <object class="GtkToggleButton" id="side-left-btn">
+                <property name="icon-name">text-path-left</property>
+                <property name="active">1</property>
+                <property name="tooltip-text" translatable="yes">Set the side of the textPath to left</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkToggleButton" id="side-right-btn">
+                <property name="icon-name">text-path-right</property>
+                <property name="group">side-left-btn</property>
+                <property name="tooltip-text" translatable="yes">Set the side of the textPath to right</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <placeholder width="343" height="18"></placeholder>
+  <requires lib="gtk" version="4.0"></requires>
+  <object class="GtkGrid" id="paint-strip">
+    <property name="row-spacing">0</property>
+    <property name="column-spacing">4</property>
+    <child>
+      <object class="GtkLabel" id="paint-label">
+        <property name="halign">start</property>
+        <property name="label" translatable="yes">Fill</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <!--dim: 5, 1-->
+    <child>
+      <object class="GtkMenuButton" id="paint-btn">
+        <property name="always-show-arrow">true</property>
+        <property name="popover">popup</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="row">0</property>
+        </layout>
+        <child>
+          <object class="GtkBox" id="paint-preview-stack">
+            <child>
+              <object class="GtkImage" id="paint-icon-preview">
+                <property name="margin-end">4</property>
+                <property name="margin-start">0</property>
+                <property name="width-request">16</property>
+                <property name="halign">start</property>
+                <property name="pixel-size">16</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkDrawingArea" id="paint-color-preview">
+                <property name="hexpand">true</property>
+                <property name="hexpand-set">true</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="gtkmm__CustomObject_InkSpinButton" id="paint-alpha">
+        <property name="hexpand">true</property>
+        <property name="hexpand-set">true</property>
+        <property name="suffix" translatable="yes" context="Transparency percent">%</property>
+        <property name="scaling-factor">100.000000</property>
+        <property name="digits">0</property>
+        <layout>
+          <property name="column">3</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="paint-buttons">
+        <property name="valign">center</property>
+        <layout>
+          <property name="column">4</property>
+          <property name="row">0</property>
+        </layout>
+        <child>
+          <object class="GtkButton" id="paint-add">
+            <property name="has-frame">false</property>
+            <property name="icon-name">plus</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="paint-clear">
+            <property name="has-frame">false</property>
+            <property name="icon-name">minus</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkPopover" id="popup"></object>
+</interface>

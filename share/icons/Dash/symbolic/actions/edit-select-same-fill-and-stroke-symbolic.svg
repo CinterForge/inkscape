@@ -1,0 +1,19 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="edit-select-same-fill-and-stroke">
+<g id=".style-fill+stroke">
+<g id="Group 286" opacity="0.9">
+<path id="rectangle" opacity="0.25" d="M4 9.25L9.25 4L11.5 4L4 11.5L4 9.25Z" fill="black"/>
+<path id="rectangle_2" opacity="0.15" d="M4 7L7 4L9.25 4L4 9.25L4 7Z" fill="black"/>
+<path id="rectangle_3" opacity="0.35" d="M4 11.5L11.5 4L13.75 4L4 13.75L4 11.5Z" fill="black"/>
+<path id="rectangle_4" opacity="0.45" d="M4 13.75L13.75 4L16 4L4 16L4 13.75Z" fill="black"/>
+<path id="rectangle_5" opacity="0.55" d="M4 16L16 4L16 6.25L6.25 16L4 16Z" fill="black"/>
+<path id="rectangle_6" opacity="0.65" d="M6.25 16L16 6.25L16 8.5L8.5 16L6.25 16Z" fill="black"/>
+<path id="rectangle_7" opacity="0.75" d="M8.5 16L16 8.5L16 10.75L10.75 16L8.5 16Z" fill="black"/>
+<path id="rectangle_8" opacity="0.85" d="M10.75 16L16 10.75L16 13L13 16L10.75 16Z" fill="black"/>
+<path id="rectangle_9" opacity="0.9" d="M13 16L16 13L16 16L13 16Z" fill="black"/>
+<path id="rectangle_10" opacity="0.1" d="M7 4L4 7L4 4L7 4Z" fill="black"/>
+</g>
+<path id="Union" d="M3 16H1V11H3V16ZM3 9H1V5H3V9ZM2 0.5C2.82843 0.5 3.5 1.17157 3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5ZM9 3H5V1H9V3ZM16 3H11V1H16V3Z" fill="black"/>
+</g>
+</g>
+</svg>

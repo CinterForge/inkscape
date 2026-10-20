@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="node-type-smooth">
+<g id=".node-type-smooth">
+<path id="Subtract" d="M4.5 7.66455C2.51001 9.07705 1.00013 11.744 1 15.4995V15.9995H0V15.4995C0.000147643 11.1381 1.93212 7.97023 4.5 6.47119V7.66455ZM11.5 6.47119C14.0679 7.97023 15.9999 11.1381 16 15.4995V15.9995H15V15.4995C14.9999 11.744 13.49 9.07705 11.5 7.66455V6.47119Z" fill="black"/>
+<path id="neutral" d="M10.5 8.5H5.5V3.5H10.5V8.5ZM6.5 7.5H9.5V4.5H6.5V7.5Z" fill="black"/>
+</g>
+</g>
+</svg>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- original from https://gitlab.kitware.com/cmake/cmake/-/blob/03884f4f/Modules/Internal/CPack/WIX.template.in
+
+License info:
+
+CMake - Cross Platform Makefile Generator
+Copyright 2000-2024 Kitware, Inc. and Contributors
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+* Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+
+* Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+
+* Neither the name of Kitware, Inc. nor the names of Contributors
+  may be used to endorse or promote products derived from this
+  software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following individuals and institutions are among the Contributors:
+
+* Aaron C. Meadows <cmake@shadowguarddev.com>
+* Adriaan de Groot <groot@kde.org>
+* Aleksey Avdeev <solo@altlinux.ru>
+* Alexander Neundorf <neundorf@kde.org>
+* Alexander Smorkalov <alexander.smorkalov@itseez.com>
+* Alexey Sokolov <sokolov@google.com>
+* Alex Merry <alex.merry@kde.org>
+* Alex Turbov <i.zaufi@gmail.com>
+* Andreas Pakulat <apaku@gmx.de>
+* Andreas Schneider <asn@cryptomilk.org>
+* André Rigland Brodtkorb <Andre.Brodtkorb@ifi.uio.no>
+* Axel Huebl, Helmholtz-Zentrum Dresden - Rossendorf
+* Benjamin Eikel
+* Bjoern Ricks <bjoern.ricks@gmail.com>
+* Brad Hards <bradh@kde.org>
+* Christopher Harvey
+* Christoph Grüninger <foss@grueninger.de>
+* Clement Creusot <creusot@cs.york.ac.uk>
+* Daniel Blezek <blezek@gmail.com>
+* Daniel Pfeifer <daniel@pfeifer-mail.de>
+* Dawid Wróbel <me@dawidwrobel.com>
+* Enrico Scholz <enrico.scholz@informatik.tu-chemnitz.de>
+* Eran Ifrah <eran.ifrah@gmail.com>
+* Esben Mose Hansen, Ange Optimization ApS
+* Geoffrey Viola <geoffrey.viola@asirobots.com>
+* Google Inc
+* Gregor Jasny
+* Helio Chissini de Castro <helio@kde.org>
+* Ilya Lavrenov <ilya.lavrenov@itseez.com>
+* Insight Software Consortium <insightsoftwareconsortium.org>
+* Intel Corporation <www.intel.com>
+* Jan Woetzel
+* Jordan Williams <jordan@jwillikers.com>
+* Julien Schueller
+* Kelly Thompson <kgt@lanl.gov>
+* Konstantin Podsvirov <konstantin@podsvirov.pro>
+* Laurent Montel <montel@kde.org>
+* Mario Bensi <mbensi@ipsquad.net>
+* Martin Gräßlin <mgraesslin@kde.org>
+* Mathieu Malaterre <mathieu.malaterre@gmail.com>
+* Matthaeus G. Chajdas
+* Matthias Kretz <kretz@kde.org>
+* Matthias Maennich <matthias@maennich.net>
+* Michael Hirsch, Ph.D. <www.scivision.co>
+* Michael Stürmer
+* Miguel A. Figueroa-Villanueva
+* Mike Durso <rbprogrammer@gmail.com>
+* Mike Jackson
+* Mike McQuaid <mike@mikemcquaid.com>
+* Nicolas Bock <nicolasbock@gmail.com>
+* Nicolas Despres <nicolas.despres@gmail.com>
+* Nikita Krupen'ko <krnekit@gmail.com>
+* NVIDIA Corporation <www.nvidia.com>
+* OpenGamma Ltd. <opengamma.com>
+* Patrick Stotko <stotko@cs.uni-bonn.de>
+* Per Øyvind Karlsen <peroyvind@mandriva.org>
+* Peter Collingbourne <peter@pcc.me.uk>
+* Petr Gotthard <gotthard@honeywell.com>
+* Philip Lowman <philip@yhbt.com>
+* Philippe Proulx <pproulx@efficios.com>
+* Raffi Enficiaud, Max Planck Society
+* Raumfeld <raumfeld.com>
+* Roger Leigh <rleigh@codelibre.net>
+* Rolf Eike Beer <eike@sf-mail.de>
+* Roman Donchenko <roman.donchenko@itseez.com>
+* Roman Kharitonov <roman.kharitonov@itseez.com>
+* Ruslan Baratov
+* Sebastian Holtermann <sebholt@xwmw.org>
+* Stephen Kelly <steveire@gmail.com>
+* Sylvain Joubert <joubert.sy@gmail.com>
+* The Qt Company Ltd.
+* Thomas Sondergaard <ts@medical-insight.com>
+* Tobias Hunger <tobias.hunger@qt.io>
+* Todd Gamblin <tgamblin@llnl.gov>
+* Tristan Carel
+* University of Dundee
+* Vadim Zhukov
+* Will Dicharry <wdicharry@stellarscience.com>
+
+See version control history for details of individual contributions.
+
+The above copyright and license notice applies to distributions of
+CMake in source and binary form.  Third-party software packages supplied
+with CMake under compatible licenses provide their own copyright notices
+documented in corresponding subdirectories or source files.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+CMake was initially developed by Kitware with the following sponsorship:
+
+ * National Library of Medicine at the National Institutes of Health
+   as part of the Insight Segmentation and Registration Toolkit (ITK).
+
+ * US National Labs (Los Alamos, Livermore, Sandia) ASC Parallel
+   Visualization Initiative.
+
+ * National Alliance for Medical Image Computing (NAMIC) is funded by the
+   National Institutes of Health through the NIH Roadmap for Medical Research,
+   Grant U54 EB005149.
+
+ * Kitware, Inc.
+
+-->
+
+<?include "cpack_variables.wxi"?>
+
+<Wix
+    xmlns="http://wixtoolset.org/schemas/v4/wxs"@CPACK_WIX_CUSTOM_XMLNS_EXPANDED@
+    RequiredVersion="4.0"
+    >
+
+    <Package
+        Name="$(var.CPACK_PACKAGE_NAME)"
+        Version="$(var.CPACK_PACKAGE_VERSION)"
+        Manufacturer="$(var.CPACK_PACKAGE_VENDOR)"
+        UpgradeCode="$(var.CPACK_WIX_UPGRADE_GUID)"
+        ProductCode="$(var.CPACK_WIX_PRODUCT_GUID)"
+        Scope="$(var.CPACK_WIX_INSTALL_SCOPE)"
+        InstallerVersion="500"
+        Language="1033"
+        Compressed="yes"
+        >
+
+        <Media Id="1" Cabinet="media1.cab" EmbedCab="yes"/>
+
+        <!--
+        if C:\Program Files\Inkscape\bin\inkscape.exe exists, then
+            EXISTING_INKSCAPE_BIN_PROGRAMFILES = "C:\Program Files\Inkscape\bin\inkscape.exe"
+        else
+            EXISTING_INKSCAPE_BIN_PROGRAMFILES = "NOT_FOUND"
+        end
+        -->
+        <Property Id="EXISTING_INKSCAPE_BIN_PROGRAMFILES" Value="NOT_FOUND" >
+          <DirectorySearch Id="ds1" Depth="1" Path="C:\Program Files\Inkscape\bin" >
+              <FileSearch Name="inkscape.exe">
+              </FileSearch>
+          </DirectorySearch>
+        </Property>
+        
+        <!--
+        if inkscape.exe exists at the path indicated by the AppPaths registry entry, then
+            EXISTING_INKSCAPE_BIN_APPATH = path to inkscape.exe
+        else
+            EXISTING_INKSCAPE_BIN_APPATH = "NOT_FOUND"
+        end
+        -->
+        <Property Id="EXISTING_INKSCAPE_BIN_APPATH" Value="NOT_FOUND" >
+            <RegistrySearch Key="SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\inkscape.exe" Name="Path" Root="HKLM" Type="raw">
+                <DirectorySearch Id="ds2" Depth="1">
+                    <FileSearch Name="inkscape.exe">
+                    </FileSearch>
+                </DirectorySearch>
+            </RegistrySearch>
+        </Property>
+
+        <!--
+        Brutal workaround to avoid broken upgrades from old Inkscape .EXE or .MSI verisons:
+        Refuse to install/update when inkscape.exe already exists.
+        
+        ## Background
+        There are many different cases we would need to support:
+        
+        ### Old EXE installer:
+        For .EXE installations we could, in theory, call the Uninstall.exe and
+        then check again. This is not yet implemented. It is difficult to do
+        this properly because MSI has a very complex and weird sequence of operations
+        and we need to make sure that the uninstaller is called before the .MSI
+        checks which files are already installed on the disk.
+        
+        ### Old MSI <= 1.3.x  (and maybe also 1.4.x)
+        For old Inkscape .MSI versions (e.g. 1.3.2) there is probably no good other
+        solution, as they were built with a buggy CMake version. The old version
+        produced installers with a weird mixture of per-user and system-wide
+        installation (CPACK_WIX_INSTALL_SCOPE=None, default for old WiX v3,
+        see CMake documentation). This weirdness led to start menu entries
+        being visible only to the one user who ran the installer.
+        
+        ### New MSI >= 1.5
+        Fixing this weirdness (CPACK_WIX_INSTALL_SCOPE=perMachine, default for
+        new WiX v4) unfortunately results in a .MSI installer that does not cleanly
+        upgrade from 1.3.2, because the new MSI with InstallScope=perMachine can not
+        see old MSI installations with InstallScope=None, and therefore the user
+        gets two half-broken installations.
+        
+        Furthermore, even with the current version, it seems that .MSI does not
+        properly update an existing installation (as it was already observed
+        when upgrading from 1.3.0 to 1.3.2 with    the old InstallScope settings).
+
+        ### Possible improvements
+        Once the remaining upgrade problems fixed, then we could add an extra
+        file to the installation that signals that the Inkscape installation
+        is safe to update via MSI. If that file is found, the check could be
+        bypassed.
+        
+        ## Implementation
+        
+        In detail, the below <Launch> condition means:
+        if ( (inkscape.exe was NOT found in ProgramFiles AND NOT found in the location given by registry App Paths)
+            OR the exact same .MSI package is already installed (which means we we are doing a reinstallation/uninstallation/modification after successful installation)
+            OR we are doing a reinstallation / repair installation
+            OR we are resuming a half-finished installation
+			OR the property INKSCAPE_BYPASS_MSI_LAUNCH_CONDITION is set (msiexec /i inkscape.msi INKSCAPE_BYPASS_MSI_LAUNCH_CONDITION=yes)
+         then 
+            allow the installer to continue
+         else
+            show message "Please uninstall"
+            exit with error
+        end
+         
+        For examples of launch conditions see: https://community.flexera.com/t5/InstallShield-Knowledge-Base/Common-MSI-Conditions/ta-p/3854
+        Reference documentation: https://learn.microsoft.com/en-us/windows/win32/msi/property-reference
+        -->          
+        <Launch 
+            Condition="(EXISTING_INKSCAPE_BIN_PROGRAMFILES=&quot;NOT_FOUND&quot; and EXISTING_INKSCAPE_BIN_APPATH=&quot;NOT_FOUND&quot;) or Installed or REINSTALL or RESUME or INKSCAPE_BYPASS_MSI_LAUNCH_CONDITION"
+            Message="Please uninstall the old Inkscape version first."/>
+            
+        <MajorUpgrade
+            Schedule="afterInstallInitialize"
+            AllowSameVersionUpgrades="yes"
+            DowngradeErrorMessage="A later version of [ProductName] is already installed. Setup will now exit."/>
+
+        <WixVariable Id="WixUILicenseRtf" Value="$(var.CPACK_WIX_LICENSE_RTF)"/>
+        <Property Id="WIXUI_INSTALLDIR" Value="INSTALL_ROOT"/>
+
+        <?ifdef CPACK_WIX_PRODUCT_ICON?>
+        <Property Id="ARPPRODUCTICON" Value="ProductIcon.ico" />
+        <Icon Id="ProductIcon.ico" SourceFile="$(var.CPACK_WIX_PRODUCT_ICON)"/>
+        <?endif?>
+
+        <?ifdef CPACK_WIX_UI_BANNER?>
+        <WixVariable Id="WixUIBannerBmp" Value="$(var.CPACK_WIX_UI_BANNER)"/>
+        <?endif?>
+
+        <?ifdef CPACK_WIX_UI_DIALOG?>
+        <WixVariable Id="WixUIDialogBmp" Value="$(var.CPACK_WIX_UI_DIALOG)"/>
+        <?endif?>
+
+        <FeatureRef Id="ProductFeature"/>
+
+        <ui:WixUI Id="$(var.CPACK_WIX_UI_REF)" />
+        <UIRef Id="WixUI_ErrorProgressText" />
+
+        <?include "properties.wxi"?>
+        <?include "product_fragment.wxi"?>
+    </Package>
+</Wix>

@@ -1,0 +1,1864 @@
+/* GTK3 WIDGET STYLING */
+
+
+/*
+ * Keep in order of:
+ *   General -> Specific
+ *   Order of appearance in widget tree.
+ *   See GtkInspector
+ *     GTK_DEBUG=interactive ~/path_to_gtk3/bin/inkscape
+ *
+ * We need a standardized naming scheme.
+ *
+ * As of Gtk 3.20, you cannot use widget names.
+ */
+
+
+/* Standard theme based colors. Prefer these.
+ *
+ * @theme_bg_color
+ * @theme_fg_color
+ * @theme_base_color
+ * @theme_text_color
+ * @theme_selected_bg_color
+ * @theme_selected_fg_color
+ * @theme_tooltip_bg_color
+ * @theme_tooltip_fg_color
+ *
+ */
+
+/* Our own custom shades... better not to use.
+ * Lightest to darkest based on linear rgb.
+ */
+@define-color bg_color0 #ffffff;
+/* White */
+@define-color bg_color05 #f8f8f8;
+/* Slightly off white */
+@define-color bg_color1 #f0f0f0;
+@define-color bg_color2 #e0e0e0;
+@define-color bg_color3 #d0d0d0;
+@define-color bg_color4 #bbbbbb;
+/* 50% Gray */
+@define-color bg_color5 #a5a5a5;
+@define-color bg_color6 #898989;
+@define-color bg_color7 #636363;
+@define-color bg_color8 #000000;
+/* Black */
+
+@import url("highlight-colors.css");
+
+/* Inkscape CSS helper
+    * to add a class to a widget do some thing like
+    * widget->get_style_context()->add_class("mycoolclass");
+    * we define a bunch of helper CSS styles
+    * Each Inkscape desktop has some classes in top level window
+    * called "dark|bright" (syncked with dark or brighrt themes) and "symbolic|regular" (defined by the user in themes preferences)
+    * so you can style using this clases
+    * by this way you can always know if the UI is in dark mode or using symbolic icons
+    * Also added some helper clases:
+    * ".inverted" invert colors fon widhet and childs
+    * ".highlight-dark" highlights with red tint
+    * ".highlight-light" highlights with yellow tint
+    * ".symbolic" Force icon symbolic
+    * ".regular" Force colorful icons
+    * " .forcebright Force darlk even if the towp wingow has clas dark (happends when theme is dark)
+    * " .forcedark" Force darlk even if the towp wingow has clas bright
+    * :::::::: Combo box.
+    * "..combobright" Combo bright
+    */
+
+*{
+    font-feature-settings: "tnum";
+}
+
+/* Make icons in treeview etc use theme fg_color, not the stronger text_color */
+.view.image {
+    color: @theme_fg_color;
+}
+.view.image:backdrop {
+    color: @theme_unfocused_fg_color;
+}
+.view.image:disabled {
+    color: @insensitive_fg_color;
+}
+
+/* Select on both `image` for GtkImage and `.image` for GtkCellRendererPixbuf */
+*:disabled .image,
+*:disabled image {
+    opacity: 0.4;
+}
+
+/* For these neednʼt be more specific, as this property only applies to icons */
+
+.symbolic {
+    -gtk-icon-style: symbolic;
+}
+
+.regular {
+    -gtk-icon-style: regular;
+}
+
+.regular .symbolic {
+    -gtk-icon-style: symbolic;
+}
+
+.titlebutton > image {
+    -gtk-icon-style: requested;
+}
+
+.inverted,
+.dark .forcebright,
+.bright .forcedark {
+    color: @theme_bg_color;
+    background-color: @theme_fg_color;
+    background-image: image(@theme_fg_color);
+    caret-color: @theme_bg_color;
+    -gtk-secondary-caret-color: @theme_fg_color;
+}
+
+.highlight {
+    color: @theme_fg_color;
+    background-color: alpha(@theme_selected_bg_color,0.5);
+    background-image: image(alpha(@theme_selected_bg_color,0.5));
+    caret-color: @theme_bg_color;
+    border-radius:4px;
+    -gtk-secondary-caret-color: @theme_fg_color;
+}
+
+.noborder{
+    border-width:0;
+}
+
+/* blinking animation for dialogs reopen*/
+@keyframes blink_border {
+  0% { border-color: @theme_selected_fg_color;}
+  90%   { border-color: @theme_selected_bg_color; }
+  100%   { border-color: @theme_selected_fg_color;  }
+}
+@keyframes blink_background {
+  0% { background-color: @theme_bg_color;  }
+  90%   { background-color: @theme_selected_bg_color; }
+  100%   { background-color: @theme_bg_color;  }
+}
+@keyframes blink_background_img {
+  0%   { background-image: image(@theme_bg_color); }
+  90%  { background-image: image(@theme_selected_bg_color); }
+  100% { background-image: image(@theme_bg_color); }
+}
+@keyframes blink_opacity {
+  0%   { opacity: 0; }
+  90%  { opacity:0.7; }
+  100% { opacity:1; }
+}
+
+button.blink {
+    animation: 0.5s blink_background_img 0.1s ease 1;
+}
+
+notebook.blink {
+  animation: 0.5s blink_border 0.1s ease 1;
+}
+
+#InkscapeCanvas.snapshot{
+  animation: 0.3s blink_opacity 0.1s ease 1;
+}
+
+notebook.blink > header > tabs > tab:checked {
+  animation: 0.5s blink_background 0.1s ease 1;
+}
+
+.inverted :not(menuitem):not(.rawstyle):not(overshoot):not(undershoot):not(selection),
+.bright .forcedark :not(menuitem):not(.rawstyle):not(overshoot):not(undershoot):not(selection),
+.dark .forcebright :not(menuitem):not(.rawstyle):not(overshoot):not(undershoot):not(selection) {
+    color: inherit;
+    background-color: inherit;
+    background-image: inherit;
+}
+
+.dark .combobright .combo,
+.dark .combobright menu{
+    background-color: @theme_text_color;
+    background-image: linear-gradient(to top, @theme_text_color, @theme_fd_color);
+    caret-color: @theme_base_color;
+    -gtk-secondary-caret-color: @theme_base_color;
+}
+.dark .combobright box *{
+    color: @theme_base_color;
+}
+.dark .combobright .combo *,
+.dark .combobright menu *{
+    color: inherit;
+}
+
+
+/* attribute dialog popup size */
+.attrpop textview {
+    font-size: 1em;
+}
+
+.mono-font {
+    /* note: monospaced font is set by ThemeContext::applyMonospacedFont() */
+}
+
+/*
+*to get system default colors
+* with Gdk::RGBA success =_symbolic_error_color.get_stseparatole_context()->get_color();
+* _symbolic_error_color has one of this classes applied
+*/
+
+.system_base_color {
+    color: @theme_fg_color;
+    background-color: @theme_bg_color;
+}
+
+.system_error_color {
+    color: @error_color;
+}
+
+.system_warning_color {
+    color: @warning_color;
+}
+
+.system_success_color {
+    color: @success_color;
+}
+
+iconview *:hover {
+    border-width: 1px;
+    border-color: @theme_fg_color;
+    border-style: solid;
+    border-radius: 4px;
+}
+
+.dark iconview *:hover {
+    border-color: @theme_bg_color;
+}
+
+#startscreennotebook iconview *:hover{
+    background-color:@theme_selected_bg_color;
+    border-radius:5px;
+    border-width:0;
+}
+
+.inksmall {
+    font-size: 0.8em;
+}
+
+.menu-category {
+    font-size: smaller;
+    font-weight: bold;
+}
+
+.small-heading {
+    font-size: smaller;
+    font-weight: bold;
+    opacity: 0.5;
+}
+
+.secondary {
+    opacity: 0.7;
+}
+
+.halfrem-vert-space {
+    margin-top: 0.5rem;
+}
+
+#CommandPaletteBase {
+    background-color: @theme_base_color; /* some themes don't seem to have a background color for list rows defined and would end up transparent otherwise */
+    border: 5px solid @theme_bg_color;
+    border-radius: 5px;
+}
+
+#CommandPaletteBase list row:not(:last-child) {
+    border-bottom: 1px solid @bg_color5;
+}
+
+
+/* Selector dialog */
+#SelectorsAndStyleDialog button {
+    min-height: 16px;
+    margin: 2px;
+    padding: 2px;
+}
+
+#SelectorsAndStyleDialog .toggle {
+    min-width: 18px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#SelectorsAndStyleDialog .radio.image-button {
+    margin: 0;
+    padding: 0px;
+    border-radius: 2px 0 0 2px;
+}
+
+#SelectorsAndStyleDialog .radio.image-button:last-child {
+    border-radius: 0 2px 2px 0;
+    border-left-width: 0;
+}
+
+#SelectorsAndStyleDialog treeview button {
+    border-width: 0;
+    margin: 0 0 1px 0;
+}
+
+#SelectorsAndStyleDialog treeview button:nth-child(3),
+#SelectorsAndStyleDialog treeview.style_sheet button:nth-child(4) {
+    border-width: 0 0 0 2px;
+    border-color: @theme_fg_color;
+    border-style: solid;
+    opacity: 0.5;
+}
+
+#SelectorsAndStyleDialog treeview.style_sheet button:nth-child(3) {
+    border-width: 0;
+}
+
+#SelectorsAndStyleDialog #StyleDialog treeview button *{
+    font-size:5px;
+    min-height:1px;
+    padding:0;
+    margin:0;
+}
+
+#SelectorsAndStyleDialog #StyleDialog treeview button {
+    padding:0;
+    min-height:1px;
+    border-left-width:4px;
+    border-color:@success_color;
+}
+
+/* ink-ruler */
+
+#InkRuler {
+    /* make size relative */
+    font-size: smaller;
+    color: alpha(@theme_fg_color, 0.6);
+}
+.dark #InkRuler {
+    color: alpha(@theme_fg_color, 0.7);
+}
+:root {
+    --ruler-separator-color: alpha(@borders, 0.6);
+    --ruler-size: 18px;
+    /* increase contrast between background and page area in light theme */
+    --ruler-light-background: shade(@theme_bg_color, 0.97);
+    --ruler-dark-background: @theme_bg_color;
+}
+#InkRuler.horz {
+    min-height: var(--ruler-size);
+    border-top: solid 1px var(--ruler-separator-color);
+}
+#InkRuler.vert {
+    min-width: var(--ruler-size);
+    border-left: solid 1px var(--ruler-separator-color);
+}
+#InkRuler {
+    background-color: var(--ruler-light-background);
+}
+.dark #InkRuler {
+    background-color: var(--ruler-dark-background);
+}
+
+/* Ensure ui/themes.cpp excludes these classes on applying overridebasecolor: */
+
+.bright #InkRuler.page {
+    color: @theme_base_color;
+}
+.dark #InkRuler.page {
+    color: shade(@theme_base_color, 0.666);
+}
+/* selected object, stroke */
+.bright #InkRuler.selection.border {
+    color: @theme_selected_bg_color;
+}
+.dark   #InkRuler.selection.border {
+    color: shade(@theme_selected_bg_color, 1.5);
+}
+/* selected object, background */
+.bright #InkRuler.selection.background {
+    color: alpha(@theme_selected_bg_color, 0.15);
+}
+.dark   #InkRuler.selection.background {
+    color: alpha(@theme_selected_bg_color, 0.35);
+}
+.bright #InkRuler.ticks {
+    color: alpha(@theme_fg_color, 0.4);
+}
+.dark   #InkRuler.ticks {
+    color: alpha(@theme_fg_color, 0.5);
+}
+
+/* The actual canvas (Inkscape's drawing area). */
+SPCanvas {
+    background-color: white;
+}
+
+/* Those are three buttons in canvas corners; their size dictates how large scrollbars are */
+#QuickActions, #LockGuides, #CMS_Adjust {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border-radius: 0;
+    border-width: 0;
+    min-width: var(--ruler-size);
+    min-height: var(--ruler-size);
+}
+#LockGuides {
+    border-top:  solid 1px var(--ruler-separator-color);
+    border-left: solid 1px var(--ruler-separator-color);
+}
+.dark #LockGuides {
+    background-image: image(var(--ruler-dark-background));
+}
+.dark #LockGuides image {
+    background-color: var(--ruler-dark-background);
+}
+.bright #LockGuides {
+    background-image: image(var(--ruler-light-background));
+}
+.bright #LockGuides image {
+    background-color: var(--ruler-light-background);
+}
+/* Don't let images inside those buttons inflate their sizes */
+#QuickActions *, #LockGuides *, #CMS_Adjust * {
+    padding: 0;
+}
+#QuickActions image {
+    margin-top: 1px;
+}
+
+/* Keep palette scrollbar from generating warnings. */
+#PreviewHolderScroller .vertical slider {
+    min-height: 15px;
+}
+
+/* Override minimum size of container children for palette. */
+#ColorItemPreview {
+    min-height: 5px;
+    min-width: 5px;
+}
+
+/* Reduce width of Fill and Stroke dialog */
+#ColorModeButton {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* InkSpinScale */
+#InkSpinScale {
+    padding: 0px;
+}
+
+#InkSpinScale trough,
+#InkSpinScale slider,
+#InkSpinScale highlight {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* Hide slider */
+#InkSpinScale slider {
+    background: none;
+    border: none;
+    outline: none;
+    min-width: 0px;
+    min-height: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+#InkSpinScale scale {
+    padding: 0px;
+    margin:0;
+}
+
+#InkSpinScale trough {
+    min-height: 25px;
+    padding: 0; /* remove padding to make inkspinscale the same height as spinbutton */
+}
+#InkSpinScale trough highlight {
+    margin: 0;
+}
+
+#InkSpinScale box.active {
+    box-shadow: 0 0 0 1px rgb(74, 144, 217);
+}
+
+#InkSpinScale spinbutton {
+    box-shadow: none;
+    min-height: 10px;
+    border-left:0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#InkSpinScale spinbutton entry {
+    min-height: 25px;
+    outline-style: none;
+}
+
+#UnicodeIconView {
+    font-size: 1.2em;
+}
+
+#ObjectsTreeView.view:focus {
+    outline-style: double;
+    outline-width: 5px;
+    outline-color: alpha(@theme_fg_color, 0.4);
+}
+#Objects .search {
+  padding: 2px 4px;
+  min-height: 16px;
+  font-size: smaller;
+}
+
+#SimpleFilterModifier #InkSpinScale {
+    padding: 2px 4px;
+}
+
+#CompletionPopup entry {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#CompletionPopup button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* GtkTreeView: clarify drop locations (especially important for XML editor) */
+treeview.view > dndtarget:drop(active) {
+    border-style: solid;
+    border-width: 2px;
+}
+
+treeview.view > dndtarget:drop(active).after {
+    border-style: none none solid none;
+}
+
+treeview.view > dndtarget:drop(active).before {
+    border-style: solid none none none;
+}
+
+treeview.view > dndtarget:drop(active).after,
+treeview.view > dndtarget:drop(active).before {
+    border-width: 4px;
+    border-radius: 10px;
+}
+
+button.close-button{
+    background-image: none;
+    padding: 0px;
+    min-height: 1px;
+    min-width: 1px;
+    border: none;
+    opacity: 0.5;
+    box-shadow: none;
+}
+
+button.close-button:hover{
+    box-shadow: none;
+    opacity: 1;
+}
+
+/*
+ * Inkscape start dialog styles
+ */
+
+#start-screen-window .titlebar stack { /* banner-stack */
+    padding: 0;
+    /* opaque bg at bottom corners, rather than having gap, which in GTK3 glitches in transition */
+    background: linear-gradient(to bottom, transparent 0%, transparent 50%, @theme_bg_color);
+}
+
+#start-screen-window .combo {
+    padding:1px 10px;
+
+}
+#start-screen-window .combo * {
+    padding:2px;
+}
+
+#start-screen-window grid label {
+    font-size:small;
+    margin:12px;
+}
+
+#start-screen-window * {
+    outline:0;
+}
+
+button.link:hover image {
+    -gtk-icon-filter: opacity(0.5);
+}
+
+/* Markers */
+#MarkerComboBox {
+    /* Keep it from getting too small due to reduced box padding below */
+    min-height: 26px;
+}
+#MarkerComboBox > button {
+    /* reduced padding for marker combo box to present larger preview */
+    padding: 2px;
+}
+.marker-item-box {
+    padding: 0 2px;
+}
+.marker-separator {
+    padding: 0;
+}
+
+.tight-button {
+    padding: 4px;
+}
+
+.small-button {
+    /* small button in-line with spinbuttons, made small not to inflate height of spinbutton */
+    padding: 1px 3px;
+}
+
+/* This is a button placed next to spinbuttons with a link/unlink icon.
+ * It is supposed to be narrow and tall, so let it be narrow: */
+button.link-edit-button {
+    padding: 5px 0;
+    min-width: 16px; /* icon size */
+}
+button.link-edit-button image {
+    padding: 0;
+}
+
+/* In some themes stack switcher buttons are extra wide forcing dialogs too wide */
+stackswitcher button {
+    padding-left: 1px;
+    padding-right: 1px;
+    min-width: 40px;
+}
+
+/* ColorPalette */
+/* set style for small buttons; we need them reasonably small,
+ * since they impact min height of color palette strip */
+.color-palette-main-box button.small {
+    padding: 1px;
+    margin: 0;
+    min-width: 16px;
+}
+.color-palette-main-box flowbox,
+.color-palette-main-box scrolledwindow {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    min-width: 1px;
+    min-height: 1px;
+}
+/* remove padding/margins from FlowBoxChild widgets,
+ * so previews can be adjacent to each other */
+.color-palette-main-box flowboxchild {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    min-width: 1px;
+    min-height: 1px;
+}
+/*removes dashed line (scrolling indicator) on color palette for all themes */
+.color-palette-main-box scrolledwindow undershoot.top,
+.color-palette-main-box scrolledwindow undershoot.right,
+.color-palette-main-box scrolledwindow undershoot.bottom,
+.color-palette-main-box scrolledwindow undershoot.left {
+    background-image: none;
+}
+
+.backgnd-passive {
+    background-color: @theme_bg_color;
+    opacity: 0.5;
+    transition: background-color 300ms linear;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.backgnd-active {
+  animation-name: pulse;
+  background-color: @theme_selected_bg_color;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+.nb-highlight > header.top {
+  background-color: @theme_selected_bg_color;
+}
+
+.tight-flowbox flowboxchild {
+    margin: 0;
+    padding: 0px;
+}
+.tight-flowbox button {
+    margin: 0;
+    padding: 4px;
+}
+.compact-flowbox flowboxchild {
+    margin: 0;
+    padding: 2px; /* moderate gap of 2*2=4 pixels */
+    min-width: 8px;
+    min-height: 8px;
+}
+
+/* slider with tighter margins */
+scale.tight-slider {
+    padding: 8px 4px 7px 4px;
+}
+
+scale.small-slider {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+/* add .small-marks class to Gtk::Scale to have smaller font used, since markup didn't work there */
+scale.small-marks.marks-after {
+    font-size: smaller;
+}
+
+/* Square toolbar buttons: request square buttons for all toolbars. */
+button.square-button {
+    padding: 3px;
+}
+
+button.square-button image {
+    padding: 0;
+    min-width: 16px;
+    min-height: 16px;
+}
+
+.tag-box {
+    background-color: alpha(@theme_fg_color, 0.15);
+    border-radius: 50px;
+    margin: 0;
+    margin-right: 1px;
+}
+
+.tag-box label {
+    min-width: 2em; /* don't let it collapse */
+    margin-right: 1px;
+    margin-left: 8px;
+}
+
+.tag-box button {
+    padding: 0;
+    margin-right: 2px;
+}
+
+/* Give layer selector button label a highlight color */
+#LayerSelector label
+{
+    padding-left: 6px;
+    border-left-style: solid;
+    border-left-width: 3px  ;
+    /* Color is set in src/ui/widget/layer-selector.cpp */
+}
+
+#DialogNotebook #Swatches box label.padded-label {
+    padding-left: 5px;
+    padding-right: 3px;
+}
+
+#DialogNotebook #Swatches #ColorItem.group + label {
+    font-weight: bold;
+}
+
+#DialogNotebook #Swatches #ColorItem.paint-none + label {
+    font-style: italic;
+}
+
+#StyleSwatch {
+    font-size: smaller;
+}
+#StyleSwatch.vertical {
+    line-height: 0.8;
+    /* Extra height for text descenders (?) makes style swatch bounding box too tall enlarging toolbars;
+    counter combined height of two lines of text that not even line-height can defeat with negative margin. */
+    margin-bottom: -3px;
+}
+
+#DocumentProperties #NotebookPage {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.informational-text {
+    font-style: italic;
+}
+
+.dialog-heading {
+    font-weight: bold;
+}
+
+/* heading label in dialogs */
+.heading {
+    font-weight: bold;
+    font-size: 1.1em; /* make it optically comparable with non-bold */
+    margin-top: 0.5em;
+}
+/* topmost heading in dialogs */
+.heading.top {
+    margin-top: 0.2em;
+}
+/* slightly smaller (sub)heading label in dialogs */
+.heading1 {
+    font-weight: bold;
+    font-size: 1em; /* make it optically comparable with non-bold */
+    margin-top: 0.5em;
+}
+
+.grid-section-title {
+    font-weight: bold;
+    margin: 2px 0;
+}
+.grid-section-button {
+    /* make it tight */
+    padding: 2px 2px 2px 0;
+    margin: 2px 0;
+}
+.grid-section-divider {
+    margin: 2px 0;
+    opacity: 0.6;
+}
+
+/* single-level indentation for labels in a dialog */
+.indent {
+    margin-left: 1em;
+}
+
+.small-font {
+    font-size: smaller;
+}
+
+entry.small-entry {
+    min-height: 18px;
+    padding: 0;
+}
+
+.inkscape-toolbar {
+    margin: 4px;
+}
+.inkscape-toolbar > * {
+    margin-right: 2px;
+    margin-left: 2px;
+}
+.inkscape-toolbar > box > image,
+.inkscape-toolbar > box > label {
+    margin-right: 2px;
+}
+.inkscape-toolbar  popover content > * {
+    margin-right: 2px;
+    margin-left: 2px;
+}
+/* Revise for gtk4: There's no box in popover */
+/*.inkscape-toolbar > popover > box {*/
+/*    margin: 4px 3px;*/
+/*}*/
+/*.inkscape-toolbar > popover > box > * {*/
+/*    margin-right: 3px;*/
+/*}*/
+/*.inkscape-toolbar > popover > box > *:last-child {*/
+/*    margin-right: 0;*/
+/*}*/
+
+/* for dialogs with "Apply" button (or equivalent) - larger hit target */
+.wide-apply-button {
+    min-width: 150px;
+}
+
+button.menu-btn-tight {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#DockedDialogNotebook {
+    border: none;
+}
+
+/*#DialogMenuButton {*/
+/*    padding: 0;*/
+/*    border: none;*/
+/*    opacity: 0.7;*/
+/*}*/
+/*#DialogMenuButton:hover {*/
+/*    opacity: 1;*/
+/*}*/
+
+/*
+ * Inkscape Export Dialog
+ */
+#ExportDialog #export_selection{
+    border-radius: 0px;
+}
+#ExportDialog #export_preview_single {
+    border: 1px solid;
+}
+#ExportDialog #export_preview_batch {
+    border: 1px solid;
+}
+
+.key {
+    border-radius: 3px;
+    background-color: alpha(@theme_fg_color, 0.15);
+    padding: 2px;
+}
+
+combobox.flat-combobox button {
+    border: none;
+    background-color: transparent;
+    background-image: image(transparent);
+}
+
+.filter-effects, .effects-params {
+    min-height: 50px;
+}
+
+/* Defeat standard darker background color on views: use popoverʼs background */
+popover.background.filter-effects-info textview,
+popover.background.filter-effects-info textview > text {
+    background: none;
+}
+
+.dark .symbolsoverlay iconview:not(:selected) {
+    background-color: #f0f0f0; /* bright background color for typically black symbols */
+    /* background-color: @theme_fg_color; - this doesn't work for some themes (like MonoThemeDark) */
+    color:@theme_bg_color; /* symbol text labels */
+}
+
+.dark .symbolsoverlay {
+    color: @theme_bg_color; /* this is for overlay widget's children */
+}
+
+/* LPE Dialog add */
+#LPEScrolled {
+    border:none;
+}
+
+#LPESelectorFlowBox GtkFlowBoxChild,
+#LPESelectorFlowBox flowboxchild {
+    border-width: 0px;
+    border-radius: 6px;
+    margin: 10px;
+    padding: 10px;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+    outline: none;
+}
+
+#LPESelectorFlowBox flowboxchild * {
+    color: @theme_fg_color;
+}
+
+#LPESelectorFlowBox flowboxchild image,
+#LPESelectorFlowBox flowboxchild label {
+    background-color: transparent;
+    background-image: image(transparent);
+}
+
+#LPESelectorFlowBox flowboxchild:selected image,
+#LPESelectorFlowBox flowboxchild:selected label {
+    color: @theme_selected_fg_color;
+}
+
+#LPESelectorFlowBox *:selected #LPESelectorEffectFavTop,
+#LPESelectorFlowBox *:selected:focus #LPESelectorEffectFavTop {
+    opacity: 0;
+}
+
+#LPESelectorFlowBox .lpename {
+    margin-bottom: 5px;
+}
+
+#LPESelectorFlowBox .lpeinfo {
+    padding: 20px;
+}
+
+#LPESelectorFlowBox .lpedisabled {
+    opacity: 0.3;
+}
+
+#LPESelectorEffectInfoPop {
+    padding: 15px;
+}
+
+#LPESelectorEffectInfoName {
+    font-weight: bold;
+    padding: 15px;
+}
+
+#LPEDialogSelector .lpeinfo {
+    padding: 8px;
+    background-color: @theme_bg_color;
+    color: @theme_selected_fg_color;
+    border-color: @theme_selected_bg_color;
+    border-style: solid;
+    margin: 0px 0px 10px 0px;
+    border-radius: 0px;
+    border-width: 0 0 1px 0;
+    padding:5px;
+}
+
+#LPESelectorFlowBox image{
+    background-color:@theme_bg_color;
+    border-color:transparent;
+}
+
+#LPEExperimental image {
+    color: transparent;
+}
+
+#LPEDialogSelector .searchbar entry image,
+#LPEDialogSelector .searchbar label,
+#LPEDialogSelector .searchbar #LPESelectorEffectFavShowImage {
+    color: @theme_fg_color;
+}
+
+#LPEDialogSelector.LPEPackMore flowboxchild {
+margin:5px 1px 0px;
+padding:3px 3px 10px 3px;
+}
+
+
+#LPEDialogSelector.LPEList .lpename {
+    margin-bottom: 1px;
+    font-weight:bold;
+}
+
+#LPEDialogSelector.LPEList flowboxchild {
+    padding:3px 1px 3px 10px;
+    margin:1px 0px 1px;
+    border-radius:0;
+    border-style:dotted;
+    border-color:@theme_fg_color;
+    border-width: 0 0 1px 0;
+}
+
+#LPEDialogSelector.LPEList flowboxchild:selected {
+    border-style:none;
+    margin:-3px 0px 0px;
+    padding:4px 1px 4px 10px;
+}
+
+#LPEDialogSelector.LPEList #LPESelectorFlowBox *:selected #LPESelectorEffectFavTop,
+#LPEDialogSelector.LPEList #LPESelectorFlowBox *:selected:focus #LPESelectorEffectFavTop {
+    opacity: 1;
+}
+
+#LivePathEffect {
+    padding-top:5px;
+}
+
+#LivePathEffect expander:focus, #LivePathEffect expander > label:focus{
+    outline-width:0;
+}
+
+#LivePathEffect list{
+    margin:5px 5px 0 5px;
+}
+
+#LivePathEffect list row{
+    margin:0;
+    padding:0;
+    border-width:0;
+    border-style:none;
+    outline-width:0;
+}
+#LivePathEffect list row > box{
+    margin:0;
+    padding:1px;
+    border-width:1px;
+    border-radius:4px;
+    margin-bottom:5px;
+    border-style:solid;
+    border-color:@borders;
+    outline-width:0;
+}
+
+#LivePathEffect list row:last-child  > box{
+    margin-bottom:0px;
+}
+
+#LPEEffectItem{
+    border-radius:3px;
+    padding:2px;
+    outline:0;
+}
+
+#LPEEffectItem .minbutton {
+    padding:0;
+    margin:0;
+    outline:0;
+    border-color:@borders;
+}
+
+#LPEEffectItem expander title label {
+    min-height:26px;
+}
+
+#LPEEffectItem expander,
+#LPEEffectItem expander *,
+#LPEEffectItem expander:focus,
+#LPEEffectItem expander *:focus {
+    outline:0;
+}
+
+.LPEDrag,.LPEDrag:active,.LPEDrag:focus,.LPEDrag:hover {
+    margin:0;
+    padding:0;
+    border-style:none;
+    opacity:0.7;
+    background-color:transparent;
+    background-image:none;
+    outline:0;
+}
+
+.LPEDrag:hover {
+    opacity:1;
+    background-color:transparent;
+    background-image:none;
+}
+
+#LivePathEffect list#LPEParentBox row{
+    border-style:none;
+    outline:0;
+}
+
+#LivePathEffect list#LPEParentBox row > button {
+    padding:2px;
+    margin:0;
+}
+
+#LPEContainer:drop(active) {
+    box-shadow:none;
+}
+
+#LPECurrentItem *{
+    color:@theme_fg_color;
+}
+
+#LPEContainer #LPEListBox{
+    border-style: solid none solid none;
+    border-color: @theme_base_color;
+    border-width:0;
+    padding:0;
+}
+#LPEListBox row:drop(active){
+    box-shadow:none;
+}
+#LPEContainer:drop(active).before row:first-child > box,
+#LPEListBox row:drop(active).before > box{
+    border-width:6px 1px 1px 1px;
+    border-color: @theme_selected_bg_color @borders @borders @borders;
+    box-shadow:none;
+    border-radius:6px 6px 0 0;
+}
+
+#LPEContainer:drop(active).after row:last-child > box,
+#LPEListBox row:drop(active).after > box{
+    border-width:1px 1px 6px 1px;
+    border-color: @borders @borders @theme_selected_bg_color @borders;
+    border-radius:0 0 6px 6px;
+    box-shadow:none;
+}
+
+#LPEEffectItem expander title label {
+    min-height:34px;
+}
+
+#LPEMenu menuitem:not(.menu-category):disabled {
+    color:alpha(@theme_text_color,0.4);
+}
+
+#LPEListBox row > *:disabled * {
+    color:@theme_text_color;
+}
+
+
+#LivePathEffect list row,
+#LPEListBox row.activatable:hover {
+    background-color: transparent;
+}
+
+#LivePathEffect list row .drag-icon,
+#LPEListBox row.activatable .drag-icon:hover {
+    background-color: @theme_base_color;
+    border-width:1px;
+    border-radius:0;
+    margin:0;
+    padding:5px;
+    border-style:solid;
+    border-color:@borders;
+    outline-width:0;
+}
+
+#LivePathEffect list row .drag-icon * {
+    outline:0;
+}
+
+#LPEActionButtons #eventbutton:nth-child(1) button{
+    border-radius:3px 0 0 3px;
+    border-width:1px 0 1px 1px;
+}
+
+#LPEActionButtons #eventbutton:nth-child(2) button{
+    border-radius:0;
+    border-width:1px 0 1px 1px;
+}
+#LPECurrentItem * {
+    border-width:0;
+    border-style:none;
+}
+#LPECurrentItem {
+    margin-top:0;
+}
+#LPECurrentItem image{
+    margin-right:6px;
+}
+#LPECurrentItem {
+    margin-top:0;
+}
+#LPEParentBox{
+    margin:10px 4px;
+    padding:0;
+}
+
+/* min size for an angle slider in gradient editor */
+.angle-slider {
+    min-width: 80px;
+}
+
+/* Gtk::PopoverMenu and Inkscape::UI::Widget::PopoverMenu */
+/* Make it look basically like GtkMenu; see comments @ original merge request */
+popover.menu, /* GTK sets .menu/make_menuized_popover() sets .menuize */
+popover.popover-menu { /* Inkscape::UI::Widget::PopoverMenu */
+    /* Rounded corners can glitch in GTK3 with submenus, and GtkMenu was square anyway = emulate */
+    border-radius: 0;
+    border-color: @borders;
+    padding: 0;
+}
+popover.popover-menu contents {
+    padding: 1px 0;
+}
+popover.popover-menu menu {
+    background: none;
+    border: none;
+}
+popover.popover-menu .menu-category {
+    min-height: 16px;
+    padding: 2px 10px;
+}
+/* popover.menu modelbutton, */
+popover.popover-menu .regular-item {
+    border-radius: 0;
+    outline-style: none;
+    min-height: 23px;
+    padding: 2px 10px;
+}
+popover.popover-menu menuitem:hover {
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+popover.popover-menu menuitem:hover image {    
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+popover.popover-menu separator {
+    margin: 1px 0;
+}
+
+/* Snap popover */
+
+#SnapPopover contents { /* Removes the inherited padding of popovers  */
+	padding: 0px;
+    min-width: 220px;
+/*  background-color: @theme_bg_color; */
+}
+
+#SnapPopover checkbutton label {
+  padding: 1px 8px 0px 4px;
+}
+
+#SnapPopover box.popover-header {
+    padding: 12px;
+    border-bottom: 1px solid alpha(@borders, 0.5);
+}
+
+#SnapPopover grid.snap-section {
+    padding: 10px 12px;
+    border-bottom: 1px solid alpha(@borders, 0.5);
+    background-color: @theme_base_color;
+}
+
+#SnapPopover grid.snap-section-last {
+    padding: 10px;
+    background-color: @theme_base_color;
+}
+
+#SnapPopover box.popover-footer {
+    border-top: 1px solid alpha(@borders, 0.5);
+    outline-offset: 5px;
+}
+
+#SnapPopover box.popover-footer label {
+    text-decoration: none;
+}
+
+#SnapToolbar {
+    padding: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 2px;
+    margin-bottom: 0px;
+}
+
+#SnapToolbar button.toggle button {
+    min-width: 16px;
+    min-height: 16px;
+    margin: 0px;
+}
+
+#SnapToolbar scrolledwindow.snap-section {
+    border-bottom: 1px solid alpha(@borders, 0.5);
+}
+
+#SnapToolbar box.snap-section {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border-bottom: 1px solid alpha(@borders, 0.5);
+}
+
+#SnapToolbar box.snap-section-last {
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+/* Defeat defaulting to having more spacing between RadioButtons than GtkMenu */
+popover.popover-menu radiobutton {
+    padding: 0;
+}
+/* Emulate GtkMenu theming in absence of ability to change CSS node name, unlike our PopoverMenu */
+/* popover.menu modelbutton:focus,
+popover.menu modelbutton:hover {
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+} */
+/* UGH! GtkMenuSectionBox has Widget:margin = 10px. Counteract to look like popover.popover-menu */
+popover.menu > stack > box {
+    margin: -2px -6px;
+}
+/* Detect submenu headings & replicate GTK .dim-label, looks nicer than leaving normal fg colour */
+popover.menu > stack > box > modelbutton:first-child > * /* Affect children not bgcolour */
+{
+    opacity: 0.55;
+}
+
+/* darker background for extensions gallery due to fixed-color thumbnails (white background + drop shadow) */
+.darker-background {
+    background-image: image(alpha(#000, 0.05));
+}
+
+/* Add margins to tool toolbar: a) separators, so they don't touch buttons b) buttons, so they don't touch sides */
+#tool-toolbar separator {
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+#tool-toolbar button {
+    margin-left: 1px;
+    margin-right: 1px;
+}
+#tool-toolbar {
+    margin: 1px;    /* toolbar box itself, so it has some breathing space; other toolbars have much larger margins */
+}
+
+/* used @ ui/themes to get correct foreground color; get_color() can be wrong */
+/* Asterisks & stuff in the selectors are just to ensure sufficient priority. */
+*.theme_fg_color,
+*.theme_fg_color:not(:backdrop),
+*.theme_fg_color:backdrop
+{
+    color: @theme_fg_color;
+}
+
+/* As GTK4 only lets us get the fg color, use these to stash other colors there…
+   by calling util:get_color_with_class(), *BUT* see its note re this technique.
+   Asterisks & stuff in the selectors are just to ensure sufficient priority. */
+*.theme_bg_color,
+*.theme_bg_color:not(:backdrop),
+*.theme_bg_color:backdrop
+{
+    color: @theme_bg_color;
+}
+*.theme_selected_bg_color,
+*.theme_selected_bg_color:not(:backdrop),
+*.theme_selected_bg_color:backdrop
+{
+    color: @theme_selected_bg_color;
+}
+
+/* ColorSlider */
+#ColorSlider {
+    min-width : 96px;
+    min-height:  12px;
+    /* this is color of the thumb ring */
+    color: @theme_base_color;
+}
+
+#ColorPicker {
+    padding: 0;
+    min-width: 24px;
+    min-height: 24px;
+}
+#ColorPicker:not(.icon) > button {
+    border-width: 0;
+    padding: 0;
+}
+#ColorPicker:not(.icon) > .toggle {
+    border-width: 0;
+    padding: 0;
+}
+
+/* ColorPreview */
+#ColorPreview {
+    min-width : 16px;
+    min-height: 16px;
+}
+#ColorPreview.simple {
+    min-height: 12px;
+}
+#ColorPreview:hover:not(.simple) {
+    border-radius: 2px;
+    /* using outline, to keep dimensions intact - no growth */
+    outline: solid @theme_selected_bg_color 1px;
+}
+
+/* GradientImage */
+#GradientImage {
+    min-width : 54px;
+    min-height: 12px;
+}
+
+/* GradientWithStops */
+#GradientEdit {
+    min-width: 60px;
+    /* widget's height; it should take stop template's height into account
+     * current value is fine-tuned to make stop handles overlap gradient image
+     * just the right amount */
+    min-height: 34px;
+}
+
+/* Canvas */
+#InkscapeCanvas {
+    min-width : 256px;
+    min-height: 256px;
+}
+
+#Symbols .item-box {
+    /* symbol items should be tightly packed */
+    margin: 1px;
+}
+
+/* IconPreview */
+frame.icon-preview {
+    border-radius: 0;
+}
+button.icon-preview {
+    min-width : 0;
+    min-height: 0;
+    padding: 5px;
+}
+
+/* GtkFrames that formerly had :shadow-type == NONE */
+frame.flat {
+    border: none;
+}
+
+/*we dont want higlight with tab order only want checked ones */
+#ToolToolbar flowboxchild:selected {
+    background-color:transparent;
+    background-image:image(@theme_bg_color);
+}
+
+/* Adding some margins for popup dialogs, so the content is not touching the window borders */
+.popup-dialog-margins {
+    margin: 0.75em;
+}
+
+/* Tabs widget */
+#DocumentTab { padding: 3px; }
+
+#DocumentTabsWidget { box-shadow: none; }
+
+@keyframes pulse-border {
+  0% {
+    box-shadow: inset alpha(@theme_selected_bg_color, 0.4) 0px 0px 2px 1px;
+  }
+  50% {
+    box-shadow: inset @theme_selected_bg_color 0px 0px 6px 2px;
+  }
+  100% {
+    box-shadow: inset alpha(@theme_selected_bg_color, 0.4) 0px 0px 2px 1px;
+  }
+}
+
+#DocumentTabsWidget.drop-highlight > #Overlay {
+   box-shadow: inset @theme_selected_bg_color 0px 0px 5px 1px;
+   animation-name: pulse-border;
+   animation-duration: 1s;
+   animation-timing-function: ease;
+   animation-iteration-count: infinite;
+}
+
+/*helper info in popover menu*/
+.menu_search{
+    background-color:alpha(@theme_fg_color,0.1);
+    margin:0 0 -8px -8px;
+}
+
+/* limit height of list view items */
+columnview.list-view-small > listview > row > cell {
+    padding: 5px;
+}
+
+/* gridview items with smaller margins */
+gridview.grid-view-small > child box.item-box {
+    padding: 0;
+    margin: 8px;
+    border-spacing: 8px;
+}
+
+/* gridview items with much tighter margins for compact view */
+gridview.grid-view-compact > child box.item-box {
+    padding: 0;
+    margin: 3px;
+    border-spacing: 3px;
+}
+gridview.grid-view-no-margins > child {
+    padding: 2px;
+    border-radius: 2px;
+}
+gridview.grid-view-no-margins > child box.item-box {
+    padding: 0;
+    margin: 0;
+    border-spacing: 0;
+}
+
+/* list view with items based on labels need some extra vertical space */
+listview.list-view-small > row > box.item-box {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+listview.list-view-small > row > box.item-box.separator {
+    margin: 1px;
+}
+
+/* About screen slide show transitions >>>>>>>>>>>>>>>>>>>>>>>>> */
+@keyframes fade_in_opacity {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes fade_out_opacity {
+    0%   { opacity: 1; }
+    100% { opacity: 0; }
+}
+.fade-in {
+    animation: 1.2s fade_in_opacity 0s both;
+}
+.fade-out {
+    animation: 1.2s fade_out_opacity 0s both;
+}
+.background-transition {
+    transition-property: background-color;
+    transition-duration: 1.2s;
+}
+/* <<<<<<<<<<<<<<<<<<<<<<<< About screen slide show transitions */
+
+/* Grid definition panel/box in document properties dialog */
+.grid-row-definition {
+    margin: 4px 6px;
+}
+
+/* Establish minimal size for custom spin buttons */
+ink-spinbutton {
+    min-height: 22px;
+}
+ink-spinbutton.frame {
+    min-height: 24px;
+}
+
+.std-widget-height {
+    min-height: 24px;
+}
+
+/*ink-spinbutton entry {*/
+/*    !* we need to set entry size too, so it doesn't enlarge spin button *!*/
+/*    min-height: 18px;*/
+/*}*/
+
+/* Helper class to make icons in GtkEntry disappear */
+.no-icon image {
+    margin: 0;
+    padding: 0;
+    -gtk-icon-size: 0;
+}
+
+separator.thin {
+    margin: 0;
+}
+separator.faint {
+    opacity: 0.5;
+}
+
+#ColorPage separator {
+    min-height: 1px;
+    margin: 1px 0;
+    padding: 0;
+}
+
+#ColorWheel {
+    min-height: 220px;
+}
+
+#ColorPlate.rectangular {
+    min-height: 160px;
+}
+#ColorPlate.circular {
+    min-height: 220px;
+}
+
+/* Shrink area of separator's influence or else it will interfere with ruler and multipaned handle. */
+#TBoxCanvasSeparator {
+    margin: 0;
+    padding: 0;
+}
+
+/* Simple decorators for resizing handles giving them borders */
+#MultipanedHandle.horizontal {
+    background-image: linear-gradient(to right,
+        alpha(@theme_fg_color, 0.25) 0%,
+        @theme_bg_color 10%,
+        @theme_bg_color 90%,
+        alpha(@theme_fg_color, 0.25) 100%);
+}
+#MultipanedHandle.vertical {
+    background-image: linear-gradient(to bottom,
+        alpha(@theme_fg_color, 0.25) 0%,
+        @theme_bg_color 10%,
+        @theme_bg_color 90%,
+        alpha(@theme_fg_color, 0.25) 100%);
+}
+
+/* Establish min width of the paint popup in object properties dialog */
+#PaintSwitch {
+    min-width: 24rem;
+}
+
+/* Adds an exception to StartScreen recent files tab
+   which removes the frame in the bottom
+   See share/ui/inkscape-start.glade:637 */
+scrolledwindow.inkscape-start-exception.frame {
+    border-bottom: 0;
+}
+
+/* separators for DropDown widget's popup list */
+listview row.top-separator {
+    margin-top: 6px;
+    /* choose separator color that's going to be visible in a popup with both light and dark theme */
+    box-shadow: 0 -4px alpha(@theme_fg_color, 0.2), 0 -3px @theme_base_color;
+}
+
+/* Eliminate mysterious blue frame that shows up in a list popup of the dropdownlist widget */
+#DropDownList listview row:focus {
+    outline: none;
+}
+
+/* Giving dialog buttons sending responses min size to keep them wider */
+.dialog-cmd-button {
+    min-width: 5em;
+}
+
+/* Limit max size of rows in a stack sidebar to something more compact */
+.compact-stack-sidebar list row {
+    min-height: 2.25em;
+}
+
+.border-box {
+    border-radius: 2px;
+    border: 1px solid @borders;
+}
+.linked .border-box:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.linked .border-box:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.entry-box {
+    /* Entry background color */
+    background-color: @theme_base_color;
+}
+
+/* MenuButton with sharp corners */
+menubutton.rectangle > button {
+    border-radius: 0;
+    padding: 0px;
+}
+
+/* limit slider size to let scrolledwindow shrink */
+scrolledwindow.small-window slider {
+    min-height: 16px;
+}
+
+.large-icon {
+    -gtk-icon-size: 20px;
+}
+
+button.reduced-padding {
+    padding: 1px;
+}
+
+.standard-frame {
+    border: 1px solid @borders;
+}
+
+.active-background {
+    background-color: @theme_base_color;
+}
+
+/* Pattern editor in a popup - give it some vertical size to reveal a list of patterns */
+#PatternEditorPopup {
+    min-height: 450px;
+}
+
+/* TabStrip widget is used for switching docked dialogs */
+#TabStrip {
+    min-height: calc(2em + 4px);
+}
+#TabStrip.horizontal {
+    padding: 0 4px;
+}
+#TabStrip.vertical {
+    padding: 0 1px;
+}
+#SimpleTab {
+    min-width: 1em;
+    min-height: calc(2em + 4px);
+}
+#NewTabButton {
+    margin-left: 3px;
+}
+#DialogMenuButton {
+    margin-left: 3px;
+}
+
+/* Some themes add color decoration for active drop targets; we use our own highlight, so disable them */
+#MultipanedDropZone:drop(active), #MultipanedDropZone:drop(active):focus,
+  #DialogMultipaned:drop(active),   #DialogMultipaned:drop(active):focus {
+    box-shadow: none;
+}
+
+/* this is a frame for EditingLabel to signal we are in editing mode */
+editablelabel.editing {
+    outline-offset: 0;
+    outline: 1px solid @theme_fg_color;
+}
+
+/*
+**********************
+* Recolor Art class  *
+**********************
+*/
+
+#recolor-art #original,
+#recolored {
+    min-height: 12px;
+    border-radius: 4px;
+    /* border: 2px solid transparent; */
+}
+
+#original-recolor-box{
+padding:0 1px;
+}
+.type_box {
+  background-color: alpha(@theme_bg_color,0.8);
+  border-radius: 2px;
+  padding-left: 2px;
+  padding-right: 6px;
+}
+#recolor-art listview row:selected{
+    background-color: transparent;
+    border: 2px solid @theme_selected_bg_color;
+    border-radius: 4px;
+    color: @theme_fg_color;
+}
+
+#recolor-art gridview child:selected {
+    background-color: transparent;
+    border: 1px solid @theme_selected_bg_color;
+    border-radius: 1px;
+    color: @theme_fg_color;
+}
+
+#recolor-art scrollbar slider {
+    min-width: 0px;
+    min-height: 0px;
+    margin: 0px;
+    padding: 0px;
+    background: transparent;
+    border: none;
+}
+
+text-combobox .menuitem {
+    min-height: 1.75em;
+}
+
+#FontList indent {
+    /* Set indent to align listview items with and without leaf nodes (i.e. with and without expander icon) */
+    -gtk-icon-size: 16px;
+}
+
+#FontList .font-list {
+    min-height: 8em;
+}
+
+/* Allow scrollwindow to become smaller than it normally is to let font variations take up as little space as they need */
+#FontList .collapse-scrollbar scrollbar slider {
+    min-height: 0;
+}
+
+.compact-menu-button box {
+    border-spacing: 0;
+}
+
+/* Style used by font grid items */
+.round-rect-shade {
+    border-radius: 3px;
+    background: mix(@theme_base_color, @theme_fg_color, 0.04);
+    color: @theme_fg_color;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.30);
+}
+#FontGrid > child {
+    padding: 4px;
+    border-radius: 6px;
+}
+#FontGrid > child box.item-box {
+    padding: 2px 0;
+    margin: 0;
+    border-spacing: 0;
+}

@@ -1,0 +1,16 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+[Desktop Entry]
+Version=1.0
+Name=Inkview
+GenericName=Vector Graphics Viewer
+X-GNOME-FullName=Inkview Vector Graphics Viewer
+Comment=View Scalable Vector Graphics images
+Keywords=image;viewer;vector;drawing;
+Type=Application
+Categories=Graphics;Viewer;VectorGraphics;GTK;
+MimeType=${INKSCAPE_MIMETYPE}
+Exec=inkview %F
+TryExec=inkview
+Terminal=false
+StartupNotify=true
+Icon=${INKSCAPE_ICONPATH}

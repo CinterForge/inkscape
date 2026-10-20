@@ -1,0 +1,3 @@
+package-has-unnecessary-activation-of-ldconfig-trigger
+named-copyright-for-single-installable
+source-is-missing share/attributes/*.html

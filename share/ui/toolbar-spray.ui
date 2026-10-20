@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkAdjustment" id="_mean_adj">
+    <property name="upper">100</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="_offset_adj">
+    <property name="upper">1000</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">4</property>
+  </object>
+  <object class="GtkAdjustment" id="_population_adj">
+    <property name="lower">1</property>
+    <property name="upper">100</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="_rotation_adj">
+    <property name="upper">100</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="_scale_adj">
+    <property name="upper">100</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="_sd_adj">
+    <property name="lower">1</property>
+    <property name="upper">100</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="_width_adj">
+    <property name="lower">1</property>
+    <property name="upper">100</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkBox" id="spray-toolbar">
+    <property name="halign">start</property>
+    <property name="valign">center</property>
+    <property name="hexpand">True</property>
+    <child>
+      <object class="GtkLabel">
+        <property name="label" translatable="yes">Mode</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="mode_buttons_box">
+        <property name="spacing">3</property>
+        <child>
+          <object class="GtkToggleButton" id="mode_buttons_group">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Spray copies of the initial selection</property>
+            <property name="has-frame">False</property>
+            <property name="icon-name">spray-mode-copy</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Spray clones of the initial selection</property>
+            <property name="has-frame">False</property>
+            <property name="group">mode_buttons_group</property>
+            <property name="icon-name">spray-mode-clone</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Spray objects in a single path</property>
+            <property name="has-frame">False</property>
+            <property name="group">mode_buttons_group</property>
+            <property name="icon-name">spray-mode-union</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Delete sprayed items from selection</property>
+            <property name="has-frame">False</property>
+            <property name="group">mode_buttons_group</property>
+            <property name="icon-name">draw-eraser</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="width_box">
+        <property name="tooltip-text" translatable="yes">The width of the spray area (relative to the visible canvas area)</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Width</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_width_item">
+            <property name="name">spray-width</property>
+            <property name="focusable">True</property>
+            <property name="adjustment">_width_adj</property>
+            <property name="climb-rate">1</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="use_pressure_width_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Use the pressure of the input device to alter the width of spray area</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">draw-use-pressure</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="population_box">
+        <property name="tooltip-text" translatable="yes">Adjusts the number of items sprayed per click</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Amount</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_population_item">
+            <property name="name">spray-population</property>
+            <property name="focusable">True</property>
+            <property name="adjustment">_population_adj</property>
+            <property name="climb-rate">1</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="use_pressure_population_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Use the pressure of the input device to alter the amount of objects sprayed per click</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">draw-use-pressure</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="_rotation_box">
+        <property name="tooltip-text" translatable="yes">Variation of the rotation of the sprayed objects; 0% for the same rotation than the original object</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Rotation</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_rotation_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_rotation_adj</property>
+            <property name="climb-rate">0.10</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="scale_box">
+        <property name="tooltip-text" translatable="yes">Variation in the scale of the sprayed objects; 0% for the same scale than the original object</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Scale</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_scale_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_scale_adj</property>
+            <property name="climb-rate">0.10</property>
+            <property name="digits">2</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_use_pressure_scale_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Use the pressure of the input device to alter the scale of new items</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">draw-use-pressure</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="sd_box">
+        <property name="tooltip-text" translatable="yes">Increase to scatter sprayed objects</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Scatter</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_sd_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_sd_adj</property>
+            <property name="climb-rate">1</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="mean_box">
+        <property name="tooltip-text" translatable="yes">0 to spray a spot; increase to enlarge the ring radius</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Focus</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_mean_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_mean_adj</property>
+            <property name="climb-rate">1</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_over_no_transparent_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Apply over no transparent areas</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">object-visible</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_over_transparent_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Apply over transparent areas</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">object-hidden</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_pick_no_overlap_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">No overlap between colors</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">symbol-bigger</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_no_overlap_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Prevent overlapping objects</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">distribute-randomize</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="_offset_box">
+        <property name="tooltip-text" translatable="yes">Increase to segregate objects more (value in percent)</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Offset</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_offset_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_mean_adj</property>
+            <property name="climb-rate">1</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_picker_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Pick color from the drawing. You can use clonetiler trace dialog for advanced effects. In clone mode original fill or stroke colors must be unset.</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">color-picker</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_pick_fill_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Apply picked color to fill</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">paint-solid</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_pick_stroke_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Apply picked color to stroke</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">no-marker</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_pick_inverse_value_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Inverted pick value, retaining color in advanced trace mode</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">object-tweak-shrink</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_pick_center_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Pick from center instead of average area.</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">snap-bounding-box-center</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <style>
+      <class name="inkscape-toolbar"/>
+    </style>
+  </object>
+</interface>

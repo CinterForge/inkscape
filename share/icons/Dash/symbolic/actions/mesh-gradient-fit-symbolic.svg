@@ -1,0 +1,30 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="mesh-gradient-fit">
+<g id=".paint-gradient-mesh-arrow-diagonal">
+<path id="Subtract" d="M14 8H10L8 10V14H1V1H14V8ZM2 13H7V10L5 8H2V13ZM6 7.5L7.5 9L9 7.5L7.5 6L6 7.5ZM2 7H5L7 5V2H2V7ZM8 5L10 7H13V2H8V5Z" fill="black"/>
+<path id="Union" d="M14.0015 11H11.7075L15.0015 14.291V12H16.0015L16.0005 15.5V16H12.0015V15H14.2974L11.0005 11.707V14H10.0015L10.0005 10.5V10H14.0015V11Z" fill="black"/>
+<g id="Group 301">
+<g id="Container" opacity="0.5">
+<rect id="Rectangle" opacity="0.3" x="2" y="14" width="13" height="1" transform="rotate(-90 2 14)" fill="black"/>
+<rect id="Rectangle_2" opacity="0.2" x="3" y="14" width="13" height="1" transform="rotate(-90 3 14)" fill="black"/>
+<rect id="Rectangle_3" opacity="0.11" x="4" y="14" width="13" height="1" transform="rotate(-90 4 14)" fill="black"/>
+</g>
+<g id="Container_2" opacity="0.5">
+<rect id="Rectangle_4" opacity="0.3" x="1" y="2" width="13" height="1" fill="black"/>
+<rect id="Rectangle_5" opacity="0.2" x="1" y="3" width="13" height="1" fill="black"/>
+<rect id="Rectangle_6" opacity="0.11" x="1" y="4" width="13" height="1" fill="black"/>
+</g>
+<g id="Container_3" opacity="0.5">
+<rect id="Rectangle_7" opacity="0.3" x="13" y="1" width="6" height="1" transform="rotate(90 13 1)" fill="black"/>
+<rect id="Rectangle_8" opacity="0.2" x="12" y="1" width="6" height="1" transform="rotate(90 12 1)" fill="black"/>
+<rect id="Rectangle_9" opacity="0.11" x="11" y="1" width="6" height="1" transform="rotate(90 11 1)" fill="black"/>
+</g>
+<g id="Container_4" opacity="0.5">
+<rect id="Rectangle_10" opacity="0.3" x="7" y="13" width="6" height="1" transform="rotate(180 7 13)" fill="black"/>
+<rect id="Rectangle_11" opacity="0.2" x="7" y="12" width="6" height="1" transform="rotate(180 7 12)" fill="black"/>
+<rect id="Rectangle_12" opacity="0.11" x="7" y="11" width="6" height="1" transform="rotate(180 7 11)" fill="black"/>
+</g>
+</g>
+</g>
+</g>
+</svg>

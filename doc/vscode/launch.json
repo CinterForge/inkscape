@@ -1,0 +1,25 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "preLaunchTask": "Ninja Install",
+            // The .com file is necessary to get command line output to GDB. https://gitlab.com/inkscape/inbox/-/issues/4495
+            "program": "${workspaceFolder}/build/install_dir/bin/inkscape.com",
+            "cwd": "${workspaceFolder}",
+            // Fails if false unless terminal.integrated.automationProfile.windows is PS or cmd,
+            // or if it's absent and terminal.integrated.defaultProfile.windows is one of those.
+            // Those can be set in the user settings.json, in a workspace file, or in .vscode/settings.json.
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:/msys64/ucrt64/bin/gdb.exe",
+            "filterStdout": true,
+            "filterStderr": false
+        }
+    ]
+}

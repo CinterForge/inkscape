@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="draw-eraser">
+<g id=".eraser">
+<path id="neutral" opacity="0.3" d="M4 7.5L0.5 11L5 15.5H7L9.5 13L4 7.5Z" fill="black"/>
+<path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M16 7L8 15H15V16H7H5L0 11L10 1L16 7ZM5.41406 15H6.58594L8.68945 12.8965L4.10352 8.31055L1.41406 11L5.41406 15ZM4.81055 7.60352L10 2.41406L14.5859 7L9.39648 12.1895L4.81055 7.60352Z" fill="black"/>
+</g>
+</g>
+</svg>

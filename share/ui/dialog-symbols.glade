@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkAdjustment" id="adjustment-symbol-size">
+    <property name="upper">50</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">5</property>
+  </object>
+  <object class="GtkAdjustment" id="adjustment-zoom">
+    <property name="lower">-20</property>
+    <property name="upper">20</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">1</property>
+  </object>
+  <object class="GtkPopover" id="settings-popover">
+    <property name="has-arrow">False</property>
+    <property name="halign">end</property>
+    <property name="child">
+      <object class="GtkGrid">
+        <property name="halign">start</property>
+        <property name="valign">start</property>
+        <property name="margin-start">1</property>
+        <property name="margin-end">1</property>
+        <property name="margin-top">1</property>
+        <property name="margin-bottom">1</property>
+        <property name="row-spacing">2</property>
+        <property name="column-spacing">4</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="halign">start</property>
+            <property name="label" translatable="yes">Tile size</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkScale" id="symbol-size">
+            <property name="draw-value">False</property>
+            <property name="width-request">120</property>
+            <property name="focusable">True</property>
+            <property name="adjustment">adjustment-symbol-size</property>
+            <property name="show-fill-level">True</property>
+            <property name="round-digits">1</property>
+            <property name="digits">0</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="show-names">
+            <property name="label" translatable="yes">Show names</property>
+            <property name="focusable">True</property>
+            <property name="halign">start</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">1</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="zoom-to-fit">
+            <property name="label" translatable="yes">Zoom to fit</property>
+            <property name="focusable">True</property>
+            <property name="halign">start</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">3</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="halign">start</property>
+            <property name="label" translatable="yes">Zoom</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">4</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkScale" id="zoom">
+            <property name="draw-value">False</property>
+            <property name="focusable">True</property>
+            <property name="adjustment">adjustment-zoom</property>
+            <property name="show-fill-level">True</property>
+            <property name="round-digits">0</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">4</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkSeparator">
+            <layout>
+              <property name="column">0</property>
+              <property name="row">2</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </property>
+  </object>
+  <object class="GtkPopover" id="set-popover">
+    <property name="has-arrow">False</property>
+    <property name="child">
+      <object class="GtkGrid">
+        <property name="halign">start</property>
+        <property name="valign">start</property>
+        <property name="margin-start">1</property>
+        <property name="margin-end">1</property>
+        <property name="margin-top">1</property>
+        <property name="margin-bottom">1</property>
+        <property name="row-spacing">4</property>
+        <property name="column-spacing">4</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="halign">start</property>
+            <property name="label" translatable="yes">Symbol set</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkSearchEntry" id="set-search">
+            <property name="max-width-chars">6</property>
+            <property name="focusable">True</property>
+            <property name="tooltip-text" translatable="yes">Search for symbol set</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow">
+            <property name="width-request">320</property>
+            <property name="height-request">500</property>
+            <property name="focusable">True</property>
+            <property name="has-frame">True</property>
+            <property name="overlay-scrolling">False</property>
+            <property name="child">
+              <object class="GtkIconView" id="symbol-sets">
+                <property name="focusable">True</property>
+                <property name="item-orientation">horizontal</property>
+                <property name="item-width">290</property>
+                <property name="row-spacing">0</property>
+                <property name="column-spacing">1</property>
+                <property name="item-padding">4</property>
+                <property name="margin">0</property>
+                <property name="activate-on-single-click">True</property>
+              </object>
+            </property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">1</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </property>
+    <style>
+        <class name="popup-menu"/>
+    </style>
+  </object>
+  <object class="GtkBox" id="main-box">
+    <property name="margin-start">1</property>
+    <property name="margin-end">1</property>
+    <property name="margin-top">2</property>
+    <property name="margin-bottom">1</property>
+    <property name="orientation">vertical</property>
+    <child>
+      <object class="GtkBox">
+        <property name="spacing">4</property>
+        <child>
+          <object class="GtkMenuButton" id="symbol-set-popup">
+            <property name="hexpand">True</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="popover">set-popover</property>
+            <child>
+              <object class="GtkBox">
+                <property name="hexpand">True</property>
+                <child>
+                  <object class="GtkLabel" id="cur-set">
+                    <property name="hexpand">True</property>
+                    <property name="label" translatable="no">name of the current symbol set</property>
+                    <property name="ellipsize">end</property>
+                    <property name="single-line-mode">True</property>
+                    <property name="xalign">0</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkImage">
+                    <property name="icon-name">pan-down-symbolic</property>
+                    <style>
+                      <class name="arrow"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkSearchEntry" id="search">
+            <property name="max-width-chars">6</property>
+            <property name="focusable">True</property>
+            <property name="tooltip-text" translatable="yes">Search for symbol</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkLabel" id="info">
+        <property name="margin-end">15</property>
+        <property name="margin-top">3</property>
+        <property name="label" translatable="no">label</property>
+        <property name="xalign">1</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkOverlay" id="overlay">
+        <property name="hexpand">True</property>
+        <property name="vexpand">True</property>
+        <property name="child">
+          <object class="GtkScrolledWindow" id="scroller">
+            <property name="focusable">True</property>
+            <property name="margin-top">1</property>
+            <property name="overlay-scrolling">False</property>
+            <property name="child">
+              <object class="GtkGridView" id="icon-view">
+                <property name="height-request">250</property>
+                <property name="single-click-activate">False</property>
+              </object>
+            </property>
+          </object>
+        </property>
+      </object>
+    </child>
+    <child>
+        <object class="GtkSeparator">
+        </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="tools">
+        <property name="margin-top">1</property>
+        <property name="spacing">4</property>
+        <child>
+          <object class="GtkButton" id="copy-symbol">
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Copy selected symbol onto clipboard</property>
+            <property name="has-frame">False</property>
+            <property name="icon-name">edit-copy</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="add-symbol">
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Convert selected object(s) to symbol</property>
+            <property name="has-frame">False</property>
+            <property name="icon-name">list-add</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="remove-symbol">
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Convert selected symbol to object, and all symbols of this type to clones of this object</property>
+            <property name="has-frame">False</property>
+            <property name="icon-name">list-remove</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkMenuButton" id="settings">
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="halign">end</property>
+            <property name="hexpand">True</property>
+            <property name="receives-default">True</property>
+            <property name="has-frame">False</property>
+            <property name="direction">up</property>
+            <property name="popover">settings-popover</property>
+            <property name="tooltip-text" translatable="yes">Symbols display settings</property>
+            <child>
+              <object class="GtkImage">
+                <property name="icon-name">gear</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

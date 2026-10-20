@@ -1,0 +1,14 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="path-offset-dynamic">
+<g id=".stroke-cursor" clip-path="url(#clip0_3684_42757)">
+<path id="Union" d="M10 8.68309L10.0001 0.000760265L16.2461 6.03227L12.9994 5.6552L14.3844 8.91807L13.3696 9.34884L11.9843 6.08542L10 8.68309Z" fill="black"/>
+<path id="Subtract" opacity="0.2" d="M0.000976562 3C3.49468 3 6.66407 4.38069 9 6.62305V10H10L10.9736 9.02539C12.2573 11.0407 13.001 13.4335 13.001 16H8C8 11.5817 4.41828 8 0 8V3H0.000976562Z" fill="black"/>
+<path id="Subtract_2" d="M0 8C4.41828 8 8 11.5817 8 16H7C7 12.134 3.86599 9 0 9V8ZM10.9727 9.02637C12.2561 11.0415 13 13.4338 13 16H12C12 13.7112 11.358 11.5728 10.2461 9.75293L10.9727 9.02637ZM0 3C3.49396 3 6.66403 4.38041 9 6.62305V8.06641C6.80112 5.57388 3.58512 4 0 4V3Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42757">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

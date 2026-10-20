@@ -1,0 +1,33 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+
+set(libnrtype_unit_SRC
+	font-factory.cpp
+	font-instance.cpp
+	font-utils.cpp
+	OpenTypeUtil.cpp
+    
+	# -------
+	# Headers
+	font-factory.h
+	font-glyph.h
+	font-instance.h
+	font-utils.h
+	OpenTypeUtil.h
+)
+
+function(get_libnrtype_unit_lib)
+    list(TRANSFORM libnrtype_unit_SRC PREPEND "libnrtype/")
+
+    list(PREPEND libnrtype_unit_SRC
+                                 "io/stream/inkscapestream.cpp"
+                                 "io/stream/gzipstream.cpp"
+                                 "io/stream/bufferstream.cpp"
+                                 "io/sys.cpp"
+                                 "util/statics.cpp"
+                 )
+    list(TRANSFORM libnrtype_unit_SRC PREPEND "${CMAKE_SOURCE_DIR}/src/")
+    add_library(libnrtype_unit_lib SHARED "${libnrtype_unit_SRC}")
+    pkg_check_modules(NRTYPE_UNIT_DEPS REQUIRED IMPORTED_TARGET zlib fontconfig freetype2 pangoft2 cairomm-1.16 pangomm-2.48)
+    target_link_libraries(libnrtype_unit_lib 2Geom::2geom GLibmm::GLibmm PkgConfig::NRTYPE_UNIT_DEPS)
+    make_target_unit_testable(libnrtype_unit_lib)
+endfunction(get_libnrtype_unit_lib)

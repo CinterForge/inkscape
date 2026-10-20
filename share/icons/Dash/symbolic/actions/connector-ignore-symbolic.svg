@@ -1,0 +1,12 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="connector-ignore">
+<g id=".connector-ignore" clip-path="url(#clip0_3684_42501)">
+<path id="Union" d="M3 2.29297L13.707 13H16V16H13V13.707L2.29297 3H0V0H3V2.29297ZM5 7.12109V11H8.87891L9.87891 12H4V6.12109L5 7.12109ZM12 9.87891L11 8.87891V5H7.12109L6.12109 4H12V9.87891Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42501">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

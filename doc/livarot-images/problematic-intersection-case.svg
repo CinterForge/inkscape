@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="593.25421"
+   height="414.70798"
+   viewBox="0 0 593.25421 414.70798"
+   version="1.1"
+   id="svg6"
+   inkscape:version="1.1-dev (e41a0c7bf5, 2020-08-24, custom)"
+   sodipodi:docname="problematic-intersection-case.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="marker973"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path971" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker963"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path961" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker859"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path857" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1121"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1119" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.53409942"
+     inkscape:cx="-56.169318"
+     inkscape:cy="317.35665"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     width="1000px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     fit-margin-left="10"
+     fit-margin-top="10"
+     fit-margin-right="10"
+     fit-margin-bottom="10" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-172.41122,-63.625426)">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1121)"
+       d="m 250.89042,81.406202 85.6937,319.813218"
+       id="path829" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker859)"
+       d="M 291.90829,238.05712 183.88162,144.92989"
+       id="path855"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:16px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="203.0696"
+       y="209.07495"
+       id="text887"><tspan
+         sodipodi:role="line"
+         id="tspan885"
+         x="203.0696"
+         y="209.07495">left</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:16px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="298.60837"
+       y="186.01599"
+       id="text891"><tspan
+         sodipodi:role="line"
+         id="tspan889"
+         x="298.60837"
+         y="186.01599">right</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker973)"
+       d="m 657.14458,73.754836 85.6937,319.813214"
+       id="path949" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker963)"
+       d="M 698.16245,230.40575 626.79513,357.48346"
+       id="path951"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:16px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="630.6897"
+       y="285.12833"
+       id="text955"><tspan
+         sodipodi:role="line"
+         id="tspan953"
+         x="630.6897"
+         y="285.12833">left</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:16px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+       x="704.86255"
+       y="178.36462"
+       id="text959"><tspan
+         sodipodi:role="line"
+         id="tspan957"
+         x="704.86255"
+         y="178.36462">right</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:34.2668px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:2.14167"
+       x="205.33521"
+       y="467.84818"
+       id="text1029"><tspan
+         sodipodi:role="line"
+         id="tspan1027"
+         x="205.33521"
+         y="467.84818"
+         style="stroke-width:2.14167">lst &gt; lEn</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:33.5599px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:2.09749"
+       x="617.29639"
+       y="459.41025"
+       id="text1033"><tspan
+         sodipodi:role="line"
+         id="tspan1031"
+         x="617.29639"
+         y="459.41025"
+         style="stroke-width:2.09749">lst &lt; lEn</tspan></text>
+  </g>
+</svg>

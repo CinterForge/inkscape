@@ -1,0 +1,9 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="distribute-horizontal-center">
+<g id=".arrange-distribute-horizontal-center">
+<path class="warning" opacity="0.5" d="M5 16H4V12H5V16ZM12 16H11V12H12V16ZM5 4H4V0H5V4ZM12 4H11V0H12V4Z" fill="black"/>
+<rect id="rectangle" opacity="0.3" x="14" y="3" width="10" height="5" transform="rotate(90 14 3)" fill="black"/>
+<path id="neutral" d="M2 13L2 3L7 3L7 13L2 13ZM3 4L3 12L6 12L6 4L3 4ZM9 13L9 3L14 3L14 13L9 13ZM10 4L10 12L13 12L13 4L10 4Z" fill="black"/>
+</g>
+</g>
+</svg>

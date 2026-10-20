@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100mm"
+   height="100mm"
+   viewBox="0 0 100 100"
+   version="2.0"
+   id="svg1"
+   inkscape:version="1.5-dev (4070d5f319, 2026-07-28, custom)"
+   sodipodi:docname="09-text-layout.svg"
+   standalone="no"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <style
+     type="text/css"
+     id="style1">
+    text,
+    tspan.cjk,
+    text.cjk {
+      font-family: Noto Sans;
+    }
+    tspan.arabic,
+    text.arabic {
+      font-family: 'Noto Sans Arabic';
+      direction: rtl;
+    }
+    tspan.hebrew,
+    text.hebrew {
+      font-family: 'Noto Sans Hebrew';
+    }
+</style>
+  <defs
+     id="defs1">
+    <rect
+       x="37.5"
+       y="38.976547"
+       width="302.36221"
+       height="314.21035"
+       id="rect1" />
+    <rect
+       x="38.532089"
+       y="70.520981"
+       width="287.1731"
+       height="71.975044"
+       id="rect1-5" />
+    <rect
+       x="37.5"
+       y="38.976547"
+       width="302.36221"
+       height="314.21035"
+       id="rect280" />
+    <rect
+       x="38.532089"
+       y="70.520981"
+       width="287.1731"
+       height="71.975044"
+       id="rect340" />
+    <rect
+       x="38.532089"
+       y="70.520981"
+       width="287.1731"
+       height="71.975044"
+       id="rect344" />
+    <view
+       viewBox="0 0 100 100"
+       id="page1"
+       inkscape:label="Fonts"
+       inkscape:margin="10"
+       inkscape:bleed="0" />
+    <view
+       viewBox="110 0 100 100"
+       id="page3"
+       inkscape:label="Text Lines"
+       inkscape:margin="10"
+       inkscape:bleed="0" />
+    <view
+       viewBox="220 0 100 100"
+       id="page5"
+       inkscape:label="Kerning"
+       inkscape:margin="10"
+       inkscape:bleed="0" />
+    <view
+       viewBox="330 0 100 100"
+       id="page6"
+       inkscape:label="Text CJK"
+       inkscape:margin="10"
+       inkscape:bleed="0" />
+    <view
+       viewBox="440 0 100 100"
+       id="page29"
+       inkscape:label="Text RTL"
+       inkscape:margin="10"
+       inkscape:bleed="0" />
+    <view
+       viewBox="550 0 100 100"
+       id="page2"
+       inkscape:label="Text on Path"
+       inkscape:margin="10"
+       inkscape:bleed="0" />
+    <view
+       viewBox="660 0 100 100"
+       id="page4"
+       inkscape:label="Flowed"
+       inkscape:margin="10"
+       inkscape:bleed="0" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview1"
+     inkscape:current-layer="layer1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2"
+     inkscape:cx="1773"
+     inkscape:cy="154.75"
+     inkscape:window-width="1692"
+     inkscape:window-height="1096"
+     inkscape:window-maximized="1"
+     showgrid="false" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="fill:#800080">
+    <g
+       id="g345"
+       inkscape:label="Flowed Text">
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,660.07813,-3.4473653)"
+         id="text1-9"
+         style="font-size:9px;line-height:1.15;text-align:justify;text-decoration-color:#000000;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);shape-subtract:url(#circle11) url(#path1);shape-padding:5;display:inline;fill:#000000;stroke:none;stroke-width:7.55906;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+         x="0"
+         y="0"
+         inkscape:label="Flowed Text"><tspan
+           x="42.5"
+           y="51.715439"
+           id="tspan14">
+</tspan><tspan
+           x="42.5"
+           y="67.224689"
+           id="tspan16"><tspan
+   style="font-size:15px"
+   id="tspan15">What is Lorem Ipsum?</tspan>
+</tspan><tspan
+           x="42.5"
+           y="79.315438"
+           id="tspan17">
+</tspan><tspan
+           x="42.5"
+           y="89.665436"
+           id="tspan21"><tspan
+             dx="0 0 0 0 0 0 0.9598484 0 0 0 0 0 0.9598484 0 0 0.9598484 0 0 0 0 0 0 0.9598484 0 0 0 0 0 0.9598484 0 0 0 0 0.9598484 0 0 0.9598484"
+             id="tspan18">Lorem Ipsum is simply dummy text of the </tspan><tspan
+             dx="0 0 0 0 0 0 0 0 0 1.5217762"
+             id="tspan20">printing and </tspan></tspan><tspan
+           x="42.5"
+           y="100.01543"
+           id="tspan31"><tspan
+   dx="0 0 0 0 0 0 0 0 0 0 0 0 1.5321178 0 0 0 0 0 0 0 0 0 1.5321217 0 0 0 0 0 1.5321217 0 0 0 0 0 1.532114"
+   id="tspan22">typesetting industry. Lorem Ipsum has </tspan>been <tspan
+   dx="3.0716286"
+   id="tspan23">the </tspan></tspan><tspan
+           x="42.5"
+           y="110.36543"
+           id="tspan33"><tspan
+   dx="0 0 0 0 0 0 0 0 0 0 0 1.2512188 0 0 0 0 0 0 0 0 1.251215 0 0 0 0 0 1.2512226 0 0 0 0 1.2512302"
+   id="tspan32">industry's standard dummy text ever </tspan>since </tspan><tspan
+           x="42.5"
+           y="120.71543"
+           id="tspan36">the <tspan
+   dx="0.0038890839 0 0 0 0 0 0 0.0038909912 0 0 0 0 0.0038928986 0 0 0.0038890839 0 0 0 0 0 0 0 0.0038814545"
+   id="tspan34">1500s, when an unknown printer </tspan>took <tspan
+   dx="0.46531105"
+   id="tspan35">a </tspan></tspan><tspan
+           x="42.5"
+           y="131.06543"
+           id="tspan38">galley <tspan
+   dx="2.024519 0 0 2.0245228 0 0 0 0 2.0245228 0 0 0 2.0245228 0 0 0 0 0 0 0 0 0 2.0245152 0 0 2.0245152"
+   id="tspan37">of type and scrambled it to </tspan>make </tspan><tspan
+           x="42.5"
+           y="141.41544"
+           id="tspan41">a <tspan
+   dx="6.0991907"
+   id="tspan39">type </tspan><tspan
+   dx="6.0991926 0 0 0 0 0 0 0 0 6.0991879 0 0 0 0 0 6.0991917 0 0 6.0991993"
+   id="tspan40">specimen book. It has </tspan></tspan><tspan
+           x="42.5"
+           y="151.76544"
+           id="tspan45">survived <tspan
+   dx="0.12320137 0 0 0 0.12320137"
+   id="tspan42">not only </tspan><tspan
+   dx="0.12319756 2.7089996 -2.7090015"
+   id="tspan43">five </tspan><tspan
+   dx="0.123209 0 0 0 0 0 0 0 0 0 0 0.12320137"
+   id="tspan44">centuries, but </tspan>also </tspan><tspan
+           x="42.5"
+           y="162.11545"
+           id="tspan48"><tspan
+             dx="0 0 0 0 0.81276512 0 0 0 0 0.81276512 0 0 0 0 0.81276512"
+             id="tspan46">the leap into electronic </tspan><tspan
+             dx="0.81276894"
+             id="tspan47">typesetting, </tspan></tspan><tspan
+           x="42.5"
+           y="172.46545"
+           id="tspan51">remaining <tspan
+   dx="1.4701328"
+   id="tspan49">essentially </tspan><tspan
+   dx="1.4701405 0 0 0 0 0 0 0 0 0 0 1.4701405"
+   id="tspan50">unchanged. It </tspan>was </tspan><tspan
+           x="42.5"
+           y="182.81546"
+           id="tspan55">popularise<tspan
+   dx="0 0 3.9894505 0 0 3.9894505"
+   id="tspan52">d in the </tspan><tspan
+   dx="3.9894505"
+   id="tspan53">1960s </tspan><tspan
+   dx="3.9894505 0 0 0 0 3.9894581"
+   id="tspan54">with the </tspan>release </tspan><tspan
+           x="42.5"
+           y="193.16547"
+           id="tspan58">of <tspan
+   dx="4.3672142 0 0 0 0 0 0 0 0 4.3672123"
+   id="tspan56">Letraset sheets </tspan><tspan
+   dx="4.3672085 0 0 0 0 0 0 0 0 0 0 4.3672199"
+   id="tspan57">containing Lorem </tspan>Ipsum </tspan><tspan
+           x="42.5"
+           y="203.51547"
+           id="tspan63">passages, <tspan
+   dx="1.0926418 0 0 0 1.0926418"
+   id="tspan59">and more </tspan><tspan
+   dx="1.092638"
+   id="tspan60">recently </tspan><tspan
+   dx="1.0926456 0 0 0 0 1.0926533"
+   id="tspan61">with desktop </tspan>publishing </tspan><tspan
+           x="42.5"
+           y="213.86548"
+           id="tspan64">software like Aldus PageMaker including versions of Lorem Ipsum.
+</tspan><tspan
+           x="42.5"
+           y="224.21548"
+           id="tspan66">
+</tspan><tspan
+           x="42.5"
+           y="239.72474"
+           id="tspan68"><tspan
+   style="font-size:15px"
+   id="tspan67">Can we do Arabic?</tspan>
+</tspan><tspan
+           x="334.86133"
+           y="251.81549"
+           id="tspan70"><tspan
+             dx="0 0 0 0 0 -1.539423 0 0 0 0 0 0 -1.539423 0 0 0 0 0 0 0 -1.5393982 0 0 -1.5393925 0 0 0 0 0 -1.5393925 0 0 0 6.6240044 -6.6240234 0 -1.5394344 0 0 -1.5393982 0 0 3.7616138 -5.3010254 0 0 4.3739738 -4.3739929 -1.5393925 0 3.2669983 -3.2670288 0 0 0 -1.539423 0 0 0 0 0.88159943 -2.4210014 0 -1.5393925 0 0 0 0 -1.5394287"
+             style="direction:rtl"
+             id="tspan69">واصل دراسته واكملها في الحرم المكي، ثم في جامعة الإمام محمد بن سعود في </tspan></tspan><tspan
+           x="173.59367"
+           y="263.37425"
+           id="tspan78"><tspan
+             dx="0 0 0 0 0 0 4.3740044 -4.3740005"
+             style="direction:rtl"
+             id="tspan71">المملكة </tspan><tspan
+             dx="-2.8956699 0 0 0 2.4209938 -2.4209919 0 0 -2.8956699 0 0 0 0 0 2.6909924 -2.6909943"
+             style="direction:rtl"
+             id="tspan72">العربية السعودية، </tspan><tspan
+             dx="1.1273346 -4.0230045 0 0 0 1.1273346 -4.0230045"
+             style="direction:rtl"
+             id="tspan73">فنبغ في </tspan><tspan
+             dx="0 0 3.0870094 -3.0870056"
+             style="direction:rtl"
+             id="tspan74">النحو </tspan><tspan
+             dx="-3.1271152 0 0 0 0 0 -3.1271152 0 3.2670059 -3.2670059 4.3739986 -4.3740005 0 -3.1271076 2.691 -2.6910019 0 0 0 0.89588928 -4.0230026 0 -1.0121098 -2.1150055"
+             style="direction:rtl"
+             id="tspan76">وعلوم الآلة، وتعمق في أصول </tspan></tspan><tspan
+           x="159.80009"
+           y="274.93303"
+           id="tspan88"><tspan
+             style="direction:rtl"
+             id="tspan79">الدين </tspan><tspan
+             dx="-5.1070118 0 0 0 0 0 0 -5.1070042"
+             style="direction:rtl"
+             id="tspan80">والشرع والفقه </tspan><tspan
+             dx="-5.1070118"
+             style="direction:rtl"
+             id="tspan81">والفتوى، </tspan><tspan
+             style="direction:rtl"
+             id="tspan83">وحصوله </tspan><tspan
+             dx="-0.68989754 0 0 0 1.425108 -2.1150055 0 0 0 -0.68989754 0 0 0 0 2.691 -2.6909962"
+             style="direction:rtl"
+             id="tspan85">على أعلى المراتب </tspan><tspan
+             dx="-0.68989754"
+             style="direction:rtl"
+             id="tspan87">العلمية </tspan></tspan><tspan
+           x="155.22475"
+           y="286.49181"
+           id="tspan99"><tspan
+             dx="0 -2.1150055 3.3569965 -3.3569946 4.2929935 0 -4.2929993"
+             style="direction:rtl"
+             id="tspan90">أستاذًا </tspan><tspan
+             dx="-12.671862"
+             style="direction:rtl"
+             id="tspan92">مساعدًا، </tspan><tspan
+             dx="-8.6488647 -4.0230045 7.6500034 -7.6500034"
+             style="direction:rtl"
+             id="tspan94">فمشاركًا، </tspan><tspan
+             dx="0 -4.0230045 0 3.3569889 -3.3569946 4.2929935 0 -4.2929916 0 -2.6435566 0 3.3569965 -3.3569946"
+             style="direction:rtl"
+             id="tspan95">فأستاذًا مكتمل </tspan><tspan
+             dx="-2.6435642 0 3.2670059 -3.2670059 3.3569889 -3.3569946 4.2929935 -4.2929955"
+             style="direction:rtl"
+             id="tspan97">الأستاذية، </tspan><tspan
+             dx="-2.6435566"
+             style="direction:rtl"
+             id="tspan98">حيث </tspan></tspan><tspan
+           x="154.75983"
+           y="298.05058"
+           id="tspan159"><tspan
+             dx="0 0 0 0 -2.1607075 0 0 0 4.8952961 -7.0559998 0 0 3.6450081 -3.6450043"
+             style="direction:rtl"
+             id="tspan100">حصل على شهادة </tspan><tspan
+             dx="-2.1606998 0 0 0 3.3569908 -3.3569946 0 0 0 1.8623047 -4.0230045"
+             style="direction:rtl"
+             id="tspan101">الدكتورة في </tspan><tspan
+             dx="0 0 0 -0.22794533 0 5.7329903 -5.7329865 0 0 4.3739967 -4.3740005 2.1930542 -2.4209919 0 0 0 0 -0.22794342"
+             style="direction:rtl"
+             id="tspan102">من الجامعة نفسها في </tspan><tspan
+             dx="-0.2279377"
+             style="direction:rtl"
+             id="tspan132">سنة </tspan><tspan
+             dx="92.720781"
+             style="direction:rtl"
+             id="tspan133">١٤٠٨</tspan><tspan
+             dx="10.296007"
+             style="direction:rtl"
+             id="tspan134"> </tspan></tspan><tspan
+           x="105.93176"
+           y="309.60936"
+           id="tspan169"><tspan
+             dx="0 0 0 2.6909962 -2.6909981 0 -5.9398785 0 0 0 0 4.0230026 -4.0230007"
+             style="direction:rtl"
+             id="tspan160">هجريا الموافق </tspan><tspan
+             dx="52.811872"
+             style="direction:rtl"
+             id="tspan161">٢٢</tspan><tspan
+             style="direction:rtl"
+             id="tspan162">/</tspan><tspan
+             style="direction:rtl"
+             id="tspan163">٧</tspan><tspan
+             style="direction:rtl"
+             id="tspan164">/</tspan><tspan
+             style="direction:rtl"
+             id="tspan165">١٩٨٨</tspan><tspan
+             dx="17.603991"
+             style="direction:rtl"
+             id="tspan166">م، </tspan><tspan
+             dx="0 0 0 0 0 3.9108505 -4.2929916 8.2980061 -8.2980042 3.6408691 -4.0230103 0 -0.38213539 0 2.4209919 -2.4209995 0 0 -0.38213539 0 3.3569889 -3.3569908"
+             style="direction:rtl"
+             id="tspan167">وكان ذلك في سابقة مميزة </tspan><tspan
+             dx="-0.38214302"
+             style="direction:rtl"
+             id="tspan168">سجلها </tspan></tspan><tspan
+           x="162.17696"
+           y="321.16814"
+           id="tspan177"><tspan
+             style="direction:rtl"
+             id="tspan170">له </tspan><tspan
+             dx="-3.1847324 0 3.3569908 -3.3569946 0 0 0 0 -3.1847401 0 0 0 3.0870018 -3.086998"
+             style="direction:rtl"
+             id="tspan171">التاريخ الوطني </tspan><tspan
+             dx="-3.1847324 0 0 0 0 0 0 0 0 -3.1847363 2.42099 -2.42099"
+             style="direction:rtl"
+             id="tspan172">العماني، ونال </tspan><tspan
+             dx="0 -2.1420097 0 2.691 -2.6909943"
+             style="direction:rtl"
+             id="tspan173">إثريهما </tspan><tspan
+             dx="-0.037714005 0 0 0 0 -0.037714005 0 0 0 0 0 4.4550133 -4.4550095 6.9660015 -6.9660034"
+             style="direction:rtl"
+             id="tspan174">وسام الاستحقاق </tspan><tspan
+             dx="-0.037714005"
+             style="direction:rtl"
+             id="tspan175">الرسمي </tspan><tspan
+             dx="3.9852867 -4.0230045"
+             style="direction:rtl"
+             id="tspan176">في </tspan></tspan><tspan
+           x="318.431"
+           y="332.72691"
+           id="tspan185"><tspan
+             dx="0 0 3.3569679 -3.3569736 0 4.0229893 -4.0230026"
+             style="direction:rtl"
+             id="tspan178">الثقافة </tspan><tspan
+             style="direction:rtl"
+             id="tspan179">والعلوم </tspan><tspan
+             dx="0 0 0 0 0 6.1649971 -6.1649933 0 0 0 3.6450024 -3.6450043 0 0 0 0 0 0 0 5.7329826 -5.7329865 0 0 4.373991 -4.3740082"
+             style="direction:rtl"
+             id="tspan180">من لدن حضرة صاحب الجلالة </tspan><tspan
+             dx="0 0 0 0 0 0 6.1649952 -6.1649933"
+             style="direction:rtl"
+             id="tspan181">السلطان </tspan><tspan
+             dx="4.0230026 -4.0230026 2.4209919 -2.42099 0 0 2.42099 -2.4209938 0 0 0 3.3569889 -3.356987"
+             style="direction:rtl"
+             id="tspan182">قابوس بن سعيد المعظم</tspan><tspan
+             dx="265.81501"
+             style="direction:rtl"
+             id="tspan183">.</tspan><tspan
+             style="font-family:'Noto Sans Arabic';direction:rtl"
+             id="tspan184">
+</tspan></tspan></text>
+      <circle
+         style="shape-margin:12.4022;fill:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+         id="path1"
+         cx="727.00977"
+         cy="34.630703"
+         r="12.366857"
+         inkscape:label="Excluded Shape 1" />
+      <circle
+         style="shape-margin:5;fill:#000000;fill-opacity:1;stroke-width:1.10885;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+         id="circle11"
+         cx="709.21136"
+         cy="74.47062"
+         r="6.8565106"
+         inkscape:label="Excluded Shape 2" />
+    </g>
+    <text
+       xml:space="preserve"
+       id="text1"
+       style="font-size:21px;line-height:0.5;stroke-width:1.67796"
+       transform="matrix(1.2025051,0,0,1.2025051,26.174654,16.313342)"
+       y="10"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         x="0"
+         y="10"
+         style="line-height:0.5;stroke-width:1.66319">Text</tspan></text>
+    <text
+       xml:space="preserve"
+       id="text2"
+       style="font-family:Levi;font-size:10px;line-height:0;text-align:center;text-anchor:middle;stroke-width:1.12507"
+       transform="matrix(1.7934517,0,0,1.7934517,32.334047,32.780458)"
+       y="10"
+       x="24.669994"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         x="24.669994"
+         y="10"
+         style="line-height:0.5;text-align:end;text-anchor:end;stroke-width:1.11517">Text <tspan
+   style="font-weight:bold;text-align:end;text-anchor:end;stroke-width:1.11517"
+   id="tspan3">is</tspan></tspan><tspan
+         sodipodi:role="line"
+         x="24.669994"
+         y="17.5"
+         style="font-style:italic;line-height:1;text-align:end;text-anchor:end;stroke-width:1.11517"
+         id="tspan5">italic</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;line-height:3;text-align:end;text-decoration-color:#000000;text-anchor:end;fill:#000000;stroke:none;stroke-width:2.12701;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.5"
+       x="119.83067"
+       y="17.799892"
+       id="text6-5-9"><tspan
+         sodipodi:role="line"
+         id="tspan6-3-1"
+         x="119.83067"
+         y="17.799892"
+         style="font-size:10.5833px;line-height:3;text-align:start;text-anchor:start;fill:#000000;stroke-width:2.12701">Line spacing</tspan><tspan
+         sodipodi:role="line"
+         x="119.83067"
+         y="49.549789"
+         style="font-size:10.5833px;line-height:3;text-align:start;text-anchor:start;fill:#000000;stroke-width:2.12701"
+         id="tspan13-2">three units</tspan></text>
+    <text
+       xml:space="preserve"
+       id="text1-5-9"
+       style="font-size:20.79px;line-height:0.5;letter-spacing:0px;fill:black;stroke:none;stroke-width:2.01775"
+       y="59.845268"
+       x="230.02795"><tspan
+         sodipodi:role="line"
+         id="tspan1-9-7"
+         x="230.02795"
+         y="59.845268"
+         style="font-size:20.79px;line-height:0.5;letter-spacing:0px;stroke-width:2"
+         dx="0"
+         rotate="12 12 12 12 12 12 12 0">Rotated</tspan></text>
+    <g
+       id="g340"
+       inkscape:label="RTL Text"
+       style="display:inline">
+      <text
+         class="arabic"
+         xml:space="preserve"
+         x="519.35892"
+         y="49.2875"
+         id="text3">مرحبا بالعالم</text>
+      <text
+         class="arabic"
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,444.76471,53.923673)"
+         id="text340"
+         style="font-size:53.3333px;line-height:1.25;text-align:start;letter-spacing:0px;word-spacing:0px;direction:ltr;white-space:pre;shape-inside:url(#rect340);display:inline"
+         x="820.31207"
+         y="0"
+         inkscape:transform-center-x="103.10363"
+         inkscape:transform-center-y="-0.96178757"><tspan
+           x="295.49112"
+           y="111.88509"
+           id="tspan187"><tspan
+             style="text-align:end;direction:rtl;text-anchor:end"
+             id="tspan186">مرحبا بالعالم</tspan></tspan></text>
+      <text
+         class="arabic"
+         xml:space="preserve"
+         style="font-size:13.587px;line-height:1;text-align:start;text-decoration-color:#000000;letter-spacing:0px;direction:rtl;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         x="526.33911"
+         y="70.402718"
+         id="text339"><tspan
+           sodipodi:role="line"
+           id="tspan338"
+           x="526.33911"
+           y="70.402718"
+           style="direction:rtl;fill:#000000;stroke:none;stroke-width:2">كلمات مخفية</tspan></text>
+      <text
+         class="hebrew"
+         xml:space="preserve"
+         style="font-size:13.587px;line-height:1;text-align:start;text-decoration-color:#000000;letter-spacing:0px;direction:rtl;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         x="530.60345"
+         y="34.494831"
+         id="text338"><tspan
+           sodipodi:role="line"
+           id="tspan337"
+           x="530.60345"
+           y="34.494831"
+           style="direction:rtl;fill:#000000;stroke:none;stroke-width:2">מילים נסתרות</tspan></text>
+    </g>
+    <g
+       id="g1"
+       inkscape:label="Text on a Path">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:2.30276;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+         d="M 560,90.000001 C 579.59262,81.30536 588.33198,86.758106 587.39402,57.287018 586.45607,27.815928 621.41239,11.957411 639,10"
+         id="path6-0"
+         sodipodi:nodetypes="czc" />
+      <text
+         xml:space="preserve"
+         style="font-size:11.9062px;line-height:1.15;text-align:justify;text-decoration-color:#000000;letter-spacing:0px;fill:#000000;stroke:none;stroke-width:7.55906;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+         id="text6-6"
+         transform="translate(-3.37637,-1.0063324)"><textPath
+           xlink:href="#path6-0"
+           startOffset="50%"
+           id="textPath6-2"
+           style="font-size:11.9062px;text-align:center;text-anchor:middle">Text on Path</textPath></text>
+      <path
+         style="vector-effect:non-scaling-stroke;fill:none;stroke:#eaeaea;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;-inkscape-stroke:hairline"
+         d="m 588.04547,88.070768 c 35.94007,-21.922005 7.69812,-41.096176 24.23534,-54.531705 9.23331,-7.501522 22.44494,-6.756176 24.64301,3.155029"
+         id="path4"
+         sodipodi:nodetypes="csc" />
+    </g>
+    <text
+       xml:space="preserve"
+       id="text1-3"
+       style="font-size:2.64583px;line-height:1;fill:black;stroke:none;stroke-width:2.01776"
+       y="76.384377"
+       x="10.812891"><tspan
+         sodipodi:role="line"
+         id="tspan1-5"
+         x="10.812891"
+         y="76.384377"
+         style="font-size:2.64583px;line-height:1;stroke-width:1.99999">10 Text size</tspan><tspan
+         sodipodi:role="line"
+         x="10.812891"
+         y="81.106857"
+         style="font-size:5.29167px;line-height:1;stroke-width:1.99999"
+         id="tspan6">20 Text size</tspan><tspan
+         sodipodi:role="line"
+         x="10.812891"
+         y="88.475174"
+         style="font-size:7.9375px;line-height:1;stroke-width:1.99999"
+         id="tspan8">30 Text size</tspan></text>
+    <text
+       xml:space="preserve"
+       id="text1-5"
+       style="font-size:20.79px;line-height:0.5;letter-spacing:2.49481px;fill:black;stroke:none;stroke-width:2.01775"
+       y="85.010399"
+       x="228.9397"><tspan
+         sodipodi:role="line"
+         id="tspan1-9"
+         x="228.9397"
+         y="85.010399"
+         style="font-size:20.79px;line-height:0.5;letter-spacing:2.49481px;stroke-width:2">Spaced</tspan></text>
+    <text
+       xml:space="preserve"
+       id="text1-5-2"
+       style="font-size:27.9568px;line-height:0.5;letter-spacing:0px;fill:black;stroke:none;stroke-width:2.01775"
+       y="30.268688"
+       x="230.29517"><tspan
+         sodipodi:role="line"
+         id="tspan1-9-9"
+         x="230.29517"
+         y="30.268688"
+         style="font-size:27.9568px;line-height:0.5;letter-spacing:0px;stroke-width:2"
+         dy="0 10.660204 0 0 -10.660204">Offset</tspan></text>
+    <text
+       xml:space="preserve"
+       style="line-height:1;text-align:end;text-decoration-color:#000000;baseline-shift:baseline;text-anchor:end;fill:#008000;stroke:none;stroke-width:2.127;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.5"
+       x="186.86378"
+       y="84.784874"
+       id="text6-2"><tspan
+         sodipodi:role="line"
+         x="186.86378"
+         y="84.784874"
+         style="line-height:1;baseline-shift:baseline;fill:#000000;stroke-width:2.127"
+         id="tspan19">1<tspan
+   style="font-size:65%;baseline-shift:super"
+   id="tspan9">super</tspan> 2<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan12">sub</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;line-height:0.5;text-align:end;text-decoration-color:#000000;text-anchor:end;fill:#000000;stroke:none;stroke-width:2.127;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.5"
+       x="199.54492"
+       y="31.68726"
+       id="text6-5"><tspan
+         sodipodi:role="line"
+         id="tspan6-3"
+         x="199.54492"
+         y="31.68726"
+         style="font-size:10.5833px;line-height:0.5;fill:#000000;stroke-width:2.127">Line spacing</tspan><tspan
+         sodipodi:role="line"
+         x="199.54492"
+         y="36.978909"
+         style="font-size:10.5833px;line-height:0.5;fill:#000000;stroke-width:2.127"
+         id="tspan13">one half</tspan></text>
+    <g
+       id="g346"
+       inkscape:label="Up and Down Text">
+      <text
+         class="cjk"
+         xml:space="preserve"
+         style="font-size:13.587px;line-height:1;text-align:start;text-decoration-color:#000000;letter-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         x="338.89944"
+         y="21.413044"
+         id="text24"><tspan
+           sodipodi:role="line"
+           id="tspan24"
+           x="338.89944"
+           y="21.413044"
+           style="fill:#000000;stroke:none;stroke-width:2">隠された言葉</tspan></text>
+      <text
+         class="cjk"
+         xml:space="preserve"
+         style="font-size:11.2812px;line-height:1;text-align:start;text-decoration-color:#000000;letter-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2.00001;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         x="357.41724"
+         y="55.877693"
+         id="text25"><tspan
+           sodipodi:role="line"
+           id="tspan25"
+           x="357.41724"
+           y="55.877693"
+           style="writing-mode:tb-rl;fill:#000000;stroke:none;stroke-width:2.00001">隠され</tspan><tspan
+           sodipodi:role="line"
+           x="345.06293"
+           y="55.877693"
+           style="writing-mode:tb-rl;fill:#000000;stroke:none;stroke-width:2.00001"
+           id="tspan27">た言葉</tspan></text>
+      <text
+         class="cjk"
+         xml:space="preserve"
+         style="font-size:11.2812px;line-height:1;text-align:start;text-decoration-color:#000000;letter-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2.00001;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         x="371.74771"
+         y="30.049915"
+         id="text25-9"><tspan
+           sodipodi:role="line"
+           id="tspan25-2"
+           x="371.74771"
+           y="30.049915"
+           style="writing-mode:tb-rl;fill:#000000;stroke:none;stroke-width:2.00001">隠されword</tspan><tspan
+           sodipodi:role="line"
+           x="359.92996"
+           y="30.049915"
+           style="writing-mode:tb-rl;fill:#000000;stroke:none;stroke-width:2.00001"
+           id="tspan27-0" /></text>
+      <text
+         class="cjk"
+         xml:space="preserve"
+         style="font-size:11.2812px;line-height:1;text-align:start;text-decoration-color:#000000;letter-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2.00001;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         x="402.2442"
+         y="56.397411"
+         id="text25-8"><tspan
+           sodipodi:role="line"
+           id="tspan25-4"
+           x="402.2442"
+           y="56.397411"
+           style="writing-mode:vertical-lr;fill:#000000;stroke:none;stroke-width:2.00001">隠され</tspan><tspan
+           sodipodi:role="line"
+           x="414.59851"
+           y="56.397411"
+           style="writing-mode:vertical-lr;fill:#000000;stroke:none;stroke-width:2.00001"
+           id="tspan26">た言葉</tspan></text>
+      <text
+         class="cjk"
+         xml:space="preserve"
+         style="font-size:11.2812px;line-height:1;text-align:start;text-decoration-color:#000000;letter-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2.00001;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         x="382.47055"
+         y="30.151201"
+         id="text29"><tspan
+           sodipodi:role="line"
+           id="tspan28"
+           x="382.47055"
+           y="30.151201"
+           style="writing-mode:tb-rl;text-orientation:sideways;fill:#000000;stroke:none;stroke-width:2.00001">隠されword</tspan><tspan
+           sodipodi:role="line"
+           x="370.6528"
+           y="30.151201"
+           style="writing-mode:tb-rl;text-orientation:sideways;fill:#000000;stroke:none;stroke-width:2.00001"
+           id="tspan29" /></text>
+    </g>
+  </g>
+</svg>

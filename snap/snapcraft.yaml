@@ -1,0 +1,336 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+name: inkscape
+adopt-info: inkscape
+contact: https://inkscape.org/contribute
+license: GPL-3.0
+confinement: strict
+base: core24
+compression: lzo
+
+# ----
+# hacks to make `evince` work for the print preview
+layout:
+  /usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/evince/4/backends:
+    bind: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/evince/4/backends
+  /usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/glib-2.0:
+    bind: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/glib-2.0
+# ----
+
+plugs:
+  dot-config-inkscape:
+    interface: personal-files
+    write: [ $HOME/.config/inkscape ]
+  gtk-3-themes:
+    interface: content
+    target: $SNAP/data-dir/themes
+    default-provider: gtk-common-themes
+  icon-themes:
+    interface: content
+    target: $SNAP/data-dir/icons
+    default-provider: gtk-common-themes
+# ----
+# hack needed to ensure that the "cups" slot is available on the host, see https://snapcraft.io/docs/cups-interface
+  foo-install-cups:
+    interface: content
+    content: foo
+    default-provider: cups
+    target: $SNAP_DATA/foo
+# ----
+
+slots:
+  inkscape-dbus:
+    interface: dbus
+    bus: session
+    name: org.inkscape.Inkscape
+
+# commented out due to bug https://github.com/canonical/snapcraft/issues/4931
+# will be added automatically by snapcraft anyway
+# assumes: [ command-chain ]
+
+parts:
+  inkscape:
+    plugin: cmake
+    source: .
+    cmake-generator: Ninja
+    cmake-parameters:
+      - '-DCMAKE_INSTALL_PREFIX='
+    build-packages:
+#       NOTE: Most dependencies are already provided by "extension: gnome" (see later).
+      - cython3
+      - libart-2.0-dev
+      - libboost-all-dev
+      - libcdr-dev
+      - libdouble-conversion-dev
+      - libgc-dev
+      - libgsl-dev
+      - libgtest-dev
+      - libmagick++-dev
+      - libpoppler-glib-dev
+      - libpoppler-private-dev
+      - libpotrace-dev
+      - librevenge-dev
+      - libreadline-dev
+      - libspelling-1-dev
+      - libvisio-dev
+      - libwpg-dev
+      - libxml-parser-perl
+      - libxslt1-dev
+      - ragel
+      - libgmock-dev
+    stage-packages:
+#       NOTE: Most dependencies are already provided by "extension: gnome" (see later).
+      - libboost-filesystem1.83.0
+      - libcdr-0.1-1
+      - libgc1
+      - libgsl27
+      - libgslcblas0
+      - libmagick++-6.q16-9
+      - libpotrace0
+      - libproxy1v5
+      - librevenge-0.0-0
+      - libspelling-1-1
+      - libvisio-0.1-1
+      - libwpg-0.3-3
+      - imagemagick
+      - libimage-magick-perl
+      - libwmf-bin
+      - transfig
+      - libsvg-perl
+      - libxml-xql-perl
+# ----
+# needed by the print preview feature
+      - evince
+      - libglib2.0-0t64
+# ----
+    prime:
+      - -lib/inkscape/*.a
+      - -*canberra*so* # We don't have sound permissions anyway
+# HACK: remove all libraries that are already provided by the snap gnome extension
+# The list can be generated with:
+# snap run --shell inkscape
+# $ cd /snap/inkscape/current/usr/lib/; for i in **/lib*.so*; do if [ -e /snap/gnome-46-2404/current/usr/lib/$i ]; then echo $i; fi; done
+# and some manual string modifications.
+# (note that the string "gnome-46-2404" may need to be updated in the future, check $GTK_PATH within the snap environment.)
+      - -usr/lib/*/gtk-*/
+      - -usr/lib/*/libICE.*
+      - -usr/lib/*/libLerc.*
+      - -usr/lib/*/libSM.*
+      - -usr/lib/*/libXcursor.*
+      - -usr/lib/*/libXcomposite.*
+      - -usr/lib/*/libXi.*
+      - -usr/lib/*/libXinerama.*
+      - -usr/lib/*/libXrandr.*
+      - -usr/lib/*/libXrender.*
+      - -usr/lib/*/libXt.*
+      - -usr/lib/*/libarchive.*
+      - -usr/lib/*/libatk.*
+      - -usr/lib/*/libatk-bridge.*
+      - -usr/lib/*/libatspi.*
+      - -usr/lib/*/libaom.*
+      - -usr/lib/*/libaspell.*
+      - -usr/lib/*/libavahi-client.*
+      - -usr/lib/*/libavahi-common.*
+      - -usr/lib/*/libcairo-gobject.*
+      - -usr/lib/*/libcairo-script-interpreter.*
+      - -usr/lib/*/libcairo.*
+      - -usr/lib/*/libcolord.*
+      - -usr/lib/*/libcolordprivate.*
+      - -usr/lib/*/libcups.*
+      - -usr/lib/*/libcurl-gnutls.*
+      - -usr/lib/*/libdatrie.*
+      - -usr/lib/*/libdconf.*
+      - -usr/lib/*/libde265.*
+      - -usr/lib/*/libdeflate.*
+      - -usr/lib/*/libenchant-2.*
+      - -usr/lib/*/libepoxy.*
+      - -usr/lib/*/libexslt.*
+      - -usr/lib/*/libfontconfig.*
+      - -usr/lib/*/libfreebl3.*
+      - -usr/lib/*/libfreeblpriv3.*
+      - -usr/lib/*/libfribidi.*
+      - -usr/lib/*/libgdbm.*
+      - -usr/lib/*/libgdbm_compat.*
+      - -usr/lib/*/libgdk_pixbuf-2.0.*
+      - -usr/lib/*/libgomp.*
+      - -usr/lib/*/libgraphene-1.0.*
+      - -usr/lib/*/libgraphite2.*
+      - -usr/lib/*/libgtk-4.*
+      - -usr/lib/*/libgtksourceview-5.*
+      - -usr/lib/*/libharfbuzz.*
+      - -usr/lib/*/libheif.*
+      - -usr/lib/*/libhunspell-1.7.*
+      - -usr/lib/*/libjbig.*
+      - -usr/lib/*/libjpeg.*
+      - -usr/lib/*/liblber.*
+      - -usr/lib/*/liblcms2.*
+      - -usr/lib/*/libldap.*
+      - -usr/lib/*/libltdl.*
+      - -usr/lib/*/libmpfr.*
+      - -usr/lib/*/libmpfr.*
+      - -usr/lib/*/libnghttp2.*
+      - -usr/lib/*/libnspr4.*
+      - -usr/lib/*/libnss3.*
+      - -usr/lib/*/libnssckbi.*
+      - -usr/lib/*/libnssdbm3.*
+      - -usr/lib/*/libnssutil3.*
+      - -usr/lib/*/libopenjp2.*
+      - -usr/lib/*/libopenjp2.*
+      - -usr/lib/*/libpango-1.0.*
+      - -usr/lib/*/libpangocairo-1.0.*
+      - -usr/lib/*/libpangoft2-1.0.*
+# not removed because we install some perl libs, and then rather supply all than only half of them.
+#      - -usr/lib/*/libperl.*
+      - -usr/lib/*/libpixman-1.*
+      - -usr/lib/*/libplc4.*
+      - -usr/lib/*/libplds4.*
+      - -usr/lib/*/libpoppler-glib.*
+      - -usr/lib/*/libpoppler.*
+      - -usr/lib/*/libproxy.*
+      - -usr/lib/*/libpsl.*
+      - -usr/lib/*/libpspell.*
+      - -usr/lib/*/librtmp.*
+      - -usr/lib/*/libsasl2.*
+      - -usr/lib/*/libsharpyuv.*
+      - -usr/lib/*/libsmime3.*
+      - -usr/lib/*/libsoftokn3.*
+      - -usr/lib/*/libssh.*
+      - -usr/lib/*/libssl3.*
+      - -usr/lib/*/libthai.*
+      - -usr/lib/*/libtiff.*
+      - -usr/lib/*/libwebp.*
+      - -usr/lib/*/libwebpdemux.*
+      - -usr/lib/*/libwebpmux.*
+      - -usr/lib/*/libxcb-render.*
+      - -usr/lib/*/libxslt.*
+      - -usr/lib/*/libcdda_interface*
+      - -usr/lib/*/libcdda_paranoia.*
+      - -usr/lib/*/libdw.*
+      - -usr/lib/*/libgdk-3.*
+      - -usr/lib/*/libgio-2.0.*
+      - -usr/lib/*/libglib-2.0.*
+      - -usr/lib/*/libgmodule-2.0.*
+      - -usr/lib/*/libgnome-desktop-3.so.*
+      - -usr/lib/*/libgobject-2.0.*
+      - -usr/lib/*/libgspell-1.*
+      - -usr/lib/*/libgstallocators-1.0.*
+      - -usr/lib/*/libgstapp-1.0.*
+      - -usr/lib/*/libgstaudio-1.0.*
+      - -usr/lib/*/libgstbase-1.0.*
+      - -usr/lib/*/libgstcheck-1.0.*
+      - -usr/lib/*/libgstcontroller-1.0.*
+      - -usr/lib/*/libgstfft-1.0.*
+      - -usr/lib/*/libgstnet-1.0.*
+      - -usr/lib/*/libgstpbutils-1.0.*
+      - -usr/lib/*/libgstreamer-1.0.*
+      - -usr/lib/*/libgstriff-1.0.*
+      - -usr/lib/*/libgstrtp-1.0.*
+      - -usr/lib/*/libgstrtsp-1.0.*
+      - -usr/lib/*/libgstsdp-1.0.*
+      - -usr/lib/*/libgsttag-1.0.*
+      - -usr/lib/*/libgstvideo-1.0.*
+      - -usr/lib/*/libgthread-2.0.*
+      - -usr/lib/*/libgtk-3.*
+      - -usr/lib/*/libhandy-1.*
+      - -usr/lib/*/libogg.*
+      - -usr/lib/*/libopus.*
+      - -usr/lib/*/liborc-0.4.*
+      - -usr/lib/*/liborc-test-0.4.*
+      - -usr/lib/*/libsecret-1.*
+      - -usr/lib/*/libtheora.*
+      - -usr/lib/*/libtheoradec.so.*
+      - -usr/lib/*/libtheoraenc.so.*
+      - -usr/lib/*/libunwind-*.so.*
+      - -usr/lib/*/libunwind.so.8.0.1
+      - -usr/lib/*/libvisual-0.4.*
+      - -usr/lib/*/libvorbis.*
+      - -usr/lib/*/libvorbisenc.so.*
+    override-build: |
+      echo "Fixing Icon path"
+      sed -i.bak -e 's|Icon=${INKSCAPE_ICONPATH}|Icon=${SNAP}/share/inkscape/branding/inkscape.svg|g' $SNAPCRAFT_PART_SRC/org.inkscape.Inkscape.desktop.template
+      echo "---"
+      echo "WORKAROUND: forcing system version of poppler over the version contained in gnome-sdk (because gnome-sdk ships libpoppler-dev without libpoppler-private-dev, and pkgconfig does not know the difference )"
+      mount -o bind /dev/null /snap/gnome-*-sdk/current/usr/lib/*-linux-gnu/pkgconfig/poppler.pc
+      mount -o bind /dev/null /snap/gnome-*-sdk/current/usr/lib/*-linux-gnu/pkgconfig/poppler-glib.pc
+      echo "WORKAROUND: Overwriting all system libs with their version from the gnome-sdk snap (to avoid weird linker errors)"
+      echo "(Yes, this is very ugly, it's a major design flaw in the snap build system that the gnome-sdk libraries are not compatible to the Ubuntu base system ones 🤮 )"
+      for lib in $(find /usr/lib/*-linux-gnu/ -maxdepth 1 -name '*.s*'); do
+       if [ -e /snap/gnome-*-sdk/current/$lib ]; then
+          # Skip broken symlinks
+          cat /snap/gnome-*-sdk/current/$lib > /dev/null || continue
+          echo Overwriting system lib $lib
+          mv $lib $lib.disabled
+          cp /snap/gnome-*-sdk/current/$lib $lib
+        fi
+      done
+      echo "---"
+      echo "Building Inkscape"
+      craftctl default
+      echo "---"
+      echo "Fixing Inkscape version"
+      INKSCAPE_VERSION=`g++ -I${SNAPCRAFT_PART_SRC}/src ${SNAPCRAFT_PART_BUILD}/src/inkscape-version.cpp ${SNAPCRAFT_PROJECT_DIR}/snap/local/print-inkscape-version.cpp -o print-inkscape-version && ./print-inkscape-version`
+      echo "Inkscape Version: ${INKSCAPE_VERSION}"
+      craftctl set version="${INKSCAPE_VERSION}"
+    override-prime: |
+      craftctl default
+      sed -i "s|_have.*$||" $SNAPCRAFT_PRIME/share/bash-completion/completions/inkscape
+    parse-info: [ org.inkscape.Inkscape.appdata.xml ] # Note: built from /org.inkscape.Inkscape.appdata.xml.in
+    after: [python-deps] # Grab the network stuff first
+
+  python-deps:
+    plugin: python
+    source: ./share/extensions
+#   Unfortunately, snap only supports one pyproject.toml file.
+#   It takes the dependencies from ./share/extensions/pyproject.toml.
+#   The content of other pyproject.toml files is transferred here manually:
+    python-packages:
+#    the following dependencies are taken manually from share/extensions/other/inkman/pyproject.toml:
+      - requests
+      - platformdirs
+      - filelock
+      - cachecontrol[filecache]
+#     the following dependencies are taken manually from share/extensions/other/clipart/pyproject.toml:
+      - beautifulsoup4
+    stage-packages:
+      - optipng
+#     - pstoedit
+#     - texlive-latex-base
+  snap-helpers:
+    plugin: dump
+    source: snap/local/scripts
+
+apps:
+  inkscape:
+    # NOTE: The gnome extension provides a lot of magic during build and runtime.
+    # It modifies the behavior of the above "parts" section:
+    # It sets environment variables, installs packages and provides many custom-
+    # built versions of Gtk related libraries. Unfortunately, these libraries
+    # are sometimes incompatible with the system provided APT packages.
+    # In general, it is better to list as few packages as possible in
+    # "build-packages" and "stage-packages" above, so that the versions provided
+    # by the gnome extensions are used instead.
+    extensions: [ gnome ]
+    command: bin/inkscape
+    command-chain: [ inkscape-variables, private-fontcache ]
+    plugs:
+      - cups # printing
+      - dot-config-inkscape
+      - home # direct access to /home, needed because e.g. drag-and-drop is not working via XDG portal
+      - removable-media # direct access to /mnt, same reason as /home
+      - raw-usb # plotter support
+      - network # for extension manager
+    slots:
+      - inkscape-dbus
+    desktop: share/applications/org.inkscape.Inkscape.desktop
+    common-id: org.inkscape.Inkscape
+    completer: share/bash-completion/completions/inkscape
+  viewer:
+    extensions: [ gnome ]
+    command: bin/inkview
+    command-chain: [ inkscape-variables, private-fontcache ]
+    plugs:
+      - dot-config-inkscape
+
+hooks:
+  configure:
+    plugs:
+      - desktop

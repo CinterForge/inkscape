@@ -1,0 +1,39 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+
+set(path_unit_SRC
+    path-boolop.cpp
+    path-curve.cpp
+
+    # -------
+    # Headers
+    path-boolop.h
+    path-curve.h
+)
+
+function(get_path_unit_lib)
+    list(TRANSFORM path_unit_SRC PREPEND "path/")
+
+    list(PREPEND path_unit_SRC
+                                 "livarot/AVL.cpp"
+                                 "livarot/PathConversion.cpp"
+                                 "livarot/PathCutting.cpp"
+                                 "livarot/PathOutline.cpp"
+                                 "livarot/PathStroke.cpp"
+                                 "livarot/Path.cpp"
+                                 "livarot/ShapeMisc.cpp"
+                                 "livarot/ShapeSweep.cpp"
+                                 "livarot/Shape.cpp"
+                                 "livarot/path-description.cpp"
+                                 "livarot/sweep-event.cpp"
+                                 "livarot/sweep-tree.cpp"
+                                 "livarot/sweep-tree-list.cpp"
+                                 "svg/stringstream.cpp"
+                                 "svg/strip-trailing-zeros.cpp"
+                                 "util/numeric/precision.cpp"
+                                 )
+
+    list(TRANSFORM path_unit_SRC PREPEND "${CMAKE_SOURCE_DIR}/src/")
+    add_library(path_unit_lib SHARED "${path_unit_SRC}")
+    target_link_libraries(path_unit_lib 2Geom::2geom GLibmm::GLibmm)
+    make_target_unit_testable(path_unit_lib)
+endfunction(get_path_unit_lib)

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1in"
+   height="1in"
+   viewBox="0 0 96 96"
+   version="1.1"
+   xml:space="preserve"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+<defs>
+<mask maskUnits="userSpaceOnUse" id="mask-circle-48">
+    <circle style="fill: #ffff00; stroke: none;"
+            id="circle-48" cx="48" cy="48" r="48" />
+</mask>
+</defs>
+<!-- note that the image has y = 60 but is translated by (0, -40), resulting in a net y-translation of +20 -->
+<image x="0" y="60" transform="translate(0,-40)" width="96" height="76"
+       preserveAspectRatio="none"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVQIW2P46KUCAAOPAWCkytQ8AAAAAElFTkSuQmCC"
+       id="test-image" mask="url(#mask-circle-48)"/>
+</svg>

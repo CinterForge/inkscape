@@ -1,0 +1,13 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="construct-grid">
+<g id=".layout-grid-construct" clip-path="url(#clip0_3684_42753)">
+<path id="Union" d="M5.5 13.5L8 11L10 13L11.5 13L13 11.5L13 10L11 8L13.5 5.5L16 8L14 10L14 11.5L16 13.5L13.5 16L11.5 14L10 14L8 16L5.5 13.5ZM14.6875 8L13.5 6.8125L12.3125 8L13.5 9.1875L14.6875 8ZM14.6875 13.5L13.5 12.3125L12.3125 13.5L13.5 14.6875L14.6875 13.5ZM9.1875 13.5L8 12.3125L6.8125 13.5L8 14.6875L9.1875 13.5Z" fill="black"/>
+<path id="shape" d="M1.31134e-06 -1.31134e-06L15 0L15 3L14 3L14 1L8 0.999999L8 7L10 7L10 8L8 8L8 10L7 10L7 8L1 8L1 14L3 14L3 15L0 15L1.31134e-06 -1.31134e-06ZM7 0.999999L1 0.999999L1 7L7 7L7 0.999999Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42753">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

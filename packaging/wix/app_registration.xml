@@ -1,0 +1,18 @@
+<CPackWiXPatch>
+  <CPackWiXFragment Id="CM_CP_inkscape.bin.inkscape.exe">
+    <ProgId Id="Inkscape.SVG" Description="Scalable Vector Graphics" Icon="CM_FP_inkscape.bin.inkscape.exe">
+        <Extension Id="svg">
+            <Verb Id="open" TargetFile='CM_FP_inkscape.bin.inkscape.exe' Argument="&quot;%1&quot;" />
+        </Extension>
+    </ProgId>
+    <ProgId Id="Inkscape.SVGZ" Description="Compressed Scalable Vector Graphics" Icon="CM_FP_inkscape.bin.inkscape.exe">
+        <Extension Id="svgz">
+            <Verb Id="open" TargetFile='CM_FP_inkscape.bin.inkscape.exe' Argument="&quot;%1&quot;" />
+        </Extension>
+    </ProgId>
+    <RegistryKey Key="SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\inkscape.exe" Root="HKLM">
+        <RegistryValue Type="string" Value="[#CM_FP_inkscape.bin.inkscape.exe]"/>
+        <RegistryValue Name="Path" Type="string" Value="[$CM_CP_inkscape.bin.inkscape.exe]"/>
+    </RegistryKey>
+  </CPackWiXFragment>
+</CPackWiXPatch>

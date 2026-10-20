@@ -1,0 +1,12 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="draw-geometry-line-segment">
+<g id=".line-segment" clip-path="url(#clip0_3684_42616)">
+<path id="Union" d="M15.8535 3.14648L15.1465 3.85352L14 2.70703L2.70703 14L3.85352 15.1465L3.14648 15.8535L0.146484 12.8535L0.853516 12.1465L2 13.293L13.293 2L12.1465 0.853516L12.8535 0.146484L15.8535 3.14648Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42616">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

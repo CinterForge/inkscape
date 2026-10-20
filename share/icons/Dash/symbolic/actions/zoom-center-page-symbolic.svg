@@ -1,0 +1,18 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="zoom-center-page">
+<g id=".frame-center-page" clip-path="url(#clip0_3684_42765)">
+<g id=".frame" clip-path="url(#clip1_3684_42765)">
+<path id="Union" opacity="0.5" d="M1 15H3.5V16H0V12.5H1V15ZM16 16H12.5V15H15V12.5H16V16ZM3.5 1H1V3.5H0V0H3.5V1ZM16 3.5H15V1H12.5V0H16V3.5Z" fill="black"/>
+</g>
+<path id="Union_2" d="M13 5V14.001H4V2.00098L10 2L13 5ZM5 13.001H12V5.41406L9.58594 3H5V13.001ZM9 8H11V9H9V11H8V9H6V8H8V6H9V8Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42765">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+<clipPath id="clip1_3684_42765">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

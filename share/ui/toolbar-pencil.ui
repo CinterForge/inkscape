@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <placeholder width="916" height="63"></placeholder>
+  <requires lib="gtk" version="4.0"></requires>
+  <object class="GtkAdjustment" id="_maxpressure_adj">
+    <property name="upper">100</property>
+    <property name="step-increment">1</property>
+  </object>
+  <object class="GtkAdjustment" id="_minpressure_adj">
+    <property name="upper">100</property>
+    <property name="step-increment">1</property>
+  </object>
+  <object class="GtkAdjustment" id="_shapescale_adj">
+    <property name="upper">1000</property>
+    <property name="step-increment">0.5</property>
+    <property name="page-increment">1</property>
+  </object>
+  <object class="GtkAdjustment" id="_tolerance_adj">
+    <property name="upper">100</property>
+    <property name="step-increment">0.5</property>
+    <property name="page-increment">1</property>
+  </object>
+  <object class="GtkBox" id="pencil-toolbar">
+    <property name="halign">start</property>
+    <property name="valign">center</property>
+    <property name="hexpand">True</property>
+    <child>
+      <object class="GtkLabel">
+        <property name="tooltip-text" translatable="yes">Mode of new lines drawn by this tool</property>
+        <property name="label" translatable="yes">Mode</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="mode_buttons_box">
+        <property name="spacing">3</property>
+        <child>
+          <object class="GtkToggleButton" id="mode_buttons_group">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Create regular Bezier path</property>
+            <property name="has-frame">False</property>
+            <property name="icon-name">path-mode-bezier</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Create Spiro path</property>
+            <property name="has-frame">False</property>
+            <property name="group">mode_buttons_group</property>
+            <property name="icon-name">path-mode-spiro</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Create BSpline path</property>
+            <property name="has-frame">False</property>
+            <property name="group">mode_buttons_group</property>
+            <property name="icon-name">path-mode-bspline</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="zigzag_btn">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Create a sequence of straight line segments</property>
+            <property name="has-frame">False</property>
+            <property name="group">mode_buttons_group</property>
+            <property name="icon-name">path-mode-polyline</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="paraxial_btn">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Create a sequence of paraxial line segments</property>
+            <property name="has-frame">False</property>
+            <property name="group">mode_buttons_group</property>
+            <property name="icon-name">path-mode-polyline-paraxial</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator"></object>
+    </child>
+    <child>
+      <object class="GtkButton" id="_flatten_spiro_bspline_btn">
+        <property name="margin-end">5</property>
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Flatten Spiro or BSpline LPE</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">flatten</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="pencil_only_box">
+        <property name="spacing">2</property>
+        <child>
+          <object class="GtkToggleButton" id="_usepressure_btn">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Use pressure input</property>
+            <property name="has-frame">False</property>
+            <property name="icon-name">draw-use-pressure</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="_minpressure_box">
+            <property name="tooltip-text" translatable="yes">Min percent of pressure</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="margin-end">0</property>
+                <property name="margin-start">5</property>
+                <property name="label" translatable="yes">Min</property>
+              </object>
+            </child>
+            <child>
+              <object class="gtkmm__CustomObject_InkSpinButton" id="_minpressure_item">
+                <property name="focusable">True</property>
+                <property name="adjustment">_minpressure_adj</property>
+                <property name="climb-rate">1</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="_maxpressure_box">
+            <property name="tooltip-text" translatable="yes">Max percent of pressure</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="margin-start">5</property>
+                <property name="label" translatable="yes">Max</property>
+              </object>
+            </child>
+            <child>
+              <object class="gtkmm__CustomObject_InkSpinButton" id="_maxpressure_item">
+                <property name="focusable">True</property>
+                <property name="adjustment">_maxpressure_adj</property>
+                <property name="climb-rate">1</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="powerstroke_cap_box">
+            <property name="tooltip-text" translatable="yes">Line endings when drawing with pressure-sensitive PowerPencil</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">Caps</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkDropDown" id="cap-list">
+                <property name="tooltip-text" translatable="yes">Line endings when drawing with pressure-sensitive PowerPencil</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkSeparator"></object>
+        </child>
+        <child>
+          <object class="GtkBox" id="tolerance_box">
+            <property name="tooltip-text" translatable="yes">How much smoothing (simplifying) is applied to the line</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="margin-start">5</property>
+                <property name="label" translatable="yes">Smoothing</property>
+              </object>
+            </child>
+            <child>
+              <object class="gtkmm__CustomObject_InkSpinButton" id="_tolerance_item">
+                <property name="focusable">True</property>
+                <property name="adjustment">_tolerance_adj</property>
+                <property name="climb-rate">1</property>
+                <property name="digits">2</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="_simplify_btn">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">LPE based interactive simplify</property>
+            <property name="has-frame">False</property>
+            <property name="icon-name">interactive_simplify</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="_flatten_simplify_btn">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">LPE simplify flatten</property>
+            <property name="has-frame">False</property>
+            <property name="icon-name">flatten</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkSeparator"></object>
+        </child>
+        <style>
+          <class name="pencil-only"></class>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="shape_box">
+        <property name="margin-start">5</property>
+        <property name="tooltip-text" translatable="yes">Shape of new paths drawn by this tool</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Shape</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkDropDown" id="shape-list"></object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="_shapescale_box">
+        <property name="tooltip-text" translatable="yes">Scale of the width of the power stroke shape.</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Scale</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_shapescale_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_shapescale_adj</property>
+            <property name="climb-rate">1</property>
+            <property name="digits">2</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <style>
+      <class name="inkscape-toolbar"></class>
+    </style>
+  </object>
+</interface>

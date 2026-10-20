@@ -1,0 +1,13 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="node_insert_max_x">
+<g id=".node-add-right" clip-path="url(#clip0_3684_42670)">
+<path id="Subtract" d="M0 0C3.59944 1.57337e-07 6.64272 2.37744 7.64746 5.64746L10 8L7.64746 10.3516C6.643 13.622 3.59977 16 0 16V15C2.97453 15 5.51355 13.1439 6.52734 10.5273L4 8L6.52734 5.47168C5.51333 2.85561 2.9742 1 0 1V0ZM5.5 8L7 9.5L8.5 8L7 6.5L5.5 8Z" fill="black"/>
+<path id="neutral" d="M14 7.5L16 7.50098V8.50098L14 8.5V10.5H13V8.5H11V7.5H13V5.5H14V7.5Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42670">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

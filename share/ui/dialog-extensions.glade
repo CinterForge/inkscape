@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkAdjustment" id="adjustment-thumbnails">
+    <property name="upper">16</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">1</property>
+  </object>
+  <object class="GtkPopover" id="popover-settings">
+    <property name="child">
+      <object class="GtkBox">
+        <property name="margin-start">8</property>
+        <property name="margin-end">8</property>
+        <property name="margin-top">8</property>
+        <property name="margin-bottom">8</property>
+        <property name="spacing">4</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Thumbnail size</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkScale" id="thumb-size">
+            <property name="draw-value">True</property>
+            <property name="digits">0</property>
+            <property name="width-request">130</property>
+            <property name="focusable">True</property>
+            <property name="adjustment">adjustment-thumbnails</property>
+            <property name="show-fill-level">True</property>
+            <property name="round-digits">0</property>
+          </object>
+        </child>
+      </object>
+    </property>
+  </object>
+  <object class="GtkListStore" id="categories-store">
+    <columns>
+      <column type="gchararray"/>
+      <column type="gchararray"/>
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkBox" id="main">
+    <property name="margin-top">5</property>
+    <property name="margin-bottom">5</property>
+    <property name="hexpand">True</property>
+    <property name="vexpand">True</property>
+    <property name="orientation">vertical</property>
+    <child>
+      <object class="GtkCenterBox">
+        <property name="shrink-center-last">False</property>
+        <property name="margin-start">5</property>
+        <property name="margin-end">5</property>
+        <property name="margin-bottom">5</property>
+        <property name="end-widget">
+            <object class="GtkBox">
+            <property name="spacing">3</property>
+            <child>
+                <object class="GtkMenuButton">
+                    <property name="focusable">True</property>
+                    <property name="focus-on-click">False</property>
+                    <property name="receives-default">True</property>
+                    <property name="has-frame">False</property>
+                    <property name="popover">popover-settings</property>
+                    <property name="icon-name">gear</property>
+                </object>
+            </child>
+            <child>
+                <object class="GtkSearchEntry" id="search">
+                <property name="max-width-chars">15</property>
+                <property name="focusable">True</property>
+                <property name="placeholder-text">Search...</property>
+                </object>
+            </child>
+            </object>
+        </property>
+        <property name="start-widget">
+            <object class="GtkBox">
+            <property name="spacing">3</property>
+            <child>
+                <object class="GtkToggleButton" id="toggle">
+                    <property name="focusable">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="halign">start</property>
+                    <property name="valign">center</property>
+                    <property name="margin-end">5</property>
+                    <property name="has-frame">False</property>
+                    <property name="icon-name">panel-left</property>
+                </object>
+            </child>
+            <child>
+                <object class="GtkLabel" id="header">
+                    <property name="label" translatable="no">Select extension to run:</property>
+                </object>
+            </child>
+            </object>
+        </property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+      </object>
+    </child>
+    <child>
+      <object class="GtkPaned" id="paned">
+        <property name="shrink-start-child">0</property>
+        <property name="resize-start-child">0</property>
+        <property name="focusable">True</property>
+        <property name="hexpand">True</property>
+        <property name="vexpand">True</property>
+        <property name="position">120</property>
+        <property name="position-set">True</property>
+        <property name="wide-handle">True</property>
+        <property name="start-child">
+          <object class="GtkScrolledWindow" id="s">
+            <property name="focusable">True</property>
+            <property name="vexpand">True</property>
+            <property name="hscrollbar-policy">never</property>
+            <property name="min-content-width">50</property>
+            <property name="child">
+              <object class="GtkTreeView" id="selector">
+                <property name="focusable">True</property>
+                <property name="model">categories-store</property>
+                <property name="headers-visible">False</property>
+                <property name="enable-search">False</property>
+                <property name="show-expanders">False</property>
+                <property name="activate-on-single-click">True</property>
+                <child internal-child="selection">
+                  <object class="GtkTreeSelection"/>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn" id="category">
+                    <property name="sizing">autosize</property>
+                    <property name="title" translatable="yes">column</property>
+                    <child>
+                      <object class="GtkCellRendererText">
+                        <property name="ellipsize">middle</property>
+                      </object>
+                      <attributes>
+                        <attribute name="text">1</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </property>
+          </object>
+        </property>
+        <property name="end-child">
+          <object class="GtkScrolledWindow">
+            <property name="focusable">True</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">True</property>
+            <property name="hscrollbar-policy">never</property>
+            <property name="overlay-scrolling">False</property>
+            <property name="child">
+              <object class="GtkGridView" id="grid">
+                <property name="focusable">True</property>
+                <style>
+                  <class name="darker-background"/>
+                </style>
+              </object>
+            </property>
+            <style>
+              <class name="darker-background"/>
+            </style>
+          </object>
+        </property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+      </object>
+    </child>
+    <child>
+      <object class="GtkCenterBox">
+        <property name="margin-top">5</property>
+        <property name="shrink-center-last">False</property>
+        <property name="hexpand">True</property>
+        <property name="start-widget">
+          <object class="GtkLabel" id="name">
+            <property name="label" translatable="False">name</property>
+            <property name="margin-start">5</property>
+            <property name="hexpand">True</property>
+            <property name="halign">end</property>
+            <property name="valign">center</property>
+            <property name="ellipsize">middle</property>
+          </object>
+        </property>
+        <property name="center-widget">
+          <object class="GtkButton" id="run">
+            <property name="width-request">100</property>
+            <property name="focusable">True</property>
+            <property name="receives-default">True</property>
+            <property name="margin-start">10</property>
+            <property name="margin-end">10</property>
+            <property name="child">
+              <object class="GtkBox">
+                <property name="spacing">3</property>
+                <property name="halign">center</property>
+                <child>
+                  <object class="GtkImage" id="image-run">
+                    <property name="icon-name">play</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="run-label">
+                    <property name="label" translatable="yes" context="run-extension" comments="This verb is used to execute an extension. If extension accepts input parameters, then ellipsis will be appended to this word -> _Run...">_Run</property>
+                    <property name="use-underline">True</property>
+                    <property name="valign">center</property>
+                  </object>
+                </child>
+              </object>
+            </property>
+          </object>
+        </property>
+        <property name="end-widget">
+          <object class="GtkLabel" id="info">
+            <property name="opacity">0.6</property>
+            <property name="hexpand">True</property>
+            <property name="halign">start</property>
+            <property name="valign">center</property>
+            <property name="margin-end">5</property>
+            <property name="label" translatable="False">info</property>
+            <property name="ellipsize">middle</property>
+          </object>
+        </property>
+      </object>
+    </child>
+  </object>
+  <object class="GtkListStore" id="store">
+    <columns>
+      <column type="gchararray"/>
+      <column type="gchararray"/>
+      <column type="gchararray"/>
+    </columns>
+  </object>
+</interface>

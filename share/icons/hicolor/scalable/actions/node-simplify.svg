@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   version="2.0"
+   id="svg5"
+   inkscape:version="1.5-dev (24c308b, 2026-09-16)"
+   sodipodi:docname="node-simplify.svg"
+   standalone="no"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs5" />
+  <sodipodi:namedview
+     id="namedview5"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="22.78125001"
+     inkscape:cx="0.9657064467"
+     inkscape:cy="13.54183813"
+     inkscape:window-width="1920"
+     inkscape:window-height="1008"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="node-break">
+    <inkscape:grid
+       type="xygrid"
+       id="grid5"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="1"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.3019607843"
+       color="#0099e5"
+       opacity="0.1490196078"
+       empspacing="5"
+       enabled="true"
+       visible="true" />
+  </sodipodi:namedview>
+  <g
+     id="node-break"
+     inkscape:label="#node_break"
+     transform="matrix(1,0,0,-1,0,16)">
+    <path
+       d="m 0.5,2.5 h 14"
+       style="fill:none;stroke:#646464;stroke-linecap:round"
+       id="path1" />
+    <path
+       d="m 0.5,13.5 h 14"
+       style="fill:none;stroke:#646464;stroke-linecap:round"
+       id="path2"
+       sodipodi:nodetypes="cc" />
+    <!-- Nodes -->
+    <rect
+       x="5.5"
+       y="0.5"
+       width="4"
+       height="4"
+       style="fill:#6464ff;fill-opacity:0.4;stroke:#6464ff;stroke-linejoin:round"
+       id="rect3" />
+    <rect
+       x="3.5"
+       y="11.5"
+       width="3"
+       height="4"
+       style="fill:#6464ff;fill-opacity:0.4;stroke:#0000ff;stroke-linejoin:round"
+       id="rect4" />
+    <rect
+       x="8.5"
+       y="11.5"
+       width="3"
+       height="4"
+       style="fill:#6464ff;fill-opacity:0.4;stroke:#0000ff;stroke-linejoin:round"
+       id="rect5" />
+    <!-- Arrow -->
+    <path
+       d="M 4.738933283,9.6628734 5.463377653,9.856987687 5.851606221,8.408098949 7.30049496,8.796327517 6.071726887,6.137708698 3.678273112,7.825756097 5.127161851,8.213984665 Z"
+       style="fill:black;stroke-width:0.75"
+       id="path5" />
+    <path
+       d="M 9.536622345,9.83352102 10.26106672,9.639406732 9.87283815,8.190517999 11.32172689,7.802289431 8.928273112,6.114242032 7.699505038,8.772860851 9.148393779,8.384632284 Z"
+       style="fill:black;stroke-width:0.75"
+       id="path6" />
+  </g>
+</svg>

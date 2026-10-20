@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <placeholder width="704" height="17"></placeholder>
+  <requires lib="gtk" version="4.0"></requires>
+  <object class="GtkAdjustment" id="statusbar-zoom-adjustment">
+    <property name="step-increment">0.1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <menu id="statusbar-zoom-menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Zoom Selection</attribute>
+        <attribute name="action">win.canvas-zoom-selection</attribute>
+        <attribute name="icon">zoom-fit-selection</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Zoom Drawing</attribute>
+        <attribute name="action">win.canvas-zoom-drawing</attribute>
+        <attribute name="icon">zoom-fit-drawing</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Zoom Page</attribute>
+        <attribute name="action">win.canvas-zoom-page</attribute>
+        <attribute name="icon">zoom-fit-page</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Zoom Page Width</attribute>
+        <attribute name="action">win.canvas-zoom-page-width</attribute>
+        <attribute name="icon">zoom-fit-width</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Center Page</attribute>
+        <attribute name="action">win.canvas-zoom-center-page</attribute>
+        <attribute name="icon">zoom-center-page</attribute>
+      </item>
+    </section>
+  </menu>
+  <object class="GtkAdjustment" id="statusbar-rotate-adjustment">
+    <property name="step-increment">1</property>
+    <property name="page-increment">15</property>
+    <property name="lower">-180</property>
+    <property name="upper">180</property>
+  </object>
+  <menu id="statusbar-rotate-menu"></menu>
+  <object class="GtkBox" id="statusbar">
+    <property name="name">Statusbar</property>
+    <property name="margin-end">15</property>
+    <child>
+      <object class="GtkBox" id="statusbar-selected-style">
+        <property name="halign">center</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <property name="halign">center</property>
+        <property name="orientation">vertical</property>
+        <property name="margin-top">6</property>
+        <property name="margin-bottom">6</property>
+        <property name="margin-end">6</property>
+      </object>
+    </child>
+    <child>      <!-- avoid resizes with external scrolls-->
+
+      <object class="GtkScrolledWindow">
+        <property name="can-focus">True</property>
+        <property name="hexpand">True</property>
+        <property name="vexpand">True</property>
+        <property name="hscrollbar-policy">external</property>
+        <property name="vscrollbar-policy">external</property>
+        <child>
+          <object class="GtkLabel" id="statusbar-selection">
+            <property name="name">StatusbarSelection</property>
+            <property name="halign">start</property>
+            <property name="xalign">0</property>
+            <property name="label" translatable="yes">&lt;b&gt;Welcome to Inkscape!&lt;/b&gt; Use shape or freehand tools to create objects; use selector (arrow) to move or transform them.</property>
+            <property name="use-markup">True</property>
+            <!--
+            do not wrap is necesary need for fast render in windows a non ellipsize label https://docs.gtk.org/Pango/method.Layout.is_wrapped.html
+            -->
+            <property name="wrap">False</property>
+            <property name="ellipsize">end</property>
+            <property name="lines">2</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkLabel" id="statusbar-coordinates">
+        <property name="name">StatusbarCoordinates</property>
+        <property name="margin-end">10</property>
+        <property name="tooltip-text" translatable="yes">Cursor coordinates</property>
+        <property name="label" translatable="no">(0.00, 0.00)</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="statusbar-snapshot">
+        <style>
+          <class name="linked"/>
+        </style>
+        <child>
+          <object class="GtkSeparator">
+            <property name="orientation">vertical</property>
+            <property name="margin-top">6</property>
+            <property name="margin-bottom">6</property>
+            <property name="margin-end">6</property>
+          </object>
+        </child>
+        <child>  
+          <object class="GtkButton" id="snapshot-set">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Set snapshot canvas</property>
+            <property name="action-name">win.canvas-snapshot-set</property>
+            <property name="has-frame">False</property>
+            <child>
+              <object class="GtkImage" id="image-snapshot-set">
+                <property name="icon-name">canvas-snapshot-set</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="snapshot-toggle">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Toggle snapshot canvas</property>
+            <property name="action-name">win.canvas-snapshot-toggle</property>
+            <property name="has-frame">False</property>
+            <child>
+              <object class="GtkImage" id="image-snapshot-toggle">
+                <property name="icon-name">canvas-snapshot-toggle</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="gtkmm__CustomObject_InkSpinButton" id="statusbar-zoom">
+        <property name="margin-bottom">2</property>
+        <property name="margin-top">2</property>
+        <property name="margin-end">10</property>
+        <property name="margin-start">0</property>
+        <property name="valign">center</property>
+        <property name="tooltip-text" translatable="yes">Zoom (also Ctrl+scroll)</property>
+        <property name="icon" translatable="no">zoom</property>
+        <property name="name">StatusbarZoomValue</property>
+        <property name="focusable">True</property>
+        <property name="adjustment">statusbar-zoom-adjustment</property>
+        <property name="digits">1</property>
+        <property name="value">100</property>
+        <property name="suffix" translatable="yes">%</property>
+      </object>
+    </child>
+    <child>
+      <object class="gtkmm__CustomObject_InkSpinButton" id="statusbar-rotate">
+        <property name="valign">center</property>
+        <property name="tooltip-text" translatable="yes">Rotation (also Ctrl+Shift+scroll)</property>
+        <property name="icon" translatable="no">rotate-canvas</property>
+        <property name="name">StatusbarRotateValue</property>
+        <property name="focusable">True</property>
+        <property name="adjustment">statusbar-rotate-adjustment</property>
+        <property name="digits">1</property>
+        <property name="suffix" translatable="yes">°</property>
+        <property name="wrap-around">True</property>
+        <property name="valign">center</property>
+      </object>
+    </child>
+  </object>
+</interface>

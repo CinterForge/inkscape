@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkScrolledWindow" id="container">
+    <property name="focusable">True</property>
+    <property name="has-frame">False</property>
+    <property name="child">
+      <object class="GtkGridView" id="iconview">
+        <property name="focusable">True</property>
+        <style>
+          <class name="grid-view-small"/>
+        </style>
+      </object>
+    </property>
+    <style>
+      <class name="inkscape-start-exception"/>
+    </style>
+  </object>
+</interface>

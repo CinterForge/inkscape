@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkBox" id="zoom-toolbar">
+    <property name="halign">start</property>
+    <property name="valign">center</property>
+    <property name="hexpand">True</property>
+    <child>
+      <object class="GtkButton">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Zoom In</property>
+        <property name="action-name">win.canvas-zoom-in</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">zoom-in</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Zoom Out</property>
+        <property name="action-name">win.canvas-zoom-out</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">zoom-out</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Zoom 1-1</property>
+        <property name="action-name">win.canvas-zoom-1-1</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">zoom-original</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Zoom 1-2</property>
+        <property name="action-name">win.canvas-zoom-1-2</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">zoom-half-size</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Zoom 2-1</property>
+        <property name="action-name">win.canvas-zoom-2-1</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">zoom-double-size</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Zoom Selection</property>
+        <property name="action-name">win.canvas-zoom-selection</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">zoom-fit-selection</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Zoom Drawing</property>
+        <property name="action-name">win.canvas-zoom-drawing</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">zoom-fit-drawing</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Zoom Page</property>
+        <property name="action-name">win.canvas-zoom-page</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">zoom-fit-page</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Zoom Page Width</property>
+        <property name="action-name">win.canvas-zoom-page-width</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">zoom-fit-width</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Center Page</property>
+        <property name="action-name">win.canvas-zoom-center-page</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">zoom-center-page</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Zoom Previous</property>
+        <property name="action-name">win.canvas-zoom-prev</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">zoom-previous</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Zoom Next</property>
+        <property name="action-name">win.canvas-zoom-next</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">zoom-next</property>
+      </object>
+    </child>
+    <style>
+      <class name="inkscape-toolbar"/>
+    </style>
+  </object>
+</interface>

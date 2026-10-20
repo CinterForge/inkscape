@@ -1,0 +1,13 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="scale-unlinked">
+<g id=".transform-scale-unlinked" clip-path="url(#clip0_3684_42244)">
+<path id="Union" d="M11 16H5V15H7.5V12H4V8.5H1V11H0V5H1V7.5H4V4H7.5V1H5V0H11V1H8.5V4H12V7.5H15V5H16V11H15V8.5H12V12H8.5V15H11V16ZM5 11H11V5H5V11Z" fill="black"/>
+<path id="Union_2" opacity="0.2" d="M1 15H3V16H0V13H1V15ZM16 16H13V15H15V13H16V16ZM3 1H1V3H0V0H3V1ZM16 3H15V1H13V0H16V3Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42244">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -1,0 +1,28 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="draw-trace-background">
+<g id=".gradient-intensity">
+<g id="Mask group">
+<mask id="mask0_3684_42640" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="15" height="13">
+<path id="Ellipse 359" d="M15 3C15 8.52285 8.28427 13 0 13V0H14.3133C14.7595 0.947041 15 1.95479 15 3Z" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_3684_42640)">
+<g id="Group 282">
+<rect id="rectangle" opacity="0.66" x="14" y="14" width="1" height="12" transform="rotate(-180 14 14)" fill="black"/>
+<rect id="rectangle_2" opacity="0.6" x="13" y="14" width="1" height="12" transform="rotate(-180 13 14)" fill="black"/>
+<rect id="rectangle_3" opacity="0.56" x="12" y="14" width="1" height="12" transform="rotate(-180 12 14)" fill="black"/>
+<rect id="rectangle_4" opacity="0.48" x="11" y="14" width="1" height="12" transform="rotate(-180 11 14)" fill="black"/>
+<rect id="rectangle_5" opacity="0.42" x="10" y="14" width="1" height="12" transform="rotate(-180 10 14)" fill="black"/>
+<rect id="rectangle_6" opacity="0.36" x="9" y="14" width="1" height="12" transform="rotate(-180 9 14)" fill="black"/>
+<rect id="rectangle_7" opacity="0.3" x="8" y="14" width="1" height="12" transform="rotate(-180 8 14)" fill="black"/>
+<rect id="rectangle_8" opacity="0.24" x="7" y="14" width="1" height="12" transform="rotate(-180 7 14)" fill="black"/>
+<rect id="rectangle_9" opacity="0.18" x="6" y="14" width="1" height="12" transform="rotate(-180 6 14)" fill="black"/>
+<rect id="rectangle_10" opacity="0.12" x="5" y="14" width="1" height="12" transform="rotate(-180 5 14)" fill="black"/>
+<rect id="rectangle_11" opacity="0.06" x="4" y="14" width="1" height="12" transform="rotate(-180 4 14)" fill="black"/>
+</g>
+</g>
+</g>
+<path id="Subtract" d="M15 15H1V13.9756C7.34943 13.7064 12.6969 10.8945 14.9092 7H15V15Z" fill="black"/>
+<path id="Intersect" d="M14 6.5957C13.7198 7.0802 13.385 7.54652 13 7.99121V3H3V12.7988C2.67052 12.8434 2.33694 12.8783 2 12.9082V2H14V6.5957Z" fill="black"/>
+</g>
+</g>
+</svg>

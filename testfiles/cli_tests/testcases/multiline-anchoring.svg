@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="200" height="2200"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   version="1.1"
+   viewBox="0 0 200 2200">
+  <g id="grouped_text" style="font-size:40px;line-height:1.25">
+    <text x="50"  y="400"><tspan
+      sodipodi:role="line">أبجد</tspan><tspan
+      sodipodi:role="line">أبجد</tspan></text>
+    <text x="50" y="600"><tspan
+      sodipodi:role="line">up</tspan><tspan
+      sodipodi:role="line">down</tspan></text>
+    <text x="50" y="800" style="writing-mode:vertical-lr;"><tspan
+      sodipodi:role="line">أبجد</tspan><tspan
+      sodipodi:role="line">أبجد</tspan></text>
+    <text x="50" y="1000" style="writing-mode:vertical-lr;"><tspan
+      sodipodi:role="line">left</tspan><tspan
+      sodipodi:role="line">right</tspan></text>
+    <text x="100" y="1200" style="writing-mode:vertical-rl;text-orientation:upright"><tspan
+      sodipodi:role="line">أبجد</tspan><tspan
+      sodipodi:role="line">أبجد</tspan></text>
+    <text x="100" y="1400" style="writing-mode:vertical-rl;text-orientation:upright"><tspan
+      sodipodi:role="line">right</tspan><tspan
+      sodipodi:role="line">left</tspan></text>
+  </g>
+</svg>

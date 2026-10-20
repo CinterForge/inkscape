@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="object-unlocked">
+<g id=".lock-open">
+<path id="Union" d="M8 1C10.2091 1.00002 12 2.79087 12 5V8H13V15H3V8H11V5C11 3.34316 9.65684 2.00002 8 2C6.69417 2.00002 5.58594 2.83534 5.17383 4H4.12598C4.57002 2.27479 6.13618 1.00002 8 1ZM4 14H12V9H4V14Z" fill="black"/>
+<rect id="Rectangle 776" opacity="0.3" x="4" y="9" width="8" height="5" fill="black"/>
+</g>
+</g>
+</svg>

@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="dialog-information">
+<g id=".light-bulb">
+<rect id="Rectangle 777" opacity="0.3" x="6" y="12" width="4" height="2" fill="black"/>
+<path id="Union" d="M8 1C10.7614 1 13 3.23858 13 6C13 7.63553 12.2141 9.08679 11 9.99902V14L10 15H6L5 14V9.99902C3.78592 9.08679 3 7.63553 3 6C3 3.23858 5.23858 1 8 1ZM6 12V13.5859L6.41406 14H9.58594L10 13.5859V12H6ZM8 2C5.79086 2 4 3.79086 4 6C4 7.30721 4.62682 8.46744 5.60059 9.19922L6 9.5V11H10V9.5L10.3994 9.19922C11.3732 8.46744 12 7.30721 12 6C12 3.79086 10.2091 2 8 2Z" fill="black"/>
+</g>
+</g>
+</svg>

@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="shape-item">
+<g id=".bounding-box-group">
+<path id="Union" d="M3 15H1V13H3V15ZM15 15H13V13H15V15ZM3 3H1V1H3V3ZM15 3H13V1H15V3Z" fill="black"/>
+<path id="Subtract" d="M14 14H2V2H14V14ZM3 13H13V3H3V13Z" fill="black"/>
+</g>
+</g>
+</svg>

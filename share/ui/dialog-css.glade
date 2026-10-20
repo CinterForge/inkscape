@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkBox" id="CSSSelectorContainer">
+    <property name="orientation">vertical</property>
+    <property name="baseline-position">top</property>
+    <child>
+      <object class="GtkBox">
+        <child>
+          <object class="GtkButton" id="CSSSelectorAddButton">
+            <property name="has-frame">False</property>
+            <child>
+              <object class="GtkImage">
+                <property name="margin-end">5</property>
+                <property name="icon-name">list-add</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel" id="CSSSelector">
+            <property name="label" translatable="yes">Selector</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="label"> {</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkTreeView" id="CSSTree">
+        <property name="has-tooltip">True</property>
+        <property name="hscroll-policy">natural</property>
+        <property name="vscroll-policy">natural</property>
+        <property name="enable-search">False</property>
+        <property name="fixed-height-mode">True</property>
+        <property name="hover-selection">True</property>
+        <property name="show-expanders">False</property>
+        <property name="tooltip-column">6</property>
+        <property name="activate-on-single-click">True</property>
+        <child internal-child="selection">
+          <object class="GtkTreeSelection" id="CSSTreeData"/>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkLabel" id="CSSSelectorFilled">
+        <property name="halign">start</property>
+        <property name="valign">start</property>
+        <property name="label">}</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <property name="margin-top">6</property>
+        <property name="margin-bottom">6</property>
+      </object>
+    </child>
+  </object>
+</interface>

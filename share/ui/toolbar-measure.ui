@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkAdjustment" id="_font_size_adj">
+    <property name="lower">1</property>
+    <property name="upper">36</property>
+    <property name="value">10</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">4</property>
+  </object>
+  <object class="GtkAdjustment" id="_offset_adj">
+    <property name="upper">90000</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">4</property>
+  </object>
+  <object class="GtkAdjustment" id="_precision_adj">
+    <property name="upper">10</property>
+    <property name="step-increment">1</property>
+  </object>
+  <object class="GtkAdjustment" id="_ry_adj">
+    <property name="upper">1000000</property>
+    <property name="step-increment">0.10</property>
+    <property name="page-increment">5</property>
+  </object>
+  <object class="GtkAdjustment" id="_scale_adj">
+    <property name="upper">90000</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">4</property>
+  </object>
+  <object class="GtkPopover" id="settings-popover">
+  </object>
+
+  <object class="GtkBox" id="measure-toolbar">
+    <property name="halign">start</property>
+    <property name="valign">center</property>
+    <property name="hexpand">True</property>
+    <child>
+      <object class="GtkBox" id="font_size_box">
+        <property name="tooltip-text" translatable="yes">The font size to be used in the measurement labels</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Font Size</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_font_size_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_font_size_adj</property>
+            <property name="climb-rate">0.10</property>
+            <property name="digits">2</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="precision_box">
+        <property name="tooltip-text" translatable="yes">Decimal precision of measure</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Precision</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_precision_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_precision_adj</property>
+            <property name="climb-rate">0.10</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="scale_box">
+        <property name="tooltip-text" translatable="yes">Scale the results</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Scale</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_scale_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_scale_adj</property>
+            <property name="climb-rate">0.10</property>
+            <property name="digits">3</property>
+            <property name="suffix" translatable="no">%</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="unit_menu_box">
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Units</property>
+            <property name="use-markup">True</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_only_selected_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Measure only selected</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">snap-bounding-box-center</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_ignore_1st_and_last_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Ignore first and last</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">draw-geometry-line-segment</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_inbetween_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Show measures between items</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">distribute-randomize</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_show_hidden_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Show hidden intersections</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">object-hidden</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_all_layers_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Measure all layers</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">dialog-layers</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="reverse_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Reverse measure</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">draw-geometry-mirror</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="to_phantom_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Phantom measure</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">selection-make-bitmap-copy</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="to_guides_btn">
+        <property name="valign">center</property>
+        <property name="name">_to_guides_item</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">To guides</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">guides</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="to_item_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Convert to item</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">path-reverse</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="mark_dimension_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Mark Dimension</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">tool-pointer</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="offset_box">
+        <property name="tooltip-text" translatable="yes">Mark dimension offset</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Offset</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_offset_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_offset_adj</property>
+            <property name="climb-rate">0.10</property>
+            <property name="digits">2</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuButton" id="settings_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Measurement settings</property>
+        <property name="popover">settings-popover</property>
+        <property name="has-frame">True</property>
+        <property name="direction">down</property>
+        <child>
+          <object class="GtkBox">
+            <property name="spacing">2</property>
+            <child>
+              <object class="GtkImage">
+                <property name="icon-name">settings</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkImage">
+                <property name="icon-name">pan-down-symbolic</property>
+                <style>
+                  <class name="arrow"/>
+                </style>
+              </object>
+            </child>
+          </object>
+        </child>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <style>
+      <class name="inkscape-toolbar"/>
+    </style>
+  </object>
+</interface>

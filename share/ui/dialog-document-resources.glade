@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkListStore" id="liststore">
+    <columns>
+      <column type="gchararray"/>
+      <column type="gchararray"/>
+      <column type="gchararray"/>
+      <column type="gulong"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0" translatable="yes">Overview</col>
+        <col id="1">stats</col>
+        <col id="2">-</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0" translatable="no">-</col>
+        <col id="1">-</col>
+        <col id="2">-</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Colors</col>
+        <col id="1">colors</col>
+        <col id="2">color-palette</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">External</col>
+        <col id="1">external</col>
+        <col id="2">file-link</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Filters</col>
+        <col id="1">filters</col>
+        <col id="2">dialog-filters</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Fonts</col>
+        <col id="1">fonts</col>
+        <col id="2">dialog-text-and-font</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Gradients</col>
+        <col id="1">gradients</col>
+        <col id="2">paint-gradient-linear</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Images</col>
+        <col id="1">images</col>
+        <col id="2">shape-image</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Markers</col>
+        <col id="1">markers</col>
+        <col id="2">markers</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Metadata</col>
+        <col id="1">metadata</col>
+        <col id="2">document-properties</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Patterns</col>
+        <col id="1">patterns</col>
+        <col id="2">paint-pattern</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Styles</col>
+        <col id="1">styles</col>
+        <col id="2">dialog-fill-and-stroke</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Swatches</col>
+        <col id="1">swatches</col>
+        <col id="2">paint-swatch</col>
+        <col id="3">0</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Symbols</col>
+        <col id="1">symbols</col>
+        <col id="2">shape-symbol</col>
+        <col id="3">0</col>
+      </row>
+    </data>
+  </object>
+  <object class="GtkBox" id="main">
+    <property name="hexpand">True</property>
+    <property name="vexpand">True</property>
+    <property name="orientation">vertical</property>
+    <child>
+      <object class="GtkCenterBox" id="tbar">
+        <property name="margin-start">3</property>
+        <property name="margin-top">3</property>
+        <property name="margin-bottom">3</property>
+        <property name="start-widget">
+          <object class="GtkBox" id="tbar1">
+            <property name="spacing">3</property>
+            <child>
+              <object class="GtkLabel" id="spacer">
+            </object>
+            </child>
+            <child>
+            <object class="GtkButton" id="edit">
+                <property name="focusable">True</property>
+                <property name="receives-default">True</property>
+                <property name="tooltip-text" translatable="yes">Edit label</property>
+                <property name="has-frame">False</property>
+                <property name="icon-name">edit</property>
+            </object>
+            </child>
+            <child>
+            <object class="GtkButton" id="select">
+                <property name="focusable">True</property>
+                <property name="receives-default">True</property>
+                <property name="tooltip-text" translatable="yes">Select this on canvas (if applicable) or in the XML dialog (e.g. a pattern in the 'defs' section)</property>
+                <property name="has-frame">False</property>
+                <property name="icon-name">object-select</property>
+            </object>
+            </child>
+            <child>
+            <object class="GtkButton" id="delete">
+                <property name="focusable">True</property>
+                <property name="receives-default">True</property>
+                <property name="tooltip-text" translatable="yes">Delete selected item from the document</property>
+                <property name="has-frame">False</property>
+                <property name="icon-name">edit-delete</property>
+            </object>
+            </child>
+            <child>
+            <object class="GtkButton" id="extract">
+                <property name="focusable">True</property>
+                <property name="receives-default">True</property>
+                <property name="tooltip-text" translatable="yes">Export</property>
+                <property name="has-frame">False</property>
+                <property name="icon-name">document-export</property>
+            </object>
+            </child>
+          </object>
+        </property>
+        <property name="end-widget">
+          <object class="GtkBox" id="tbar2">
+            <child>
+              <object class="GtkButton" id="cleanup">
+                <property name="focusable">True</property>
+                <property name="receives-default">True</property>
+                <property name="tooltip-text" translatable="yes">Remove unused definitions</property>
+                <property name="action-name">win.document-cleanup</property>
+                <property name="has-frame">False</property>
+                <property name="icon-name">document-cleanup</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkSearchEntry" id="search">
+                <property name="focusable">True</property>
+                <property name="width-chars">15</property>
+              </object>
+            </child>
+          </object>
+        </property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkPaned" id="paned">
+        <property name="vexpand">True</property>
+        <property name="shrink-end-child">0</property>
+        <property name="shrink-start-child">0</property>
+        <property name="resize-start-child">0</property>
+        <property name="focusable">True</property>
+        <property name="position">120</property>
+        <property name="position-set">True</property>
+        <property name="wide-handle">True</property>
+        <property name="start-child">
+          <object class="GtkScrolledWindow" id="scrolledwindow1">
+            <property name="focusable">True</property>
+            <property name="margin-end">1</property>
+            <property name="has-frame">True</property>
+            <property name="child">
+              <object class="GtkListView" id="tree">
+<!-- v4.18              <property name="tab-behavior">item</property>-->
+              </object>
+            </property>
+          </object>
+        </property>
+        <property name="end-child">
+          <object class="GtkStack" id="stack">
+            <property name="width-request">50</property>
+            <property name="margin-start">1</property>
+            <child>
+              <object class="GtkStackPage">
+                <property name="name">iconview</property>
+                <property name="title">page0</property>
+                <property name="child">
+                  <object class="GtkScrolledWindow">
+                    <property name="focusable">True</property>
+                    <property name="has-frame">True</property>
+                    <property name="overlay-scrolling">False</property>
+                    <property name="child">
+                      <object class="GtkGridView" id="iconview">
+                        <property name="focusable">True</property>
+                        <property name="margin-start">3</property>
+                        <property name="margin-end">3</property>
+                        <property name="margin-top">3</property>
+                        <property name="margin-bottom">3</property>
+                      </object>
+                    </property>
+                  </object>
+                </property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkStackPage">
+                <property name="name">treeview</property>
+                <property name="title">page1</property>
+                <property name="child">
+                  <object class="GtkScrolledWindow">
+                    <property name="focusable">True</property>
+                    <property name="has-frame">True</property>
+                    <property name="overlay-scrolling">False</property>
+                    <property name="child">
+                      <object class="GtkColumnView" id="listview">
+                        <property name="focusable">True</property>
+                        <property name="reorderable">False</property>
+                        <property name="show-column-separators">True</property>
+                        <property name="show-row-separators">True</property>
+                        <child>
+                          <object class="GtkColumnViewColumn" id="col0">
+                            <property name="resizable">True</property>
+                            <property name="title" translatable="yes">Property</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkColumnViewColumn" id="col1">
+                            <property name="title" translatable="yes">Count</property>
+                            <property name="fixed-width">70</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkColumnViewColumn" id="col2">
+                            <property name="title" translatable="yes">Value</property>
+                            <property name="expand">True</property>
+                          </object>
+                        </child>
+                      </object>
+                    </property>
+                  </object>
+                </property>
+              </object>
+            </child>
+
+            <child>
+              <object class="GtkStackPage">
+                <property name="name">grid</property>
+                <property name="title">page2</property>
+                <property name="child">
+                  <object class="GtkScrolledWindow">
+                    <property name="focusable">True</property>
+                    <property name="has-frame">True</property>
+                    <property name="overlay-scrolling">False</property>
+                    <property name="child">
+                      <object class="GtkViewport">
+                        <property name="child">
+                          <object class="GtkGrid" id="grid">
+                            <property name="valign">start</property>
+                            <property name="margin-start">4</property>
+                            <property name="margin-end">4</property>
+                            <property name="margin-top">4</property>
+                            <property name="margin-bottom">4</property>
+                            <property name="row-spacing">4</property>
+                            <property name="column-spacing">4</property>
+                          </object>
+                        </property>
+                      </object>
+                    </property>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </property>
+      </object>
+    </child>
+  </object>
+</interface>

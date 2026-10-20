@@ -1,0 +1,78 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+
+set(colors_unit_SRC
+	cms/profile.cpp
+	cms/transform.cpp
+	cms/transform-color.cpp
+	color.cpp
+	manager.cpp
+	parser.cpp
+	printer.cpp
+	gradient-averager.cpp
+	spaces/base.cpp
+	spaces/cms.cpp
+	spaces/cmyk.cpp
+	spaces/components.cpp
+	spaces/gamut.cpp
+	spaces/hsl.cpp
+	spaces/hsluv.cpp
+	spaces/hsv.cpp
+	spaces/lab.cpp
+	spaces/lch.cpp
+	spaces/linear-rgb.cpp
+	spaces/luv.cpp
+	spaces/ok-color.cpp
+	spaces/oklab.cpp
+	spaces/oklch.cpp
+	spaces/named.cpp
+	spaces/rgb.cpp
+	spaces/xyz.cpp
+	utils.cpp
+
+	# -------
+	# Headers
+	cms/profile.h
+	cms/transform.h
+	cms/transform-color.h
+	cms/transform-surface.h
+	color.h
+	manager.h
+	parser.h
+	printer.h
+	gradient-averager.h
+	spaces/alpha.h
+	spaces/base.h
+	spaces/cms.h
+	spaces/cmyk.h
+	spaces/components.h
+	spaces/convert-static.h
+	spaces/enum.h
+	spaces/gamut.h
+	spaces/gray.h
+	spaces/hsl.h
+	spaces/hsluv.h
+	spaces/hsv.h
+	spaces/lab.h
+	spaces/lch.h
+	spaces/linear-rgb.h
+	spaces/luv.h
+	spaces/ok-color.h
+	spaces/okhsl.h
+	spaces/okhsv.h
+	spaces/oklab.h
+	spaces/oklch.h
+	spaces/named.h
+	spaces/rgb.h
+	spaces/xyz.h
+	utils.h
+)
+
+function(get_color_unit_lib)
+    list(TRANSFORM colors_unit_SRC PREPEND "colors/")
+    list(PREPEND colors_unit_SRC "util-string/string-convert.cpp")
+    list(TRANSFORM colors_unit_SRC PREPEND "${CMAKE_SOURCE_DIR}/src/")
+    add_library(colors_unit_lib SHARED "${colors_unit_SRC}")
+    pkg_check_modules(COLOR_UNIT_DEPS REQUIRED IMPORTED_TARGET lcms2 cairomm-1.16)
+    target_link_libraries(colors_unit_lib 2Geom::2geom GLibmm::GLibmm PkgConfig::COLOR_UNIT_DEPS)
+    make_target_unit_testable(colors_unit_lib)
+endfunction(get_color_unit_lib)

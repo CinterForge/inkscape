@@ -1,0 +1,26 @@
+
+
+This directory contains code for: rendering graphics on the canvas,
+"picking" objects on the canvas based on closeness to cursor, directing
+events (mouse button, key press, etc.) to the correct object.
+
+The code can be divided into two types: handling SVG elements
+(DrawingItem and derived classes) and handling controlled items
+(SPCanvasItem and derived structures/classes).
+
+Currently we rely on the "Cairo" graphics library for rendering.
+
+DrawingItem:
+
+  Item belonging to the drawing. These are rendered via the
+  CanvasArena canvas item.
+
+CanvasItem:
+
+  See README in control sub-directory.
+
+To do:
+
+* Split into three directories: drawing, control, common (partially done).
+* Rename control directory to canvas directory.
+* Remove SPCurve.

@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="join-type">
+<g id=".path-join-type">
+<path id="Subtract" opacity="0.35" d="M16 5H5V16H1V8C1 4.13401 4.13401 1 8 1H16V5Z" fill="black"/>
+<path id="Union" d="M16 9H9V16H7V7H16V9Z" fill="black"/>
+</g>
+</g>
+</svg>

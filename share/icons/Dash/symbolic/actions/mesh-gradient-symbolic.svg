@@ -1,0 +1,21 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="mesh-gradient">
+<g id=".paint-gradient-mesh">
+<g id="neutral">
+<rect id="neutral_2" opacity="0.3" x="2" y="2" width="12" height="1" fill="black"/>
+<rect id="neutral_3" opacity="0.2" x="2" y="3" width="12" height="1" fill="black"/>
+<rect id="neutral_4" opacity="0.11" x="2" y="4" width="12" height="1" fill="black"/>
+<rect id="neutral_5" opacity="0.3" x="14" y="2" width="12" height="1" transform="rotate(90 14 2)" fill="black"/>
+<rect id="neutral_6" opacity="0.2" x="13" y="2" width="12" height="1" transform="rotate(90 13 2)" fill="black"/>
+<rect id="neutral_7" opacity="0.11" x="12" y="2" width="12" height="1" transform="rotate(90 12 2)" fill="black"/>
+<rect id="neutral_8" opacity="0.3" x="14" y="14" width="12" height="1" transform="rotate(-180 14 14)" fill="black"/>
+<rect id="neutral_9" opacity="0.2" x="14" y="13" width="12" height="1" transform="rotate(-180 14 13)" fill="black"/>
+<rect id="neutral_10" opacity="0.11" x="14" y="12" width="12" height="1" transform="rotate(-180 14 12)" fill="black"/>
+<rect id="neutral_11" opacity="0.3" x="2" y="14" width="12" height="1" transform="rotate(-90 2 14)" fill="black"/>
+<rect id="neutral_12" opacity="0.2" x="3" y="14" width="12" height="1" transform="rotate(-90 3 14)" fill="black"/>
+<rect id="neutral_13" opacity="0.11" x="4" y="14" width="12" height="1" transform="rotate(-90 4 14)" fill="black"/>
+</g>
+<path id="Union" d="M15 15H1V1H15V15ZM10.5 8.5L8.5 10.5V14H14V8.5H10.5ZM2 14H7.5V10.5L5.5 8.5H2V14ZM6.5 8L8 9.5L9.5 8L8 6.5L6.5 8ZM2 7.5H5.5L7.5 5.5V2H2V7.5ZM8.5 5.5L10.5 7.5H14V2H8.5V5.5Z" fill="black"/>
+</g>
+</g>
+</svg>

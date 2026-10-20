@@ -1,0 +1,24 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="text_outer_style">
+<g id=".text-color" clip-path="url(#clip0_3684_42531)">
+<g id="Group 286">
+<path id="rectangle" opacity="0.25" d="M16 12.9375L12.9375 16H11.625L16 11.625V12.9375Z" fill="black"/>
+<path id="rectangle_2" opacity="0.2" d="M16 14.25L14.25 16H12.9375L16 12.9375V14.25Z" fill="black"/>
+<path id="rectangle_3" opacity="0.3" d="M16 11.625L11.625 16H10.3125L16 10.3125V11.625Z" fill="black"/>
+<path id="rectangle_4" opacity="0.4" d="M16 10.3125L10.3125 16H9L16 9V10.3125Z" fill="black"/>
+<path id="rectangle_5" opacity="0.5" d="M16 9L9 16V14.6875L14.6875 9H16Z" fill="black"/>
+<path id="rectangle_6" opacity="0.6" d="M14.6875 9L9 14.6875V13.375L13.375 9H14.6875Z" fill="black"/>
+<path id="rectangle_7" opacity="0.7" d="M13.375 9L9 13.375V12.0625L12.0625 9H13.375Z" fill="black"/>
+<path id="rectangle_8" opacity="0.8" d="M12.0625 9L9 12.0625V10.75L10.75 9H12.0625Z" fill="black"/>
+<path id="rectangle_9" opacity="0.9" d="M10.75 9L9 10.75L9 9L10.75 9Z" fill="black"/>
+<path id="rectangle_10" opacity="0.15" d="M14.25 16L16 14.25L16 16L14.25 16Z" fill="black"/>
+</g>
+<path id="Union" d="M11.001 9V1H1.00098V11H9V9H11.001ZM10 15H15V10H10V15ZM8.79883 9H7.48047L7.0498 7.67285H4.94922L4.51758 9H3.19922L5.20801 3.18164H6.79297L8.79883 9ZM5.26172 6.71289H6.73828L6.02344 4.51172H5.97754L5.26172 6.71289ZM16 16H9V12H0.000976562V0H12.001V9H16V16Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42531">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -1,0 +1,9 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="align-horizontal-right-to-anchor">
+<g id=".arrange-align-horizontal-anchor-right">
+<rect id="rectangle" opacity="0.3" y="12" width="12" height="4" fill="black"/>
+<path id="neutral" d="M12 16H0V12H12V16ZM1 15H11V13H1V15ZM12 10H6V6H12V10ZM7 9H11V7H7V9Z" fill="black"/>
+<path class="warning" opacity="0.5" d="M12 0H16V4H12V0Z" fill="black"/>
+</g>
+</g>
+</svg>

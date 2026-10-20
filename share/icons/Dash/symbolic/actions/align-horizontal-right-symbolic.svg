@@ -1,0 +1,9 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="align-horizontal-right">
+<g id=".arrange-align-horizontal-right">
+<rect class="warning" opacity="0.3" x="15" width="1" height="16" fill="black"/>
+<rect id="rectangle" opacity="0.3" x="1" y="9" width="12" height="4" fill="black"/>
+<path id="Union" d="M13 13H1V9H13V13ZM2 12H12V10H2V12ZM13 7H7V3H13V7ZM8 6H12V4H8V6Z" fill="black"/>
+</g>
+</g>
+</svg>

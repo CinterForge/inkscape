@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"></requires>
+  <object class="GtkAdjustment" id="_col_adj">
+    <property name="lower">1</property>
+    <property name="upper">20</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">1</property>
+  </object>
+  <object class="GtkAdjustment" id="_row_adj">
+    <property name="lower">1</property>
+    <property name="upper">20</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">1</property>
+  </object>
+  <object class="GtkBox" id="mesh-toolbar">
+    <property name="halign">start</property>
+    <property name="valign">center</property>
+    <property name="hexpand">True</property>
+    <child>
+      <object class="GtkLabel">
+        <property name="label" translatable="yes">&lt;b&gt;New:&lt;/b&gt;</property>
+        <property name="use-markup">True</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="new_type_buttons_box">
+        <property name="spacing">3</property>
+        <child>
+          <object class="GtkToggleButton" id="new_type_buttons_group">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Create mesh gradient</property>
+            <property name="has-frame">False</property>
+            <property name="icon-name">paint-gradient-mesh</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Create conical gradient</property>
+            <property name="has-frame">False</property>
+            <property name="group">new_type_buttons_group</property>
+            <property name="icon-name">paint-gradient-conical</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="new_fillstroke_buttons_box">
+        <property name="spacing">3</property>
+        <child>
+          <object class="GtkToggleButton" id="new_fillstroke_buttons_group">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Create gradient in the fill</property>
+            <property name="has-frame">False</property>
+            <property name="icon-name">object-fill</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Create gradient in the stroke</property>
+            <property name="has-frame">False</property>
+            <property name="group">new_fillstroke_buttons_group</property>
+            <property name="icon-name">object-stroke</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="row_box">
+        <property name="tooltip-text" translatable="yes">Number of rows in new mesh</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Rows</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_row_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_row_adj</property>
+            <property name="climb-rate">1</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="col_box">
+        <property name="tooltip-text" translatable="yes">Number of columns in new mesh</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Columns</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_col_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_col_adj</property>
+            <property name="climb-rate">0.10</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator"></object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_edit_fill_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Edit fill mesh</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">object-fill</property>
+        <style>
+          <class name="priority1"></class>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_edit_stroke_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Edit stroke mesh</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">object-stroke</property>
+        <style>
+          <class name="priority1"></class>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <style>
+          <class name="priority1"></class>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="show_handles_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Show handles</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">show-node-handles</property>
+        <style>
+          <class name="priority1"></class>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="toggle_sides_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Toggle selected sides between Beziers and lines.</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">node-segment-line</property>
+        <style>
+          <class name="priority1"></class>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="make_elliptical_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Make selected sides elliptical by changing length of handles. Works best if handles already approximate ellipse.</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">node-segment-curve</property>
+        <style>
+          <class name="priority1"></class>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="pick_colors_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Pick colors for selected corner nodes from underneath mesh.</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">color-picker</property>
+        <style>
+          <class name="priority1"></class>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="scale_mesh_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Scale mesh to fit inside bounding box.</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">mesh-gradient-fit</property>
+        <style>
+          <class name="priority1"></class>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <style>
+          <class name="priority1"></class>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="warning_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">WARNING: Mesh SVG Syntax Subject to Change</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">dialog-warning</property>
+        <style>
+          <class name="priority1"></class>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="select_type_box">
+        <property name="spacing">2</property>
+        <property name="margin-start">5</property>
+        <style>
+          <class name="priority1"></class>
+        </style>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Smoothing</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkDropDown" id="type-selector">
+            <property name="tooltip-text" translatable="yes" comments="TRANSLATORS: Type of Smoothing. See https://en.wikipedia.org/wiki/Coons_patch">Coons: no smoothing. Bicubic: smoothing across patch boundaries.</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <style>
+      <class name="inkscape-toolbar"></class>
+    </style>
+  </object>
+</interface>

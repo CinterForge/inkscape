@@ -1,0 +1,13 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="path-outset">
+<g id=".stroke-arrow-out" clip-path="url(#clip0_3684_42599)">
+<path id="Union" d="M0 8C4.41828 8 8 11.5817 8 16H7C7 12.134 3.86599 9 0 9V8ZM0 3C7.1797 3 13 8.8203 13 16H12C12 9.37258 6.62742 4 0 4V3ZM16 5H15V1.70801L11.001 5.70703L10.2939 5L14.2939 1H11V0H16V5Z" fill="black"/>
+<path id="Intersect" opacity="0.2" d="M0.000976562 3C7.18068 3 13.001 8.8203 13.001 16H8C8 11.5817 4.41828 8 0 8V3H0.000976562Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42599">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

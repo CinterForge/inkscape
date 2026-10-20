@@ -1,0 +1,19 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="zoom-fit-page">
+<g id=".frame-page-height" clip-path="url(#clip0_3684_42654)">
+<g id=".frame" clip-path="url(#clip1_3684_42654)">
+<path id="Union" opacity="0.5" d="M1 15H3.5V16H0V12.5H1V15ZM16 16H12.5V15H15V12.5H16V16ZM3.5 1H1V3.5H0V0H3.5V1ZM16 3.5H15V1H12.5V0H16V3.5Z" fill="black"/>
+</g>
+<path id="Union_2" d="M6.70703 5L6 5.70703L5.00391 4.71094L5 11.292L6 10.293L6.70703 11L4.5 13.207L2.29297 11L3 10.293L4 11.293L4.00391 4.70215L3 5.70703L2.29297 5L4.5 2.79297L6.70703 5Z" fill="black"/>
+<path id="Subtract" d="M13 5.00049V14.0005H7V13.0005H12V6.27295H9V3.00049H7V2.00049H10L13 5.00049ZM10 5.27295H11.8584L10 3.41455V5.27295Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42654">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+<clipPath id="clip1_3684_42654">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

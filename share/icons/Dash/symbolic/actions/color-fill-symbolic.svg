@@ -1,0 +1,14 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="color-fill">
+<g id=".bucket" clip-path="url(#clip0_3684_42800)">
+<path id="neutral" opacity="0.3" d="M9 14.5L3 8.5V7.5H14L15 8.5L9 14.5Z" fill="black"/>
+<path id="Union" d="M16.0002 8L9.00024 15L2.00024 8V7H13.5002L8.25024 1.75L9.00024 1L16.0002 8ZM3.50024 8L9.00024 13.5L14.5002 8H3.50024Z" fill="black"/>
+<path id="Vector 123" d="M1 13.6056V9L3.5547 12.8321C4.17249 13.7587 3.50819 15 2.39445 15C1.62432 15 1 14.3757 1 13.6056Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42800">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

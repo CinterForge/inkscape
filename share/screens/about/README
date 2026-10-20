@@ -1,0 +1,5 @@
+Note: Development build "aboutNN.svgz" files are present here. They <use> banner, so it is clear what they are.
+Replace them in a release branch only with about screen contest top entries of your choice.
+Winning entry should be named first: about00.svgz. Other entries may follow (aboutNN.svgz).
+They will be presented in "About Inkscape" dialog as a slide show, starting with about00.svgz.
+No extra processing is expected, just saving them as plain SVGZ compressed (to save space) is needed.

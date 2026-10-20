@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkWindow" id="about-screen-window">
+    <property name="name">about</property>
+    <property name="title" translatable="yes">Inkscape. Draw freely.</property>
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
+    <property name="icon-name">org.inkscape.Inkscape</property>
+    <property name="child">
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkNotebook" id="tabs">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="show-border">False</property>
+            <property name="enable-popup">True</property>
+            <property name="group-name">about_stack</property>
+            <child>
+              <object class="GtkNotebookPage">
+                <property name="child">
+                  <object class="GtkAspectFrame" id="aspect-frame">
+                    <property name="width-request">750</property>
+                    <property name="height-request">625</property>
+                    <property name="yalign">0</property>
+                    <property name="ratio">1.2000000476837158</property>
+                    <property name="child">
+                      <object class="GtkOverlay" id="overlay">
+                        <property name="child">
+                          <object class="GtkPicture" id="viewer1">
+                            <property name="width-request">725</property>
+                            <property name="height-request">625</property>
+                          </object>
+                        </property>
+                        <child type="overlay">
+                          <object class="GtkPicture" id="viewer2">
+                            <property name="width-request">750</property>
+                            <property name="height-request">625</property>
+                          </object>
+                        </child>
+                      </object>
+                    </property>
+                    <style>
+                      <class name="flat"/>
+                    </style>
+                  </object>
+                </property>
+                <property name="tab">
+                  <object class="GtkLabel" id="about-label">
+                    <property name="tooltip-text" translatable="yes">Official splash artwork of this version</property>
+                    <property name="hexpand">True</property>
+                    <property name="label" translatable="yes">About</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkNotebookPage">
+                <property name="position">1</property>
+                <property name="child">
+                  <object class="GtkBox" id="authors-box">
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkLabel" id="header-authors">
+                        <property name="margin-top">3</property>
+                        <property name="label" translatable="yes" context="Authors">&lt;big&gt;&lt;b&gt;Do you want to get involved with Inkscape? &lt;a href="https://inkscape.org/contribute/"&gt;Check this page!&lt;/a&gt;&lt;/b&gt;&lt;/big&gt;</property>
+                        <property name="use-markup">True</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkScrolledWindow" id="content-author">
+                        <property name="vexpand">True</property>
+                        <property name="focusable">True</property>
+                        <property name="child">
+                          <object class="GtkTextView" id="credits-authors">
+                            <property name="focusable">True</property>
+                            <property name="editable">False</property>
+                            <property name="justification">center</property>
+                            <property name="left-margin">10</property>
+                            <property name="right-margin">10</property>
+                            <property name="top-margin">10</property>
+                            <property name="bottom-margin">10</property>
+                            <property name="cursor-visible">False</property>
+                            <property name="accepts-tab">False</property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+                <property name="tab">
+                  <object class="GtkLabel" id="authors-label">
+                    <property name="tooltip-text" translatable="yes">List of authors who contributed to the code</property>
+                    <property name="hexpand">True</property>
+                    <property name="label" translatable="yes">Authors</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkNotebookPage">
+                <property name="position">2</property>
+                <property name="tab-fill">False</property>
+                <property name="child">
+                  <object class="GtkBox" id="translators-box">
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkLabel" id="header-translators">
+                        <property name="margin-top">3</property>
+                        <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;Do you want to contribute to translation activities? &lt;a href="https://inkscape.org/contribute/translations/"&gt;Join us here!&lt;/a&gt;&lt;/b&gt;&lt;/big&gt;</property>
+                        <property name="use-markup">True</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkScrolledWindow" id="content-translators">
+                        <property name="vexpand">True</property>
+                        <property name="focusable">True</property>
+                        <property name="child">
+                          <object class="GtkTextView" id="credits-translators">
+                            <property name="focusable">True</property>
+                            <property name="editable">False</property>
+                            <property name="justification">center</property>
+                            <property name="left-margin">10</property>
+                            <property name="right-margin">10</property>
+                            <property name="top-margin">10</property>
+                            <property name="bottom-margin">10</property>
+                            <property name="cursor-visible">False</property>
+                            <property name="accepts-tab">False</property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+                <property name="tab">
+                  <object class="GtkLabel" id="translators-label">
+                    <property name="tooltip-text" translatable="yes">List of translators</property>
+                    <property name="hexpand">True</property>
+                    <property name="label" translatable="yes">Translators</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkNotebookPage">
+                <property name="position">3</property>
+                <property name="tab-fill">False</property>
+                <property name="child">
+                  <object class="GtkBox" id="license-box">
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkLabel" id="header-license">
+                        <property name="focusable">True</property>
+                        <property name="margin-top">3</property>
+                        <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;See the full details about the Inkscape licenses &lt;a href="https://inkscape.org/about/license/"&gt;here&lt;/a&gt;!&lt;/b&gt;&lt;/big&gt;</property>
+                        <property name="use-markup">True</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkScrolledWindow">
+                        <property name="vexpand">True</property>
+                        <property name="child">
+                          <object class="GtkViewport">
+                            <property name="child">
+                              <object class="GtkLabel" id="license-text">
+                                <property name="margin-start">50</property>
+                                <property name="margin-end">50</property>
+                                <property name="margin-top">20</property>
+                                <property name="margin-bottom">20</property>
+                                <property name="label" translatable="yes">License file failed to load.</property>
+                                <property name="use-markup">True</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <property name="selectable">True</property>
+                                <property name="yalign">0</property>
+                              </object>
+                            </property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+                <property name="tab">
+                  <object class="GtkLabel" id="license-label">
+                    <property name="tooltip-text" translatable="yes">Inkscape license</property>
+                    <property name="hexpand">True</property>
+                    <property name="label" translatable="yes">License</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="dialog-footer">
+            <property name="vexpand">True</property>
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkBox" id="about-screen-footer">
+                <property name="margin-start">9</property>
+                <property name="margin-end">9</property>
+                <property name="margin-top">8</property>
+                <property name="margin-bottom">8</property>
+                <child>
+                  <object class="GtkLabel" id="copyright">
+                    <property name="halign">center</property>
+                    <property name="label" translatable="yes" context="Brief copyright notice at the footer of the About screen; the placeholder '%1' represents the year as a 4-digit number.">© %1 Inkscape Developers</property>
+                    <property name="wrap">True</property>
+                    <property name="wrap-mode">char</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLinkButton" id="website">
+                    <property name="halign">center</property>
+                    <property name="hexpand">True</property>
+                    <property name="label">www.inkscape.org</property>
+                    <property name="focusable">True</property>
+                    <property name="focus-on-click">False</property>
+                    <property name="receives-default">True</property>
+                    <property name="tooltip-text" translatable="yes">Link to the official website</property>
+                    <property name="margin-start">15</property>
+                    <property name="has-frame">False</property>
+                    <property name="uri">https://inkscape.org/?about-screen=1</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkGrid">
+                    <child>
+                      <object class="GtkRevealer">
+                        <property name="transition-type">slide-right</property>
+                        <property name="transition-duration">1000</property>
+                        <property name="child">
+                          <object class="GtkLabel" id="version-copied">
+                            <property name="label" translatable="yes">Version Copied!</property>
+                          </object>
+                        </property>
+                        <layout>
+                          <property name="column">0</property>
+                          <property name="row">0</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkRevealer">
+                        <property name="transition-type">slide-right</property>
+                        <property name="transition-duration">1000</property>
+                        <property name="child">
+                          <object class="GtkLabel" id="debug-info-copied">
+                            <property name="label" translatable="yes">Debug Info Copied!</property>
+                          </object>
+                        </property>
+                        <layout>
+                          <property name="column">0</property>
+                          <property name="row">0</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkRevealer">
+                        <property name="transition-type">crossfade</property>
+                        <property name="transition-duration">1000</property>
+                        <property name="reveal-child">True</property>
+                        <property name="child">
+                          <object class="GtkButton" id="version">
+                            <property name="focusable">True</property>
+                            <property name="receives-default">True</property>
+                            <property name="tooltip-text" translatable="yes">Click to copy the version number to the clipboard</property>
+                            <child>
+                              <object class="GtkBox">
+                                <child>
+                                  <object class="GtkImage" id="copy-icon">
+                                    <property name="margin-end">3</property>
+                                    <property name="icon-name">edit-copy</property>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkLabel" id="version-label">
+                                    <property name="label">$version</property>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                        </property>
+                        <layout>
+                          <property name="column">0</property>
+                          <property name="row">0</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="debug-info">
+                    <property name="focusable">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="tooltip-text" translatable="yes">Click to copy debug info to the clipboard</property>
+                    <property name="margin-start">4</property>
+                    <child>
+                      <object class="GtkImage" id="bug_icon">
+                        <property name="icon-name">bug</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <style>
+                  <class name="background-transition"/>
+                </style>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </property>
+  </object>
+</interface>

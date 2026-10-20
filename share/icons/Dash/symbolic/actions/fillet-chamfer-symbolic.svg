@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="fillet-chamfer">
+<g id=".corner-type-chamfer">
+<path id="Rectangle 675" opacity="0.2" d="M8 1H15V8C11.134 8 8 4.86599 8 1Z" fill="black"/>
+<path id="Union" d="M8 1C8 4.86599 11.134 8 15 8V15H1V1H8ZM2 14H14V8.93555C10.3815 8.48419 7.51581 5.61846 7.06445 2H2V14Z" fill="black"/>
+</g>
+</g>
+</svg>

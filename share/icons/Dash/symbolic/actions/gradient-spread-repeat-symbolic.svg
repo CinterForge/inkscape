@@ -1,0 +1,17 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="gradient-spread-repeat">
+<g id=".paint-gradient-linear-repeat">
+<path id="Union" d="M15 15H1V1H15V15ZM2 14H14V2H2V14Z" fill="black"/>
+<rect id="rectangle" opacity="0.56" x="2" y="2" width="1" height="12" fill="black"/>
+<rect id="rectangle_2" opacity="0.56" x="8" y="2" width="1" height="12" fill="black"/>
+<rect id="rectangle_3" opacity="0.42" x="3" y="2" width="1" height="12" fill="black"/>
+<rect id="rectangle_4" opacity="0.42" x="9" y="2" width="1" height="12" fill="black"/>
+<rect id="rectangle_5" opacity="0.3" x="4" y="2" width="1" height="12" fill="black"/>
+<rect id="rectangle_6" opacity="0.3" x="10" y="2" width="1" height="12" fill="black"/>
+<rect id="rectangle_7" opacity="0.18" x="5" y="2" width="1" height="12" fill="black"/>
+<rect id="rectangle_8" opacity="0.18" x="11" y="2" width="1" height="12" fill="black"/>
+<rect id="rectangle_9" opacity="0.06" x="6" y="2" width="1" height="12" fill="black"/>
+<rect id="rectangle_10" opacity="0.06" x="12" y="2" width="1" height="12" fill="black"/>
+</g>
+</g>
+</svg>

@@ -1,0 +1,14 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="layer-bottom">
+<g id=".layer-bottom" clip-path="url(#clip0_3684_42258)">
+<path id="Subtract" opacity="0.3" d="M11 11L3 15L-5 11L-2 9.5L3 12L8 9.5L11 11Z" fill="black"/>
+<path id="Union" d="M13.5 9.5V13.293L15 11.793L15.707 12.5L13 15.207L10.293 12.5L11 11.793L12.5 13.293V9.5H13.5Z" fill="black"/>
+<path id="Union_2" d="M11 5L8 6.5L11 8L8 9.5L11 11L3 15L-5 11L-2 9.5L-5 8L-2 6.5L-5 5L3 1L11 5ZM-2.51465 11L3 13.7568L8.51465 11L6.75684 10.1211L3 12L-0.757812 10.1211L-2.51465 11ZM3 9L-0.757812 7.12109L-2.51465 8L3 10.7568L8.51465 8L6.75684 7.12109L3 9ZM-2.76367 5L3 7.88184L8.76367 5L3 2.11816L-2.76367 5Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42258">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

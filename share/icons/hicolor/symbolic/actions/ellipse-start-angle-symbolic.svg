@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg width="16" height="16" viewBox="0 0 16 16" version="1.1" id="svg1" inkscape:version="1.5-dev (6a01648af5, 2025-01-17, custom)" sodipodi:docname="ellipse-start-angle-symbolic.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview id="namedview1" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#e6e6e6" inkscape:document-units="px" inkscape:zoom="45.83539" showgrid="false" inkscape:cx="13.701203" inkscape:cy="10.003188" inkscape:current-layer="layer1">
+    <inkscape:grid type="xygrid" id="grid1" units="px" originx="0" originy="0" spacingx="1" spacingy="1" empcolor="#0099e5" empopacity="0.30196078" color="#0099e5" opacity="0.14901961" empspacing="5" enabled="true" visible="false" />
+  </sodipodi:namedview>
+  <defs id="defs1" />
+  <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
+    <path style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#000000;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-opacity:1;opacity:1" d="M 8.609375,7.2070312 A 1,1 0 0 0 7.2070312,7.390625 1,1 0 0 0 7.390625,8.7929688 l 4.363281,3.3476562 a 1,1 0 0 0 1.402344,-0.183594 1,1 0 0 0 -0.183594,-1.402343 z" id="path2" />
+    <path style="baseline-shift:baseline;display:inline;overflow:visible;opacity:0.4;vector-effect:none;fill:#000000;fill-rule:evenodd;stroke-linejoin:round;enable-background:accumulate;stop-opacity:1" d="M 7.9785156,2 C 7.3581534,2.001977 6.7304133,2.1010076 6.1191406,2.3027344 3.6740501,3.1096413 2.0145758,5.3920436 2,7.9667969 1.985424,10.54155 3.6188892,12.841243 6.0546875,13.675781 c 2.435798,0.834539 5.1376425,0.01928 6.7050785,-2.023437 0.168265,-0.218976 0.127165,-0.532894 -0.0918,-0.701172 L 8.828125,8.0058594 12.701172,5.1015625 C 12.921436,4.9357921 12.965992,4.6230283 12.800782,4.4023437 11.642626,2.8570906 9.839602,1.9940689 7.9785156,2 Z M 9.498047,3.2285156 c 0.808661,0.25408 1.610856,0.7396158 2.20883,1.3790091 L 7.6992188,7.5996094 C 7.4343716,7.7984103 7.4324252,8.1950941 7.6953088,8.3964844 L 11.639854,11.416581 C 10.304461,12.81247 8.2379591,13.367406 6.3789062,12.730469 4.3457847,12.033893 2.9878334,10.121761 3,7.9726562 3.012166,5.8235512 4.3927159,3.9254654 6.4335937,3.2519531 7.4540327,2.915197 8.5222949,2.9219361 9.498047,3.2285156 Z" id="path3" sodipodi:nodetypes="sssscccccssccccssss" />
+  </g>
+</svg>

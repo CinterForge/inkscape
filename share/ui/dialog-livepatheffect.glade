@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkBox" id="LPEContainer">
+    <property name="name">LPEContainer</property>
+    <property name="width-request">250</property>
+    <property name="hexpand">True</property>
+    <property name="vexpand">True</property>
+    <property name="orientation">vertical</property>
+    <property name="baseline-position">top</property>
+    <child>
+      <object class="GtkBox" id="LPEAddContainer">
+        <property name="name">LPEAddContainer</property>
+        <property name="margin-start">5</property>
+        <property name="margin-end">5</property>
+        <property name="margin-start">5</property>
+        <property name="margin-end">5</property>
+        <property name="margin-bottom">5</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="LPECurrentItem">
+        <property name="name">LPECurrentItem</property>
+        <property name="orientation">vertical</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkLabel" id="LPESelectionInfo">
+        <property name="margin-start">5</property>
+        <property name="margin-end">5</property>
+        <property name="margin-start">5</property>
+        <property name="margin-end">5</property>
+        <property name="ellipsize">end</property>
+        <property name="width-chars">20</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkListBox" id="LPEListBox">
+        <property name="name">LPEListBox</property>
+        <property name="selection-mode">none</property>
+        <style>
+          <class name="lpelistbox"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkListBox" id="LPEParentBox">
+        <property name="name">LPEParentBox</property>
+        <property name="selection-mode">none</property>
+      </object>
+    </child>
+  </object>
+  <object class="GtkListStore" id="LPEList">
+    <columns>
+      <column type="gint"/>
+      <column type="gchararray"/>
+      <column type="gchararray"/>
+      <column type="gboolean"/>
+      <column type="gchararray"/>
+    </columns>
+  </object>
+</interface>

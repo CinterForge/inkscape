@@ -1,0 +1,23 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="zoom-fit-selection">
+<g id=".frame-selection" clip-path="url(#clip0_3684_42740)">
+<g id=".frame" clip-path="url(#clip1_3684_42740)">
+<path id="Union" opacity="0.5" d="M1 15H3.5V16H0V12.5H1V15ZM16 16H12.5V15H15V12.5H16V16ZM3.5 1H1V3.5H0V0H3.5V1ZM16 3.5H15V1H12.5V0H16V3.5Z" fill="black"/>
+</g>
+<g id="bounding-box-selection" opacity="0.9" clip-path="url(#clip2_3684_42740)">
+<path id="Union_2" d="M4 12H6V13H3V10H4V12ZM9 13H7V12H9V13ZM13 13H10V12H12V10H13V13ZM4 9H3V7H4V9ZM13 9H12V7H13V9ZM6 4H4V6H3V3H6V4ZM13 6H12V4H10V3H13V6ZM9 4H7V3H9V4Z" fill="black"/>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42740">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+<clipPath id="clip1_3684_42740">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+<clipPath id="clip2_3684_42740">
+<rect width="10" height="10" fill="white" transform="translate(3 3)"/>
+</clipPath>
+</defs>
+</svg>

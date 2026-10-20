@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkAdjustment" id="_fidelity_adj">
+    <property name="lower">1</property>
+    <property name="upper">100</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="_force_adj">
+    <property name="lower">1</property>
+    <property name="upper">100</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="_width_adj">
+    <property name="lower">1</property>
+    <property name="upper">100</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkBox" id="tweak-toolbar">
+    <property name="halign">start</property>
+    <property name="valign">center</property>
+    <property name="hexpand">True</property>
+    <child>
+      <object class="GtkLabel">
+        <property name="label" translatable="yes">Mode</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="mode_buttons_box">
+        <property name="name">mode_group_box</property>
+        <child>
+          <object class="GtkToggleButton" id="mode_move_btn">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Move objects in any direction</property>
+            <property name="has-frame">False</property>
+            <property name="active">True</property>
+            <property name="icon-name">object-tweak-push</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="mode_inout_btn">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Move objects towards cursor; with Shift from cursor</property>
+            <property name="has-frame">False</property>
+            <property name="group">mode_move_btn</property>
+            <property name="icon-name">object-tweak-attract</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="mode_jitter_btn">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Move objects in random directions</property>
+            <property name="has-frame">False</property>
+            <property name="group">mode_move_btn</property>
+            <property name="icon-name">object-tweak-randomize</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="mode_scale_btn">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Shrink objects, with Shift enlarge</property>
+            <property name="has-frame">False</property>
+            <property name="group">mode_move_btn</property>
+            <property name="icon-name">object-tweak-shrink</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="mode_rotate_btn">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Rotate objects, with Shift counterclockwise</property>
+            <property name="has-frame">False</property>
+            <property name="group">mode_move_btn</property>
+            <property name="icon-name">object-tweak-rotate</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="mode_dupdel_btn">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Duplicate objects, with Shift delete</property>
+            <property name="has-frame">False</property>
+            <property name="group">mode_move_btn</property>
+            <property name="icon-name">object-tweak-duplicate</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="mode_push_btn">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Push parts of paths in any direction</property>
+            <property name="has-frame">False</property>
+            <property name="group">mode_move_btn</property>
+            <property name="icon-name">path-tweak-push</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="mode_shrinkgrow_btn">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Shrink (inset) parts of paths; with Shift grow (outset)</property>
+            <property name="has-frame">False</property>
+            <property name="group">mode_move_btn</property>
+            <property name="icon-name">path-tweak-shrink</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="mode_attrep_btn">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Attract parts of paths towards cursor; with Shift from cursor</property>
+            <property name="has-frame">False</property>
+            <property name="group">mode_move_btn</property>
+            <property name="icon-name">path-tweak-attract</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="mode_roughen_btn">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Roughen parts of paths</property>
+            <property name="has-frame">False</property>
+            <property name="group">mode_move_btn</property>
+            <property name="icon-name">path-tweak-roughen</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="mode_colpaint_btn">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Paint the tool's color upon selected objects</property>
+            <property name="has-frame">False</property>
+            <property name="group">mode_move_btn</property>
+            <property name="icon-name">object-tweak-paint</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="mode_coljitter_btn">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Jitter the colors of selected objects</property>
+            <property name="has-frame">False</property>
+            <property name="group">mode_move_btn</property>
+            <property name="icon-name">object-tweak-jitter-color</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="mode_blur_btn">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Blur selected objects more; with Shift, blur less</property>
+            <property name="has-frame">False</property>
+            <property name="group">mode_move_btn</property>
+            <property name="icon-name">object-tweak-blur</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="width_box">
+        <property name="tooltip-text" translatable="yes">The width of the tweak area (relative to the visible canvas area)</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Width</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_width_item">
+            <property name="name">tweak-width</property>
+            <property name="focusable">True</property>
+            <property name="adjustment">_width_adj</property>
+            <property name="climb-rate">1</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="force_box">
+        <property name="tooltip-text" translatable="yes">The force of the tweak action</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Force</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_force_item">
+            <property name="name">tweak-force</property>
+            <property name="focusable">True</property>
+            <property name="adjustment">_force_adj</property>
+            <property name="climb-rate">1</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_pressure_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Use the pressure of the input device to alter the force of tweak action</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">draw-use-pressure</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="_fidelity_box">
+        <property name="tooltip-text" translatable="yes">Low fidelity simplifies paths; high fidelity preserves path features but may generate a lot of new nodes</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Fidelity</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_fidelity_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_fidelity_adj</property>
+            <property name="climb-rate">1</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="_channels_box">
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Channels:</property>
+            <property name="use-markup">True</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="_doh_btn">
+            <property name="valign">center</property>
+            <property name="label" translatable="yes" context="Hue">H</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">In color mode, act on object's hue</property>
+            <property name="has-frame">False</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="_dos_btn">
+            <property name="valign">center</property>
+            <property name="label" translatable="yes" context="Saturation">S</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">In color mode, act on object's saturation</property>
+            <property name="has-frame">False</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="_dol_btn">
+            <property name="valign">center</property>
+            <property name="label" translatable="yes" context="Lightness">L</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">In color mode, act on object's lightness</property>
+            <property name="has-frame">False</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="_doo_btn">
+            <property name="valign">center</property>
+            <property name="label" translatable="yes" context="Opacity">O</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">In color mode, act on object's opacity</property>
+            <property name="has-frame">False</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <style>
+      <class name="inkscape-toolbar"/>
+    </style>
+  </object>
+</interface>

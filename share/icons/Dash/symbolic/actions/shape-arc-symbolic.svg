@@ -1,0 +1,12 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="shape-arc">
+<g id=".arc" clip-path="url(#clip0_3684_42612)">
+<path id="Union" d="M8 4C12.3999 4 16 7.60013 16 12H15C15 8.15242 11.8476 5 8 5C4.15242 5 1 8.15242 1 12H0C0 7.60013 3.60013 4 8 4Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42612">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

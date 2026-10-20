@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="draw-freehand">
+<g id=".pencil">
+<path id="neutral" opacity="0.3" d="M12 0.5L10 2.5L13.5 6L15.5 4L12 0.5Z" fill="black"/>
+<path id="Union" d="M16 4L6 14L1 15L2 10L12 0L16 4ZM2.27441 13.7246L4.97656 13.1836L2.81445 11.0215L2.27441 13.7246ZM3.30957 10.1025L5.89551 12.6885L12.6885 5.89551L10.1025 3.30957L3.30957 10.1025ZM10.8096 2.60254L13.3955 5.18848L14.5859 4L12 1.41406L10.8096 2.60254Z" fill="black"/>
+</g>
+</g>
+</svg>

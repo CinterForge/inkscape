@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   viewBox="0 0 16 16"
+   fill="none"
+   version="1.1"
+   id="svg291"
+   sodipodi:docname="Dash-Inkscape-Icons13.svg"
+   inkscape:export-batch-name=""
+   inkscape:export-batch-path="/Users/hperticarati/Desktop/icon_export-2025-12-21"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <style
+     id="style219">.bbox { fill: none; fill-opacity: 0; opacity: 0; stroke: none; }
+.error { fill: url(#linearGradient885); }
+.success { fill: url(#linearGradient953); }
+.warning { fill: url(#linearGradient3); }
+</style>
+  <sodipodi:namedview
+     id="namedview291"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="false"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="false"
+     inkscape:deskcolor="#000000"
+     showgrid="true"
+     inkscape:zoom="2.3774947"
+     inkscape:cx="4266.8865"
+     inkscape:cy="2045.0098"
+     inkscape:window-width="1512"
+     inkscape:window-height="916"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Misc"
+     labelstyle="below"
+     showguides="false"
+     inkscape:clip-to-page="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid302"
+       units="px"
+       originx="-3272"
+       originy="-2180"
+       spacingx="1"
+       spacingy="1"
+       empcolor="#919191"
+       empopacity="0.10196078"
+       color="#919191"
+       opacity="0.05"
+       empspacing="4"
+       enabled="true"
+       visible="true" />
+    <inkscape:grid
+       type="xygrid"
+       id="grid389"
+       units="px"
+       originx="-3271.5"
+       originy="-2179.5"
+       spacingx="1"
+       spacingy="1"
+       empcolor="#c0c0c0"
+       empopacity="0.17012266"
+       color="#0099e5"
+       opacity="0.00499998"
+       empspacing="0"
+       enabled="false"
+       visible="true"
+       dotted="true"
+       snapvisiblegridlinesonly="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs291">
+    <linearGradient
+       id="swatch313"
+       inkscape:swatch="solid"
+       inkscape:label="dark-grey"
+       gradientTransform="translate(-1345.3414,267.61969)">
+      <stop
+         style="stop-color:#353841;stop-opacity:1;"
+         offset="0"
+         id="stop313" />
+    </linearGradient>
+    <linearGradient
+       id="swatch387"
+       inkscape:swatch="solid"
+       inkscape:label="white"
+       gradientTransform="matrix(1.2222222,0,0,1.2222222,-3347.7257,1748.8889)">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop387" />
+    </linearGradient>
+    <linearGradient
+       id="swatch5"
+       inkscape:swatch="solid"
+       inkscape:label="success"
+       gradientTransform="translate(5106,656.85076)">
+      <stop
+         style="stop-color:#04c8a5;stop-opacity:1;"
+         offset="0"
+         id="stop5" />
+    </linearGradient>
+    <linearGradient
+       id="swatch6"
+       inkscape:swatch="solid"
+       inkscape:label="warning"
+       gradientTransform="translate(5106,656.85076)">
+      <stop
+         style="stop-color:#0a8bff;stop-opacity:1;"
+         offset="0"
+         id="stop6" />
+    </linearGradient>
+    <linearGradient
+       id="swatch7"
+       inkscape:swatch="solid"
+       inkscape:label="error"
+       gradientTransform="translate(5106,764.85076)">
+      <stop
+         style="stop-color:#f73664;stop-opacity:1;"
+         offset="0"
+         id="stop7" />
+    </linearGradient>
+    <linearGradient
+       id="swatch127"
+       inkscape:swatch="solid"
+       inkscape:label="black"
+       gradientTransform="matrix(0.01811583,0,0,0.04150859,-726.29953,5004.41)">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop128" />
+    </linearGradient>
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="Misc"
+     inkscape:label="Icons - Misc"
+     inkscape:highlight-color="#309184"
+     style="display:inline"
+     transform="translate(-3272,-2180)">
+    <g
+       id="object-tweak-shrink-4"
+       transform="translate(2655,761)"
+       style="display:inline"
+       inkscape:label="color-invert">
+      <rect
+         id="rect5276-9"
+         width="16"
+         height="16"
+         x="452"
+         y="1604"
+         inkscape:label="bbox"
+         inkscape:tile-x0="272"
+         inkscape:tile-y0="308"
+         transform="translate(165,-185)"
+         class="bbox "
+         opacity="0" />
+      <path
+         style="display:inline;fill:url(#swatch127);fill-opacity:1;stroke:none;stroke-width:1"
+         id="path48"
+         inkscape:transform-center-x="-1.0290009"
+         inkscape:transform-center-y="-1.0253419"
+         sodipodi:type="arc"
+         sodipodi:cx="-625.00776"
+         sodipodi:cy="1427"
+         sodipodi:rx="7.0000001"
+         sodipodi:ry="7.0000001"
+         sodipodi:start="0.78539816"
+         sodipodi:end="3.9269908"
+         sodipodi:arc-type="slice"
+         d="m -620.05801,1431.9497 a 7.0000001,7.0000001 0 0 1 -9.8995,0 7.0000001,7.0000001 0 0 1 0,-9.8994 l 4.94975,4.9497 z"
+         transform="scale(-1,1)" />
+      <path
+         style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:url(#swatch127);enable-background:accumulate;stop-opacity:1"
+         d="m 625,1420 c -3.86006,0 -7,3.1399 -7,7 0,3.8601 3.13994,7 7,7 3.86006,0 7,-3.1399 7,-7 0,-3.8601 -3.13994,-7 -7,-7 z m 0,1 c 3.31963,0 6,2.6804 6,6 0,3.3196 -2.68037,6 -6,6 -3.31963,0 -6,-2.6804 -6,-6 0,-3.3196 2.68037,-6 6,-6 z"
+         id="circle48" />
+    </g>
+  </g>
+  <style
+     id="style219-9">
+.bbox { 
+    fill:none;
+    fill-opacity:0;
+    opacity:0;
+    stroke:none;
+}
+.error { fill: url(#linearGradient885); }
+.success { fill: url(#linearGradient953); }
+.warning { fill: url(#linearGradient3); }
+</style>
+</svg>

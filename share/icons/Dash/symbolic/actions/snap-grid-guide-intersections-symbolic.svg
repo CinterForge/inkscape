@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="snap-grid-guide-intersections">
+<g id=".snap-intersection">
+<path id="Union" opacity="0.7" d="M6 15H5V10H6V15ZM3 8H1V7H3V8ZM15 8H8V7H15V8ZM6 5H5V1H6V5Z" fill="black"/>
+<circle class="error" cx="5.5" cy="7.5" r="1.5" fill="#F73664"/>
+</g>
+</g>
+</svg>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkBox" id="contents">
+    <property name="name">TextEdit Dialog Box</property>
+    <property name="width-request">510</property>
+    <property name="focusable">False</property>
+    <property name="orientation">vertical</property>
+    <child>
+      <object class="GtkPaned" id="paned">
+        <property name="focusable">True</property>
+        <property name="vexpand">True</property>
+        <property name="wide-handle">True</property>
+        <property name="margin-top">4</property>
+        <property name="margin-bottom">4</property>
+        <property name="resize-start-child">False</property>
+        <property name="start-child">
+          <object class="GtkBox" id="font_list_box">
+            <property name="focusable">False</property>
+            <property name="orientation">vertical</property>
+            <property name="spacing">4</property>
+            <child>
+              <object class="GtkBox" id="font_list_filter_box">
+                <property name="focusable">False</property>
+                <property name="spacing">4</property>
+                <child>
+                  <object class="GtkSearchEntry" id="search_entry">
+                    <property name="focusable">True</property>
+                    <property name="tooltip-text" translatable="yes">Search fonts present in the font list</property>
+                    <property name="hexpand">False</property>
+                    <property name="halign">fill</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="reset_button">
+                    <property name="focusable">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="tooltip-text" translatable="yes">Reset the font list</property>
+                    <property name="icon-name">view-refresh</property>
+                    <property name="hexpand">False</property>
+                    <property name="halign">fill</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="font_count_label">
+                <property name="halign">start</property>
+                <property name="hexpand">False</property>
+              </object>
+            </child>
+          </object>
+        </property>
+        <property name="end-child">
+          <object class="GtkBox" id="collections_box">
+            <property name="margin-start">8</property>
+            <property name="orientation">vertical</property>
+            <property name="spacing">4</property>
+            <child>
+              <object class="GtkBox" id="buttons_box">
+                <property name="spacing">4</property>
+                <child>
+                  <object class="GtkButton" id="create_button">
+                    <property name="focusable">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="tooltip-text" translatable="yes">Create new collection</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="edit_button">
+                    <property name="focusable">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="tooltip-text" translatable="yes">Edit selected collection</property>
+                    <property name="margin-start">2</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="delete_button">
+                    <property name="focusable">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="tooltip-text" translatable="yes">Delete selected item</property>
+                    <property name="margin-start">2</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </property>
+      </object>
+    </child>
+  </object>
+</interface>

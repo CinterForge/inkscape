@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="distribute-graph-directed">
+<g id=".arrange-distribute-graph-directed">
+<path id="Union" opacity="0.3" d="M10 9H5V5H10V9ZM4 4H0V0H4V4ZM15 4H11V0H15V4Z" fill="black"/>
+<path id="Union_2" d="M4 3.29297L5.70703 5H9.29297L11 3.29297V0H15V4H11.707L10 5.70703V9H8V13.793L10 11.793L10.707 12.5L7.5 15.707L4.29297 12.5L5 11.793L7 13.793V9H5V5.70703L3.29297 4H0V0H4V3.29297ZM6 8H9V6H6V8ZM1 3H3V1H1V3ZM12 3H14V1H12V3Z" fill="black"/>
+</g>
+</g>
+</svg>

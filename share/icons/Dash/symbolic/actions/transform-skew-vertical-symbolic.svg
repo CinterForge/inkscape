@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="transform-skew-vertical">
+<g id=".transform-skew-vertical">
+<path id="Union" d="M2.78125 1.58691L13.7812 9.08691L14 9.23535V15.9463L13.2188 15.4131L2.21875 7.91309L2 7.76465V1.05371L2.78125 1.58691ZM3 7.23535L13 14.0537V9.76367L3 2.94531V7.23535ZM12 3.79297L13.5 2.29297L14.207 3L11.5 5.70703L8.79297 3L9.5 2.29297L11 3.79297V0H12V3.79297Z" fill="black"/>
+<path id="rectangle" opacity="0.2" d="M2.5 2L13.5 9.5V15L2.5 7.5L2.5 2Z" fill="black"/>
+</g>
+</g>
+</svg>

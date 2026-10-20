@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <placeholder width="268" height="204"></placeholder>
+  <requires lib="gtk" version="4.0"></requires>
+  <object class="GtkBox" id="main">
+    <property name="hexpand">true</property>
+    <property name="hexpand-set">true</property>
+    <property name="orientation">vertical</property>
+    <child>
+      <object class="GtkBox" id="header">
+        <property name="margin-bottom">2</property>
+        <property name="margin-top">4</property>
+        <property name="spacing">4</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="halign">start</property>
+            <property name="hexpand">true</property>
+            <property name="hexpand-set">true</property>
+            <property name="label" translatable="yes">Swatch fill</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkMenuButton">
+            <property name="popover">settings</property>
+            <property name="icon-name">gear</property>
+            <property name="has-frame">false</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkSearchEntry" id="search">
+            <property name="max-width-chars">10</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkScrolledWindow" id="scroll">
+        <property name="margin-bottom">4</property>
+        <property name="margin-top">2</property>
+        <property name="has-frame">true</property>
+        <property name="vexpand">true</property>
+        <property name="vexpand-set">true</property>
+        <property name="hscrollbar-policy">never</property>
+        <property name="height-request">100</property>
+        <property name="width-request">-1</property>
+        <property name="child">
+          <object class="GtkGridView" id="gridview">
+            <property name="max-columns">16</property>
+            <property name="min-columns">1</property>
+            <style>
+              <class name="grid-view-no-margins"></class>
+            </style>
+          </object>
+        </property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkWidget" id="separator"></object>
+    </child>
+    <child>
+      <object class="GtkGrid">
+        <property name="margin-bottom">6</property>
+        <property name="margin-top">4</property>
+        <property name="row-spacing">4</property>
+        <property name="column-spacing">8</property>
+        <child>
+          <object class="GtkBox" id="col-1">
+            <layout>
+              <property name="column">0</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="col-3">
+            <layout>
+              <property name="column">2</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkEntry" id="label">
+            <property name="max-width-chars">20</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="spacing">4</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">1</property>
+            </layout>
+            <child>
+              <object class="GtkButton" id="new-btn">
+                <property name="tooltip-text" translatable="yes">Add new swatch</property>
+                <property name="icon-name">plus</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="delete-btn">
+                <property name="hexpand">true</property>
+                <property name="hexpand-set">true</property>
+                <property name="halign">start</property>
+                <property name="tooltip-text" translatable="yes">Delete current swatch</property>
+                <property name="icon-name">minus</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="import-btn">
+                <property name="halign">end</property>
+                <property name="tooltip-text" translatable="yes">Import color palette into document</property>
+                <property name="icon-name">import</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="export-btn">
+                <property name="tooltip-text" translatable="yes">Export swatches to color palette</property>
+                <property name="icon-name">export</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="clean-btn">
+                <property name="tooltip-text" translatable="yes">Remove unused swatches</property>
+                <property name="icon-name">document-cleanup</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkPopover" id="settings">
+    <property name="child">
+      <object class="GtkGrid">
+        <property name="row-spacing">0</property>
+        <property name="column-spacing">4</property>
+        <child>
+          <object class="GtkCheckButton" id="show-labels">
+            <property name="halign">start</property>
+            <property name="label" translatable="yes" context="Swatch names">Show labels</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">-1</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="halign">start</property>
+            <property name="label" translatable="yes">Tile size</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkScale">
+            <property name="digits">0</property>
+            <property name="adjustment">tiles</property>
+            <property name="show-fill-level">true</property>
+            <property name="height-request">-1</property>
+            <property name="width-request">140</property>
+            <property name="value-pos">right</property>
+            <property name="draw-value">true</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <!--dim: 2, 2-->
+      </object>
+    </property>
+  </object>
+  <object class="GtkAdjustment" id="tiles">
+    <property name="page-increment">4.000000</property>
+    <property name="upper">32.000000</property>
+    <property name="lower">16.000000</property>
+  </object>
+</interface>

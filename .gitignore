@@ -1,0 +1,74 @@
+doxygen_warnings.log
+doxygen/
+gtest/
+build
+share/inkscape
+share/*/*.h
+src/3rdparty/cairo
+
+inkscape_devel_*.snap
+inkscape_devel_source.tar.bz2
+
+*.pyc
+*.old
+*.swp
+*~
+*.rej
+.vscode
+.nvim.lua
+*.kdev4
+.uuid
+.clangd/
+.cache
+compile_commands.json
+
+# Snap packaging specific rules
+/snap/.snapcraft/
+/parts/
+/stage/
+/prime/
+
+/*.snap
+/*_source.tar.bz2
+
+# CMake stuff
+CMakeFiles/
+Makefile
+cmake_install.cmake
+CMakeCache.txt
+CPackConfig.cmake
+CPackSourceConfig.cmake
+cmake_uninstall.cmake
+
+# Debian packaging
+/debian
+/obj-x86_64-linux-gnu
+/packaging/debian/.cpack
+/packaging/debian/.debhelper
+/packaging/debian/*.log
+/packaging/debian/*.substvars
+/packaging/debian/debhelper-build-stamp
+/packaging/debian/files
+/packaging/debian/inkscape*/
+/packaging/debian/lib*/
+/packaging/debian/tmp/
+
+
+# Translations
+po/*.gmo
+
+# Generated Man pages
+man/*.1
+man/*.pod
+man/*.tmp
+
+# Generated C files
+src/helper/sp-marshal.*
+
+# Ctags
+tags
+.DS_Store
+.idea
+
+# YCM code completer
+.ycm_*

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <placeholder width="620" height="12"></placeholder>
+  <requires lib="gtk" version="4.0"></requires>
+  <object class="GtkAdjustment" id="_offset_adj">
+    <property name="upper">1</property>
+    <property name="step-increment">0.01</property>
+    <property name="page-increment">0.10</property>
+  </object>
+  <object class="GtkBox" id="gradient-toolbar">
+    <property name="halign">start</property>
+    <property name="valign">center</property>
+    <property name="hexpand">True</property>
+    <child>
+      <object class="GtkLabel">
+        <property name="label" translatable="yes">&lt;b&gt;New:&lt;/b&gt;</property>
+        <property name="use-markup">True</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="new_type_buttons_box">
+        <property name="spacing">3</property>
+        <child>
+          <object class="GtkToggleButton" id="new_type_buttons_group">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Create linear gradient</property>
+            <property name="has-frame">False</property>
+            <property name="icon-name">paint-gradient-linear</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Create radial (elliptic or circular) gradient</property>
+            <property name="has-frame">False</property>
+            <property name="group">new_type_buttons_group</property>
+            <property name="icon-name">paint-gradient-radial</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="new_fillstroke_buttons_box">
+        <property name="spacing">3</property>
+        <child>
+          <object class="GtkToggleButton" id="new_fillstroke_buttons_group">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Create gradient in the fill</property>
+            <property name="has-frame">False</property>
+            <property name="icon-name">object-fill</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Create gradient in the stroke</property>
+            <property name="has-frame">False</property>
+            <property name="group">new_fillstroke_buttons_group</property>
+            <property name="icon-name">object-stroke</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator"></object>
+    </child>
+    <child>
+      <object class="GtkBox" id="select_box">
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Select</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkDropDown" id="gradient-list">
+            <property name="focus-on-click">false</property>
+            <property name="focusable">false</property>
+            <property name="can-focus">true</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_linked_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Link gradients to change all related gradients</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">object-unlocked</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="_stops_reverse_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Reverse the direction of the gradient</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">object-flip-horizontal</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="spread_box">
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Repeat</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkDropDown" id="spread-list">
+            <property name="focus-on-click">false</property>
+            <property name="focusable">false</property>
+            <property name="can-focus">true</property>
+            <property name="tooltip-text" translatable="yes" comments="TRANSLATORS: for info, see http://www.w3.org/TR/2000/CR-SVG-20000802/pservers.html#LinearGradientSpreadMethodAttribute">Whether to fill with flat color beyond the ends of the gradient vector (spreadMethod=&quot;pad&quot;), or repeat the gradient in the same direction (spreadMethod=&quot;repeat&quot;), or repeat the gradient in alternating opposite directions (spreadMethod=&quot;reflect&quot;)</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator"></object>
+    </child>
+    <child>
+      <object class="GtkBox" id="stop_box">
+        <style>
+          <class name="priority1"></class>
+        </style>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Stop</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkDropDown" id="stop-list">
+            <property name="focus-on-click">false</property>
+            <property name="focusable">false</property>
+            <property name="can-focus">true</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="offset_box">
+        <property name="tooltip-text" translatable="yes">Offset of selected stop</property>
+        <style>
+          <class name="priority1"></class>
+        </style>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Offset</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_offset_item">
+            <property name="focusable">True</property>
+            <property name="tooltip-text" translatable="yes">Width of selection</property>
+            <property name="adjustment">_offset_adj</property>
+            <property name="climb-rate">0.10</property>
+            <property name="digits">2</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="_stops_add_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Insert new stop</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">gradient-add-stop</property>
+        <style>
+          <class name="priority1"></class>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="_stops_delete_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Delete stop</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">gradient-remove-stop</property>
+        <style>
+          <class name="priority1"></class>
+        </style>
+      </object>
+    </child>
+    <style>
+      <class name="inkscape-toolbar"></class>
+    </style>
+  </object>
+</interface>

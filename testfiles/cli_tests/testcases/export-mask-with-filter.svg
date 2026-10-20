@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs id="defs1">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Blur"
+       id="filter1"
+       x="-0.1235933"
+       y="-0.1226977"
+       width="1.2471866"
+       height="1.2453954">
+       <feGaussianBlur
+         stdDeviation="0.5 0.5"
+         result="blur"
+         id="feGaussianBlur1" />
+    </filter>
+    <mask maskUnits="userSpaceOnUse" id="mask1">
+      <g>
+        <ellipse
+           style="fill:#ffffff;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.4;filter:url(#filter1)"
+           id="ellipse2"
+           cx="65.92141"
+           cy="189.50781"
+           rx="4.8546319"
+           ry="4.8900671" />
+      </g>
+    </mask>
+  </defs>
+  <rect
+     width="13.015991"
+     height="13.015991"
+     style="fill:red"
+     id="rect1"
+     x="59.467747"
+     y="181.51627"
+     mask="url(#mask1)"
+     transform="matrix(21.524572,0,0,21.524572,-1314.8414,-3891.5781)" />
+</svg>

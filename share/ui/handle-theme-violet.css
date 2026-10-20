@@ -1,0 +1,10 @@
+@import url("node-handles.css");
+
+*:selected,
+*:click {
+    fill: #bb61f3 !important;
+}
+
+*:hover {
+    fill: #cd89f7 !important;
+}

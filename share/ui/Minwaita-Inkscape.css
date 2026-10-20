@@ -1,0 +1,277 @@
+/* Minwaita-Inkscape SPECIFIC STYLE */
+
+/*
+ * Keep as small as possible
+ */
+
+/* Those tweaks will be applied on top the default Adwaita theme.
+ * This is an attempt to mirror Minwaita style sizes from gtk3.
+ *
+ * Min sizes used below vary, but they all aim to make widgets height
+ * visually uniform, such that they end up having similar height in the end.
+ */
+
+button { /* compact square button by default */
+    padding: 2px 2px;
+    min-height: 18px;
+    min-width: 18px;
+    border-radius: 2px;
+}
+button.text-button > label { /* margins for text in buttons */
+    margin: 0 4px;
+}
+button.text-button > box > label { /* margins for text in buttons with label and image in a box */
+    margin: 0 4px;
+}
+
+entry { /* some min height, so it doesn't collapse */
+    min-height: 22px;
+    border-radius: 2px;
+}
+
+spinbutton {    /* make it optically similar in size to buttons */
+    min-height: 24px;
+    border-radius: 2px;
+    padding: 0;
+}
+spinbutton button { /* don't let buttons inside inflate spinbox height */
+    padding-top: 0;
+    padding-bottom: 0;
+    border-radius: 0;
+}
+spinbutton text { /* don't let text inside inflate spinbox height */
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+notebook header tabs tab { /* limiting size of tabs in a notebook, to match Inkscape v1.4 */
+    min-height: 20px;
+    margin: 0;
+}
+notebook header tabs { /* ditto */
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+frame { /* rectangular frame to match older Inkscape style and stop cutting corners of its content */
+    border-radius: 0;
+}
+
+/* regular popovers */
+popover > contents {
+    /* baked-in padding, mimicking what's in Adwaita, so our popups use consistent padding */
+    padding: 6px;
+    border-radius: 5px;
+}
+
+/* those are comboboxes with text and their popup list */
+combobox > :not(popover) > entry {
+    /* remove rounding on the right */
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+combobox > :not(popover) > entry + button {
+    /* remove rounding on the left */
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding-left: 4px;
+}
+popover.menu {
+    margin-top: 1px;
+}
+popover.menu > contents {
+    padding: 1px 0;
+    border-radius: 0;
+}
+popover.menu modelbutton { /* this is selectable item in a combobox popup list */
+    border-radius: 0;
+    min-height: 25px;
+}
+popover.menu modelbutton:selected {
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+dropdown popover listview { /* DropDown widget's popup menu container */
+    margin: 0;
+}
+dropdown popover listview row {
+    margin: 0;
+    border-radius: 0;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+dropdown popover listview row:selected {
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+/* button breathing space, so they are not hugging window edge and get clipped by window's rounded corners */
+.dialog-action-area > button {
+    margin: 4px 4px 8px 4px;
+}
+.dialog-action-area > button:first-child {
+    margin-left: 8px;
+}
+.dialog-action-area > button:last-child {
+    margin-right: 8px;
+}
+
+/* scrollbar {
+  margin: -1px;
+} 
+
+filechooser #pathbarbox button {
+   color: #2e3436;
+   outline-color: rgba(46, 52, 54, 0.3);
+   border-color: #c4c4bf;
+   border-bottom-color: #a0a097;
+   background-image: linear-gradient(to bottom, #f5f5f4, #ebebe9 60%, #ddddd9);
+   text-shadow: 0 1px rgba(255, 255, 255, 0.769231);
+   -gtk-icon-shadow: 0 1px rgba(255, 255, 255, 0.769231);
+   box-shadow: inset 0 1px white;
+}
+
+filechooser #pathbarbox button:hover {
+   color: #2e3436;
+   outline-color: rgba(46, 52, 54, 0.3);
+   border-color: #c4c4bf;
+   border-bottom-color: #a0a097;
+   text-shadow: 0 1px rgba(255, 255, 255, 0.769231);
+   -gtk-icon-shadow: 0 1px rgba(255, 255, 255, 0.769231);
+   box-shadow: inset 0 1px white;
+   background-image: linear-gradient(to bottom, white, #f5f5f4 60%, #ebebe9);
+}
+
+filechooser #pathbarbox button:active {
+  color: #2e3436;
+  outline-color: rgba(46, 52, 54, 0.3);
+  border-color: #c4c4bf;
+  background-image: image(#e6e6e4);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0);
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+}
+
+filechooser #pathbarbox button:disabled {
+  border-color: #c4c4bf;
+  background-image: image(#f9f9f8);
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0);
+}
+
+filechooser #pathbarbox button:disabled label, filechooser #pathbarbox button:disabled {
+  color: #313739;
+}
+
+filechooser #pathbarbox button:backdrop {
+  border-color: #cecec9;
+  background-image: image(#f5f5f4);
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0);
+}
+
+filechooser #pathbarbox button:backdrop label, filechooser #pathbarbox button:backdrop {
+  color: #313739;
+}
+
+filechooser #pathbarbox button:backdrop:disabled {
+  border-color: #cecec9;
+  background-image: image(#f9f9f8);
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0);
+}
+
+filechooser #pathbarbox button:backdrop:disabled label, filechooser #pathbarbox button:backdrop:disabled {
+  color: #566164;
+}
+*/
+
+button.titlebutton {
+  color:inherit;
+  border-style: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: -gtk-scaled(url("assets/window-buttons/titlebutton.png"), url("assets/window-buttons/titlebutton@2.png"));
+  text-shadow: none;
+  -gtk-icon-shadow:none;
+}
+
+window.nautilus-desktop-window box.searchbar-container.vertical > searchbar, window.nautilus-desktop-window box.searchbar-container.vertical > searchbar:backdrop {
+  background-color: transparent;
+}
+
+viewport.frame > list.tweak-categories label:backdrop {
+  color: #313739;
+}
+
+/* .primary-toolbar button.raised {
+  margin: 0px;
+} */
+
+scrolledwindow undershoot.top,scrolledwindow undershoot.bottom,scrolledwindow undershoot.left,scrolledwindow undershoot.right {
+    background-image: none;
+}
+
+#AuxToolbox {
+  min-height:38px;
+}
+
+notebook notebook header label {
+    font-weight:normal;
+}
+
+/* notebook notebook header image {
+    -gtk-icon-transform:scale(0.75);
+    margin:-1px 0 -1px -3px;
+} */
+
+/* checked buttons: dark theme version */
+.dark button.radio:checked,
+.dark button.toggle:checked {
+    background-image: image(@theme_selected_bg_color);
+}
+
+/* scale part without border doesn't match with a spinbutton; add border */
+#InkSpinScale trough {
+    border: 1px solid alpha(@theme_fg_color, 0.15);
+}
+
+.dark #InkSpinScale trough {
+    border-color: alpha(black, 0.25);
+}
+
+#LPEEffectItem expander title label {
+  min-height:21px;
+}
+
+/*************
+ * Expanders *
+ *************/
+
+expander combobox arrow {
+  -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+expander combobox arrow:dir(rtl) {
+  -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+expander combobox arrow:checked {
+  -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+/* Smaller version of the switch widget */
+switch.small {
+    border-radius: 9px;
+    min-height: 14px;
+}
+switch.small slider {
+    min-height: 14px;
+    min-width: 14px;
+}

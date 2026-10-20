@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="object-stroke">
+<g id=".style-stroke-A">
+<path id="Union" d="M15 15H1V1H15V15ZM2 14H14V2H2V14ZM12 12H4V4H12V12ZM5 11H11V5H5V11Z" fill="black"/>
+<path id="Subtract" opacity="0.5" d="M15 15H1V1H15V15ZM4 4V12H12V4H4Z" fill="black"/>
+</g>
+</g>
+</svg>

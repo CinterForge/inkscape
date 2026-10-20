@@ -1,0 +1,1158 @@
+// SPDX-License-Identifier: GPL-2.0-or-later
+/**
+ * @file
+ * Bucket fill drawing context, works by bitmap filling an area on a rendered version
+ * of the current display and then tracing the result using potrace.
+ */
+/* Author:
+ *   Lauris Kaplinski <lauris@kaplinski.com>
+ *   bulia byak <buliabyak@users.sf.net>
+ *   John Bintz <jcoswell@coswellproductions.org>
+ *   Jon A. Cruz <jon@joncruz.org>
+ *   Abhishek Sharma
+ *
+ * Copyright (C) 2006      Johan Engelen <johan@shouraizou.nl>
+ * Copyright (C) 2000-2005 authors
+ * Copyright (C) 2000-2001 Ximian, Inc.
+ *
+ * Released under GNU GPL v2+, read the file 'COPYING' for more information.
+ */
+
+#include "flood-tool.h"
+
+#include <glibmm/i18n.h>
+
+#include "async/progress.h"
+#include "context-fns.h"
+#include "desktop-style.h"
+#include "document-undo.h"
+#include "layer-manager.h"
+#include "message-context.h"
+#include "rubberband.h"
+#include "selection.h"
+#include "page-manager.h"
+
+#include "display/cairo-utils.h"
+#include "display/drawing-context.h"
+#include "display/drawing.h"
+
+#include "livarot/Path.h"
+#include "livarot/Shape.h"
+
+#include "object/sp-path.h"
+#include "object/sp-root.h"
+
+#include "svg/svg.h"
+
+#include "trace/potrace/inkscape-potrace.h"
+
+#include "ui/icon-names.h"
+#include "ui/shape-editor.h"
+#include "ui/widget/canvas.h"  // Canvas area
+#include "ui/widget/events/canvas-event.h"
+
+using Inkscape::DocumentUndo;
+
+using Inkscape::Display::ExtractARGB32;
+using Inkscape::Display::ExtractRGB32;
+using Inkscape::Display::AssembleARGB32;
+
+using namespace Inkscape::Colors;
+
+namespace Inkscape::UI::Tools {
+
+// Must match PaintBucketChannels enum
+std::vector<char const *> const FloodTool::channel_list = {
+    N_("Visible Colors"),
+    N_("Red"),
+    N_("Green"),
+    N_("Blue"),
+    N_("Hue"),
+    N_("Saturation"),
+    N_("Lightness"),
+    N_("Alpha")
+};
+
+std::vector<char const *> const FloodTool::gap_list = {
+    NC_("Flood autogap", "None"),
+    NC_("Flood autogap", "Small"),
+    NC_("Flood autogap", "Medium"),
+    NC_("Flood autogap", "Large")
+};
+
+FloodTool::FloodTool(SPDesktop *desktop)
+    : ToolBase(desktop, "/tools/paintbucket", "flood.svg")
+    , mod_flood_item(Modifiers::Modifier::get(Modifiers::Type::FLOOD_ITEM))
+    , mod_flood_touch_fill(Modifiers::Modifier::get(Modifiers::Type::FLOOD_TOUCH_FILL))
+    , mod_select_add_to(Modifiers::Modifier::get(Modifiers::Type::SELECT_ADD_TO))
+{
+    // TODO: Why does the flood tool use a hardcoded tolerance instead of a pref?
+    tolerance = 4;
+
+    shape_editor = new ShapeEditor(desktop);
+
+    if (auto item = desktop->getSelection()->singleItem()) {
+        shape_editor->set_item(item);
+    }
+
+    sel_changed_connection = desktop->getSelection()->connectChanged(
+        sigc::mem_fun(*this, &FloodTool::selection_changed)
+    );
+
+    auto prefs = Preferences::get();
+    if (prefs->getBool("/tools/paintbucket/selcue")) {
+        enableSelectionCue();
+    }
+}
+
+FloodTool::~FloodTool()
+{
+    sel_changed_connection.disconnect();
+
+    delete shape_editor;
+    shape_editor = nullptr;
+
+    // Fixme: This is necessary because we do not grab.
+    if (item) {
+        finishItem();
+    }
+}
+
+/**
+ * Callback that processes the "changed" signal on the selection;
+ * destroys old and creates new knotholder.
+ */
+void FloodTool::selection_changed(Selection *selection)
+{
+    shape_editor->unset_item();
+    shape_editor->set_item(selection->singleItem());
+}
+
+inline static uint32_t compose_onto(uint32_t px, uint32_t bg)
+{
+    uint32_t ap = 0, rp = 0, gp = 0, bp = 0;
+    uint32_t rb = 0, gb = 0, bb = 0;
+    ExtractARGB32(px, ap, rp, gp, bp);
+    ExtractRGB32(bg, rb, gb, bb);
+
+    uint32_t ro = (255 - ap) * rb + 255 * rp; ro = (ro + 127) / 255;
+    uint32_t go = (255 - ap) * gb + 255 * gp; go = (go + 127) / 255;
+    uint32_t bo = (255 - ap) * bb + 255 * bp; bo = (bo + 127) / 255;
+
+    return AssembleARGB32(255, ro, go, bo);
+}
+
+/**
+ * Get the pointer to a pixel in a pixel buffer.
+ * @param px The pixel buffer.
+ * @param x The X coordinate.
+ * @param y The Y coordinate.
+ * @param stride The rowstride of the pixel buffer.
+ */
+inline uint32_t get_pixel(unsigned char *px, int x, int y, int stride)
+{
+    return *reinterpret_cast<uint32_t*>(px + y * stride + x * 4);
+}
+
+inline unsigned char *get_trace_pixel(unsigned char *trace_px, int x, int y, int width)
+{
+    return trace_px + (x + y * width);
+}
+
+/**
+ * \brief Check whether two unsigned integers are close to each other
+ *
+ * \param[in] a The 1st unsigned int
+ * \param[in] b The 2nd unsigned int
+ * \param[in] d The threshold for comparison
+ *
+ * \return true if |a-b| <= d; false otherwise
+ */
+static bool compare_uint32(uint32_t a, uint32_t b, uint32_t d)
+{
+    return std::abs(static_cast<int64_t>(a) - static_cast<int64_t>(b)) <= static_cast<int64_t>(d);
+}
+
+/**
+ * Compare a pixel in a pixel buffer with another pixel to determine if a point should be included in the fill operation.
+ * @param check The pixel in the pixel buffer to check.
+ * @param orig The original selected pixel to use as the fill target color.
+ * @param merged_orig_pixel The original pixel merged with the background.
+ * @param dtc The desktop background color.
+ * @param threshold The fill threshold.
+ * @param method The fill method to use as defined in PaintBucketChannels.
+ */
+static bool compare_pixels(uint32_t check, uint32_t orig, uint32_t merged_orig_pixel, uint32_t dtc, int threshold, PaintBucketChannels method)
+{
+    uint32_t ac = 0, rc = 0, gc = 0, bc = 0;
+    ExtractARGB32(check, ac, rc, gc, bc);
+
+    uint32_t ao = 0, ro = 0, go = 0, bo = 0;
+    ExtractARGB32(orig, ao, ro, go, bo);
+
+    uint32_t ad = 0, rd = 0, gd = 0, bd = 0;
+    ExtractARGB32(dtc, ad, rd, gd, bd);
+
+    uint32_t amop = 0, rmop = 0, gmop = 0, bmop = 0;
+    ExtractARGB32(merged_orig_pixel, amop, rmop, gmop, bmop);
+
+    auto hsl_orig = Color(Space::Type::HSL, {0, 0, 0});
+    auto hsl_check = hsl_orig;
+
+    if ((method == FLOOD_CHANNELS_H) ||
+        (method == FLOOD_CHANNELS_S) ||
+        (method == FLOOD_CHANNELS_L)) {
+        double dao = ao;
+        double dac = ac;
+        hsl_orig.set(Color(Space::Type::RGB, {ro / dao, go / dao, bo / dao}), true);
+        hsl_check.set(Color(Space::Type::RGB, {rc / dac, gc / dac, bc / dac}), true);
+    }
+    
+    switch (method) {
+        case FLOOD_CHANNELS_ALPHA:
+            return compare_uint32(ac, ao, threshold);
+        case FLOOD_CHANNELS_R:
+            return compare_uint32(ac ? unpremul_alpha(rc, ac) : 0,
+                                   ao ? unpremul_alpha(ro, ao) : 0,
+                                   threshold);
+        case FLOOD_CHANNELS_G:
+            return compare_uint32(ac ? unpremul_alpha(gc, ac) : 0,
+                                   ao ? unpremul_alpha(go, ao) : 0,
+                                   threshold);
+        case FLOOD_CHANNELS_B:
+            return compare_uint32(ac ? unpremul_alpha(bc, ac) : 0,
+                                   ao ? unpremul_alpha(bo, ao) : 0,
+                                   threshold);
+        case FLOOD_CHANNELS_RGB:
+            {
+                uint32_t amc, rmc, bmc, gmc;
+                //amc = 255*255 - (255-ac)*(255-ad); amc = (amc + 127) / 255;
+                //amc = (255-ac)*ad + 255*ac; amc = (amc + 127) / 255;
+                amc = 255; // Why are we looking at desktop? Cairo version ignores destop alpha
+                rmc = (255-ac)*rd + 255*rc; rmc = (rmc + 127) / 255;
+                gmc = (255-ac)*gd + 255*gc; gmc = (gmc + 127) / 255;
+                bmc = (255-ac)*bd + 255*bc; bmc = (bmc + 127) / 255;
+
+                int diff = 0; // The total difference between each of the 3 color components
+                diff += std::abs(static_cast<int>(amc ? unpremul_alpha(rmc, amc) : 0) - static_cast<int>(amop ? unpremul_alpha(rmop, amop) : 0));
+                diff += std::abs(static_cast<int>(amc ? unpremul_alpha(gmc, amc) : 0) - static_cast<int>(amop ? unpremul_alpha(gmop, amop) : 0));
+                diff += std::abs(static_cast<int>(amc ? unpremul_alpha(bmc, amc) : 0) - static_cast<int>(amop ? unpremul_alpha(bmop, amop) : 0));
+                return ((diff / 3) <= ((threshold * 3) / 4));
+            }
+        case FLOOD_CHANNELS_H:
+            return ((int)(fabs(hsl_check[0] - hsl_orig[0]) * 100.0) <= threshold);
+        case FLOOD_CHANNELS_S:
+            return ((int)(fabs(hsl_check[1] - hsl_orig[1]) * 100.0) <= threshold);
+        case FLOOD_CHANNELS_L:
+            return ((int)(fabs(hsl_check[2] - hsl_orig[2]) * 100.0) <= threshold);
+    }
+    
+    return false;
+}
+
+static constexpr unsigned char PIXEL_CHECKED = 1;
+static constexpr unsigned char PIXEL_QUEUED  = 2;
+static constexpr unsigned char PIXEL_PAINTABLE = 4;
+static constexpr unsigned char PIXEL_NOT_PAINTABLE = 8;
+static constexpr unsigned char PIXEL_COLORED = 16;
+
+static inline bool is_pixel_checked(unsigned char *t) { return (*t & PIXEL_CHECKED) == PIXEL_CHECKED; }
+static inline bool is_pixel_queued(unsigned char *t) { return (*t & PIXEL_QUEUED) == PIXEL_QUEUED; }
+static inline bool is_pixel_paintability_checked(unsigned char *t) {
+  return !((*t & PIXEL_PAINTABLE) == 0) && ((*t & PIXEL_NOT_PAINTABLE) == 0);
+}
+static inline bool is_pixel_paintable(unsigned char *t) { return (*t & PIXEL_PAINTABLE) == PIXEL_PAINTABLE; }
+static inline bool is_pixel_colored(unsigned char *t) { return (*t & PIXEL_COLORED) == PIXEL_COLORED; }
+
+static inline void mark_pixel_checked(unsigned char *t) { *t |= PIXEL_CHECKED; }
+static inline void mark_pixel_queued(unsigned char *t) { *t |= PIXEL_QUEUED; }
+static inline void mark_pixel_paintable(unsigned char *t) { *t |= PIXEL_PAINTABLE; *t ^= PIXEL_NOT_PAINTABLE; }
+static inline void mark_pixel_not_paintable(unsigned char *t) { *t |= PIXEL_NOT_PAINTABLE; *t ^= PIXEL_PAINTABLE; }
+static inline void mark_pixel_colored(unsigned char *t) { *t |= PIXEL_COLORED; }
+
+static inline void clear_pixel_paintability(unsigned char *t) { *t ^= PIXEL_PAINTABLE; *t ^= PIXEL_NOT_PAINTABLE; }
+
+struct BitmapCoordsInfo
+{
+    bool is_left;
+    unsigned int x;
+    unsigned int y;
+    int y_limit;
+    unsigned int width;
+    unsigned int height;
+    unsigned int stride;
+    unsigned int threshold;
+    unsigned int radius;
+    PaintBucketChannels method;
+    uint32_t dtc;
+    uint32_t merged_orig_pixel;
+    Geom::Rect bbox;
+    Geom::Rect screen;
+    unsigned int max_queue_size;
+    unsigned int current_step;
+};
+
+/**
+ * Check if a pixel can be included in the fill.
+ * @param px The rendered pixel buffer to check.
+ * @param trace_t The pixel in the trace pixel buffer to check or mark.
+ * @param x The X coordinate.
+ * @param y The y coordinate.
+ * @param orig_color The original selected pixel to use as the fill target color.
+ * @param bci The bitmap_coords_info structure.
+ */
+inline static bool check_if_pixel_is_paintable(unsigned char *px, unsigned char *trace_t, int x, int y, uint32_t orig_color, BitmapCoordsInfo const &bci)
+{
+    if (is_pixel_paintability_checked(trace_t)) {
+        return is_pixel_paintable(trace_t);
+    } else {
+        uint32_t pixel = get_pixel(px, x, y, bci.stride);
+        if (compare_pixels(pixel, orig_color, bci.merged_orig_pixel, bci.dtc, bci.threshold, bci.method)) {
+            mark_pixel_paintable(trace_t);
+            return true;
+        } else {
+            mark_pixel_not_paintable(trace_t);
+            return false;
+        }
+    }
+}
+
+/**
+ * Perform the bitmap-to-vector tracing and place the traced path onto the document.
+ * @param px The trace pixel buffer to trace to SVG.
+ * @param desktop The desktop on which to place the final SVG path.
+ * @param transform The transform to apply to the final SVG path.
+ * @param union_with_selection If true, merge the final SVG path with the current selection.
+ */
+static void do_trace(BitmapCoordsInfo const &bci, unsigned char *trace_px, SPDesktop *desktop, Geom::Affine const &transform, unsigned min_x, unsigned max_x, unsigned min_y, unsigned max_y, bool union_with_selection)
+{
+    SPDocument *document = desktop->getDocument();
+
+    unsigned char *trace_t;
+
+    auto gray_map = Trace::GrayMap(max_x - min_x + 1, max_y - min_y + 1);
+    unsigned gray_map_y = 0;
+    for (unsigned y = min_y; y <= max_y; y++) {
+        auto gray_map_t = gray_map.row(gray_map_y);
+
+        trace_t = get_trace_pixel(trace_px, min_x, y, bci.width);
+        for (unsigned x = min_x; x <= max_x; x++) {
+            *gray_map_t = is_pixel_colored(trace_t) ? Trace::GrayMap::BLACK : Trace::GrayMap::WHITE;
+            gray_map_t++;
+            trace_t++;
+        }
+        gray_map_y++;
+    }
+
+    Trace::Potrace::PotraceTracingEngine pte;
+    auto progress = Async::ProgressAlways<double>();
+    auto results = pte.traceGrayMap(gray_map, progress);
+
+    // XML Tree being used here directly while it shouldn't be...."
+    Inkscape::XML::Document *xml_doc = desktop->doc()->getReprDoc();
+
+    Inkscape::Preferences *prefs = Inkscape::Preferences::get();
+    double offset = prefs->getDouble("/tools/paintbucket/offset", 0.0);
+
+    for (auto result : results) {
+
+        Inkscape::XML::Node *pathRepr = xml_doc->createElement("svg:path");
+        /* Set style */
+        desktop->applyCurrentOrToolStyle(pathRepr, "/tools/paintbucket", false);
+
+        Path path;
+        path.LoadPathVector(result.path);
+
+        if (offset != 0) {
+            Shape path_shape;
+            path.ConvertWithBackData(0.03);
+            path.Fill(&path_shape, 0);
+
+            Shape expanded_path_shape;
+            expanded_path_shape.ConvertToShape(&path_shape, fill_nonZero);
+            path_shape.MakeOffset(&expanded_path_shape, offset * desktop->current_zoom(), join_round, 4);
+            expanded_path_shape.ConvertToShape(&path_shape, fill_positive);
+
+            Path expanded_path;
+            expanded_path_shape.ConvertToForme(&expanded_path);
+            expanded_path.ConvertEvenLines(1.0);
+            expanded_path.Simplify(1.0);
+        
+            auto str = expanded_path.svg_dump_path();
+            if (!str.empty()) {
+                pathRepr->setAttribute("d", str.c_str());
+            } else {
+                desktop->messageStack()->flash(Inkscape::WARNING_MESSAGE, _("<b>Too much inset</b>, the result is empty."));
+                Inkscape::GC::release(pathRepr);
+                return;
+            }
+        } else {
+            pathRepr->setAttribute("d", path.svg_dump_path().c_str());
+        }
+
+        auto layer = desktop->layerManager().currentLayer();
+        layer->addChild(pathRepr, nullptr);
+
+        SPObject *reprobj = document->getObjectByRepr(pathRepr);
+        if (reprobj) {
+            cast<SPItem>(reprobj)->doWriteTransform(transform);
+            
+            // premultiply the item transform by the accumulated parent transform in the paste layer
+            Geom::Affine local (layer->i2doc_affine());
+            if (!local.isIdentity()) {
+                gchar const *t_str = pathRepr->attribute("transform");
+                Geom::Affine item_t (Geom::identity());
+                if (t_str)
+                    sp_svg_transform_read(t_str, &item_t);
+                item_t *= local.inverse();
+                // (we're dealing with unattached repr, so we write to its attr instead of using sp_item_set_transform)
+                pathRepr->setAttributeOrRemoveIfEmpty("transform", sp_svg_transform_write(item_t));
+            }
+
+            Inkscape::Selection *selection = desktop->getSelection();
+
+            pathRepr->setPosition(-1);
+
+            if (union_with_selection) {
+                desktop->messageStack()->flashF( Inkscape::WARNING_MESSAGE,
+                    ngettext("Area filled, path with <b>%d</b> node created and unioned with selection.","Area filled, path with <b>%d</b> nodes created and unioned with selection.",
+                    cast<SPPath>(reprobj)->nodesInPath()), cast<SPPath>(reprobj)->nodesInPath() );
+                selection->add(reprobj);
+                selection->pathUnion(true);
+            } else {
+                desktop->messageStack()->flashF( Inkscape::WARNING_MESSAGE,
+                    ngettext("Area filled, path with <b>%d</b> node created.","Area filled, path with <b>%d</b> nodes created.",
+                    cast<SPPath>(reprobj)->nodesInPath()), cast<SPPath>(reprobj)->nodesInPath() );
+                selection->set(reprobj);
+            }
+
+        }
+
+        Inkscape::GC::release(pathRepr);
+
+    }
+}
+
+/**
+ * The possible return states of perform_bitmap_scanline_check().
+ */
+enum class ScanlineCheckResult
+{
+    OK,
+    ABORTED,
+    BOUNDARY
+};
+
+/**
+ * Determine if the provided coordinates are within the pixel buffer limits.
+ * @param x The X coordinate.
+ * @param y The Y coordinate.
+ * @param bci The bitmap_coords_info structure.
+ */
+inline static bool coords_in_range(unsigned x, unsigned y, BitmapCoordsInfo const &bci)
+{
+    return x < bci.width && y < bci.height;
+}
+
+static constexpr int PAINT_DIRECTION_LEFT = 1;
+static constexpr int PAINT_DIRECTION_RIGHT = 2;
+static constexpr int PAINT_DIRECTION_UP = 4;
+static constexpr int PAINT_DIRECTION_DOWN = 8;
+static constexpr int PAINT_DIRECTION_ALL = 15;
+
+/**
+ * Paint a pixel or a square (if autogap is enabled) on the trace pixel buffer.
+ * @param px The rendered pixel buffer to check.
+ * @param trace_px The trace pixel buffer.
+ * @param orig_color The original selected pixel to use as the fill target color.
+ * @param bci The bitmap_coords_info structure.
+ * @param original_point_trace_t The original pixel in the trace pixel buffer to check.
+ */
+inline static unsigned paint_pixel(unsigned char *px, unsigned char *trace_px, uint32_t orig_color, BitmapCoordsInfo const &bci, unsigned char *original_point_trace_t)
+{
+    if (bci.radius == 0) {
+        mark_pixel_colored(original_point_trace_t); 
+        return PAINT_DIRECTION_ALL;
+    } else {
+        unsigned char *trace_t;
+  
+        bool can_paint_up = true;
+        bool can_paint_down = true;
+        bool can_paint_left = true;
+        bool can_paint_right = true;
+      
+        for (unsigned int ty = bci.y - bci.radius; ty <= bci.y + bci.radius; ty++) {
+            for (unsigned int tx = bci.x - bci.radius; tx <= bci.x + bci.radius; tx++) {
+                if (coords_in_range(tx, ty, bci)) {
+                    trace_t = get_trace_pixel(trace_px, tx, ty, bci.width);
+                    if (!is_pixel_colored(trace_t)) {
+                        if (check_if_pixel_is_paintable(px, trace_t, tx, ty, orig_color, bci)) {
+                            mark_pixel_colored(trace_t); 
+                        } else {
+                            if (tx < bci.x) { can_paint_left = false; }
+                            if (tx > bci.x) { can_paint_right = false; }
+                            if (ty < bci.y) { can_paint_up = false; }
+                            if (ty > bci.y) { can_paint_down = false; }
+                        }
+                    }
+                }
+            }
+        }
+    
+        unsigned int paint_directions = 0;
+        if (can_paint_left) { paint_directions += PAINT_DIRECTION_LEFT; }
+        if (can_paint_right) { paint_directions += PAINT_DIRECTION_RIGHT; }
+        if (can_paint_up) { paint_directions += PAINT_DIRECTION_UP; }
+        if (can_paint_down) { paint_directions += PAINT_DIRECTION_DOWN; }
+        
+        return paint_directions;
+    }
+}
+
+/**
+ * Push a point to be checked onto the bottom of the rendered pixel buffer check queue.
+ * @param fill_queue The fill queue to add the point to.
+ * @param max_queue_size The maximum size of the fill queue.
+ * @param trace_t The trace pixel buffer pixel.
+ * @param x The X coordinate.
+ * @param y The Y coordinate.
+ */
+static void push_point_onto_queue(std::deque<Geom::Point> &fill_queue, unsigned max_queue_size, unsigned char *trace_t, unsigned x, unsigned y)
+{
+    if (!is_pixel_queued(trace_t) && fill_queue.size() < max_queue_size) {
+        fill_queue.emplace_back(x, y);
+        mark_pixel_queued(trace_t);
+    }
+}
+
+/**
+ * Shift a point to be checked onto the top of the rendered pixel buffer check queue.
+ * @param fill_queue The fill queue to add the point to.
+ * @param max_queue_size The maximum size of the fill queue.
+ * @param trace_t The trace pixel buffer pixel.
+ * @param x The X coordinate.
+ * @param y The Y coordinate.
+ */
+static void shift_point_onto_queue(std::deque<Geom::Point> &fill_queue, unsigned max_queue_size, unsigned char *trace_t, unsigned x, unsigned y)
+{
+    if (!is_pixel_queued(trace_t) && fill_queue.size() < max_queue_size) {
+        fill_queue.emplace_front(x, y);
+        mark_pixel_queued(trace_t);
+    }
+}
+
+/**
+ * Scan a row in the rendered pixel buffer and add points to the fill queue as necessary.
+ * @param fill_queue The fill queue to add the point to.
+ * @param px The rendered pixel buffer.
+ * @param trace_px The trace pixel buffer.
+ * @param orig_color The original selected pixel to use as the fill target color.
+ * @param bci The bitmap_coords_info structure.
+ */
+static ScanlineCheckResult perform_bitmap_scanline_check(std::deque<Geom::Point> &fill_queue, unsigned char *px, unsigned char *trace_px, uint32_t orig_color, BitmapCoordsInfo bci, unsigned *min_x, unsigned *max_x)
+{
+    bool aborted = false;
+    bool reached_screen_boundary = false;
+    bool ok;
+
+    bool keep_tracing;
+    bool initial_paint = true;
+
+    unsigned char *current_trace_t = get_trace_pixel(trace_px, bci.x, bci.y, bci.width);
+    unsigned int paint_directions;
+
+    bool currently_painting_top = false;
+    bool currently_painting_bottom = false;
+
+    unsigned int top_ty = (bci.y > 0) ? bci.y - 1 : 0;
+    unsigned int bottom_ty = bci.y + 1;
+
+    bool can_paint_top = (top_ty > 0);
+    bool can_paint_bottom = (bottom_ty < bci.height);
+
+    Geom::Point front_of_queue = fill_queue.empty() ? Geom::Point() : fill_queue.front();
+
+    do {
+        ok = false;
+        if (bci.is_left) {
+            keep_tracing = bci.x != 0;
+        } else {
+            keep_tracing = bci.x < bci.width;
+        }
+
+        *min_x = std::min(*min_x, bci.x);
+        *max_x = std::max(*max_x, bci.x);
+
+        if (keep_tracing) {
+            if (check_if_pixel_is_paintable(px, current_trace_t, bci.x, bci.y, orig_color, bci)) {
+                paint_directions = paint_pixel(px, trace_px, orig_color, bci, current_trace_t);
+                if (bci.radius == 0) {
+                    mark_pixel_checked(current_trace_t);
+                    if (!fill_queue.empty() && front_of_queue == Geom::IntPoint(bci.x, bci.y)) {
+                        fill_queue.pop_front();
+                        front_of_queue = fill_queue.empty() ? Geom::Point() : fill_queue.front();
+                    }
+                }
+
+                if (can_paint_top) {
+                    if (paint_directions & PAINT_DIRECTION_UP) { 
+                        unsigned char *trace_t = current_trace_t - bci.width;
+                        if (!is_pixel_queued(trace_t)) {
+                            bool ok_to_paint = check_if_pixel_is_paintable(px, trace_t, bci.x, top_ty, orig_color, bci);
+
+                            if (initial_paint) { currently_painting_top = !ok_to_paint; }
+
+                            if (ok_to_paint && (!currently_painting_top)) {
+                                currently_painting_top = true;
+                                push_point_onto_queue(fill_queue, bci.max_queue_size, trace_t, bci.x, top_ty);
+                            }
+                            if ((!ok_to_paint) && currently_painting_top) {
+                                currently_painting_top = false;
+                            }
+                        }
+                    }
+                }
+
+                if (can_paint_bottom) {
+                    if (paint_directions & PAINT_DIRECTION_DOWN) { 
+                        unsigned char *trace_t = current_trace_t + bci.width;
+                        if (!is_pixel_queued(trace_t)) {
+                            bool ok_to_paint = check_if_pixel_is_paintable(px, trace_t, bci.x, bottom_ty, orig_color, bci);
+
+                            if (initial_paint) { currently_painting_bottom = !ok_to_paint; }
+
+                            if (ok_to_paint && (!currently_painting_bottom)) {
+                                currently_painting_bottom = true;
+                                push_point_onto_queue(fill_queue, bci.max_queue_size, trace_t, bci.x, bottom_ty);
+                            }
+                            if ((!ok_to_paint) && currently_painting_bottom) {
+                                currently_painting_bottom = false;
+                            }
+                        }
+                    }
+                }
+
+                if (bci.is_left) {
+                    if (paint_directions & PAINT_DIRECTION_LEFT) {
+                        bci.x--; current_trace_t--;
+                        ok = true;
+                    }
+                } else {
+                    if (paint_directions & PAINT_DIRECTION_RIGHT) {
+                        bci.x++; current_trace_t++;
+                        ok = true;
+                    }
+                }
+
+                initial_paint = false;
+            }
+        } else {
+            if (bci.bbox.min()[Geom::X] > bci.screen.min()[Geom::X]) {
+                aborted = true; break;
+            } else {
+                reached_screen_boundary = true;
+            }
+        }
+    } while (ok);
+
+    if (aborted) { return ScanlineCheckResult::ABORTED; }
+    if (reached_screen_boundary) { return ScanlineCheckResult::BOUNDARY; }
+    return ScanlineCheckResult::OK;
+}
+
+/**
+ * Sort the rendered pixel buffer check queue vertically.
+ */
+static bool sort_fill_queue_vertical(Geom::Point const &a, Geom::Point const &b)
+{
+    return a.y() > b.y();
+}
+
+/**
+ * Sort the rendered pixel buffer check queue horizontally.
+ */
+static bool sort_fill_queue_horizontal(Geom::Point const &a, Geom::Point const &b)
+{
+    return a.x() > b.x();
+}
+
+/**
+ * Perform a flood fill operation.
+ * @param desktop The desktop of this tool's event context.
+ * @param cursor_pos The location of the mouse cursor.
+ * @param union_with_selection If true, union the new fill with the current selection.
+ * @param is_point_fill If false, use the Rubberband "touch selection" to get the initial points for the fill.
+ * @param is_touch_fill If true, use only the initial contact point in the Rubberband "touch selection" as the fill target color.
+ */
+static void sp_flood_do_flood_fill(SPDesktop *desktop, Geom::Point const &cursor_pos,
+                                   bool union_with_selection, bool is_point_fill, bool is_touch_fill)
+{
+    auto const document = desktop->getDocument();
+    document->ensureUpToDate();
+    
+    auto const bbox = document->getRoot()->visualBounds();
+    if (!bbox) {
+        desktop->messageStack()->flash(Inkscape::WARNING_MESSAGE, _("<b>Area is not bounded</b>, cannot fill."));
+        return;
+    }
+    
+    // Render 160% of the physical display to the render pixel buffer, so that available
+    // fill areas off the screen can be included in the fill.
+    constexpr double padding = 1.6;
+
+    // image space is world space with an offset
+    Geom::Rect const screen_world = desktop->getCanvas()->get_area_world();
+    Geom::Rect const screen = screen_world * desktop->w2d();
+    Geom::IntPoint const img_dims = (screen_world.dimensions() * padding).ceil();
+    Geom::Affine const world2img = Geom::Translate((img_dims - screen_world.dimensions()) / 2.0 - screen_world.min());
+    Geom::Affine const doc2img = desktop->doc2dt() * desktop->d2w() * world2img;
+
+    auto const width = img_dims.x();
+    auto const height = img_dims.y();
+
+    auto const stride = Cairo::ImageSurface::format_stride_for_width(Cairo::Surface::Format::ARGB32, width);
+    auto const px = std::make_unique_for_overwrite<unsigned char[]>(stride * height);
+    uint32_t dtc;
+
+    // Draw image into data block px
+    { // this block limits the lifetime of Drawing and DrawingContext
+        // Create DrawingItems and set transform.
+        Drawing drawing;
+        unsigned dkey = SPItem::display_key_new(1);
+        auto root = document->getRoot()->invoke_show(drawing, dkey, SP_ITEM_SHOW_DISPLAY);
+        root->setTransform(doc2img);
+        drawing.setRoot(root);
+
+        auto const final_bbox = Geom::IntRect::from_xywh(0, 0, width, height);
+        drawing.update(final_bbox);
+
+        auto surf = Cairo::ImageSurface::create(px.get(), Cairo::Surface::Format::ARGB32, width, height, stride);
+        auto dc = DrawingContext(surf->cobj(), Geom::Point());
+        // cairo_translate not necessary here - surface origin is at 0,0
+
+        // make color transparent for 'alpha' flood mode to work
+        auto bgcolor = document->getPageManager().getBackgroundColor();
+        bgcolor.setOpacity(0.0);
+        dtc = bgcolor.toARGB();
+
+        dc.setSource(bgcolor);
+        dc.setOperator(CAIRO_OPERATOR_SOURCE);
+        dc.paint();
+        dc.setOperator(CAIRO_OPERATOR_OVER);
+
+        drawing.render(dc, final_bbox);
+
+        if constexpr (false) surf->write_to_png("cairo.png");
+
+        surf->flush();
+        
+        // Hide items
+        document->getRoot()->invoke_hide(dkey);
+    }
+
+    if constexpr (false) {
+        // Dump data to png
+        auto surf = Cairo::ImageSurface::create(px.get(), Cairo::Surface::Format::ARGB32, width, height, stride);
+        surf->write_to_png("cairo2.png");
+        std::cout << "  Wrote cairo2.png" << std::endl;
+    }
+
+    auto const trace_px = std::make_unique<unsigned char[]>(width * height);
+    
+    std::deque<Geom::Point> fill_queue;
+    std::queue<Geom::Point> color_queue;
+    
+    bool aborted = false;
+    int y_limit = height - 1;
+
+    auto prefs = Preferences::get();
+    auto const method = static_cast<PaintBucketChannels>(prefs->getInt("/tools/paintbucket/channels", 0));
+    int threshold = prefs->getIntLimited("/tools/paintbucket/threshold", 1, 0, 100);
+
+    switch (method) {
+        case FLOOD_CHANNELS_ALPHA:
+        case FLOOD_CHANNELS_RGB:
+        case FLOOD_CHANNELS_R:
+        case FLOOD_CHANNELS_G:
+        case FLOOD_CHANNELS_B:
+            threshold = (255 * threshold) / 100;
+            break;
+        default:
+            break;
+    }
+
+    BitmapCoordsInfo bci;
+    
+    bci.y_limit = y_limit;
+    bci.width = width;
+    bci.height = height;
+    bci.stride = stride;
+    bci.threshold = threshold;
+    bci.method = method;
+    bci.bbox = *bbox;
+    bci.screen = screen;
+    bci.dtc = dtc;
+    bci.radius = prefs->getIntLimited("/tools/paintbucket/autogap", 0, 0, 3);
+    bci.max_queue_size = (width * height) / 4;
+    bci.current_step = 0;
+
+    auto const fill_points = [&] () -> std::vector<Geom::Point> {
+        if (is_point_fill) {
+            return { cursor_pos };
+        } else {
+            return Rubberband::get(desktop)->getPoints();
+        }
+    }();
+
+    auto const img_max_indices = Geom::Rect::from_xywh(0, 0, width - 1, height - 1);
+
+    for (unsigned i = 0; i < fill_points.size(); i++) {
+        auto const pw = img_max_indices.clamp(fill_points[i] * world2img);
+
+        if (is_touch_fill) {
+            if (i == 0) {
+                color_queue.emplace(pw);
+            } else {
+                auto trace_t = get_trace_pixel(trace_px.get(), (int)pw.x(), (int)pw.y(), width);
+                push_point_onto_queue(fill_queue, bci.max_queue_size, trace_t, (int)pw.x(), (int)pw.y());
+            }
+        } else {
+            color_queue.emplace(pw);
+        }
+    }
+
+    bool reached_screen_boundary = false;
+
+    bool first_run = true;
+
+    size_t sort_size_threshold = 5;
+
+    unsigned int min_y = height;
+    unsigned int max_y = 0;
+    unsigned int min_x = width;
+    unsigned int max_x = 0;
+
+    while (!color_queue.empty() && !aborted) {
+        Geom::Point color_point = color_queue.front();
+        color_queue.pop();
+
+        int cx = (int)color_point[Geom::X];
+        int cy = (int)color_point[Geom::Y];
+
+        uint32_t orig_color = get_pixel(px.get(), cx, cy, stride);
+        bci.merged_orig_pixel = compose_onto(orig_color, dtc);
+
+        unsigned char *trace_t = get_trace_pixel(trace_px.get(), cx, cy, width);
+        if (!is_pixel_checked(trace_t) && !is_pixel_colored(trace_t)) {
+            if (check_if_pixel_is_paintable(px.get(), trace_px.get(), cx, cy, orig_color, bci)) {
+                shift_point_onto_queue(fill_queue, bci.max_queue_size, trace_t, cx, cy);
+
+                if (!first_run) {
+                    for (unsigned int y = 0; y < height; y++) {
+                        trace_t = get_trace_pixel(trace_px.get(), 0, y, width);
+                        for (unsigned int x = 0; x < width; x++) {
+                            clear_pixel_paintability(trace_t);
+                            trace_t++;
+                        }
+                    }
+                }
+                first_run = false;
+            }
+        }
+
+        unsigned long old_fill_queue_size = fill_queue.size();
+
+        while (!fill_queue.empty() && !aborted) {
+            Geom::Point cp = fill_queue.front();
+
+            if (bci.radius == 0) {
+                auto const new_fill_queue_size = fill_queue.size();
+
+                /*
+                 * To reduce the number of points in the fill queue, periodically
+                 * resort all of the points in the queue so that scanline checks
+                 * can complete more quickly.  A point cannot be checked twice
+                 * in a normal scanline checks, so forcing scanline checks to start
+                 * from one corner of the rendered area as often as possible
+                 * will reduce the number of points that need to be checked and queued.
+                 */
+                if (new_fill_queue_size > sort_size_threshold) {
+                    if (new_fill_queue_size > old_fill_queue_size) {
+                        std::sort(fill_queue.begin(), fill_queue.end(), sort_fill_queue_vertical);
+
+                        auto start_sort = fill_queue.begin();
+                        auto end_sort = fill_queue.begin();
+                        unsigned int sort_y = (unsigned int)cp[Geom::Y];
+                        unsigned int current_y;
+                        
+                        for (auto i = fill_queue.begin(); i != fill_queue.end(); ++i) {
+                            Geom::Point current = *i;
+                            current_y = (unsigned int)current[Geom::Y];
+                            if (current_y != sort_y) {
+                                if (start_sort != end_sort) {
+                                    std::sort(start_sort, end_sort, sort_fill_queue_horizontal);
+                                }
+                                sort_y = current_y;
+                                start_sort = i;
+                            }
+                            end_sort = i;
+                        }
+                        if (start_sort != end_sort) {
+                            std::sort(start_sort, end_sort, sort_fill_queue_horizontal);
+                        }
+                        
+                        cp = fill_queue.front();
+                    }
+                }
+
+                old_fill_queue_size = new_fill_queue_size;
+            }
+
+            fill_queue.pop_front();
+
+            int x = (int)cp[Geom::X];
+            int y = (int)cp[Geom::Y];
+
+            min_y = MIN((unsigned int)y, min_y);
+            max_y = MAX((unsigned int)y, max_y);
+
+            unsigned char *trace_t = get_trace_pixel(trace_px.get(), x, y, width);
+            if (!is_pixel_checked(trace_t)) {
+                mark_pixel_checked(trace_t);
+
+                if (y == 0) {
+                    if (bbox->min()[Geom::Y] > screen.min()[Geom::Y]) {
+                        aborted = true; break;
+                    } else {
+                        reached_screen_boundary = true;
+                    }
+                }
+
+                if (y == y_limit) {
+                    if (bbox->max()[Geom::Y] < screen.max()[Geom::Y]) {
+                        aborted = true; break;
+                    } else {
+                        reached_screen_boundary = true;
+                    }
+                }
+
+                bci.is_left = true;
+                bci.x = x;
+                bci.y = y;
+
+                ScanlineCheckResult result = perform_bitmap_scanline_check(fill_queue, px.get(), trace_px.get(), orig_color, bci, &min_x, &max_x);
+
+                switch (result) {
+                    case ScanlineCheckResult::ABORTED:
+                        aborted = true;
+                        break;
+                    case ScanlineCheckResult::BOUNDARY:
+                        reached_screen_boundary = true;
+                        break;
+                    default:
+                        break;
+                }
+
+                if (bci.x < width) {
+                    trace_t++;
+                    if (!is_pixel_checked(trace_t) && !is_pixel_queued(trace_t)) {
+                        mark_pixel_checked(trace_t);
+                        bci.is_left = false;
+                        bci.x = x + 1;
+
+                        result = perform_bitmap_scanline_check(fill_queue, px.get(), trace_px.get(), orig_color, bci, &min_x, &max_x);
+
+                        switch (result) {
+                            case ScanlineCheckResult::ABORTED:
+                                aborted = true;
+                                break;
+                            case ScanlineCheckResult::BOUNDARY:
+                                reached_screen_boundary = true;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }
+            }
+
+            bci.current_step++;
+
+            if (bci.current_step > bci.max_queue_size) {
+                aborted = true;
+            }
+        }
+    }
+    
+    if (aborted) {
+        desktop->messageStack()->flash(Inkscape::WARNING_MESSAGE, _("<b>Area is not bounded</b>, cannot fill."));
+        return;
+    }
+    
+    if (reached_screen_boundary) {
+        desktop->messageStack()->flash(Inkscape::WARNING_MESSAGE, _("<b>Only the visible part of the bounded area was filled.</b> If you want to fill all of the area, undo, zoom out, and fill again.")); 
+    }
+
+    unsigned int trace_padding = bci.radius + 1;
+    if (min_y > trace_padding) { min_y -= trace_padding; }
+    if (max_y < (y_limit - trace_padding)) { max_y += trace_padding; }
+    if (min_x > trace_padding) { min_x -= trace_padding; }
+    if (max_x < (width - 1 - trace_padding)) { max_x += trace_padding; }
+
+    Geom::Affine inverted_affine = Geom::Translate(min_x, min_y) * doc2img.inverse();
+    
+    do_trace(bci, trace_px.get(), desktop, inverted_affine, min_x, max_x, min_y, max_y, union_with_selection);
+    
+    DocumentUndo::done(document, RC_("Undo", "Fill bounded area"), INKSCAPE_ICON("color-fill"));
+}
+
+bool FloodTool::item_handler(SPItem *item, CanvasEvent const &event)
+{
+    bool ret = false;
+
+    inspect_event(event,
+    [&] (ButtonPressEvent const &event) {
+        if (event.num_press == 1 && event.button == 1 && mod_flood_item->active(event.modifiers)) {
+            auto const button_w = event.pos;
+
+            auto item = sp_event_context_find_item(_desktop, button_w, true, true);
+
+            // Set style
+            _desktop->applyCurrentOrToolStyle(item, "/tools/paintbucket", false);
+
+            DocumentUndo::done(_desktop->getDocument(), RC_("Undo", "Set style on object"), INKSCAPE_ICON("color-fill"));
+            ret = true;
+        }
+    },
+    [&] (CanvasEvent const &event) {}
+    );
+
+    return ret || ToolBase::item_handler(item, event);
+}
+
+bool FloodTool::root_handler(CanvasEvent const &event)
+{
+    bool ret = false;
+
+    inspect_event(event,
+    [&] (ButtonPressEvent const &event) {
+        if (event.num_press == 1 && event.button == 1 && !mod_flood_item->active(event.modifiers)) {
+            if (have_viable_layer(_desktop, defaultMessageContext())) {
+                // save drag origin
+                saveDragOrigin(event.pos);
+
+                dragging = true;
+
+                auto const p = _desktop->w2d(event.pos);
+                auto rubberband = Rubberband::get(_desktop);
+                rubberband->setMode(Rubberband::Mode::TOUCHPATH);
+                rubberband->setHandle(RUBBERBAND_TOUCHPATH_FLOOD);
+                rubberband->start(_desktop, p);
+            }
+        }
+    },
+
+    [&] (MotionEvent const &event) {
+        if (dragging && event.modifiers & GDK_BUTTON1_MASK) {
+            if (!checkDragMoved(event.pos)) {
+                return;
+            }
+            
+            auto const p = _desktop->w2d(event.pos);
+
+            if (Rubberband::get(_desktop)->isStarted()) {
+                Rubberband::get(_desktop)->move(p);
+                defaultMessageContext()->setF(NORMAL_MESSAGE,
+                                              _("<b>Draw over</b> areas to add to fill, hold <b>%s</b> for touch fill"),
+                                              mod_flood_touch_fill->get_label().c_str());
+                gobble_motion_events(GDK_BUTTON1_MASK);
+            }
+        }
+    },
+
+    [&] (ButtonReleaseEvent const &event) {
+        if (event.button == 1) {
+            auto r = Rubberband::get(_desktop);
+
+            if (r->isStarted()) {
+                dragging = false;
+                bool is_point_fill = within_tolerance;
+                bool is_touch_fill = mod_flood_touch_fill->active(event.modifiers);
+
+                // It's possible for the user to sneakily change the tool while the
+                // Gtk main loop has control, so we save the current desktop address:
+                SPDesktop* current_desktop = _desktop;
+
+                current_desktop->setWaitingCursor();
+                sp_flood_do_flood_fill(current_desktop, event.pos,
+                                       mod_select_add_to->active(event.modifiers),
+                                       is_point_fill, is_touch_fill);
+                current_desktop->clearWaitingCursor();
+                r->stop();
+
+                // We check whether our object was deleted by SPDesktop::setTool()
+                // TODO: fix SPDesktop so that it doesn't kill us before we're done
+                ToolBase *current_context = current_desktop->getTool();
+
+                if (current_context == (ToolBase*)this) { // We're still alive
+                    this->defaultMessageContext()->clear();
+                } // else just return without dereferencing `this`.
+                ret = true;
+            }
+        }
+    },
+
+    [&] (KeyPressEvent const &event) {
+        switch (get_latin_keyval(event)) {
+        case GDK_KEY_Up:
+        case GDK_KEY_Down:
+        case GDK_KEY_KP_Up:
+        case GDK_KEY_KP_Down:
+            // prevent the zoom field from activating
+            if (!mod_ctrl_only(event)) {
+                ret = true;
+            }
+            break;
+        default:
+            break;
+        }
+    },
+
+    [&] (CanvasEvent const &event) {}
+    );
+
+    return ret || ToolBase::root_handler(event);
+}
+
+void FloodTool::finishItem()
+{
+    message_context->clear();
+
+    if (item) {
+        item->updateRepr();
+
+        _desktop->getSelection()->set(item);
+        DocumentUndo::done(_desktop->getDocument(), RC_("Undo", "Fill bounded area"), INKSCAPE_ICON("color-fill"));
+
+        item = nullptr;
+    }
+}
+
+void FloodTool::set_channels(int channels)
+{
+    auto prefs = Preferences::get();
+    prefs->setInt("/tools/paintbucket/channels", channels);
+}
+
+} // namespace Inkscape::UI::Tools
+
+/*
+  Local Variables:
+  mode:c++
+  c-file-style:"stroustrup"
+  c-file-offsets:((innamespace . 0)(inline-open . 0)(case-label . +))
+  indent-tabs-mode:nil
+  fill-column:99
+  End:
+*/
+// vim: filetype=cpp:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:fileencoding=utf-8:textwidth=99 :

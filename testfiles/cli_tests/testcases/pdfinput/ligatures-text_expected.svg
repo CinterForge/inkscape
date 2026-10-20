@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="2.0"
+   id="svg1"
+   inkscape:version="1.5-dev (440e070fb7, 2026-08-12, custom)"
+   width="816"
+   height="1056"
+   viewBox="0 0 816 1056"
+   sodipodi:docname="ligatures.pdf"
+   standalone="no"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs1">
+    <view
+       inkscape:label="1"
+       id="view1"
+       viewBox="0 0 816 1056"
+       inkscape:margin="0"
+       inkscape:bleed="0" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
+  <g
+     id="g1"
+     inkscape:groupmode="layer"
+     inkscape:label="1">
+    <text
+       id="text1"
+       xml:space="preserve"
+       transform="matrix(1.333333333,0,0,1.333333333,75.73333333,91.13333333)"><tspan
+         id="tspan1"
+         style="font-variant:normal;font-weight:normal;font-size:12px;font-family:Calibri;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         dx="0 -0.048 0.036 0 -0.048 0.024 0 0 -0.012 0 -0.012 -0.108 -0.012 -0.096 -0.012 -0.012 0 0 0 0.024 -0.012 0.024 0 -0.012 0 -0.012 0 0.024 0 0 0.012 0 -0.012 0.012 -0.012 0.012 -0.012 -0.012 0 0 -0.192 -0.144 0.036 0 -0.18 0.024 0 0 -0.012 0 0 0 -0.012 0 0.024 -0.024 0 -0.012 0.036 0 -0.012 0.024 0 0 -0.144 -0.012 0.024 -0.144 0.036"
+         y="0">This is a test file with a number of ligatures, based on the list at </tspan></text>
+    <text
+       id="text2"
+       xml:space="preserve"
+       transform="matrix(1.333333333,0,0,1.333333333,75.73333333,110.6666667)"><tspan
+         id="tspan2"
+         style="font-variant:normal;font-weight:normal;font-size:12px;font-family:Calibri;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         dx="0 -0.156 0 0.036 -0.048 -0.048 0.036 -0.036 -0.18 -0.108 0.012 -0.024 0.012 0 0 0 0.036 -0.78 -0.024 0 0 0.012 0 -0.012 0.012 -0.108 0.012 0.012 -0.036 0 0.036 -0.012 -0.144 0 0 -0.024 0.036 -0.048 0.012 0.012 -0.228 0 -0.012 -0.012 0 0 0.012 0 -0.024 0.012 0.012 -0.024 0.012 0 -0.012 0.024 -0.012 0 0 0 0 0 0 0 0.036 -0.276 -0.024 0.024 -0.024 -0.18 0.012 -0.372 0.012 -0.108 0 0 0.036 0 -0.024 0 0.012 0 0 -0.192 -0.144 0.036 0 -0.18 0.024 0 -0.024 0 0.012 -0.36"
+         y="0">https://community.adobe.com/questions-9/section-508-accessibility-error-calibri-ligatures-not-</tspan></text>
+    <text
+       id="text3"
+       xml:space="preserve"
+       transform="matrix(1.333333333,0,0,1.333333333,75.73333333,130.2)"><tspan
+         id="tspan3"
+         style="font-variant:normal;font-weight:normal;font-size:12px;font-family:Calibri;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         dx="0 0 -0.228 0.012 -0.012 0.024 0 0 0 0 0 -0.024 -0.108 0.012 -0.024 0 0 0.012 0 -0.012 0.012 0 -0.012 -0.18 0.012 0 -0.096 -0.36 -0.024 0.012 -0.024 0.012 0.012 -0.024 0.012 0.012"
+         y="0">processing-to-adobe-acrobat-1282765.</tspan></text>
+    <text
+       id="text4"
+       xml:space="preserve"
+       transform="matrix(1.333333333,0,0,1.333333333,75.73333333,169.2666667)"><tspan
+         id="tspan4"
+         style="font-variant:normal;font-weight:normal;font-size:12px;font-family:Calibri;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         dx="0 -0.024 0 0 -0.3 0.024 0 -0.012 0.012 -0.012 0 -0.024 0.036 -0.012 0.012"
+         y="0">miffed - U+FB00</tspan></text>
+    <text
+       id="text5"
+       xml:space="preserve"
+       transform="matrix(1.333333333,0,0,1.333333333,75.73333333,188.8)"><tspan
+         id="tspan5"
+         style="font-variant:normal;font-weight:normal;font-size:12px;font-family:Calibri;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         dx="0 0 0 0 0 0 0 -0.024 0.024 -0.024 -0.012 0 0.012 -0.012 0.024 -0.024"
+         y="0">finally - U+FB01</tspan></text>
+    <text
+       id="text6"
+       xml:space="preserve"
+       transform="matrix(1.333333333,0,0,1.333333333,75.73333333,208.3333333)"><tspan
+         id="tspan6"
+         style="font-variant:normal;font-weight:normal;font-size:12px;font-family:Calibri;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         dx="0 0 0 0 0 0.048 -0.024 0.024 -0.024 -0.012 0 0.012 -0.012 0.024 -0.024 0.012 0 -0.012 0 0.012 -0.012 0.024 -0.024"
+         y="0">fluffy - U+FB02, U+FB00</tspan></text>
+    <text
+       id="text7"
+       xml:space="preserve"
+       transform="matrix(1.333333333,0,0,1.333333333,75.73333333,227.8666667)"><tspan
+         id="tspan7"
+         style="font-variant:normal;font-weight:normal;font-size:12px;font-family:Calibri;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         dx="0 -0.096 0 0 0 0 0 -0.096 0 -0.036 0.012 0 -0.012 0.012 -0.012 0 0.012 -0.012 -0.012 0.012 0.012 -0.012 0 0 0 -0.012 0.036 -0.024 0 0.012 0 0 0 -0.108 0.012 0 -0.012 0.024"
+         y="0">affiliation - U+FB03 and non-Unicode &quot;ti&quot;</tspan></text>
+    <text
+       id="text8"
+       xml:space="preserve"
+       transform="matrix(1.333333333,0,0,1.333333333,75.73333333,247.4)"><tspan
+         id="tspan8"
+         style="font-variant:normal;font-weight:normal;font-size:12px;font-family:Calibri;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         dx="0 -0.012 0.012 0 0 0 -0.036 0.024 -0.012 0.012 -0.012 0 -0.024 0.036 -0.012 0.012"
+         y="0">truffle - U+FB04</tspan></text>
+    <text
+       id="text9"
+       xml:space="preserve"
+       transform="matrix(1.333333333,0,0,1.333333333,75.73333333,266.9333333)"><tspan
+         id="tspan9"
+         style="font-variant:normal;font-weight:normal;font-size:12px;font-family:Calibri;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         dx="0 0 0 0 -0.012 0.012 -0.012 -0.024 0.024 -0.036 0.012 0 0.012 0 0 0 -0.108 0.012 0 -0.012 0.024 0 0 -0.012"
+         y="0">kitty - Non-Unicode &quot;tt&quot;</tspan></text>
+    <text
+       id="text10"
+       xml:space="preserve"
+       transform="matrix(1.333333333,0,0,1.333333333,75.73333333,306)"><tspan
+         id="tspan10"
+         style="font-variant:normal;font-weight:normal;font-size:12px;font-family:Calibri;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         dx="0 -0.012 -0.012 0 0.012 -0.012 0 0.012 -0.012 -0.012 0.036 -0.192 -0.108 -0.012 -0.012 -0.168 -0.192 0 -0.024 0 0 0.024 -0.012 -0.12 0.012 -0.18 0.036 -0.048 0.024 -0.264 -0.024 0.012 8.076 -0.012 0 0 0 10.08 0 -0.012 0 0.036 -0.012 -0.012 0 0.024 -0.18 0.024 -0.012 -0.012 0 -0.06 0.012 -0.012 0 -0.132 -0.012"
+         y="0">I do not have example words for  and , but here they are.</tspan></text>
+    <text
+       id="text11"
+       xml:space="preserve"
+       transform="matrix(1.333333333,0,0,1.333333333,288.0666667,306)"><tspan
+         id="tspan11"
+         style="font-variant:normal;font-weight:normal;font-size:12px;font-family:'Noto Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         dx="0 23.808"
+         y="0">ﬅﬆ</tspan></text>
+  </g>
+  <metadata
+     id="metadata1">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:date>D:20260812153415-06'00'</dc:date>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

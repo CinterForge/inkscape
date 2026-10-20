@@ -1,0 +1,9 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="exchange-positions-zorder">
+<g id=".arrange-z-order">
+<path id="neutral" opacity="0.3" d="M0 6H10V9H0V6Z" fill="black"/>
+<path id="Union" d="M6 15H0V14H6V15ZM6 12H0V11H6V12ZM10 9H0V6H10V9ZM1 8H9V7H1V8ZM6 4H0V3H6V4Z" fill="black"/>
+<path id="Union_2" d="M13 12.2927L14.5 10.7927L15.207 11.4998L12.5 14.2068L9.79297 11.4998L10.5 10.7927L12 12.2927V8.99976H13V12.2927ZM15.209 3.49976L14.502 4.20679L13 2.70483V5.99976H12V2.70874L10.502 4.20679L9.79492 3.49976L12.502 0.792725L15.209 3.49976Z" fill="black"/>
+</g>
+</g>
+</svg>

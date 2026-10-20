@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="2.0"
+   id="svg1"
+   width="816"
+   height="1056"
+   viewBox="0 0 816 1056"
+   sodipodi:docname="clipping_shift.pdf"
+   standalone="no"
+   inkscape:version="1.5-dev (6f35fa1fa1, 2026-06-26, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <view
+       inkscape:label="1"
+       id="view1"
+       viewBox="0 0 816 1056"
+       inkscape:margin="0"
+       inkscape:bleed="0" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3">
+      <path
+         d="M 100,100 H 400.0000001 V 400.0000001 H 100 Z"
+         id="path3" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath8">
+      <path
+         d="M -50.00000001,49.99999999 H 250.0000001 V 350.0000001 H -50.00000001 Z"
+         id="path8" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath15">
+      <path
+         d="m 300.8520001,324.0000001 -128.9890001,-11.305 -43.769,54.145 33.906,-96.84 L 85.25400002,194.086 C 177.996,253.5820001 235.5820001,239.3050001 258.0080001,151.246 c -3.305,70.1680001 -33.891,159.8520001 42.844,172.7540001 z m 0,0 z"
+         id="path15" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath16">
+      <path
+         d="M 100.852,-24.00000001 -28.13700003,-12.695 -71.90600004,-66.84000002 -38.00000003,30.00000001 -114.7460001,105.914 C -22.00400003,46.41800001 35.58199998,60.69500002 58.00799999,148.754 54.70299999,78.58600002 24.11699998,-11.098 100.852,-24.00000001 Z m 0,0 z"
+         id="path16" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath18">
+      <path
+         d="m 300.8520001,324.0000001 -128.9890001,-11.305 -43.769,54.145 33.906,-96.84 L 85.25400002,194.086 C 177.996,253.5820001 235.5820001,239.3050001 258.0080001,151.246 c -3.305,70.1680001 -33.891,159.8520001 42.844,172.7540001 z m 0,0 z"
+         id="path18" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath19">
+      <path
+         d="m 200.8520001,-74.00000004 -128.98900006,11.305 -43.76900001,-54.14500006 33.90600001,96.84000007 -76.74600002,75.91400002 C 77.99600004,-3.582000026 135.5820001,10.69499998 158.0080001,98.754 c -3.305,-70.16800002 -33.891,-159.85200004 42.844,-172.75400004 z m 0,0 z"
+         id="path19" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
+  <g
+     id="g1"
+     inkscape:groupmode="layer"
+     inkscape:label="1">
+    <path
+       id="path1"
+       d="M 100,100 H 400 V 400 H 100 Z"
+       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(1.333333333,0,0,-1.333333333,0,1056)" />
+    <path
+       id="path2"
+       d="M 0,0 200,200 Z"
+       style="fill:none;stroke:#ff0000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(1.333333333,0,0,-1.333333333,0,1056)"
+       clip-path="url(#clipPath3)" />
+    <path
+       id="path4"
+       d="M 150,200 V 300 Z"
+       style="fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(1.333333333,0,0,-1.333333333,0,1056)" />
+    <path
+       id="path5"
+       d="M 150,200 V 300 Z"
+       style="fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(1.333333333,0,0,-1.333333333,13.33333333,1042.666667)" />
+    <path
+       id="path6"
+       d="M 150,200 V 300 Z"
+       style="fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(1.333333333,0,0,-1.333333333,26.66666667,1029.333333)" />
+    <text
+       id="text6"
+       xml:space="preserve"
+       transform="matrix(1.333333333,0,0,1.333333333,173.3333333,882.6666667)"><tspan
+         id="tspan6"
+         style="font-variant:normal;font-weight:normal;font-size:12px;font-family:Helvetica;writing-mode:lr-tb;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         y="0"> Unclipped Text </tspan></text>
+    <path
+       id="path7"
+       d="M 100,100 H 400 V 400 H 100 Z"
+       style="fill:none;stroke:#ff0000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(1.333333333,0,0,-1.333333333,200,989.3333333)"
+       clip-path="url(#clipPath8)" />
+    <path
+       id="path9"
+       d="M 0,0 200,200 Z"
+       style="fill:none;stroke:#ff0000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(1.333333333,0,0,-1.333333333,200,989.3333333)"
+       clip-path="url(#clipPath8)" />
+    <path
+       id="path10"
+       d="M 150,200 V 300 Z"
+       style="fill:none;stroke:#bf00ff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(1.333333333,0,0,-1.333333333,200,989.3333333)" />
+    <path
+       id="path11"
+       d="M 150,200 V 300 Z"
+       style="fill:none;stroke:#bf00ff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(1.333333333,0,0,-1.333333333,213.3333333,976)" />
+    <path
+       id="path12"
+       d="M 150,200 V 300 Z"
+       style="fill:none;stroke:#bf00ff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(1.333333333,0,0,-1.333333333,226.6666667,962.6666667)" />
+    <text
+       id="text12"
+       xml:space="preserve"
+       transform="matrix(1.333333333,0,0,1.333333333,373.3333333,816)"><tspan
+         id="tspan12"
+         style="font-variant:normal;font-weight:normal;font-size:12px;font-family:Helvetica;writing-mode:lr-tb;fill:#bf00ff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         y="0"> Unclipped Text </tspan></text>
+    <path
+       id="path13"
+       d="M 300.852,324 171.863,312.695 128.094,366.84 162,270 85.254,194.086 c 92.742,59.496 150.328,45.219 172.754,-42.84 -3.305,70.168 -33.891,159.852 42.844,172.754 z m 0,0 z"
+       style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(1.333333333,0,0,-1.333333333,0,656)" />
+    <path
+       id="path14"
+       d="M 275,300 H 200 Z"
+       style="fill:none;stroke:#ff0000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(1.333333333,0,0,-1.333333333,0,656)"
+       clip-path="url(#clipPath15)" />
+    <text
+       id="text15"
+       xml:space="preserve"
+       transform="matrix(1.333333333,0,0,1.333333333,266.6666667,256)"
+       clip-path="url(#clipPath16)"><tspan
+         id="tspan15"
+         style="font-variant:normal;font-weight:normal;font-size:12px;font-family:Helvetica;writing-mode:lr-tb;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         y="0"> Clipped by curve </tspan></text>
+    <path
+       id="path17"
+       d="M 200,250 H 100 Z"
+       style="fill:none;stroke:#ff0000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(1.333333333,0,0,-1.333333333,0,656)"
+       clip-path="url(#clipPath18)" />
+    <text
+       id="text18"
+       xml:space="preserve"
+       transform="matrix(1.333333333,0,0,1.333333333,133.3333333,322.6666667)"
+       clip-path="url(#clipPath19)"><tspan
+         id="tspan18"
+         style="font-variant:normal;font-weight:normal;font-size:12px;font-family:Helvetica;writing-mode:lr-tb;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         y="0"> Clipped by straight line </tspan></text>
+    <path
+       id="path20"
+       d="m 220,250 -20,25 z"
+       style="fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(1.333333333,0,0,-1.333333333,0,656)" />
+    <text
+       id="text20"
+       xml:space="preserve"
+       transform="matrix(1.333333333,0,0,1.333333333,533.3333333,96)"><tspan
+         id="tspan20"
+         style="font-variant:normal;font-weight:normal;font-size:12px;font-family:Helvetica;writing-mode:lr-tb;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         y="0"> Black: Clipping paths </tspan></text>
+    <text
+       id="text21"
+       xml:space="preserve"
+       transform="matrix(1.333333333,0,0,1.333333333,533.3333333,122.6666667)"><tspan
+         id="tspan21"
+         style="font-variant:normal;font-weight:normal;font-size:12px;font-family:Helvetica;writing-mode:lr-tb;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         y="0"> Red: Clipped lines </tspan></text>
+    <text
+       id="text22"
+       xml:space="preserve"
+       transform="matrix(1.333333333,0,0,1.333333333,533.3333333,149.3333333)"><tspan
+         id="tspan22"
+         style="font-variant:normal;font-weight:normal;font-size:12px;font-family:Helvetica;writing-mode:lr-tb;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         y="0"> Blue: Unclipped lines </tspan></text>
+    <text
+       id="text23"
+       xml:space="preserve"
+       transform="matrix(1.333333333,0,0,1.333333333,533.3333333,176)"><tspan
+         id="tspan23"
+         style="font-variant:normal;font-weight:normal;font-size:12px;font-family:Helvetica;writing-mode:lr-tb;fill:#bf00ff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="0"
+         y="0"> Purple: Shifted unclipped lines </tspan></text>
+  </g>
+</svg>

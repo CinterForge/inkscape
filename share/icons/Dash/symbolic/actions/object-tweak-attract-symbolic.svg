@@ -1,0 +1,13 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="object-tweak-attract">
+<g id=".arrows-diagonal-in-c" clip-path="url(#clip0_3684_42846)">
+<path id="Union" d="M1 11H4.29297L0.146484 15.1465L0.853516 15.8535L5 11.707V15H6V10H1V11ZM11.002 4.29102L11 1H10L10.002 5.5V6H15V5H11.707L15.8535 0.853516L15.1465 0.146484L11.002 4.29102Z" fill="black"/>
+<path id="Vector 904" d="M5.5 5.5L10.5 10.5" stroke="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42846">
+<rect width="16" height="16" fill="white" transform="matrix(-1 0 0 1 16 0)"/>
+</clipPath>
+</defs>
+</svg>

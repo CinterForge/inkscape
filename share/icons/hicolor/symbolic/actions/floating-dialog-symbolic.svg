@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg width="16" height="16" viewBox="0 0 16 16" version="1.1" id="svg1" inkscape:version="1.5-dev (df37f7b0d0, 2025-01-19, custom)" sodipodi:docname="floating-dialog-symbolic.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview id="namedview1" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="true" inkscape:deskcolor="#d1d1d1" inkscape:document-units="px" inkscape:zoom="27.25" showgrid="false" inkscape:cx="8" inkscape:cy="8" inkscape:current-layer="layer1" />
+  <defs id="defs1" />
+  <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(0,-884)">
+    <g id="rect31" style="opacity:1">
+      <path id="path2" style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#000000;fill-rule:evenodd;enable-background:accumulate;stop-opacity:1" d="m 1,886 v 12 h 14 v -12 z m 1,1 h 12 v 2 H 2 Z m 0,3 h 12 v 7 H 2 Z" sodipodi:nodetypes="ccccccccccccccc" />
+    </g>
+    <rect style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-opacity:1;opacity:0.3" id="rect32" width="12" height="2" x="2" y="887" />
+    <g id="path32" style="opacity:1;stroke-width:0.991769" transform="matrix(1.0166667,0,0,1,-0.1333334,0)">
+      <path style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#c0c0c0;fill-rule:evenodd;stroke-width:0.991769;enable-background:accumulate;stop-opacity:1" d="M 2,889.5 H 14" id="path3" />
+    </g>
+  </g>
+</svg>

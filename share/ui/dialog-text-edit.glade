@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkPopover" id="filter_popover">
+    <property name="child">
+      <object class="GtkBox" id="popover_box">
+        <property name="margin-start">4</property>
+        <property name="margin-end">4</property>
+        <property name="margin-top">4</property>
+        <property name="margin-bottom">4</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkFrame" id="frame">
+            <property name="margin-top">4</property>
+            <style>
+              <class name="flat"/>
+            </style>
+            <property name="child">
+              <object class="GtkListBox" id="collections_list">
+              </object>
+            </property>
+            <child type="label">
+              <object class="GtkLabel" id="frame_label">
+                <property name="label" translatable="yes">_Font Collections</property>
+                <property name="use-underline">True</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="collection_editor_button">
+            <property name="label" translatable="yes">Open Collections Editor</property>
+            <property name="focusable">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Open the Font Collections Manager dialogue</property>
+            <property name="margin-top">4</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="reset_button">
+            <property name="label" translatable="yes">Clear all filters</property>
+            FIXME ^^^
+            <property name="focusable">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Reset filters and show all available fonts</property>
+            <property name="margin-top">4</property>
+            <property name="hexpand">False</property>
+            <property name="vexpand">False</property>
+            <property name="halign">fill</property>
+            <property name="valign">fill</property>
+            <child>
+              <object class="GtkImage" id="reset_image">
+                <property name="icon-name">view-refresh</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </property>
+  </object>
+  <object class="GtkBox" id="contents">
+    <property name="name">TextEdit Dialog Box</property>
+    <property name="orientation">vertical</property>
+    <property name="spacing">4</property>
+    <child>
+      <object class="GtkNotebook" id="notebook">
+        <property name="vexpand">True</property>
+        <property name="name">TextEdit Notebook</property>
+        <property name="focusable">True</property>
+        <child>
+          <object class="GtkNotebookPage">
+            <property name="child">
+              <object class="GtkBox" id="font_box">
+                <property name="margin-start">0</property>
+                <property name="margin-end">0</property>
+                <property name="margin-top">0</property>
+                <property name="margin-bottom">0</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkBox" id="settings_and_filters_box">
+                    <child>
+                      <object class="GtkSearchEntry" id="search_entry">
+                        <property name="focusable">True</property>
+                        <property name="tooltip-text" translatable="yes">Search fonts</property>
+                        <property name="hexpand">True</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuButton" id="filter_menu_button">
+                        <property name="focusable">True</property>
+                        <property name="focus-on-click">False</property>
+                        <property name="receives-default">True</property>
+                        <property name="tooltip-text" translatable="yes">Font Collections</property>
+                        <property name="margin-start">2</property>
+                        <property name="popover">filter_popover</property>
+                        <property name="child">
+                          <object class="GtkBox">
+                            <property name="spacing">2</property>
+                            <child>
+                              <object class="GtkImage">
+                                <property name="icon-name">font_collections</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="label" translatable="yes">Collections</property>
+                              </object>
+                            </child>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="font_count_label">
+                    <property name="halign">start</property>
+                    <property name="label" translatable="no">label</property>
+                    <property name="margin-bottom">2</property>
+                    <property name="margin-start">5</property>
+                    <property name="margin-top">2</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="preview_label">
+                    <property name="valign">center</property>
+                    <property name="label">text</property>
+                    <property name="justify">center</property>
+                    <property name="ellipsize">end</property>
+                  </object>
+                </child>
+              </object>
+            </property>
+            <property name="tab">
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">_Font</property>
+                <property name="use-underline">True</property>
+              </object>
+            </property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkNotebookPage">
+            <property name="position">1</property>
+            <property name="child">
+              <object class="GtkScrolledWindow">
+                <property name="focusable">true</property>
+                <property name="child">
+                  <object class="GtkBox" id="feat_box">
+                    <property name="margin-start">4</property>
+                    <property name="margin-end">4</property>
+                    <property name="margin-top">4</property>
+                    <property name="margin-bottom">4</property>
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkLabel" id="preview_label2">
+                        <property name="valign">center</property>
+                        <property name="label">text</property>
+                        <property name="justify">center</property>
+                        <property name="ellipsize">end</property>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </property>
+            <property name="tab">
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">_Features</property>
+                <property name="use-underline">True</property>
+              </object>
+            </property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkNotebookPage">
+            <property name="position">2</property>
+            <property name="child">
+              <object class="GtkScrolledWindow" id="text_view_container">
+                <property name="focusable">True</property>
+                <property name="has-frame">True</property>
+              </object>
+            </property>
+            <property name="tab">
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">_Text</property>
+                <property name="use-underline">True</property>
+              </object>
+            </property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="apply-box">
+        <property name="valign">center</property>
+        <property name="can-focus">False</property>
+        <property name="spacing">4</property>
+        <property name="margin-bottom">4</property>
+        <child>
+          <object class="GtkButton" id="setasdefault_button">
+            <property name="label" translatable="yes">Set as _default</property>
+            <property name="focusable">True</property>
+            <property name="receives-default">True</property>
+            <property name="use-underline">True</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="apply_button">
+            <property name="label" translatable="yes">Apply</property>
+            <property name="halign">end</property>
+            <property name="hexpand">True</property>
+            <property name="focusable">True</property>
+            <property name="receives-default">True</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkSizeGroup">
+    <widgets>
+      <widget name="setasdefault_button"/>
+      <widget name="apply_button"/>
+    </widgets>
+  </object>
+</interface>

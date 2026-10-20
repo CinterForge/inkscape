@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unitdefs>
+<!--Ruler metrics for most scales-->
+<metric name="general" default="true">
+    <tic div="true">1</tic>
+    <tic>2</tic>
+    <tic div="true">5</tic>
+    <tic div="true">10</tic>
+    <tic>25</tic>
+    <tic div="true">50</tic>
+    <tic div="true">100</tic>
+    <tic>250</tic>
+    <tic>500</tic>
+    <tic>1000</tic>
+    <tic>2500</tic>
+    <tic>5000</tic>
+    <tic>10000</tic>
+    <tic>25000</tic>
+    <tic>50000</tic>
+    <tic>100000</tic>
+</metric>
+<!--Ruler metrics for inch scales-->
+<metric name="dyadic">
+    <tic div="true">1</tic>
+    <tic div="true">2</tic>
+    <tic div="true">4</tic>
+    <tic div="true">8</tic>
+    <tic div="true">16</tic>
+    <tic>32</tic>
+    <tic>64</tic>
+    <tic>128</tic>
+    <tic>256</tic>
+    <tic>512</tic>
+    <tic>1024</tic>
+    <tic>2048</tic>
+    <tic>4096</tic>
+    <tic>8192</tic>
+    <tic>16384</tic>
+    <tic>32768</tic>
+</metric>
+
+<!-- Units used by Inkscape.
+    Note: units will be presented in the UI in the order they are defined here. -->
+<unit type="LINEAR" pri="y">
+    <name>pixel</name>
+    <plural>pixels</plural>
+    <abbr>px</abbr>
+    <factor>1.00</factor>
+    <description>CSS Pixels (96/inch)</description>
+    <precision>2</precision>
+    <step>1.0</step>
+</unit>
+<unit type="LINEAR" pri="n" metric="dyadic">
+    <name>inch</name>
+    <plural>inches</plural>
+    <abbr>in</abbr>
+    <factor>96.0</factor>
+    <description>Inches (96 px/in)</description>
+    <precision>2</precision>
+    <step>0.1</step>
+</unit>
+<unit type="LINEAR" pri="n" metric="dyadic">
+    <name>foot</name>
+    <plural>feet</plural>
+    <abbr>ft</abbr>
+    <factor>1152.0</factor>
+    <description>Feet (12 in/ft)</description>
+    <precision>3</precision>
+    <step>0.1</step>
+</unit>
+<unit type="LINEAR" pri="n">
+    <name>millimeter</name>
+    <plural>millimeters</plural>
+    <abbr>mm</abbr>
+    <factor>3.779527559055119</factor>
+    <description>Millimeters (25.4 mm/in)</description>
+    <precision>2</precision>
+    <step>1.0</step>
+</unit>
+<unit type="LINEAR" pri="n">
+    <name>centimeter</name>
+    <plural>centimeters</plural>
+    <abbr>cm</abbr>
+    <factor>37.79527559055119</factor>
+    <description>Centimeters (10 mm/cm)</description>
+    <precision>2</precision>
+    <step>0.1</step>
+</unit>
+<unit type="LINEAR" pri="n">
+    <name>meter</name>
+    <plural>meters</plural>
+    <abbr>m</abbr>
+    <factor>3779.527559055119</factor>
+    <description>Meters (100 cm/m)</description>
+    <precision>3</precision>
+    <step>0.1</step>
+</unit>
+<unit type="LINEAR" pri="n">
+    <name>point</name>
+    <plural>points</plural>
+    <abbr>pt</abbr>
+    <factor>1.333333333333333</factor>
+    <description>PostScript points (72/inch)</description>
+    <precision>2</precision>
+    <step>0.1</step>
+</unit>
+<unit type="LINEAR" pri="n">
+    <name>pica</name>
+    <plural>picas</plural>
+    <abbr>pc</abbr>
+    <factor>16.0</factor>
+    <description>12 points</description>
+    <precision>3</precision>
+    <step>0.1</step>
+</unit>
+<unit type="RADIAL" pri="y">
+    <name>degree</name>
+    <plural>degrees</plural>
+    <abbr>°</abbr>
+    <factor>1.00</factor>
+    <description>Degrees</description>
+    <precision>2</precision>
+    <step>1.0</step>
+</unit>
+<unit type="RADIAL" pri="n">
+    <name>radian</name>
+    <plural>radians</plural>
+    <abbr>rad</abbr>
+    <factor>57.29577951308232</factor>
+    <description>Radians (180/pi deg/rad)</description>
+    <precision>3</precision>
+    <step>0.1</step>
+</unit>
+<unit type="RADIAL" pri="n">
+    <name>gradian</name>
+    <plural>gradians</plural>
+    <abbr>grad</abbr>
+    <factor>0.9</factor>
+    <description>Gradians (360/400 deg/grad)</description>
+    <precision>2</precision>
+    <step>1.0</step>
+</unit>
+<unit type="RADIAL" pri="n">
+    <name>turn</name>
+    <plural>turns</plural>
+    <abbr>turn</abbr>
+    <factor>360</factor>
+    <description>Turns (360 deg/turn)</description>
+    <precision>3</precision>
+    <step>0.1</step>
+</unit>
+<unit type="FONT_HEIGHT" pri="y">
+    <name>font-height</name>
+    <plural>font-heights</plural>
+    <abbr>em</abbr>
+    <factor>1.00</factor>
+    <description>Font height</description>
+    <precision>2</precision>
+    <step>0.1</step>
+</unit>
+<unit type="FONT_HEIGHT" pri="n">
+    <name>x-height</name>
+    <plural>x-heights</plural>
+    <abbr>ex</abbr>
+    <factor>0.50</factor>
+    <description>Height of letter 'x'</description>
+    <precision>2</precision>
+    <step>0.1</step>
+</unit>
+<unit type="FONT_HEIGHT" pri="n">
+    <name>half-em</name>
+    <plural>half-ems</plural>
+    <abbr>en</abbr>
+    <factor>0.50</factor>
+    <description>Half of font height</description>
+    <precision>2</precision>
+    <step>0.1</step>
+</unit>
+<unit type="DIMENSIONLESS" pri="y">
+    <name>%</name>
+    <plural>%</plural>
+    <abbr>%</abbr>
+    <factor>1.00</factor>
+    <description>Percentage</description>
+    <precision>2</precision>
+    <step>1.0</step>
+</unit>
+
+</unitdefs>

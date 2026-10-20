@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100mm"
+   height="100mm"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.5-dev (dd7d213d1d, 2025-02-26, custom)"
+   sodipodi:docname="11-text-decoration.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <style
+     type="text/css"
+     id="style1">
+    text {
+      font-family: Noto Sans;
+    }   
+</style>
+  <defs
+     id="defs1">
+    <rect
+       x="37.5"
+       y="38.976547"
+       width="302.36221"
+       height="314.21036"
+       id="rect1" />
+    <view
+       viewBox="0 0 100 100"
+       id="page1"
+       inkscape:label="Underlined"
+       inkscape:margin="10"
+       inkscape:bleed="0" />
+    <view
+       viewBox="110 0 100 100"
+       id="page3"
+       inkscape:label="Wavy Line"
+       inkscape:margin="10"
+       inkscape:bleed="0" />
+    <view
+       viewBox="220 0 100 100"
+       id="page5"
+       inkscape:label="Overlined"
+       inkscape:margin="10"
+       inkscape:bleed="0" />
+    <view
+       viewBox="330 0 100 100"
+       id="page6"
+       inkscape:label="Flowed Complex"
+       inkscape:margin="10"
+       inkscape:bleed="0" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview1"
+     inkscape:current-layer="g345"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="1482.4493"
+     inkscape:cy="248.54803"
+     inkscape:window-width="2560"
+     inkscape:window-height="1408"
+     inkscape:window-maximized="1"
+     showgrid="false" />
+  <text
+     xml:space="preserve"
+     style="font-size:9.90414px;line-height:0;letter-spacing:0px;word-spacing:0px;fill:#000000;stroke:none;stroke-width:0.928509px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="12.059772"
+     y="20.310785"
+     id="text1"><tspan
+   style="text-decoration:underline;text-decoration-line:underline;stroke-width:0.928509px"
+   id="tspan1">Underlined</tspan> text</text>
+  <text
+     xml:space="preserve"
+     style="font-size:6.92295px;line-height:0;letter-spacing:0px;word-spacing:0px;fill:#ff00ff;fill-opacity:0.5;stroke:none;stroke-width:0.649024px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="230.71521"
+     y="18.549078"
+     id="text2"><tspan
+   style="text-decoration-line:overline;stroke-width:0.649024px"
+   id="tspan2">Overlined</tspan> no shorthand</text>
+  <text
+     xml:space="preserve"
+     style="font-size:7.02091px;line-height:0;letter-spacing:0px;word-spacing:0px;fill:green;stroke:none;stroke-width:0.658208px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="11.732255"
+     y="40.02457"
+     id="text3"><tspan
+   style="text-decoration-line:underline;text-decoration-style:dotted;stroke-width:0.658208px"
+   id="tspan3">Dotted underlined</tspan> text</text>
+  <text
+     xml:space="preserve"
+     style="font-size:7.38807px;line-height:0;letter-spacing:0px;word-spacing:0px;fill:#000000;stroke:none;stroke-width:0.692628px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="11.521749"
+     y="30.534729"
+     id="text4"><tspan
+   style="text-decoration:overline;text-decoration-line:overline;text-decoration-style:dashed;stroke-width:0.692628px"
+   id="tspan4">dashed overlined</tspan> text</text>
+  <text
+     xml:space="preserve"
+     style="font-size:4.56157px;line-height:0;letter-spacing:0px;word-spacing:0px;fill:#000000;stroke:none;stroke-width:0.427646px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="131.5977"
+     y="67.32856"
+     id="text5"><tspan
+   style="text-decoration:line-through;text-decoration-line:line-through;text-decoration-style:wavy;stroke-width:0.427646px"
+   id="tspan5">Wavy striked through</tspan> text</text>
+  <text
+     xml:space="preserve"
+     style="font-size:4.43441px;line-height:0;letter-spacing:0px;word-spacing:0px;fill:#000000;stroke:none;stroke-width:0.415724px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="129.86087"
+     y="76.476151"
+     id="text6"><tspan
+   style="text-decoration:underline overline;text-decoration-line:underline overline;text-decoration-style:wavy;text-decoration-color:red;stroke-width:0.415724px"
+   id="tspan6">Wavy over- and underline</tspan> text</text>
+  <text
+     xml:space="preserve"
+     style="font-size:1.41111px;line-height:0;text-decoration:underline;text-decoration-line:underline;text-decoration-style:wavy;text-decoration-color:blue;letter-spacing:0px;word-spacing:0px;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="158.1199"
+     y="86.058525"
+     id="text7">small Wavy</text>
+  <text
+     xml:space="preserve"
+     style="font-size:43.1588px;line-height:0;text-decoration:underline;text-decoration-line:underline;text-decoration-style:wavy;text-decoration-color:blue;letter-spacing:0px;word-spacing:0px;fill:#000000;stroke:none;stroke-width:0.570955px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="127.88174"
+     y="48.935463"
+     id="text8">big</text>
+  <text
+     xml:space="preserve"
+     style="font-size:3.85753px;line-height:0;letter-spacing:0px;word-spacing:0px;fill:#000000;stroke:none;stroke-width:0.361642px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="233.27527"
+     y="82.219841"
+     id="text9"><tspan
+   style="text-decoration-line:underline overline;text-decoration-style:double;text-decoration-color:#000000;stroke-width:0.361642px"
+   id="tspan9"><tspan
+   style="font-size:8.67942px;stroke-width:0.361642px"
+   id="tspan8">Double</tspan> over- and underline</tspan> text</text>
+  <text
+     xml:space="preserve"
+     style="font-size:2.82223px;line-height:0;text-decoration:underline;text-decoration-line:underline;text-decoration-style:solid;text-decoration-color:red;letter-spacing:0px;word-spacing:0px;fill:#000000;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="12.647433"
+     y="48.702133"
+     id="text10">Everything red underlined, plus black strikethrough <tspan
+   style="font-size:2.82222px;text-decoration:line-through;text-decoration-line:line-through"
+   id="tspan10">here</tspan></text>
+  <g
+     id="g345"
+     inkscape:label="Flowed Text"
+     style="fill:#800080"
+     transform="translate(-330.13025,1.3429972)">
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,660.07813,-3.4473653)"
+       id="text1-9"
+       style="font-size:14px;line-height:1.15;text-align:justify;text-decoration:underline;text-decoration-line:underline;text-decoration-style:solid;text-decoration-color:red;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);shape-padding:5;display:inline;fill:#000000;stroke:none;stroke-width:7.55906;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+       x="0"
+       y="0"
+       inkscape:label="Flowed Text"><tspan
+         x="42.5"
+         y="56.014815"
+         id="tspan7">
+</tspan><tspan
+         x="42.5"
+         y="72.114814"
+         id="tspan12"><tspan
+   style="font-weight:bold"
+   id="tspan11">What is Lorem Ipsum?</tspan>
+</tspan><tspan
+         x="42.5"
+         y="88.214812"
+         id="tspan13">
+</tspan><tspan
+         x="42.5"
+         y="104.31481"
+         id="tspan58"><tspan
+           dx="0 0 0 0 0 0 2.7279167 0 0 0 0 0 2.7279167 0 0 2.7279167 0 0 0 0 0 0 2.7279167 0 0 0 0 0 2.7279167 0 0 0 0 2.7279167 0 0 2.7279167"
+           id="tspan57">Lorem Ipsum is simply dummy text of the </tspan></tspan><tspan
+         x="42.5"
+         y="120.41481"
+         id="tspan60"><tspan
+           dx="0 0 0 0 0 0 0 0 0 6.5308533 0 0 0 6.5308571 0 0 0 0 0 0 0 0 0 0 0 6.5308495 0 0 0 0 0 0 0 0 0 6.5308495"
+           id="tspan59">printing and typesetting industry. Lorem </tspan></tspan><tspan
+         x="42.5"
+         y="136.51481"
+         id="tspan62"><tspan
+           dx="0 0 0 0 0 0 6.288662 0 0 0 6.288662 0 0 0 0 6.288662 0 0 0 6.288662 0 0 0 0 0 0 0 0 0 0 6.288662"
+           id="tspan61">Ipsum has been the industry's standard </tspan></tspan><tspan
+         x="42.5"
+         y="152.61481"
+         id="tspan66"><tspan
+           dx="0 0 0 0 0 0 1.7679138 0 0 0 0 1.76791"
+           id="tspan63">dummy text ever </tspan><tspan
+           dx="1.76791"
+           id="tspan64">since </tspan><tspan
+           dx="1.7679176 0 0 0 1.76791 0 0 0 0 0 0 1.7679253 0 0 0 0 1.76791"
+           id="tspan65">the 1500s, when an </tspan></tspan><tspan
+         x="42.5"
+         y="168.71481"
+         id="tspan71">unknown <tspan
+   dx="0.96390915"
+   style="font-weight:bold;text-decoration-line:none"
+   id="tspan67">printer </tspan><tspan
+   dx="0.96390152"
+   style="font-weight:bold;text-decoration-line:none"
+   id="tspan68">took </tspan><tspan
+   dx="0.96390152 0 0.96390915"
+   style="font-weight:bold"
+   id="tspan69">a galley</tspan><tspan
+   dx="0 0.96390915 0 0 0.96389389 0 0 0 0 0.96390915"
+   id="tspan70"> of type and </tspan></tspan><tspan
+         x="42.5"
+         y="184.81482"
+         id="tspan75"><tspan
+           dx="0 0 0 0 0 0 0 0 0 0 0.46591568 0 0 0.46591568"
+           id="tspan72">scrambled it to </tspan><tspan
+           dx="0.46591568 0 0 0 0 0.46592331"
+           id="tspan73">make a </tspan><tspan
+           dx="0.46592331 0 0 0 0 0.46592331 0 0 0 0 0 0 0 0 0.46592331"
+           id="tspan74">type specimen book. </tspan></tspan><tspan
+         x="42.5"
+         y="200.91482"
+         id="tspan79"><tspan
+           dx="0 0 0 2.5519152"
+           id="tspan76">It has </tspan><tspan
+           dx="2.5519142"
+           id="tspan77">survived </tspan><tspan
+           dx="2.5519142 0 0 0 2.5519142 0 0 0 0 2.5519142 4.2139969 -4.2139931 0 0 2.5519066 0 0 0 0 0 0 0 0 0 0 2.551899"
+           id="tspan78">not only five centuries, but </tspan></tspan><tspan
+         x="42.5"
+         y="217.01483"
+         id="tspan81">also <tspan
+   dx="5.9974899 0 0 0 5.9974899 0 0 0 0 5.9974823 0 0 0 0 5.9974976 0 0 0 0 0 0 0 0 0 0 5.9974823"
+   id="tspan80">the leap into electronic typesetting, </tspan></tspan><tspan
+         x="42.5"
+         y="233.11484"
+         id="tspan84">remaining <tspan
+   dx="7.041851 0 0 0 0 0 0 0 0 0 0 0 7.041851 0 0 0 0 0 0 0 0 0 0 7.041851"
+   id="tspan82">essentially unchanged. It </tspan><tspan
+   dx="7.041851"
+   id="tspan83">was </tspan></tspan><tspan
+         x="42.5"
+         y="249.21484"
+         id="tspan87">popularise<tspan
+   dx="0 0 0.7559166 0 0 0.7559166 0 0 0 0.7559166 0 0 0 0 0 0.75592422 0 0 0 0 0.7559166"
+   id="tspan85">d in the 1960s with the </tspan><tspan
+   dx="0.7559166 0 0 0 0 0 0 0 0.7559166"
+   id="tspan86">release of </tspan></tspan><tspan
+         x="42.5"
+         y="265.31485"
+         id="tspan90"><tspan
+           dx="0 0 0 0 0 0 0 0 0 6.9018478 0 0 0 0 0 0 6.9018517 0 0 0 0 0 0 0 0 0 0 6.9018364"
+           id="tspan88">Letraset sheets containing Lorem </tspan><tspan
+           dx="6.9018517"
+           id="tspan89">Ipsum </tspan></tspan><tspan
+         x="42.5"
+         y="281.41484"
+         id="tspan92">passages, <tspan
+   dx="3.1554832 0 0 0 3.1554832 0 0 0 0 3.1554832 0 0 0 0 0 0 0 0 3.1554756 0 0 0 0 3.155468"
+   id="tspan91">and more recently with desktop </tspan></tspan><tspan
+         x="42.5"
+         y="297.51485"
+         id="tspan94"><tspan
+           dx="0 0 0 0 0 0 0 0 0 0 0 4.3783455 0 0 0 0 0 0 0 0 4.3783531 0 0 0 0 4.3783531 0 0 0 0 0 4.3783531"
+           id="tspan93">publishing software like Aldus PageMaker </tspan></tspan><tspan
+         x="42.5"
+         y="313.61485"
+         id="tspan95">including versions of Lorem Ipsum.
+</tspan></text>
+  </g>
+</svg>

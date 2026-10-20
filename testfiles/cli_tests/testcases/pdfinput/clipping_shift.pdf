@@ -1,0 +1,152 @@
+%PDF-1.3
+%¿÷¢þ
+1 0 obj
+<< /Pages 2 0 R /Type /Catalog >>
+endobj
+2 0 obj
+<< /Count 1 /Kids [ 3 0 R ] /Type /Pages >>
+endobj
+3 0 obj
+<< /Contents [ 4 0 R 5 0 R ] /MediaBox [ 0 0 612 792 ] /Parent 2 0 R /Resources << /Font << /F1 6 0 R >> >> /Type /Page >>
+endobj
+4 0 obj
+<< /Length 0 >>
+stream
+
+endstream
+endobj
+5 0 obj
+<< /Length 1849 >>
+stream
+% page size [0, 0, 612, 792]
+q
+100 100 300 300 re 
+W % define clipping path
+s % also stroke it
+0 0 m
+1 0 0 RG
+1 0 0 rg
+200 200 l % a clipped line
+s
+0 0 1 RG % blue stroke to show unclipped lines
+150 200 m
+150 300 l % clipping path has no effect
+s
+q
+1 0 0 1 10 10 cm % tiny silly shift
+150 200 m
+150 300 l % clipping path has no effect
+s
+1 0 0 1 10 10 cm % another tiny silly shift
+150 200 m
+150 300 l % clipping path has no effect
+s
+BT
+/F1 12 Tf
+110 110 Td
+( Unclipped Text ) Tj
+ET
+Q
+1 0 0 RG % red stroke to show shifted stuff
+1 0 0 1 150 50 cm % shift the origin
+100 100 300 300 re % redraw the same rectangle
+s
+0 0 m
+200 200 l % and clipped line
+s
+0.75 0 1 RG % purple to show shifted unclipped lines
+0.75 0 1 rg
+150 200 m
+150 300 l % clipping path has no effect
+s
+q
+1 0 0 1 10 10 cm % tiny silly shift
+150 200 m
+150 300 l % clipping path has no effect
+s
+1 0 0 1 10 10 cm % another tiny silly shift
+150 200 m
+150 300 l % clipping path has no effect
+s
+BT
+/F1 12 Tf
+110 110 Td
+( Unclipped Text ) Tj
+ET
+Q
+Q
+q
+% a new clipping path with a funky shape
+1 0 0 1 0 300 cm
+300.852 324 m 
+171.863 312.695 l 
+128.094 366.84 l 
+162 270 l 
+85.254 194.086 l 
+177.996 253.582 235.582 239.305 258.008 151.246 c 
+254.703 221.414 224.117 311.098 300.852 324 c 
+h
+300.852 324 m
+W
+s % stroke and clip the path
+1 0 0 RG % red lines are clipped
+275 300 m
+200 300 l % clipped just by curved path
+s
+BT
+/F1 12 Tf
+200 300 Td
+( Clipped by curve ) Tj
+ET
+200 250 m
+100 250 l % clipped by straight path
+s
+BT
+/F1 12 Tf
+100 250 Td
+( Clipped by straight line ) Tj
+ET
+0 0 1 RG % blue lines are not clipped
+220 250 m
+200 275 l % no clip
+s
+Q
+BT
+/F1 12 Tf
+400 720 Td
+( Black: Clipping paths ) Tj
+ET
+1 0 0 rg
+BT
+/F1 12 Tf
+400 700 Td
+( Red: Clipped lines ) Tj
+ET
+0 0 1 rg
+BT
+400 680 Td
+( Blue: Unclipped lines ) Tj
+ET
+0.75 0 1 rg
+BT
+400 660 Td
+( Purple: Shifted unclipped lines ) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /BaseFont /Helvetica /Subtype /Type1 /Type /Font >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000123 00000 n 
+0000000261 00000 n 
+0000000310 00000 n 
+0000002211 00000 n 
+trailer << /Root 1 0 R /Size 7 /ID [<acf47b048634dd3b4031d1ee95def02f><acf47b048634dd3b4031d1ee95def02f>] >>
+startxref
+2281
+%%EOF

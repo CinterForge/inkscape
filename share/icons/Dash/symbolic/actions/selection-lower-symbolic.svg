@@ -1,0 +1,9 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="selection-lower">
+<g id=".arrange-lower">
+<path id="Union" opacity="0.5" d="M8 3V2H1V3H8ZM8 5H1V6H8V5ZM15 8H1V11H15V8ZM2 9H14V10H2V9ZM8 13H1V14H8V13Z" fill="black"/>
+<path id="Union_2" d="M15.207 3L14.5 2.29297L13 3.79297V0H12V3.79297L10.5 2.29297L9.79297 3L12.5 5.70703L15.207 3Z" fill="black"/>
+<path class="warning" d="M1 8H15V11H1V8Z" fill="#0A8BFF"/>
+</g>
+</g>
+</svg>

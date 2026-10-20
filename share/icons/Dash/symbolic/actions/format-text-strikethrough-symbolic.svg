@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   viewBox="0 0 16 16"
+   fill="none"
+   version="2.0"
+   id="svg1"
+   inkscape:version="1.5-dev (256bf56073, 2026-10-02, custom)"
+   sodipodi:docname="format-text-strikethrough-symbolic.svg"
+   standalone="no"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="10.21875001"
+     inkscape:cx="12.77064219"
+     inkscape:cy="10.81345565"
+     inkscape:window-width="1729"
+     inkscape:window-height="600"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="text_strikethrough">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="1"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.3019607843"
+       color="#0099e5"
+       opacity="0.1490196078"
+       empspacing="5"
+       enabled="true"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     id="text_strikethrough">
+    <g
+       id=".text-strikethrough">
+      <path
+         d="M 3,7 V 8 H 13 V 7 Z"
+         id="path1"
+         style="fill:#000000"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         d="m 4.5078125,9.052734375 1.6875,-0.1640625 q 0.15234375,0.849609375 0.615234375,1.248046875 0.46875,0.3984375 1.259765625,0.3984375 0.837890625,0 1.259765625,-0.3515625 Q 9.7578125,9.826171875 9.7578125,9.3515625 q 0,-0.3046875 -0.181640625,-0.515625 -0.17578125,-0.216796875 -0.62109375,-0.375 -0.3046875,-0.10546875 -1.388671875,-0.375 Q 6.171875,7.740234375 5.609375,7.236328125 4.818359375,6.52734375 4.818359375,5.5078125 q 0,-0.65625 0.369140625,-1.224609375 0.375,-0.57421875 1.072265625,-0.873046875 0.703125,-0.298828125 1.693359375,-0.298828125 1.6171875,0 2.43164063,0.708984375 0.8203125,0.708984375 0.86132812,1.892578125 L 9.51171875,5.7890625 Q 9.400390625,5.126953125 9.03125,4.83984375 8.66796875,4.546875 7.935546875,4.546875 7.1796875,4.546875 6.751953125,4.857421875 6.4765625,5.056640625 6.4765625,5.390625 q 0,0.3046875 0.2578125,0.521484375 Q 7.0625,6.1875 8.328125,6.486328125 q 1.265625,0.298828125 1.86914063,0.62109375 0.609375,0.31640625 0.94921875,0.873046875 0.34570312,0.55078125 0.34570312,1.365234375 0,0.738281255 -0.41015625,1.382812505 Q 10.671875,11.37304688 9.921875,11.68945313 9.171875,12 8.052734375,12 6.423828125,12 5.55078125,11.25 4.677734375,10.49414063 4.5078125,9.052734375 Z"
+         id="text3"
+         aria-label="S"
+         style="fill:#000000" />
+    </g>
+  </g>
+</svg>

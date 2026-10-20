@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkAdjustment" id="_cap_rounding_adj">
+    <property name="upper">5</property>
+    <property name="step-increment">0.01</property>
+    <property name="page-increment">0.10</property>
+  </object>
+  <object class="GtkAdjustment" id="_mass_adj">
+    <property name="upper">100</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="_thinning_adj">
+    <property name="lower">-100</property>
+    <property name="upper">100</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="_tremor_adj">
+    <property name="upper">100</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="_width_adj">
+    <property name="upper">100</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkBox" id="eraser-toolbar">
+    <property name="halign">start</property>
+    <property name="valign">center</property>
+    <property name="hexpand">True</property>
+    <child>
+      <object class="GtkLabel">
+        <property name="label" translatable="yes">Mode:</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="mode_buttons_box">
+        <property name="spacing">3</property>
+        <child>
+          <object class="GtkToggleButton" id="mode_buttons_group">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Delete objects touched by eraser</property>
+            <property name="has-frame">False</property>
+            <property name="icon-name">draw-eraser-delete-objects</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Cut out from paths and shapes</property>
+            <property name="has-frame">False</property>
+            <property name="group">mode_buttons_group</property>
+            <property name="icon-name">path-difference</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Clip from objects</property>
+            <property name="has-frame">False</property>
+            <property name="group">mode_buttons_group</property>
+            <property name="icon-name">path-intersection</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator" id="_params_sep">
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="_width_box">
+        <property name="tooltip-text" translatable="yes">The width of the eraser pen (relative to the visible canvas area)</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Width</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_width_item">
+            <property name="name">eraser-width</property>
+            <property name="focusable">True</property>
+            <property name="adjustment">_width_adj</property>
+            <property name="climb-rate">1</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_usepressure_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Use the pressure of the input device to alter the width of the pen</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">draw-use-pressure</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="_thinning_box">
+        <property name="tooltip-text" translatable="yes">How much velocity thins the stroke (&gt; 0 makes fast strokes thinner, &lt; 0 makes them broader, 0 makes width independent of velocity)</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Thinning</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_thinning_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_thinning_adj</property>
+            <property name="climb-rate">0.10</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="_cap_rounding_box">
+        <property name="tooltip-text" translatable="yes">Increase to make caps at the ends of strokes protrude more (0 = no caps, 1 = round caps)</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Caps</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_cap_rounding_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_cap_rounding_adj</property>
+            <property name="climb-rate">0.10</property>
+            <property name="digits">2</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="_tremor_box">
+        <property name="tooltip-text" translatable="yes">Increase to make strokes rugged and trembling</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Tremor</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_tremor_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_tremor_adj</property>
+            <property name="climb-rate">1</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="_mass_box">
+        <property name="tooltip-text" translatable="yes">Increase to make the eraser slowed by inertia</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Mass</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_mass_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_mass_adj</property>
+            <property name="climb-rate">1</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator" id="_split_sep">
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_split_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Break apart cut items</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">distribute-randomize</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <style>
+      <class name="inkscape-toolbar"/>
+    </style>
+  </object>
+</interface>

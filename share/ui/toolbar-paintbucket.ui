@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"></requires>
+  <object class="GtkAdjustment" id="_offset_adj">
+    <property name="lower">-10000</property>
+    <property name="upper">10000</property>
+    <property name="step-increment">0.10</property>
+    <property name="page-increment">0.5</property>
+  </object>
+  <object class="GtkAdjustment" id="_threshold_adj">
+    <property name="upper">100</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkBox" id="paintbucket-toolbar">
+    <property name="halign">start</property>
+    <property name="valign">center</property>
+    <property name="hexpand">True</property>
+    <child>
+      <object class="GtkBox" id="channels_box">
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Fill by</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkDropDown" id="channel-list"></object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator"></object>
+    </child>
+    <child>
+      <object class="GtkBox" id="threshold_box">
+        <property name="tooltip-text" translatable="yes">The maximum allowed difference between the clicked pixel and the neighboring pixels to be counted in the fill</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Threshold</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_threshold_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_threshold_adj</property>
+            <property name="climb-rate">0.10</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="offset_box">
+        <property name="tooltip-text" translatable="yes">The amount to grow (positive) or shrink (negative) the created fill path</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Grow/shrink by</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_offset_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_offset_adj</property>
+            <property name="climb-rate">1</property>
+            <property name="digits">2</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="unit_menu_box"></object>
+    </child>
+    <child>
+      <object class="GtkSeparator"></object>
+    </child>
+    <child>
+      <object class="GtkBox" id="autogap_box">
+        <property name="margin-start">5</property>
+        <style>
+          <class name="priority1"></class>
+        </style>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Close gaps</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkDropDown" id="autogap-list"></object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <style>
+          <class name="priority1"></class>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="reset_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Reset paint bucket parameters to defaults (use Inkscape Preferences &gt; Tools to change defaults)</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">edit-clear</property>
+        <style>
+          <class name="priority1"></class>
+        </style>
+      </object>
+    </child>
+    <style>
+      <class name="inkscape-toolbar"></class>
+    </style>
+  </object>
+</interface>

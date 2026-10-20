@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <menu id="LPEEffectMenu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Duplicate</attribute>
+        <attribute name="action">lpe-item.duplicate</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Move Up</attribute>
+        <attribute name="action">lpe-item.move-up</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Move Down</attribute>
+        <attribute name="action">lpe-item.move-down</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Flatten</attribute>
+        <attribute name="action">lpe-item.flatten</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Set Custom Defaults</attribute>
+        <attribute name="action">lpe-item.set-def</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Forget Custom Defaults</attribute>
+        <attribute name="action">lpe-item.forget-def</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Set Favorite</attribute>
+        <attribute name="action">lpe-item.set-fav</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Unset Favorite</attribute>
+        <attribute name="action">lpe-item.unset-fav</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
+      </item>
+    </section>
+  </menu>
+  <object class="GtkBox" id="LPEEffect">
+    <property name="name">LPEEffectItem</property>
+    <property name="focusable">True</property>
+    <child>
+      <object class="GtkBox">
+        <property name="name">LPEEffectItem</property>
+        <property name="hexpand">True</property>
+        <property name="vexpand">True</property>
+        <child>
+          <object class="GtkOverlay">
+            <property name="focusable">True</property>
+            <property name="hexpand">True</property>
+            <property name="child">
+              <object class="GtkExpander" id="LPEExpander">
+                <property name="focusable">False</property>
+                <child type="label">
+                  <object class="GtkBox">
+                    <property name="name">LPEExpanderBox</property>
+                    <property name="hexpand">True</property>
+                    <child>
+                      <object class="GtkBox" id="LPEExpanderBox">
+                        <child>
+                          <object class="GtkImage" id="LPEIconImage">
+                            <property name="margin-end">5</property>
+                            <property name="margin-end">5</property>
+                            <property name="pixel-size">25</property>
+                            <property name="icon-size">large</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="LPENameLabel">
+                            <property name="halign">start</property>
+                            <property name="label" translatable="no">expander</property>
+                            <property name="ellipsize">end</property>
+                            <property name="single-line-mode">True</property>
+                            <property name="xalign">0</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="width-request">145</property>
+                        <property name="halign">start</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </property>
+            <child type="overlay">
+              <object class="GtkBox">
+                <property name="height-request">30</property>
+                <property name="valign">start</property>
+                <child>
+                  <object class="GtkBox" id="LPEOpenExpander">
+                    <property name="hexpand">True</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkBox">
+                    <property name="width-request">145</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child type="overlay">
+              <object class="GtkBox" id="LPEActionButtons">
+                <property name="name">LPEActionButtons</property>
+                <property name="halign">end</property>
+                <property name="valign">start</property>
+                <child>
+                  <object class="GtkBox">
+                    <child>
+                      <object class="GtkButton" id="LPEHide">
+                        <property name="width-request">30</property>
+                        <property name="has-frame">False</property>
+                        <property name="tooltip-text" translatable="yes">Show/hide this Live Path Effect</property>
+                        <property name="icon-name">object-visible-symbolic</property>
+                        <style>
+                          <class name="minbutton"/>
+                        </style>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="LPEErase">
+                        <property name="width-request">30</property>
+                        <property name="has-frame">False</property>
+                        <property name="tooltip-text" translatable="yes">Remove this Live Path Effect</property>
+                        <property name="icon-name">edit-delete-symbolic</property>
+                        <style>
+                          <class name="minbutton"/>
+                        </style>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuButton" id="LPEEffectMenuButton">
+                        <property name="name">LPEEffectMenuButton</property>
+                        <property name="width-request">30</property>
+                        <property name="focus-on-click">False</property>
+                        <property name="menu-model">LPEEffectMenu</property>
+                        <property name="tooltip-text" translatable="yes">Menu with options related to this Live Path Effect</property>
+                        <property name="icon-name">go-down-symbolic</property>
+                      </object>
+                    </child>
+                    <style>
+                      <class name="linked"/>
+                    </style>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="LPEDrag">
+                    <property name="focusable">True</property>
+                    <property name="halign">center</property>
+                    <property name="has-frame">False</property>
+                    <property name="width-request">35</property>
+                    <property name="tooltip-text" translatable="yes">Reorder this Live Path Effect</property>
+                    <property name="hexpand">True</property>
+                    <child>
+                      <object class="GtkImage" id="dndImage">
+                        <property name="halign">center</property>
+                        <property name="margin-start">2</property>
+                        <property name="margin-start">2</property>
+                        <property name="icon-name">dnd</property>
+                      </object>
+                    </child>
+                    <style>
+                      <class name="LPEDrag"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <style>
+          <class name="activatable"/>
+        </style>
+      </object>
+    </child>
+    <style>
+      <class name="activatable"/>
+    </style>
+  </object>
+</interface>

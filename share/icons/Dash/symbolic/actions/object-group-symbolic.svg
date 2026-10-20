@@ -1,0 +1,16 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="object-group">
+<g id=".group-true" clip-path="url(#clip0_3684_42845)">
+<g id=".bounding-box-group">
+<path id="Union" d="M2 16H0V14H2V16ZM16 16H14V14H16V16ZM2 2H0V0H2V2ZM16 2H14V0H16V2Z" fill="black"/>
+<path id="Subtract" d="M15 15H1V1H15V15ZM2 14H14V2H2V14Z" fill="black"/>
+</g>
+<path id="Union_2" d="M9 7H12V12H7V9H4V4H9V7ZM5 8H7V7H8V5H5V8Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42845">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

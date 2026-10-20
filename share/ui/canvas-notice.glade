@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkRevealer" id="canvas-notice">
+    <property name="halign">center</property>
+    <property name="valign">start</property>
+    <property name="child">
+      <object class="GtkFrame">
+        <property name="child">
+          <object class="GtkBox">
+            <property name="spacing">20</property>
+            <child>
+              <object class="GtkImage" id="notice-icon">
+                <property name="margin-start">6</property>
+                <property name="margin-end">6</property>
+                <property name="margin-top">4</property>
+                <property name="margin-bottom">4</property>
+                <property name="icon-name">dialog-information</property>
+                <property name="icon-size">large</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="notice-label">
+                <property name="halign">start</property>
+                <property name="hexpand">True</property>
+                <property name="label">Example text for the notification widget!</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="notice-close">
+                <property name="focusable">True</property>
+                <property name="focus-on-click">False</property>
+                <property name="has-frame">False</property>
+                <child>
+                  <object class="GtkImage">
+                    <property name="icon-name">window-close-symbolic</property>
+                    <property name="icon-size">normal</property>
+                  </object>
+                </child>
+                <style>
+                  <class name="image-button"/>
+                </style>
+              </object>
+            </child>
+          </object>
+        </property>
+        <style>
+          <class name="app-notification"/>
+        </style>
+      </object>
+    </property>
+  </object>
+</interface>

@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkAdjustment" id="seg_min_length_adj">
+    <property name="lower">0</property>
+    <property name="upper">100</property>
+    <property name="step-increment">0.1</property>
+    <property name="page-increment">1</property>
+  </object>
+  <object class="GtkBox" id="main">
+    <property name="orientation">vertical</property>
+    <property name="hexpand">True</property>
+    <property name="vexpand">True</property>
+    <property name="spacing">10</property>
+    <child>
+      <object class="GtkGrid" id="display_options_grid">
+        <property name="valign">start</property>
+        <property name="margin-bottom">1</property>
+        <property name="row-spacing">2</property>
+        <property name="column-spacing">5</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Display options</property>
+            <property name="halign">start</property>
+            <style>
+              <class name="heading"/>
+            </style>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">0</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="show_angle_btn">
+            <property name="label" translatable="yes">Show angle</property>
+            <property name="halign">start</property>
+            <property name="focusable">True</property>
+            <property name="tooltip-text" translatable="yes">Show the angle measurement</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">1</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="show_deltas_btn">
+            <property name="label" translatable="yes">Show delta values</property>
+            <property name="halign">start</property>
+            <property name="focusable">True</property>
+            <property name="tooltip-text" translatable="yes">Show dX and dY measurements</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">2</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="deltas_label_btn">
+            <property name="label" translatable="yes">Show delta labels</property>
+            <property name="halign">start</property>
+            <property name="focusable">True</property>
+            <property name="tooltip-text" translatable="yes">Add labels to the delta measurements</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">3</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="segments_label_btn">
+            <property name="label" translatable="yes">Show segment labels</property>
+            <property name="halign">start</property>
+            <property name="focusable">True</property>
+            <property name="tooltip-text" translatable="yes">Add labels to the intersection segments</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">4</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Min. segment length</property>
+            <property name="halign">start</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">5</property>
+              <property name="column-span">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="seg_min_length">
+            <property name="halign">start</property>
+            <property name="focusable">True</property>
+            <property name="width-chars">2</property>
+            <property name="digits">2</property>
+            <property name="climb-rate">0.10</property>
+            <property name="adjustment">seg_min_length_adj</property>
+            <property name="tooltip-text" translatable="yes">Intersection segments shorter than this length will not be shown</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">5</property>
+              <property name="column-span">1</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+        <object class="GtkSeparator">
+        </object>
+    </child>
+    <child>
+      <object class="GtkGrid" id="clipboard_options_grid">
+        <property name="valign">start</property>
+        <property name="margin-bottom">1</property>
+        <property name="row-spacing">2</property>
+        <property name="column-spacing">5</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Copy measurements as text</property>
+            <property name="halign">start</property>
+            <style>
+              <class name="heading"/>
+            </style>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">0</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">String formatting</property>
+            <property name="halign">start</property>
+            <style>
+              <class name="heading1"/>
+            </style>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">1</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="labels">
+            <property name="label" translatable="yes">Include labels</property>
+            <property name="focusable">True</property>
+            <property name="halign">start</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">2</property>
+              <property name="column-span">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="units">
+            <property name="label" translatable="yes">Include units</property>
+            <property name="focusable">True</property>
+            <property name="halign">start</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">2</property>
+              <property name="column-span">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="tabs">
+            <property name="label" translatable="yes">Tab-separated string</property>
+            <property name="focusable">True</property>
+            <property name="halign">start</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">3</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Measurements to copy</property>
+            <property name="halign">start</property>
+            <style>
+              <class name="heading1"/>
+            </style>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">5</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="length">
+            <property name="label" translatable="yes">Length</property>
+            <property name="focusable">True</property>
+            <property name="halign">start</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">6</property>
+              <property name="column-span">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="between">
+            <property name="label" translatable="yes">Length - no end points</property>
+            <property name="focusable">True</property>
+            <property name="halign">start</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">6</property>
+              <property name="column-span">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="dX">
+            <property name="label">dX</property>
+            <property name="focusable">True</property>
+            <property name="halign">start</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">7</property>
+              <property name="column-span">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="dY">
+            <property name="label">dY</property>
+            <property name="focusable">True</property>
+            <property name="halign">start</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">7</property>
+              <property name="column-span">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="angle">
+            <property name="label" translatable="yes">Angle</property>
+            <property name="focusable">True</property>
+            <property name="halign">start</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">8</property>
+              <property name="column-span">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="segments">
+            <property name="label" translatable="yes">In-between segments</property>
+            <property name="focusable">True</property>
+            <property name="halign">start</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">8</property>
+              <property name="column-span">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Shape info</property>
+            <property name="halign">start</property>
+            <style>
+              <class name="heading1"/>
+            </style>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">10</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="shape_width">
+            <property name="label" translatable="yes">Width</property>
+            <property name="focusable">True</property>
+            <property name="halign">start</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">11</property>
+              <property name="column-span">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="shape_height">
+            <property name="label" translatable="yes">Height</property>
+            <property name="focusable">True</property>
+            <property name="halign">start</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">11</property>
+              <property name="column-span">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="shape_X">
+            <property name="label" translatable="yes">X</property>
+            <property name="focusable">True</property>
+            <property name="halign">start</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">12</property>
+              <property name="column-span">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="shape_Y">
+            <property name="label" translatable="yes">Y</property>
+            <property name="focusable">True</property>
+            <property name="halign">start</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">12</property>
+              <property name="column-span">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="shape_length">
+            <property name="label" translatable="yes">Length</property>
+            <property name="focusable">True</property>
+            <property name="halign">start</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">13</property>
+              <property name="column-span">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="copy-to-clipboard">
+            <property name="label" translatable="yes">Copy measurements</property>
+            <property name="focusable">True</property>
+            <property name="halign">center</property>
+            <property name="width-request">80</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">14</property>
+              <property name="column-span">5</property>
+            </layout>
+          </object>
+        </child> 
+      </object>
+    </child>
+  </object>
+</interface>

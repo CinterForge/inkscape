@@ -1,0 +1,203 @@
+// SPDX-License-Identifier: GPL-2.0-or-later
+//
+// Created by Michael Kowalski on 8/11/25.
+//
+
+#include "unicode.h"
+
+#include <charconv>
+#include <unicode/uchar.h>
+#include <giomm/file.h>
+#include <glibmm/i18n.h>
+#include <glibmm/regex.h>
+
+#include "io/resource.h"
+
+using Glib::Regex;
+
+namespace Inkscape::Util {
+
+const std::vector<UnicodeRange>& get_unicode_ranges() {
+    static std::vector<UnicodeRange> ranges{
+        {0x00000, 0x10FFFF, _("All")},
+        // those ranges are not useful to the users:
+        // {0x00000, 0x0FFFF, _("Basic Plane")},
+        // {0x10000, 0x1FFFF, _("Extended Multilingual Plane")},
+        // {0x20000, 0x2FFFF, _("Supplementary Ideographic Plane")},
+        {0x0000, 0x007F, _("Basic Latin")},
+        {0x0080, 0x00FF, _("Latin-1 Supplement")},
+        {0x0100, 0x017F, _("Latin Extended-A")},
+        {0x0180, 0x024F, _("Latin Extended-B")},
+        {0x0250, 0x02AF, _("IPA Extensions")},
+        {0x02B0, 0x02FF, _("Spacing Modifier Letters")},
+        {0x0300, 0x036F, _("Combining Diacritical Marks")},
+        {0x0370, 0x03FF, _("Greek and Coptic")},
+        {0x0400, 0x04FF, _("Cyrillic")},
+        {0x0500, 0x052F, _("Cyrillic Supplement")},
+        {0x0530, 0x058F, _("Armenian")},
+        {0x0590, 0x05FF, _("Hebrew")},
+        {0x0600, 0x06FF, _("Arabic")},
+        {0x0700, 0x074F, _("Syriac")},
+        {0x0750, 0x077F, _("Arabic Supplement")},
+        {0x0780, 0x07BF, _("Thaana")},
+        {0x07C0, 0x07FF, _("NKo")},
+        {0x0800, 0x083F, _("Samaritan")},
+        {0x0900, 0x097F, _("Devanagari")},
+        {0x0980, 0x09FF, _("Bengali")},
+        {0x0A00, 0x0A7F, _("Gurmukhi")},
+        {0x0A80, 0x0AFF, _("Gujarati")},
+        {0x0B00, 0x0B7F, _("Oriya")},
+        {0x0B80, 0x0BFF, _("Tamil")},
+        {0x0C00, 0x0C7F, _("Telugu")},
+        {0x0C80, 0x0CFF, _("Kannada")},
+        {0x0D00, 0x0D7F, _("Malayalam")},
+        {0x0D80, 0x0DFF, _("Sinhala")},
+        {0x0E00, 0x0E7F, _("Thai")},
+        {0x0E80, 0x0EFF, _("Lao")},
+        {0x0F00, 0x0FFF, _("Tibetan")},
+        {0x1000, 0x109F, _("Myanmar")},
+        {0x10A0, 0x10FF, _("Georgian")},
+        {0x1100, 0x11FF, _("Hangul Jamo")},
+        {0x1200, 0x137F, _("Ethiopic")},
+        {0x1380, 0x139F, _("Ethiopic Supplement")},
+        {0x13A0, 0x13FF, _("Cherokee")},
+        {0x1400, 0x167F, _("Unified Canadian Aboriginal Syllabics")},
+        {0x1680, 0x169F, _("Ogham")},
+        {0x16A0, 0x16FF, _("Runic")},
+        {0x1700, 0x171F, _("Tagalog")},
+        {0x1720, 0x173F, _("Hanunoo")},
+        {0x1740, 0x175F, _("Buhid")},
+        {0x1760, 0x177F, _("Tagbanwa")},
+        {0x1780, 0x17FF, _("Khmer")},
+        {0x1800, 0x18AF, _("Mongolian")},
+        {0x18B0, 0x18FF, _("Unified Canadian Aboriginal Syllabics Extended")},
+        {0x1900, 0x194F, _("Limbu")},
+        {0x1950, 0x197F, _("Tai Le")},
+        {0x1980, 0x19DF, _("New Tai Lue")},
+        {0x19E0, 0x19FF, _("Khmer Symbols")},
+        {0x1A00, 0x1A1F, _("Buginese")},
+        {0x1A20, 0x1AAF, _("Tai Tham")},
+        {0x1B00, 0x1B7F, _("Balinese")},
+        {0x1B80, 0x1BBF, _("Sundanese")},
+        {0x1C00, 0x1C4F, _("Lepcha")},
+        {0x1C50, 0x1C7F, _("Ol Chiki")},
+        {0x1CD0, 0x1CFF, _("Vedic Extensions")},
+        {0x1D00, 0x1D7F, _("Phonetic Extensions")},
+        {0x1D80, 0x1DBF, _("Phonetic Extensions Supplement")},
+        {0x1DC0, 0x1DFF, _("Combining Diacritical Marks Supplement")},
+        {0x1E00, 0x1EFF, _("Latin Extended Additional")},
+        {0x1F00, 0x1FFF, _("Greek Extended")},
+        {0x2000, 0x206F, _("General Punctuation")},
+        {0x2070, 0x209F, _("Superscripts and Subscripts")},
+        {0x20A0, 0x20CF, _("Currency Symbols")},
+        {0x20D0, 0x20FF, _("Combining Diacritical Marks for Symbols")},
+        {0x2100, 0x214F, _("Letterlike Symbols")},
+        {0x2150, 0x218F, _("Number Forms")},
+        {0x2190, 0x21FF, _("Arrows")},
+        {0x2200, 0x22FF, _("Mathematical Operators")},
+        {0x2300, 0x23FF, _("Miscellaneous Technical")},
+        {0x2400, 0x243F, _("Control Pictures")},
+        {0x2440, 0x245F, _("Optical Character Recognition")},
+        {0x2460, 0x24FF, _("Enclosed Alphanumerics")},
+        {0x2500, 0x257F, _("Box Drawing")},
+        {0x2580, 0x259F, _("Block Elements")},
+        {0x25A0, 0x25FF, _("Geometric Shapes")},
+        {0x2600, 0x26FF, _("Miscellaneous Symbols")},
+        {0x2700, 0x27BF, _("Dingbats")},
+        {0x27C0, 0x27EF, _("Miscellaneous Mathematical Symbols-A")},
+        {0x27F0, 0x27FF, _("Supplemental Arrows-A")},
+        {0x2800, 0x28FF, _("Braille Patterns")},
+        {0x2900, 0x297F, _("Supplemental Arrows-B")},
+        {0x2980, 0x29FF, _("Miscellaneous Mathematical Symbols-B")},
+        {0x2A00, 0x2AFF, _("Supplemental Mathematical Operators")},
+        {0x2B00, 0x2BFF, _("Miscellaneous Symbols and Arrows")},
+        {0x2C00, 0x2C5F, _("Glagolitic")},
+        {0x2C60, 0x2C7F, _("Latin Extended-C")},
+        {0x2C80, 0x2CFF, _("Coptic")},
+        {0x2D00, 0x2D2F, _("Georgian Supplement")},
+        {0x2D30, 0x2D7F, _("Tifinagh")},
+        {0x2D80, 0x2DDF, _("Ethiopic Extended")},
+        {0x2DE0, 0x2DFF, _("Cyrillic Extended-A")},
+        {0x2E00, 0x2E7F, _("Supplemental Punctuation")},
+        {0x2E80, 0x2EFF, _("CJK Radicals Supplement")},
+        {0x2F00, 0x2FDF, _("Kangxi Radicals")},
+        {0x2FF0, 0x2FFF, _("Ideographic Description Characters")},
+        {0x3000, 0x303F, _("CJK Symbols and Punctuation")},
+        {0x3040, 0x309F, _("Hiragana")},
+        {0x30A0, 0x30FF, _("Katakana")},
+        {0x3100, 0x312F, _("Bopomofo")},
+        {0x3130, 0x318F, _("Hangul Compatibility Jamo")},
+        {0x3190, 0x319F, _("Kanbun")},
+        {0x31A0, 0x31BF, _("Bopomofo Extended")},
+        {0x31C0, 0x31EF, _("CJK Strokes")},
+        {0x31F0, 0x31FF, _("Katakana Phonetic Extensions")},
+        {0x3200, 0x32FF, _("Enclosed CJK Letters and Months")},
+        {0x3300, 0x33FF, _("CJK Compatibility")},
+        {0x3400, 0x4DBF, _("CJK Unified Ideographs Extension A")},
+        {0x4DC0, 0x4DFF, _("Yijing Hexagram Symbols")},
+        {0x4E00, 0x9FFF, _("CJK Unified Ideographs")},
+        {0xA000, 0xA48F, _("Yi Syllables")},
+        {0xA490, 0xA4CF, _("Yi Radicals")},
+        {0xA4D0, 0xA4FF, _("Lisu")},
+        {0xA500, 0xA63F, _("Vai")},
+        {0xA640, 0xA69F, _("Cyrillic Extended-B")},
+        {0xA6A0, 0xA6FF, _("Bamum")},
+        {0xA700, 0xA71F, _("Modifier Tone Letters")},
+        {0xA720, 0xA7FF, _("Latin Extended-D")},
+        {0xA800, 0xA82F, _("Syloti Nagri")},
+        {0xA830, 0xA83F, _("Common Indic Number Forms")},
+        {0xA840, 0xA87F, _("Phags-pa")},
+        {0xA880, 0xA8DF, _("Saurashtra")},
+        {0xA8E0, 0xA8FF, _("Devanagari Extended")},
+        {0xA900, 0xA92F, _("Kayah Li")},
+        {0xA930, 0xA95F, _("Rejang")},
+        {0xA960, 0xA97F, _("Hangul Jamo Extended-A")},
+        {0xA980, 0xA9DF, _("Javanese")},
+        {0xAA00, 0xAA5F, _("Cham")},
+        {0xAA60, 0xAA7F, _("Myanmar Extended-A")},
+        {0xAA80, 0xAADF, _("Tai Viet")},
+        {0xABC0, 0xABFF, _("Meetei Mayek")},
+        {0xAC00, 0xD7AF, _("Hangul Syllables")},
+        {0xD7B0, 0xD7FF, _("Hangul Jamo Extended-B")},
+        {0xD800, 0xDB7F, _("High Surrogates")},
+        {0xDB80, 0xDBFF, _("High Private Use Surrogates")},
+        {0xDC00, 0xDFFF, _("Low Surrogates")},
+        {0xE000, 0xF8FF, _("Private Use Area")},
+        {0xF900, 0xFAFF, _("CJK Compatibility Ideographs")},
+        {0xFB00, 0xFB4F, _("Alphabetic Presentation Forms")},
+        {0xFB50, 0xFDFF, _("Arabic Presentation Forms-A")},
+        {0xFE00, 0xFE0F, _("Variation Selectors")},
+        {0xFE10, 0xFE1F, _("Vertical Forms")},
+        {0xFE20, 0xFE2F, _("Combining Half Marks")},
+        {0xFE30, 0xFE4F, _("CJK Compatibility Forms")},
+        {0xFE50, 0xFE6F, _("Small Form Variants")},
+        {0xFE70, 0xFEFF, _("Arabic Presentation Forms-B")},
+        {0xFF00, 0xFFEF, _("Halfwidth and Fullwidth Forms")},
+        {0xFFF0, 0xFFFF, _("Specials")},
+        // Selected ranges in Extended Multilingual Plane
+        {0x1F300, 0x1F5FF, _("Miscellaneous Symbols and Pictographs")},
+        {0x1F600, 0x1F64F, _("Emoticons")},
+        {0x1F650, 0x1F67F, _("Ornamental Dingbats")},
+        {0x1F680, 0x1F6FF, _("Transport and Map Symbols")},
+        {0x1F700, 0x1F77F, _("Alchemical Symbols")},
+        {0x1F780, 0x1F7FF, _("Geometric Shapes Extended")},
+        {0x1F800, 0x1F8FF, _("Supplemental Arrows-C")},
+        {0x1F900, 0x1F9FF, _("Supplemental Symbols and Pictographs")},
+        {0x1FA00, 0x1FA7F, _("Chess Symbols")},
+        {0x1FA80, 0x1FAFF, _("Symbols and Pictographs Extended-A")},
+    };
+
+    return ranges;
+}
+
+std::string get_unicode_name(std::uint32_t unicode) {
+    UErrorCode status = U_ZERO_ERROR;
+    char buffer[1024];
+    auto length = u_charName(unicode, U_EXTENDED_CHAR_NAME, buffer, sizeof(buffer), &status);
+    if (U_SUCCESS(status)) {
+        return std::string(buffer, length);
+    }
+    return {};
+}
+
+}

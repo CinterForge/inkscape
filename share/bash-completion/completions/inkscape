@@ -1,0 +1,28 @@
+# inkscape(1) completion                                     -*- shell-script -*-
+
+_inkscape_optlist=""
+_inkscape_extlist=""
+
+_have inkscape &&
+_inkscape()
+{
+    local cur
+
+    COMPREPLY=()
+    cur=${COMP_WORDS[COMP_CWORD]}
+
+
+    if [[ "$cur" == -* ]]; then
+        if [[ -z "$_inkscape_optlist" ]]; then
+            _inkscape_optlist="$(inkscape --help | grep '^ *-' | sed 's/^  *//;s/  .*//;s/=.*/=/;s/,//')"
+        fi
+        COMPREPLY=( $(compgen -W "$_inkscape_optlist" -- "$cur") )
+    else
+        if [[ -z "$_inkscape_extlist" ]]; then
+            _inkscape_extlist="$(inkscape --list-input-types | tr '\n' '|' | sed 's/|$//')"
+        fi
+        _filedir "@($_inkscape_extlist)"
+    fi
+
+}
+complete -F _inkscape $filenames inkscape

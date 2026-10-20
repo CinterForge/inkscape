@@ -1,0 +1,14 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="exchange-positions">
+<g id=".arrange-position" clip-path="url(#clip0_3684_42793)">
+<rect id="Rectangle 564" opacity="0.3" x="11" width="5" height="5" fill="black"/>
+<rect id="Rectangle 565" opacity="0.3" y="11" width="5" height="5" fill="black"/>
+<path id="Union" d="M5 16H0V11H5V16ZM1 15H4V12H1V15ZM14 12H13V9.62988L8.33594 13.8701L7.66406 13.1299L12.207 9H10V8H14V12ZM8.33594 2.87012L3.79297 7H6V8H2V4H3V6.36914L7.66406 2.12988L8.33594 2.87012ZM16 5H11V0H16V5ZM12 4H15V1H12V4Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42793">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

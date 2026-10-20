@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) and export_objects.py -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="16"
+   height="16"
+   viewBox="0 0 16 16"
+   sodipodi:docname="pages-duplicate-symbolic.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs8">
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect1720"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="round"
+       line_width="2"
+       linejoin_type="round"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect848-3"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="2"
+       linejoin_type="round"
+       miter_limit="100"
+       attempt_force_join="true" />
+  </defs>
+  <sodipodi:namedview
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     id="namedview"
+     showgrid="true"
+     inkscape:zoom="27.332502"
+     inkscape:cx="-3.8781667"
+     inkscape:cy="8.3234239"
+     inkscape:window-width="2560"
+     inkscape:window-height="1403"
+     inkscape:window-x="1200"
+     inkscape:window-y="533"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="snap-page-7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:snap-grids="true"
+     inkscape:snap-to-guides="false"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid"
+       spacingx="0.5"
+       spacingy="0.5"
+       empspacing="2"
+       originx="0.000000"
+       originy="0.000000"
+       units="px" />
+  </sodipodi:namedview>
+  <g
+     transform="translate(-979,-527.3622)"
+     inkscape:label="00334"
+     id="snap-page">
+    <g
+       id="snap-page-7"
+       inkscape:label="00334">
+      <path
+         id="path2"
+         d="M 986 528.35634 A 1.0053 1.0053 0 0 0 984.99414 529.3622 A 1.0053 1.0053 0 0 0 985 529.46572 L 985 530.3622 L 987 530.3622 L 987 530.34853 L 990.00586 530.34853 L 990.00586 531.24892 A 1 0.99602 0 0 0 990 531.3622 A 1 0.99602 0 0 0 991 532.35829 L 991 532.3622 L 992 532.3622 L 992 537.3622 L 992 539.3622 L 993 539.3622 A 1 1 0 0 0 994 538.3622 L 994 531.3622 A 1 1 0 0 0 993.70703 530.65517 L 993.70117 530.64931 L 991.69922 528.66493 L 991.69727 528.66493 A 0.9869843 0.9869843 0 0 0 991 528.37587 L 991 528.3622 L 986.10352 528.3622 A 1.0053 1.0053 0 0 0 986 528.35634 z M 985 538.3622 L 985 539.3622 L 986 539.3622 A 1 1 0 0 1 985 538.3622 z " />
+      <path
+         id="path2-7"
+         d="m 983,531.3622 c -0.55565,-3.1e-4 -1.00617,0.45021 -1.00586,1.00586 1.7e-4,0.0346 0.002,0.0691 0.006,0.10352 v 2.89062 h 2 v -2.00781 h 3.00586 v 0.90039 c -0.004,0.0376 -0.006,0.0754 -0.006,0.11328 -4e-5,0.55011 0.44769,0.99609 1,0.99609 v 0.006 h 1 v 5 h -2 v 1.99219 l 3,0.006 c 0.55228,0.001 1,-0.44772 1,-1 v -7 c -4e-5,-0.2652 -0.10542,-0.51953 -0.29297,-0.70703 l -0.006,-0.006 -2.00195,-1.98438 h -0.002 c -0.18494,-0.18493 -0.43573,-0.2889 -0.69727,-0.28906 v -0.0137 h -4.89648 c -0.0344,-0.004 -0.0689,-0.006 -0.10352,-0.006 z m 4,9.00781 v -0.008 z"
+         sodipodi:nodetypes="ccccccccccccccccscscccccccccc" />
+      <rect
+              class="success"
+         id="rect1"
+         width="6"
+         height="2"
+         x="980"
+         y="538.3622"
+         ry="1" />
+      <rect
+         class="success"
+         id="rect2"
+         width="2"
+         height="6"
+         x="982"
+         y="536.3622"
+         ry="1" />
+    </g>
+    <path
+      inkscape:connector-curvature="0"
+      id="rect16572"
+      d="m 979,15 h 16 v 16 h -16 z"
+      opacity="0"
+      transform="translate(0,512.3622)" />
+  </g>
+  <style
+     id="s2"> 
+     @import '../../highlights.css'; 
+  </style>
+  <style
+     id="s0-6">
+   .success { fill: #009909; }
+   .warning { fill: #FF1990; }
+   .error   { fill: #00AAFF; }
+  </style>
+</svg>

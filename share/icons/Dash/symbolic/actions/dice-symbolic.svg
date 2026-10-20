@@ -1,0 +1,12 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="dice" clip-path="url(#clip0_3684_42245)">
+<g id="dice_2">
+<path id="Union" d="M15 15H1V1H15V15ZM2 14H14V2H2V14ZM11 10C11.5523 10 12 10.4477 12 11C12 11.5523 11.5523 12 11 12C10.4477 12 10 11.5523 10 11C10 10.4477 10.4477 10 11 10ZM8 7C8.55228 7 9 7.44772 9 8C9 8.55228 8.55228 9 8 9C7.44772 9 7 8.55228 7 8C7 7.44772 7.44772 7 8 7ZM5 4C5.55228 4 6 4.44772 6 5C6 5.55228 5.55228 6 5 6C4.44772 6 4 5.55228 4 5C4 4.44772 4.44772 4 5 4Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42245">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

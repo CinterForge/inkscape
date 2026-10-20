@@ -1,0 +1,845 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100mm"
+   height="100mm"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.5-dev (f1330b1daa, 2025-02-06, custom)"
+   sodipodi:docname="10-text-paint.svg"
+   inkscape:export-batch-path="../../Desktop"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <style
+     type="text/css"
+     id="style1">
+    text {
+      font-family: Noto Sans;
+    }   
+</style>
+  <defs
+     id="defs1">
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern5"
+       preserveAspectRatio="xMidYMid"
+       id="pattern6"
+       patternTransform="translate(-329.88621,0.54205799)" />
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern3"
+       preserveAspectRatio="xMidYMid"
+       id="pattern5"
+       patternTransform="translate(-439.99999)" />
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern10"
+       preserveAspectRatio="xMidYMid"
+       id="pattern3"
+       patternTransform="translate(-550)" />
+    <color-profile
+       name="Artifex-CMYK-SWOP-Profile"
+       xlink:href="../../../data/colors/default_cmyk.icc"
+       id="artefact-cmyk" />
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern2-9"
+       preserveAspectRatio="xMidYMid"
+       id="pattern18"
+       patternTransform="matrix(0.08554904,0,0,0.08554904,-100.2551,281.0167)" />
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern6-7"
+       preserveAspectRatio="xMidYMid"
+       id="pattern2"
+       patternTransform="matrix(0.07855767,0,0,0.07855767,-183.66464,265.4999)"
+       x="0"
+       y="0" />
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="28.28"
+       height="23.44"
+       patternTransform="translate(190,350)"
+       preserveAspectRatio="xMidYMid"
+       style="fill:#000000"
+       id="pattern6-7"
+       inkscape:label="pattern6-7"
+       inkscape:collect="always"
+       inkscape:isstock="true">
+      <path
+         style="paint-order:stroke markers fill;stop-color:#000000"
+         d="M 0,0        A 20,20 0,0,1 14.14,5.86        A 20,20 0,0,0 28.28,11.72        L 28.28, 23.44        A 20,20 0,0,1 14.14,17.58        A 20,20 0,0,0 0,11.72        L 0,0 "
+         id="path4-2"
+         sodipodi:nodetypes="cc" />
+    </pattern>
+    <linearGradient
+       id="linearGradient1"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#a51d2d;stop-opacity:1;"
+         offset="0"
+         id="stop1" />
+      <stop
+         style="stop-color:#a51d2d;stop-opacity:0;"
+         offset="1"
+         id="stop2" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1"
+       id="linearGradient2"
+       x1="484.20853"
+       y1="105.03743"
+       x2="484.20853"
+       y2="126.31743"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.7116173,0,0,0.7116173,-294.99342,-19.746436)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1"
+       id="linearGradient3"
+       gradientUnits="userSpaceOnUse"
+       x1="110"
+       y1="56"
+       x2="110"
+       y2="70" />
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern6-7-3"
+       preserveAspectRatio="xMidYMid"
+       id="pattern2-9"
+       patternTransform="matrix(0.07855767,0,0,0.07855767,-73.631111,265.4999)"
+       x="0"
+       y="0" />
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="28.28"
+       height="23.44"
+       patternTransform="translate(190,350)"
+       preserveAspectRatio="xMidYMid"
+       style="fill:#000000"
+       id="pattern6-7-3"
+       inkscape:label="pattern6-7"
+       inkscape:collect="always"
+       inkscape:isstock="true">
+      <path
+         style="paint-order:stroke markers fill;stop-color:#000000"
+         d="M 0,0        A 20,20 0,0,1 14.14,5.86        A 20,20 0,0,0 28.28,11.72        L 28.28, 23.44        A 20,20 0,0,1 14.14,17.58        A 20,20 0,0,0 0,11.72        L 0,0 "
+         id="path4-2-1"
+         sodipodi:nodetypes="cc" />
+    </pattern>
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern6-7-3"
+       preserveAspectRatio="xMidYMid"
+       id="pattern1"
+       patternTransform="matrix(0.07855767,0,0,0.07855767,-183.66464,265.4999)"
+       x="0"
+       y="0" />
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern6-7-3-3"
+       preserveAspectRatio="xMidYMid"
+       id="pattern2-9-2"
+       patternTransform="matrix(0.07855767,0,0,0.07855767,-73.631111,265.4999)"
+       x="0"
+       y="0" />
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="28.28"
+       height="23.44"
+       patternTransform="translate(190,350)"
+       preserveAspectRatio="xMidYMid"
+       style="fill:#000000"
+       id="pattern6-7-3-3"
+       inkscape:label="pattern6-7"
+       inkscape:collect="always"
+       inkscape:isstock="true">
+      <path
+         style="paint-order:stroke markers fill;stop-color:#000000"
+         d="M 0,0        A 20,20 0,0,1 14.14,5.86        A 20,20 0,0,0 28.28,11.72        L 28.28, 23.44        A 20,20 0,0,1 14.14,17.58        A 20,20 0,0,0 0,11.72        L 0,0 "
+         id="path4-2-1-7"
+         sodipodi:nodetypes="cc" />
+    </pattern>
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern2-9-7"
+       preserveAspectRatio="xMidYMid"
+       id="pattern18-9"
+       patternTransform="matrix(0.08554904,0,0,0.08554904,-100.2551,281.0167)" />
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern6-7-3-36"
+       preserveAspectRatio="xMidYMid"
+       id="pattern2-9-7"
+       patternTransform="matrix(0.07855767,0,0,0.07855767,-73.631111,265.4999)"
+       x="0"
+       y="0" />
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="28.28"
+       height="23.44"
+       patternTransform="translate(190,350)"
+       preserveAspectRatio="xMidYMid"
+       style="fill:#000000"
+       id="pattern6-7-3-36"
+       inkscape:label="pattern6-7"
+       inkscape:collect="always"
+       inkscape:isstock="true">
+      <path
+         style="paint-order:stroke markers fill;stop-color:#000000"
+         d="M 0,0        A 20,20 0,0,1 14.14,5.86        A 20,20 0,0,0 28.28,11.72        L 28.28, 23.44        A 20,20 0,0,1 14.14,17.58        A 20,20 0,0,0 0,11.72        L 0,0 "
+         id="path4-2-1-1"
+         sodipodi:nodetypes="cc" />
+    </pattern>
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern2-9-7"
+       preserveAspectRatio="xMidYMid"
+       id="pattern1-2"
+       patternTransform="matrix(0.08554904,0,0,0.08554904,-100.2551,281.0167)" />
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern6-7-3-36"
+       preserveAspectRatio="xMidYMid"
+       id="pattern2-93"
+       patternTransform="matrix(0.07855767,0,0,0.07855767,-73.631111,265.4999)"
+       x="0"
+       y="0" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1"
+       id="linearGradient18"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.7116173,0,0,0.7116173,-184.9598,-32.241649)"
+       x1="635.62549"
+       y1="121.48176"
+       x2="636.20123"
+       y2="145.11095" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1"
+       id="linearGradient19"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.7116173,0,0,0.7116173,-184.9598,-19.995865)"
+       x1="484.20853"
+       y1="105.03743"
+       x2="484.20853"
+       y2="126.31743" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath23">
+      <text
+         xml:space="preserve"
+         style="font-size:17.6364px;line-height:0.5;text-align:end;text-decoration-color:#000000;text-anchor:end;display:inline;fill:#613583;stroke:none;stroke-width:1.5537;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.5"
+         x="959.57178"
+         y="76.404358"
+         id="text24"><tspan
+           sodipodi:role="line"
+           id="tspan24"
+           x="959.57178"
+           y="76.404358"
+           style="stroke-width:1.5537">Te<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;-inkscape-font-specification:sans-serif;stroke-width:1.5537"
+   id="tspan23">xt C</tspan>lip</tspan></text>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath24">
+      <text
+         xml:space="preserve"
+         style="font-size:17.6364px;line-height:0.5;text-align:end;text-decoration-color:#000000;text-anchor:end;display:inline;fill:#613583;stroke:none;stroke-width:1.5537;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.5"
+         x="966.97601"
+         y="35.097557"
+         id="text26"><tspan
+           sodipodi:role="line"
+           id="tspan26"
+           x="966.97601"
+           y="35.097557"
+           style="stroke-width:1.5537">Te<tspan
+   style="font-weight:bold;stroke-width:1.5537"
+   id="tspan25">xt C</tspan>lip</tspan></text>
+    </clipPath>
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern2-1"
+       preserveAspectRatio="xMidYMid"
+       id="pattern10"
+       patternTransform="translate(-660)" />
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="10"
+       height="10"
+       preserveAspectRatio="xMidYMid"
+       id="pattern2-1"
+       inkscape:label="pattern2">
+      <g
+         id="g2"
+         style="fill:#deddda;fill-opacity:1">
+        <rect
+           id="rect1"
+           width="5"
+           height="5"
+           x="0"
+           y="0" />
+        <rect
+           id="rect2"
+           width="5"
+           height="5"
+           x="5"
+           y="5" />
+      </g>
+    </pattern>
+    <view
+       viewBox="0 0 100 100"
+       id="page1"
+       inkscape:label="Fill Paint Outside"
+       inkscape:margin="10"
+       inkscape:bleed="0" />
+    <view
+       viewBox="110 0 100 100"
+       id="page2"
+       inkscape:label="Fill Paint Inside"
+       inkscape:margin="10"
+       inkscape:bleed="0" />
+    <view
+       viewBox="220 0 100 100"
+       id="page6"
+       inkscape:label="Stroke Paint Outside"
+       inkscape:margin="10"
+       inkscape:bleed="0" />
+    <view
+       viewBox="330 0 100 100"
+       id="page16"
+       inkscape:label="Stroke Paint Inside"
+       inkscape:margin="10"
+       inkscape:bleed="0" />
+    <view
+       viewBox="440 0 100 100"
+       id="page3"
+       inkscape:label="Stroke Metrics Outside"
+       inkscape:margin="10"
+       inkscape:bleed="0" />
+    <view
+       viewBox="550 0 100 100"
+       id="page4"
+       inkscape:label="Stroke Metrics Inside"
+       inkscape:margin="10"
+       inkscape:bleed="0" />
+    <view
+       viewBox="660 0 100 100"
+       id="page5"
+       inkscape:label="Paint Order Outside"
+       inkscape:margin="10"
+       inkscape:bleed="0" />
+    <view
+       viewBox="770 0 100 100"
+       id="page29"
+       inkscape:label="Paint Order Inside"
+       inkscape:margin="10"
+       inkscape:bleed="0" />
+    <view
+       viewBox="880 0 100 100"
+       id="page7"
+       inkscape:label="Clip to Text"
+       inkscape:margin="10"
+       inkscape:bleed="0" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview1"
+     inkscape:current-layer="layer1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.8384776"
+     inkscape:cx="1183.86"
+     inkscape:cy="221.65078"
+     inkscape:window-width="2560"
+     inkscape:window-height="1408"
+     inkscape:window-maximized="1"
+     showgrid="false"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     showguides="true" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="fill:#800080">
+    <rect
+       style="fill:url(#pattern6);fill-opacity:1;stroke:none;stroke-width:119.678;stroke-dasharray:none;stroke-opacity:0.548039;paint-order:stroke markers fill"
+       id="rect6"
+       width="80"
+       height="80"
+       x="340.11377"
+       y="10.542058" />
+    <rect
+       style="fill:url(#pattern5);fill-opacity:1;stroke:none;stroke-width:119.678;stroke-dasharray:none;stroke-opacity:0.548039;paint-order:stroke markers fill"
+       id="rect5"
+       width="80"
+       height="80"
+       x="230"
+       y="10" />
+    <rect
+       style="fill:url(#pattern3);fill-opacity:1;stroke:none;stroke-width:119.678;stroke-dasharray:none;stroke-opacity:0.548039;paint-order:stroke markers fill"
+       id="rect3"
+       width="80"
+       height="80"
+       x="120"
+       y="10" />
+    <rect
+       style="fill:url(#pattern10);fill-opacity:1;stroke:none;stroke-width:119.678;stroke-dasharray:none;stroke-opacity:0.548039;paint-order:stroke markers fill"
+       id="rect4"
+       width="80"
+       height="80"
+       x="10"
+       y="10" />
+    <g
+       id="g26"
+       inkscape:label="Clip to Text">
+      <rect
+         style="fill:#26a269;stroke:none;stroke-width:43.4347;stroke-opacity:0.548039;paint-order:stroke markers fill"
+         id="rect7"
+         width="80.000015"
+         height="38.381111"
+         x="890"
+         y="10"
+         clip-path="url(#clipPath24)" />
+      <rect
+         style="fill:#a51d2d;stroke:none;stroke-width:43.4347;stroke-opacity:0.548039;paint-order:stroke markers fill"
+         id="rect8"
+         width="80.000015"
+         height="38.381111"
+         x="890"
+         y="51.618889"
+         clip-path="url(#clipPath23)" />
+    </g>
+    <text
+       xml:space="preserve"
+       x="784.86694"
+       y="30.188477"
+       id="text4"
+       transform="scale(0.993799,1.0062397)"
+       inkscape:label="Paint Order Inside"
+       style="font-size:11.5px;stroke:#e5a50a;stroke-width:1"><tspan
+         sodipodi:role="line"
+         id="tspan16-3"
+         x="784.867"
+         y="75.935951"
+         style="paint-order:markers stroke fill">Fill then Stroke</tspan><tspan
+         sodipodi:role="line"
+         id="tspan6-6-3-7"
+         x="784.86694"
+         y="30.188477"
+         style="paint-order:fill stroke markers">Stroke then Fill</tspan><tspan
+         sodipodi:role="line"
+         id="tspan13-6"
+         x="784.867"
+         y="45.434616"
+         style="paint-order:stroke fill markers">Fill then Stroke</tspan><tspan
+         sodipodi:role="line"
+         id="tspan15-8"
+         x="784.86694"
+         y="60.689823"
+         style="paint-order:fill markers stroke">Stroke then Fill</tspan></text>
+    <g
+       id="g14"
+       style="display:inline;fill:#800080"
+       inkscape:label="Paint Order Outside"
+       transform="translate(220)"
+       inkscape:groupmode="layer">
+      <text
+         xml:space="preserve"
+         style="font-size:11.615px;display:inline;fill:#613583;stroke:#e5a50a;stroke-width:0.999998"
+         x="452.71863"
+         y="28.195898"
+         id="text6-3-5"
+         transform="scale(0.99379899,1.0062397)"><tspan
+           sodipodi:role="line"
+           id="tspan6-6-3"
+           x="452.71863"
+           y="28.195898"
+           style="stroke:#e5a50a;stroke-width:0.999998">Stroke then Fill</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:11.615px;display:inline;fill:#613583;stroke:#e5a50a;stroke-width:0.999998;paint-order:stroke fill markers"
+         x="452.71872"
+         y="43.442036"
+         id="text13"
+         transform="scale(0.99379899,1.0062397)"><tspan
+           sodipodi:role="line"
+           id="tspan13"
+           x="452.71872"
+           y="43.442036"
+           style="stroke:#e5a50a;stroke-width:0.999998;paint-order:stroke fill markers">Fill then Stroke</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:11.615px;display:inline;fill:#613583;stroke:#e5a50a;stroke-width:0.999998;paint-order:fill markers stroke"
+         x="452.71863"
+         y="58.697243"
+         id="text15"
+         transform="scale(0.99379899,1.0062397)"><tspan
+           sodipodi:role="line"
+           id="tspan15"
+           x="452.71863"
+           y="58.697243"
+           style="stroke:#e5a50a;stroke-width:0.999998;paint-order:fill markers stroke">Stroke then Fill</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:11.615px;display:inline;fill:#613583;stroke:#e5a50a;stroke-width:0.999998;paint-order:markers stroke fill"
+         x="452.71872"
+         y="73.943375"
+         id="text16"
+         transform="scale(0.99379899,1.0062397)"><tspan
+           sodipodi:role="line"
+           id="tspan16"
+           x="452.71872"
+           y="73.943375"
+           style="stroke:#e5a50a;stroke-width:0.999998;paint-order:markers stroke fill">Fill then Stroke</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       x="562"
+       y="24"
+       id="text3"
+       transform="scale(0.99696077,1.0030485)"
+       inkscape:label="Stroke Metrics Outside"
+       style="fill:#800080;display:inline"><tspan
+         id="tspan6-6-6"
+         x="561"
+         y="24"
+         style="font-size:17.2836px;fill:none;stroke:#ff0000;stroke-width:1">Stroke 1.0</tspan><tspan
+         id="tspan3-4"
+         x="561"
+         style="font-size:17.2836px;fill:none;stroke:#ff0000;stroke-width:0.5"
+         dy="15">Stroke 0.5</tspan><tspan
+         id="tspan4-6"
+         x="561"
+         style="font-size:17.2836px;fill:none;stroke:#ff0000;stroke-width:0.2"
+         dy="15">Stroke 0.2</tspan><tspan
+         id="tspan14-5"
+         style="font-size:20px;fill:none;stroke:#0000ff;stroke-width:2"
+         dy="20"
+         x="562">ck</tspan><tspan
+         id="tspan5-6"
+         style="font-size:20px;fill:none;stroke:#0000ff;stroke-width:2;stroke-linejoin:round"
+         dx="8"
+         dy="0">ck</tspan><tspan
+         id="tspan8-3"
+         style="font-size:20px;fill:none;stroke:#0000ff;stroke-width:2;stroke-linejoin:bevel"
+         dy="0"
+         dx="10">ck</tspan><tspan
+         id="tspan11-4"
+         x="562"
+         y="89"
+         style="font-size:10px;fill:none;stroke:#26a269;stroke-width:0.5;stroke-dasharray:4, 0.5;stroke-dashoffset:0">Dash</tspan><tspan
+         id="tspan10-2"
+         y="89"
+         dx="5"
+         style="font-size:10px;fill:none;stroke:#26a269;stroke-width:0.5;stroke-dasharray:1.5, 0.5;stroke-dashoffset:0">Dash</tspan><tspan
+         id="tspan12-4"
+         y="89"
+         style="font-size:10px;fill:none;stroke:#26a269;stroke-width:0.5;stroke-dasharray:2, 2;stroke-dashoffset:0"
+         dx="3.5">Dash</tspan></text>
+    <g
+       id="g5"
+       style="display:inline"
+       inkscape:label="Stroke Metrics Outside"
+       inkscape:groupmode="layer"
+       sodipodi:insensitive="true">
+      <text
+         xml:space="preserve"
+         style="font-size:17.2836px;fill:none;stroke:#ff0000;stroke-width:1"
+         x="451.08334"
+         y="23.604149"
+         id="text6-3"
+         transform="scale(0.99696077,1.0030485)"><tspan
+           sodipodi:role="line"
+           id="tspan6-6"
+           x="451.08334"
+           y="23.604149"
+           style="stroke-width:1">Stroke 1.0</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:20px;fill:none;stroke:#0000ff;stroke-width:2"
+         x="449.30002"
+         y="74.920723"
+         id="text14"><tspan
+           sodipodi:role="line"
+           id="tspan14"
+           x="449.30002"
+           y="74.920723">ck</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:17.2836px;fill:none;stroke:#ff0000;stroke-width:0.499998"
+         x="451.08334"
+         y="38.640881"
+         id="text19"
+         transform="scale(0.99696077,1.0030485)"><tspan
+           sodipodi:role="line"
+           id="tspan3"
+           x="451.08334"
+           y="38.640881"
+           style="stroke-width:0.499998">Stroke 0.5</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:17.2836px;fill:none;stroke:#ff0000;stroke-width:0.199999"
+         x="451.08334"
+         y="52.882572"
+         id="text20"
+         transform="scale(0.99696077,1.0030485)"><tspan
+           sodipodi:role="line"
+           id="tspan4"
+           x="451.08334"
+           y="52.882572"
+           style="stroke-width:0.199999">Stroke 0.2</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:20px;fill:none;stroke:#0000ff;stroke-width:2;stroke-linejoin:round"
+         x="479.10001"
+         y="74.920723"
+         id="text5"><tspan
+           sodipodi:role="line"
+           id="tspan5"
+           x="479.10001"
+           y="74.920723">ck</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:20px;fill:none;stroke:#0000ff;stroke-width:2;stroke-linejoin:bevel"
+         x="508.90002"
+         y="74.920723"
+         id="text8"><tspan
+           sodipodi:role="line"
+           id="tspan8"
+           x="508.90002"
+           y="74.920723">ck</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:10px;fill:none;stroke:#26a269;stroke-width:0.5;stroke-dasharray:4, 0.5;stroke-dashoffset:0"
+         x="450"
+         y="89.300003"
+         id="text11"><tspan
+           sodipodi:role="line"
+           id="tspan11"
+           x="450"
+           y="89.300003">Dash</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:10px;fill:none;stroke:#26a269;stroke-width:0.5;stroke-dasharray:1.5, 0.5;stroke-dashoffset:0"
+         x="477.95413"
+         y="89.650002"
+         id="text10"><tspan
+           sodipodi:role="line"
+           id="tspan10"
+           x="477.95413"
+           y="89.650002">Dash</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:10px;fill:none;stroke:#26a269;stroke-width:0.5;stroke-dasharray:2, 2;stroke-dashoffset:0"
+         x="505.90826"
+         y="89.300003"
+         id="text12"><tspan
+           sodipodi:role="line"
+           id="tspan12"
+           x="505.90826"
+           y="89.300003">Dash</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       x="227.99144"
+       y="21.881399"
+       id="text2"
+       transform="matrix(0.99353643,0,0,0.97396744,113.87139,0.81536424)"
+       inkscape:label="Stroke Paint Inside"
+       style="stroke-width:2;font-size:19.5px;fill:none"><tspan
+         sodipodi:role="line"
+         id="tspan6-6-1-5"
+         x="227.99144"
+         style="font-size:14.3px;display:inline;fill:none;stroke:#613583;stroke-width:2.03313;stroke-dasharray:none;stroke-opacity:1"
+         dy="0">Solid Stroke</tspan><tspan
+         sodipodi:role="line"
+         id="tspan20-26-5"
+         x="228.64096"
+         style="font-size:22.3501px;display:inline;fill:none;stroke:#26a269;stroke-width:1.01515;stroke-opacity:0.5"
+         dy="-5">Opacity</tspan><tspan
+         sodipodi:role="line"
+         id="tspan18-1"
+         x="231.73854"
+         style="stroke:url(#linearGradient18);stroke-width:2.03313"
+         dy="-5">Gradient</tspan><tspan
+         sodipodi:role="line"
+         id="tspan17-3"
+         x="234.28267"
+         style="font-size:23px;fill:none;stroke:url(#pattern18-9);stroke-width:2.16224"
+         dy="-12">Pattern</tspan></text>
+    <g
+       id="g18"
+       inkscape:label="Stroke Paint Outside"
+       style="display:inline;fill:#800080;stroke-width:1.01515"
+       inkscape:groupmode="layer"
+       transform="matrix(0.98508326,0,0,0.9850773,3.4443748,0.74646959)">
+      <text
+         xml:space="preserve"
+         style="font-size:14.173px;display:inline;fill:none;stroke:#613583;stroke-width:2.03029;stroke-dasharray:none;stroke-opacity:1"
+         x="227.99144"
+         y="21.881399"
+         id="text6-3-9"
+         transform="scale(1.0099927,0.99010615)"><tspan
+           sodipodi:role="line"
+           id="tspan6-6-1"
+           x="227.99144"
+           y="21.881399">Solid Stroke</tspan></text>
+      <text
+         xml:space="preserve"
+         style="fill:none;display:inline;font-size:22.3501px;stroke:#26a269;stroke-opacity:0.5"
+         x="228.64096"
+         y="44.110809"
+         id="text21-9"><tspan
+           sodipodi:role="line"
+           id="tspan20-26"
+           x="228.64096"
+           y="44.110809">Opacity</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:19.9253px;fill:none;stroke:url(#linearGradient19);stroke-width:2.03029"
+         x="231.73854"
+         y="67.174843"
+         id="text18"
+         transform="scale(0.99114374,1.0089354)"><tspan
+           sodipodi:role="line"
+           id="tspan18"
+           x="231.73854"
+           y="67.174843"
+           style="stroke:url(#linearGradient19)">Gradient</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:23.9537px;fill:none;stroke:url(#pattern18);stroke-width:2.15921"
+         x="234.28267"
+         y="86.815392"
+         id="text17"
+         transform="scale(0.97835031,1.0221288)"><tspan
+           sodipodi:role="line"
+           id="tspan17"
+           x="234.28267"
+           y="86.815392">Pattern</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       id="text1"
+       x="120"
+       y="21"
+       inkscape:label="Fill Paint Inside"
+       style="fill:#800080"><tspan
+         id="tspan1"
+         x="120"
+         y="22"
+         style="font-size:16px;fill:#613583">RGB</tspan><tspan
+         id="tspan1-3"
+         x="156"
+         y="22"
+         style="font-size:16px;fill:device-cmyk(1.0 0.0 0.1 0.2)">CMYK</tspan><tspan
+         sodipodi:role="line"
+         id="tspan20-2"
+         x="120"
+         style="font-size:16px;display:inline;fill:#ff0000 icc-color(Artifex-CMYK-SWOP-Profile, 1, 0, 0, 0)"
+         dy="-5"
+         y="53.679672">ICC-Color</tspan><tspan
+         sodipodi:role="line"
+         id="tspan20-2-1"
+         x="120"
+         style="font-size:16px;fill:#e66100;fill-opacity:0.5"
+         dy="-12"
+         y="53.679672">Opacity</tspan><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         style="font-size:19.7px;fill:url(#linearGradient3)"
+         dy="-16"
+         x="120"
+         y="79.206039">Gradient</tspan><tspan
+         sodipodi:role="line"
+         id="tspan9-8"
+         x="120"
+         style="font-weight:bold;font-size:21.4px;fill:url(#pattern2-9)"
+         dy="-23"
+         y="105.37783">Pattern</tspan></text>
+    <g
+       id="g3"
+       style="display:inline"
+       inkscape:label="Fill Paint Outside"
+       inkscape:groupmode="layer">
+      <text
+         xml:space="preserve"
+         style="font-size:15.875px;line-height:0.5;text-align:end;text-decoration-color:#000000;text-anchor:end;fill:#613583;stroke-width:1.90215;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.5"
+         x="8.4849052"
+         y="22.225521"
+         id="text6"><tspan
+           sodipodi:role="line"
+           id="tspan6"
+           x="8.4849052"
+           y="22.225521"
+           style="font-size:15.875px;text-align:start;text-anchor:start">RGB</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:15.875px;fill:#e66100;fill-opacity:0.5"
+         x="9"
+         y="51.074291"
+         id="text21"><tspan
+           sodipodi:role="line"
+           id="tspan20"
+           x="9"
+           y="51.074291"
+           style="font-size:15.875px;fill:#e66100">Opacity</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:19.9253px;line-height:0.5;text-align:center;text-decoration-color:#000000;text-anchor:middle;fill:url(#linearGradient2);fill-opacity:1;stroke-width:2.127;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.5"
+         x="49.57774"
+         y="70.143227"
+         id="text7"><tspan
+           sodipodi:role="line"
+           id="tspan7"
+           x="49.577736"
+           y="70.143227"
+           style="fill:url(#linearGradient2)">Gradient</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:21.9961px;line-height:0.5;text-align:end;text-decoration-color:#000000;text-anchor:end;fill:url(#pattern2);fill-opacity:1;stroke-width:2.127;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.5"
+         x="91.61599"
+         y="89.780083"
+         id="text9"><tspan
+           sodipodi:role="line"
+           id="tspan9"
+           x="91.61599"
+           y="89.780083">Pattern</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:15.875px;fill:device-cmyk(1.0 0.0 0.1 0.2)"
+         x="47"
+         y="22"
+         id="text22"><tspan
+           sodipodi:role="line"
+           id="tspan19"
+           x="47"
+           y="21">CMYK</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:15.875px;fill:#ff0000 icc-color(Artifex-CMYK-SWOP-Profile, 1, 0, 0, 0)"
+         x="9.9776945"
+         y="36.948986"
+         id="text22-3"><tspan
+           sodipodi:role="line"
+           id="tspan19-5"
+           x="9.9776945"
+           y="36.948986">ICC-Color</tspan></text>
+    </g>
+  </g>
+</svg>

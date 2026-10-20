@@ -1,0 +1,22 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="paint-gradient-conical">
+<g id=".paint-gradient-conical">
+<path id="Vector 140" opacity="0.6" d="M11 14L8 8L14 14H11Z" fill="black"/>
+<path id="Vector 148" opacity="0.66" d="M8 14V8L11 14H8Z" fill="black"/>
+<path id="Vector 149" opacity="0.54" d="M14 11V14L8 8L14 11Z" fill="black"/>
+<path id="Vector 150" opacity="0.5" d="M14 8V11L8 8H14Z" fill="black"/>
+<path id="Vector 140_2" opacity="0.36" d="M11 2L8 8L14 2H11Z" fill="black"/>
+<path id="Vector 148_2" opacity="0.32" d="M8 2V8L11 2H8Z" fill="black"/>
+<path id="Vector 149_2" opacity="0.4" d="M14 5V2L8 8L14 5Z" fill="black"/>
+<path id="Vector 150_2" opacity="0.44" d="M14 8V5L8 8H14Z" fill="black"/>
+<path id="Vector 140_3" opacity="0.24" d="M5 2L8 8L2 2H5Z" fill="black"/>
+<path id="Vector 148_3" opacity="0.28" d="M8 2V8L5 2H8Z" fill="black"/>
+<path id="Vector 149_3" opacity="0.2" d="M2 5V2L8 8L2 5Z" fill="black"/>
+<path id="Vector 150_3" opacity="0.16" d="M2 8V5L8 8H2Z" fill="black"/>
+<path id="Vector 140_4" opacity="0.04" d="M5 14L8 8L2 14H5Z" fill="black"/>
+<path id="Vector 149_4" opacity="0.08" d="M2 11V14L8 8L2 11Z" fill="black"/>
+<path id="Vector 150_4" opacity="0.12" d="M2 8V11L8 8H2Z" fill="black"/>
+<path id="Union" d="M15 15H1V1H15V15ZM2 14H14V2H2V14Z" fill="black"/>
+</g>
+</g>
+</svg>

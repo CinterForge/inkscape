@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <placeholder width="304" height="225"></placeholder>
+  <requires lib="gtk" version="4.0"></requires>
+  <object class="GtkBox" id="main">
+    <property name="orientation">vertical</property>
+    <child>
+      <object class="GtkBox" id="header">
+        <property name="margin-bottom">5</property>
+        <property name="margin-top">1</property>
+        <property name="margin-end">0</property>
+        <property name="margin-start">0</property>
+        <child>
+          <object class="GtkBox" id="types">
+            <property name="hexpand">true</property>
+            <property name="hexpand-set">false</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="box-fill-rule">
+            <property name="hexpand">true</property>
+            <property name="hexpand-set">true</property>
+            <child>
+              <object class="GtkButton" id="btn-fill-rule">
+                <property name="tooltip-text" translatable="yes">Set path fill rule</property>
+                <property name="halign">center</property>
+                <property name="hexpand">true</property>
+                <property name="hexpand-set">true</property>
+                <property name="icon-name">fill-rule-even-odd</property>
+                <property name="margin-end">0</property>
+                <property name="margin-start">0</property>
+                <property name="has-frame">false</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="pickers">
+            <property name="halign">end</property>
+            <child>
+              <object class="GtkToggleButton" id="btn-rect">
+                <property name="tooltip-text" translatable="yes">Show color map</property>
+                <property name="has-frame">false</property>
+                <property name="icon-name">color-picker-rect</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkToggleButton" id="btn-circle">
+                <property name="tooltip-text" translatable="yes">Show color wheel</property>
+                <property name="group">btn-rect</property>
+                <property name="has-frame">false</property>
+                <property name="icon-name">color-picker-circle</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkToggleButton" id="btn-input">
+                <property name="tooltip-text" translatable="yes">Show color sliders only</property>
+                <property name="group">btn-rect</property>
+                <property name="has-frame">false</property>
+                <property name="icon-name">color-picker-input</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkMenuButton" id="btn-menu">
+            <property name="visible">false</property>
+            <property name="always-show-arrow">true</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="halign">fill</property>
+            <property name="valign">center</property>
+            <property name="has-frame">false</property>
+            <property name="tooltip-text" translatable="yes">Color Pickers</property>
+            </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator" id="separator">
+        <property name="margin-end">0</property>
+        <property name="margin-start">0</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkStack" id="stack">
+        <property name="height-request">120</property>
+        <property name="width-request">-1</property>
+        <property name="vhomogeneous">false</property>
+      </object>
+    </child>
+  </object>
+  <object class="GtkBox" id="inherited">
+    <property name="spacing">0</property>
+    <property name="margin-bottom">8</property>
+    <property name="margin-top">4</property>
+    <property name="margin-end">0</property>
+    <property name="margin-start">0</property>
+    <property name="orientation">vertical</property>
+  </object>
+</interface>

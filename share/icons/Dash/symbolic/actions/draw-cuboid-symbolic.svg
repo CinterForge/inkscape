@@ -1,0 +1,11 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="draw-cuboid">
+<g id=".cube">
+<g id="neutral">
+<path id="neutral_2" opacity="0.25" d="M8 8L1.5 4.5V11.5L8 15.5V8Z" fill="black"/>
+<path id="neutral_3" opacity="0.5" d="M8 15.5V8L14.5 4.5V12L8 15.5Z" fill="black"/>
+</g>
+<path id="Union" d="M15 4V12L8 16L1 12V4L8 0L15 4ZM2 11.4189L7.5 14.5615V8.29004L2 5.14746V11.4189ZM8.5 8.29004V14.5615L14 11.4189V5.14746L8.5 8.29004ZM2.51172 4.28711L8 7.42285L13.4873 4.28711L8 1.15137L2.51172 4.28711Z" fill="black"/>
+</g>
+</g>
+</svg>

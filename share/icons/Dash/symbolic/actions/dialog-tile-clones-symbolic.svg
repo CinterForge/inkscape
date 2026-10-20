@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="dialog-tile-clones">
+<g id=".tiling-lock">
+<path id="shape" d="M7 15H4V12H7V15ZM11 15H8V12H11V15ZM15 15H12V12H15V15ZM11 11H8V8H11V11ZM15 11H12V8H15V11ZM11 7H8V4H11V7ZM15 7H12V4H15V7Z" fill="black"/>
+<path id="Union" d="M3.5 2C4.88071 2 6 3.11929 6 4.5V5.88867H7V10.8887H0V5.88867H1V4.5C1 3.11929 2.11929 2 3.5 2ZM3.5 3C2.67157 3 2 3.67157 2 4.5V5.88867H5V4.5C5 3.67157 4.32843 3 3.5 3Z" fill="black"/>
+</g>
+</g>
+</svg>

@@ -1,0 +1,20 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="edit-select-none">
+<g id=".select-none" clip-path="url(#clip0_3684_42835)">
+<g id=".clear">
+<path id="Union" d="M11.8535 4.85339L8.70703 7.99988L11.8535 11.1464L11.1465 11.8534L8 8.70691L4.85352 11.8534L4.14648 11.1464L7.29297 7.99988L4.14648 4.85339L4.85352 4.14636L8 7.29285L11.1465 4.14636L11.8535 4.85339Z" fill="black"/>
+</g>
+<g id=".bounding-box-selection" opacity="0.5" clip-path="url(#clip1_3684_42835)">
+<path id="Union_2" d="M1 15H3V16H0V13H1V15ZM6 16H4V15H6V16ZM9 16H7V15H9V16ZM12 16H10V15H12V16ZM16 16H13V15H15V13H16V16ZM1 12H0V10H1V12ZM16 12H15V10H16V12ZM1 9H0V7H1V9ZM16 9H15V7H16V9ZM1 6H0V4H1V6ZM16 6H15V4H16V6ZM3 1H1V3H0V0H3V1ZM16 3H15V1H13V0H16V3ZM6 1H4V0H6V1ZM9 1H7V0H9V1ZM12 1H10V0H12V1Z" fill="black"/>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42835">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+<clipPath id="clip1_3684_42835">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

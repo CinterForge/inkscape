@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0" />
+
+  <object class="GtkBox" id="advanced-tab-root">
+    <property name="orientation">vertical</property>
+    <property name="spacing">6</property>
+
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">horizontal</property>
+        <property name="spacing">12</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Format</property>
+            <property name="halign">start</property>
+            <property name="hexpand">true</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkDropDown" id="cmb_format">
+            <property name="model">
+              <object class="GtkStringList" />
+            </property>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkImage">
+            <property name="icon-name">info-symbolic</property>
+            <property name="margin-end">12</property>
+            <property name="tooltip-text" translatable="yes">Format is how the data is stored in the actual document. If you use CMYK, then this will be the CMYK profile format, otherwise it will be sRGB.
+
+The actual format of the color is only important for non-CMYK uses if the svg is being used in another program or website that will use that data.</property>
+          </object>
+        </child>
+      </object>
+    </child>
+
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">horizontal</property>
+        <property name="spacing">12</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Interpolation</property>
+            <property name="halign">start</property>
+            <property name="hexpand">true</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkDropDown" id="cmb_interp">
+            <property name="model">
+              <object class="GtkStringList" />
+            </property>
+            </object>
+        </child>
+
+        <child>
+          <object class="GtkImage">
+            <property name="icon-name">info-symbolic</property>
+            <property name="margin-end">12</property>
+            <property name="tooltip-text" translatable="yes">Interpolation controls how the colors are painted or 'rendered'. This has no effect for solid paints, but will produce different results for Gradients, Blending Modes and Filter Effects.</property>
+          </object>
+        </child>
+      </object>
+    </child>
+
+    <child>
+      <object class="GtkSeparator">
+        <property name="orientation">horizontal</property>
+      </object>
+    </child>
+
+    <child>
+      <object class="GtkExpander" id="recolor_expander">
+        <property name="label" translatable="yes">Recolor Selection</property>
+        <property name="tooltip-text" translatable="yes">Recolor Selection</property>
+      </object>
+    </child>
+
+  </object>
+</interface>

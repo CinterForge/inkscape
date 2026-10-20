@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="object-tweak-rotate">
+<g id=".transform-rotate-clockwise">
+<path id="Union" d="M4.70703 11L4 11.707L3 10.707V12.5C3 12.7761 3.22389 13 3.5 13H6V14H3.5C2.67161 14 2 13.3284 2 12.5V10.707L1 11.707L0.292969 11L2.5 8.79297L4.70703 11ZM11.707 8L8 11.707L4.29297 8L8 4.29297L11.707 8ZM5.70703 8L8 10.293L10.293 8L8 5.70703L5.70703 8ZM12.5 2C13.3284 2 14 2.67157 14 3.5V5.79297L15 4.79297L15.707 5.5L13.5 7.70703L11.293 5.5L12 4.79297L13 5.79297V3.5C13 3.22386 12.7761 3 12.5 3H10V2H12.5Z" fill="black"/>
+<rect id="Rectangle 823" opacity="0.2" x="8" y="5.17163" width="4" height="4" transform="rotate(45 8 5.17163)" fill="black"/>
+</g>
+</g>
+</svg>

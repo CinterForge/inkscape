@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg width="16" height="16" viewBox="0 0 16 16" version="1.1" id="svg1" inkscape:version="1.5-dev (df37f7b0d0, 2025-01-19, custom)" sodipodi:docname="dock-left-bottom-symbolic.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview id="namedview1" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="true" inkscape:deskcolor="#d1d1d1" inkscape:document-units="px" inkscape:zoom="49.295775" showgrid="true" inkscape:cx="8.7634285" inkscape:cy="8.4185714" inkscape:current-layer="layer1">
+    <inkscape:grid type="xygrid" id="grid1" units="px" originx="0" originy="0" spacingx="1" spacingy="1" empcolor="#0099e5" empopacity="0.30196078" color="#0099e5" opacity="0.14901961" empspacing="5" enabled="true" visible="true" />
+  </sodipodi:namedview>
+  <defs id="defs1" />
+  <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(0,-884)">
+    <g id="g31" transform="translate(-367.5,712.5)" style="fill:#000000">
+      <path style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#000000;fill-rule:evenodd;enable-background:accumulate;stop-opacity:1" d="m 369.5,179.5 v 6 h 6 v -1 h -5 v -5 z" id="path29" />
+      <path id="path30" style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#000000;fill-rule:evenodd;enable-background:accumulate;stop-opacity:1" d="m 372.3125,182.6875 5.66602,-1.41602 -1.77149,-1.77148 3.14649,-3.14648 -0.70704,-0.70704 -3.14648,3.14649 -1.77148,-1.77149 z" />
+    </g>
+  </g>
+</svg>

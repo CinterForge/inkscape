@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.inkscape.inkscape"
+    android:versionName="1.5-dev"
+    android:installLocation="auto">
+
+    <application
+        android:appCategory="productivity"
+        android:debuggable="true"
+        android:description="@string/app_desc"
+        android:icon="@mipmap/ic_launcher"
+        android:name="org.gtk.android.RuntimeApplication"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Gtk">
+
+        <meta-data
+            android:name="gtk.android.lib_name"
+            android:value="inkscape" />
+
+        <activity
+            android:name="org.gtk.android.ToplevelActivity"
+            android:configChanges="density|orientation|screenLayout|screenSize|touchscreen|uiMode"
+            android:windowSoftInputMode="adjustResize"
+            android:launchMode="standard"
+            android:resizeableActivity="true"
+            android:theme="@style/Theme.GtkSurface"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <uses-sdk android:minSdkVersion="31" android:targetSdkVersion="35" />
+</manifest>

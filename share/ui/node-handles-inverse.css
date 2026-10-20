@@ -1,0 +1,13 @@
+@import url("node-handles.css");
+
+* {
+    fill: black;
+    stroke: white;
+    outline: black;
+}
+
+.inkscape-adj-handle, .inkscape-adj-skew, .inkscape-adj-rotate,
+.inkscape-adj-salign, .inkscape-adj-calign, .inkscape-adj-malign,
+.inkscape-adj-center {
+    fill: white;
+}

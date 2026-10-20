@@ -1,0 +1,18 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="paint-gradient-linear">
+<g id=".paint-gradient-linear">
+<rect id="rectangle" opacity="0.66" x="14" y="2" width="1" height="12" transform="rotate(90 14 2)" fill="black"/>
+<rect id="rectangle_2" opacity="0.6" x="14" y="3" width="1" height="12" transform="rotate(90 14 3)" fill="black"/>
+<rect id="rectangle_3" opacity="0.56" x="14" y="4" width="1" height="12" transform="rotate(90 14 4)" fill="black"/>
+<rect id="rectangle_4" opacity="0.48" x="14" y="5" width="1" height="12" transform="rotate(90 14 5)" fill="black"/>
+<rect id="rectangle_5" opacity="0.42" x="14" y="6" width="1" height="12" transform="rotate(90 14 6)" fill="black"/>
+<rect id="rectangle_6" opacity="0.36" x="14" y="7" width="1" height="12" transform="rotate(90 14 7)" fill="black"/>
+<rect id="rectangle_7" opacity="0.3" x="14" y="8" width="1" height="12" transform="rotate(90 14 8)" fill="black"/>
+<rect id="rectangle_8" opacity="0.24" x="14" y="9" width="1" height="12" transform="rotate(90 14 9)" fill="black"/>
+<rect id="rectangle_9" opacity="0.18" x="14" y="10" width="1" height="12" transform="rotate(90 14 10)" fill="black"/>
+<rect id="rectangle_10" opacity="0.12" x="14" y="11" width="1" height="12" transform="rotate(90 14 11)" fill="black"/>
+<rect id="rectangle_11" opacity="0.06" x="14" y="12" width="1" height="12" transform="rotate(90 14 12)" fill="black"/>
+<path id="Union" d="M15 15H1V1H15V15ZM2 14H14V2H2V14Z" fill="black"/>
+</g>
+</g>
+</svg>

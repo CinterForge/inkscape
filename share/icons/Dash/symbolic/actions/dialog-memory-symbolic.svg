@@ -1,0 +1,12 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="dialog-memory">
+<g id="memory" clip-path="url(#clip0_3684_42760)">
+<path id="Union" d="M4 16H3V14H4V16ZM7 16H6V14H7V16ZM10 16H9V14H10V16ZM13 16H12V14H13V16ZM2 13H0V12H2V13ZM13 13H3V3H13V13ZM16 13H14V12H16V13ZM4 12H12V4H4V12ZM2 10H0V9H2V10ZM16 10H14V9H16V10ZM2 7H0V6H2V7ZM16 7H14V6H16V7ZM2 4H0V3H2V4ZM16 4H14V3H16V4ZM4 2H3V0H4V2ZM7 2H6V0H7V2ZM10 2H9V0H10V2ZM13 2H12V0H13V2Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42760">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -1,0 +1,13 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="align-on-canvas">
+<g id=".arrange-align-handle" clip-path="url(#clip0_3684_42768)">
+<path id="Union" d="M9 14.8286L9.00006 6.14627L15.2461 12.1778L11.9994 11.8007L13.3844 15.0636L12.3696 15.4943L10.9843 12.2309L9 14.8286Z" fill="black"/>
+<path id="Subtract" d="M16 3H14V5H13V3H3V13H7V14H3V16L0 13H2V3H0L3 0V2H13V0L16 3Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42768">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

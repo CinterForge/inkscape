@@ -1,0 +1,9 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="color-picker-circle">
+<g id=".color-picker-circle">
+<path id="Union" d="M8 1C11.3137 1 14 3.68629 14 7C14 10.3137 11.3137 13 8 13C4.68629 13 2 10.3137 2 7C2 3.68629 4.68629 1 8 1ZM8 2C5.23858 2 3 4.23858 3 7C3 9.76142 5.23858 12 8 12C10.7614 12 13 9.76142 13 7C13 4.23858 10.7614 2 8 2Z" fill="black"/>
+<path id="path2" opacity="0.3" d="M8 12C10.7614 12 13 9.76142 13 7C13 4.23858 10.7614 2 8 2C5.23858 2 3 4.23858 3 7C3 9.76142 5.23858 12 8 12Z" fill="black"/>
+<rect id="neutral" x="1" y="14" width="14" height="1" fill="black"/>
+</g>
+</g>
+</svg>

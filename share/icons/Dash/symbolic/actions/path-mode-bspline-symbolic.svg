@@ -1,0 +1,13 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="path-mode-bspline">
+<g id=".path-mode-bspline" clip-path="url(#clip0_3684_42580)">
+<path id="Union" d="M16 2H15.5C8.04416 2 2 8.04416 2 15.5V16H1V15.5C1 7.49187 7.49187 1 15.5 1H16V2Z" fill="black"/>
+<path id="Union_2" opacity="0.4" d="M2 7.88086C1.61503 8.56151 1.28002 9.27399 1 10.0137V3H0V0H3V1H10.0146C9.27466 1.28008 8.56178 1.61488 7.88086 2H3V3H2V7.88086ZM1 2H2V1H1V2Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42580">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

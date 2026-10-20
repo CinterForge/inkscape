@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+
+This folder contains LPE to test. LPE test API has some parameters that can be helpful for fixing tests, especially legacy ones.
+* inkscape:test-threshold="0.3" in the root SVG element set a precision to all the tests. If it's in a single element, add to it. If it doesn't exist, use a default one 0.0001
+* inkscape:test-ignore="true" skip this element from testing
+The method to create/refresh a LPE version test need update all LPE in document
+THe only way I found work properly for ALL inlude legacy is:
+1) Select Layer LPEs in layers and objects dialog
+2) ungroup
+3) group again
+4) rename new layer to LPEs
+5) delete all no layers objects at root level (become recreated)

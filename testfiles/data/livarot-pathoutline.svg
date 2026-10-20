@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg>
+    <path
+       style="fill:#ff0000;stroke-linecap:round;paint-order:markers fill stroke"
+       d="M 12.783203125,9.693359375 V 36.07421875 h 26.37890625 V 9.693359375 Z m 3.953125,3.955078125 h 18.47265625 v 18.470703125 h -18.47265625 z"
+       id="reference-object-0" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:3.95399;stroke-linecap:round;paint-order:markers fill stroke"
+       id="test-object-0"
+       width="22.42603874206543"
+       height="22.42603874206543"
+       x="14.75999641418457"
+       y="11.67069435119629" />
+    <path
+       style="stroke-linecap:round;paint-order:markers fill stroke;fill:#ff0000"
+       d="m 53.05859375,9.693359375 v 1.9765625 24.404296875 H 79.4375 V 9.693359375 H 55.03515625 Z m 6.75,3.955078125 H 75.484375 v 15.67578125 z m -2.796875,2.794921875 L 72.6875,32.119140625 H 57.01171875 Z"
+       id="reference-object-1" />
+    <path
+       id="test-object-1"
+       style="fill:none;stroke:#000000;stroke-width:3.95399;stroke-linecap:round;paint-order:markers fill stroke"
+       d="M 77.46080780029295,34.09673309326174 55.0347709655762,11.67069625854562 m -3e-14,-1.90734933e-6 H 77.4608097076416 V 34.09673309326172 H 55.03477096557617 Z" />
+    <path
+       style="fill:#ff0000;stroke-linecap:round;paint-order:markers fill stroke"
+       d="m 109.69921875,8.84765625 -1.62890625,0.3515625 c 0,0 -3.8587971773746,0.865006731985559 -7.490234375,4.40234375 -3.63143719762537,3.53733701801444 -7.12499999999999,9.81506136113277 -7.125,20.146484375 v 1.9765625 h 27.087890625 z m -2.333984375,4.787109375 7.3203125,18.13671875 H 97.5703125 c 0.42056593384675,-8.09194881866444 3.0996768596582,-12.73721925063616 5.76953125,-15.337890625 1.5815762752751,-1.5405934347432 2.976744294329,-2.33314570341249 4.025390625,-2.798828125 z"
+       id="reference-object-2" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:3.95399;stroke-linecap:round;paint-order:markers fill stroke"
+       d="m 108.4883571960642,11.13229674997904 c 0,0 -13.05697052480726,2.82192316006006 -13.05697052480726,22.61533634189478 l 22.18263269595866,1.1e-13 z"
+       id="test-object-2" />
+</svg>

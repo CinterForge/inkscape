@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkBox" id="root">
+    <property name="valign">center</property>
+    <child>
+      <object class="GtkLabel" id="name">
+        <property name="max-width-chars">20</property>
+        <property name="ellipsize">end</property>
+        <property name="margin-start">4</property>
+        <property name="margin-bottom">2</property>
+        <property name="margin-end">2</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="close">
+        <property name="icon-name">window-close</property>
+        <property name="tooltip-text" translatable="yes">Close tab</property>
+        <property name="focus-on-click">False</property>
+        <property name="margin-start">4</property>
+        <property name="margin-end">4</property>
+        <style>
+          <class name="close-button"/>
+        </style>
+      </object>
+    </child>
+  </object>
+</interface>

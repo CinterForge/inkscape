@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkImage" id="gear_icon">
+    <property name="icon-name">gear</property>
+  </object>
+  <object class="GtkPopover" id="pref_popover">
+    <property name="child">
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="name">pref_label</property>
+            <property name="margin-start">10</property>
+            <property name="margin-end">10</property>
+            <property name="margin-top">5</property>
+            <property name="label" translatable="yes">Export Format Options</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkSeparator">
+          </object>
+        </child>
+        <child>
+          <object class="GtkViewport" id="pref_holder">
+          </object>
+        </child>
+      </object>
+    </property>
+  </object>
+  <object class="GtkMenuButton" id="pref_button">
+    <property name="focusable">True</property>
+    <property name="receives-default">True</property>
+    <property name="icon-name">gear</property>
+    <property name="direction">left</property>
+    <property name="popover">pref_popover</property>
+    <property name="tooltip-text" translatable="yes">View export format options</property>
+  </object>
+</interface>

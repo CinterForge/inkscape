@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkAdjustment" id="opacity_adj">
+    <property name="upper">100</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkPopover" id="opacity_popover">
+    <property name="child">
+      <object class="GtkScale" id="opacity_scale">
+        <property name="draw-value">True</property>
+        <property name="height-request">150</property>
+        <property name="focusable">True</property>
+        <property name="orientation">vertical</property>
+        <property name="adjustment">opacity_adj</property>
+        <property name="fill-level">100</property>
+        <property name="round-digits">1</property>
+        <property name="value-pos">bottom</property>
+      </object>
+    </property>
+  </object>
+  <object class="GtkBox" id="booleans-toolbar">
+    <property name="halign">start</property>
+    <property name="valign">center</property>
+    <property name="hexpand">True</property>
+    <child>
+      <object class="GtkToggleButton" id="radio_button_group">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Add to the Shape</property>
+        <property name="action-name">win.shape-builder-mode</property>
+        <property name="action-target">0</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">shapebuilder-tool-union</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Remove from Shape</property>
+        <property name="action-name">win.shape-builder-mode</property>
+        <property name="action-target">1</property>
+        <property name="has-frame">False</property>
+        <property name="group">radio_button_group</property>
+        <property name="icon-name">shapebuilder-tool-difference</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+      </object>
+    </child>
+    <child>
+      <object class="GtkLabel">
+        <property name="margin-start">3</property>
+        <property name="label" translatable="yes">Finish:</property>
+        <property name="use-markup">True</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="confirm_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Accept</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">on</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="cancel_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Cancel</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">off</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuButton">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="has-frame">False</property>
+        <property name="popover">opacity_popover</property>
+        <child>
+          <object class="GtkImage">
+            <property name="icon-name">object-visible</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="action-name">win.shape-builder-replace</property>
+        <property name="has-frame">False</property>
+        <property name="use-underline">True</property>
+        <property name="icon-name">layer-delete</property>
+      </object>
+    </child>
+    <style>
+      <class name="inkscape-toolbar"/>
+    </style>
+  </object>
+</interface>

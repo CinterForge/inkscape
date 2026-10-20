@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkAdjustment" id="_dx_adj">
+    <property name="lower">-1000</property>
+    <property name="upper">1000</property>
+    <property name="step-increment">0.01</property>
+    <property name="page-increment">0.10</property>
+  </object>
+  <object class="GtkAdjustment" id="_dy_adj">
+    <property name="lower">-1000</property>
+    <property name="upper">1000</property>
+    <property name="step-increment">0.01</property>
+    <property name="page-increment">0.10</property>
+  </object>
+  <object class="GtkAdjustment" id="_letter_spacing_adj">
+    <property name="lower">-1000</property>
+    <property name="upper">1000</property>
+    <property name="step-increment">0.01</property>
+    <property name="page-increment">0.10</property>
+  </object>
+  <object class="GtkAdjustment" id="_line_height_adj">
+    <property name="upper">10000</property>
+    <property name="step-increment">0.10</property>
+    <property name="page-increment">1</property>
+  </object>
+  <object class="GtkAdjustment" id="_rotation_adj">
+    <property name="lower">-180</property>
+    <property name="upper">180</property>
+    <property name="step-increment">0.10</property>
+    <property name="page-increment">1</property>
+  </object>
+  <object class="GtkAdjustment" id="_word_spacing_adj">
+    <property name="lower">-1000</property>
+    <property name="upper">1000</property>
+    <property name="step-increment">0.01</property>
+    <property name="page-increment">0.10</property>
+  </object>
+  <object class="GtkPopover" id="font_collections_popover">
+    <property name="child">
+      <object class="GtkBox" id="font_collections_box">
+        <property name="valign">center</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">3</property>
+        <child>
+          <object class="GtkFrame">
+            <property name="margin-start">3</property>
+            <property name="margin-top">3</property>
+            <property name="margin-bottom">3</property>
+            <style>
+              <class name="flat"/>
+            </style>
+            <property name="child">
+              <object class="GtkListBox" id="_font_collections_list">
+                <property name="selection-mode">multiple</property>
+              </object>
+            </property>
+            <child type="label">
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">Font Collections</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="valign">center</property>
+            <property name="orientation">horizontal</property>
+            <property name="spacing">3</property>
+            <child>
+              <object class="GtkButton" id="fc_dialog_btn">
+                <property name="valign">center</property>
+                <property name="label" translatable="yes">Open Collections Editor</property>
+                <property name="focusable">True</property>
+                <property name="focus-on-click">False</property>
+                <property name="receives-default">True</property>
+                <property name="tooltip-text" translatable="yes">Open the Font Collections dialog</property>
+                <property name="margin-top">3</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="reset_btn">
+                <property name="valign">center</property>
+                <property name="focusable">True</property>
+                <property name="focus-on-click">False</property>
+                <property name="tooltip-text" translatable="yes">Reset the font list (Deselects all the font collections and clears search results)</property>
+                <property name="has-frame">False</property>
+                <property name="icon-name">view-refresh</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </property>
+  </object>
+  <object class="GtkBox" id="text-toolbar">
+    <property name="halign">start</property>
+    <property name="valign">center</property>
+    <property name="hexpand">True</property>
+    <child>
+      <object class="GtkBox" id="mode_buttons_box">
+        <property name="spacing">3</property>
+        <child>
+          <object class="GtkToggleButton" id="mode_buttons_group">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Place text anywhere on the canvas</property>
+            <property name="has-frame">False</property>
+            <property name="icon-name">draw-text</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Place text inside objects or on path edges</property>
+            <property name="has-frame">False</property>
+            <property name="group">mode_buttons_group</property>
+            <property name="icon-name">text-flow-into-frame</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="font_list_box">
+        <property name="width-request">200</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="styles_list_box">
+        <property name="width-request">130</property>
+      </object>
+    </child>
+    <child>
+      <object class="gtkmm__CustomObject_FontSizeSelector" id="font_size">
+        <property name="width-request">70</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="unit_menu_box">
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="line_height_box">
+        <property name="tooltip-text" translatable="yes">Spacing between baselines</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_line_height_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_line_height_adj</property>
+            <property name="climb-rate">0.10</property>
+            <property name="digits">3</property>
+            <property name="width-chars">10</property>
+            <property name="icon">text_line_spacing</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="line_height_unit_box">
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="alignment_buttons_box">
+        <property name="spacing">3</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="GtkToggleButton" id="alignment_mode_group">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Align left</property>
+            <property name="has-frame">False</property>
+            <property name="icon-name">format-justify-left</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Align center</property>
+            <property name="has-frame">False</property>
+            <property name="group">alignment_mode_group</property>
+            <property name="icon-name">format-justify-center</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Align right</property>
+            <property name="has-frame">False</property>
+            <property name="group">alignment_mode_group</property>
+            <property name="icon-name">format-justify-right</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Justify (only flowed text)</property>
+            <property name="has-frame">False</property>
+            <property name="group">alignment_mode_group</property>
+            <property name="icon-name">format-justify-fill</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_superscript_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Toggle superscript</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">text_superscript</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_subscript_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Toggle subscript</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">text_subscript</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_textdecoration_underline_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+	<property name="action-name">win.text-decoration-line-underline</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">format-text-underline</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_textdecoration_line_through_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+	<property name="action-name">win.text-decoration-line-line-through</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">format-text-strikethrough</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_textdecoration_over_line_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+	<property name="action-name">win.text-decoration-line-overline</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">format-text-overline</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="writing_buttons_box">
+        <property name="tooltip-text" translatable="yes">Block progression</property>
+        <property name="spacing">3</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="GtkToggleButton" id="writing_buttons_mode_group">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Horizontal text</property>
+            <property name="has-frame">False</property>
+            <property name="icon-name">frmt-text-direction-horizontal</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Vertical text — lines: right to left</property>
+            <property name="has-frame">False</property>
+            <property name="group">writing_buttons_mode_group</property>
+            <property name="icon-name">frmt-text-direction-vertical</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Vertical text — lines: left to right</property>
+            <property name="has-frame">False</property>
+            <property name="group">writing_buttons_mode_group</property>
+            <property name="icon-name">frmt-text-direction-vertical-lr</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="orientation_buttons_box">
+        <property name="tooltip-text" translatable="yes">Text (glyph) orientation in vertical text.</property>
+        <property name="spacing">3</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="GtkToggleButton" id="orientation_buttons_mode_group">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Auto glyph orientation</property>
+            <property name="has-frame">False</property>
+            <property name="icon-name">text-orientation-auto</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Upright glyph orientation</property>
+            <property name="has-frame">False</property>
+            <property name="group">orientation_buttons_mode_group</property>
+            <property name="icon-name">text-orientation-upright</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Sideways glyph orientation</property>
+            <property name="has-frame">False</property>
+            <property name="group">orientation_buttons_mode_group</property>
+            <property name="icon-name">text-orientation-sideways</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="direction_buttons_box">
+        <property name="tooltip-text" translatable="yes">Text direction for normally horizontal text.</property>
+        <property name="spacing">3</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="GtkToggleButton" id="direction_buttons_mode_group">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Left to right text</property>
+            <property name="has-frame">False</property>
+            <property name="icon-name">frmt-text-direction-horizontal</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="tooltip-text" translatable="yes">Right to left text</property>
+            <property name="has-frame">False</property>
+            <property name="group">direction_buttons_mode_group</property>
+            <property name="icon-name">frmt-text-direction-r2l</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="letter_spacing_box">
+        <property name="tooltip-text" translatable="yes">Spacing between letters (px)</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_letter_spacing_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_letter_spacing_adj</property>
+            <property name="climb-rate">0.10</property>
+            <property name="digits">2</property>
+            <property name="icon">text_letter_spacing</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="word_spacing_box">
+        <property name="tooltip-text" translatable="yes">Spacing between words (px)</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_word_spacing_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_word_spacing_adj</property>
+            <property name="climb-rate">0.10</property>
+            <property name="digits">2</property>
+            <property name="icon">text_word_spacing</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="dx_box">
+        <property name="tooltip-text" translatable="yes">Horizontal kerning (px)</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_dx_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_dx_adj</property>
+            <property name="climb-rate">0.10</property>
+            <property name="digits">2</property>
+            <property name="icon">text_horz_kern</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="dy_box">
+        <property name="tooltip-text" translatable="yes">Vertical kerning (px)</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_dy_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_dy_adj</property>
+            <property name="climb-rate">0.10</property>
+            <property name="digits">2</property>
+            <property name="icon">text_vert_kern</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="rotation_box">
+        <property name="tooltip-text" translatable="yes">Character rotation (degrees)</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_rotation_item">
+            <property name="focusable">True</property>
+            <property name="adjustment">_rotation_adj</property>
+            <property name="climb-rate">0.10</property>
+            <property name="digits">2</property>
+            <property name="icon">text_rotation</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <style>
+      <class name="inkscape-toolbar"/>
+    </style>
+  </object>
+</interface>

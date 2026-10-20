@@ -1,0 +1,17 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="display-outline-alt">
+<g id="mask">
+<mask id="mask0_3684_42584" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+<path id="Subtract" d="M11.3555 0C10.5246 0.73296 10 1.80496 10 3C10 5.20914 11.7909 7 14 7C14.7289 7 15.4115 6.80354 16 6.46289V16H0V0H11.3555Z" fill="black"/>
+</mask>
+<g mask="url(#mask0_3684_42584)">
+<g id="Group 284">
+<g id=".display-outline">
+<path id="Union" d="M15.001 12H9.00098V13H12.001V14H4.00098V13H7.00098V12H1.00098V2H15.001V12ZM6.5 9.20703L5 7.70703L2.00098 10.7061V11H14.001V8.70801L10.5 5.20703L6.5 9.20703ZM2.00098 9.29199L5 6.29297L6.5 7.79297L10.5 3.79297L14.001 7.29395V3H2.00098V9.29199Z" fill="black"/>
+</g>
+</g>
+</g>
+</g>
+<circle id="Ellipse 368" cx="14" cy="3" r="2" fill="black"/>
+</g>
+</svg>

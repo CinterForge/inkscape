@@ -1,0 +1,17 @@
+@import url("node-handles.css");
+
+/* To customize handles' look and feel:
+ * - Copy this file to your local UI folder
+ *   - UI folder's path can be found in Edit > Preferences > System: User UI
+ * - Switch to "Custom" theme in Edit > Preferences > Interface > User Interface: Handle Colors
+ * - Redefine desired selectors from node-handles.css
+ *   - node-handles.css is present in the global UI folder, which is usually at
+ *     {INSTALLATION_FOLDER}/share/inkscape/ui/node-handles.css
+ *
+ * Example:
+
+    *:selected {
+       fill: #ff1a5e !important;
+    }
+
+*/

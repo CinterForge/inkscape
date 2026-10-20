@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="distribute-horizontal-node">
+<g id=".arrange-distribute-node-horizontal">
+<path class="warning" opacity="0.5" d="M8 15H7V0H8V15Z" fill="black"/>
+<path id="Union" d="M6 7.5L3 10.5L0 7.5L3 4.5L6 7.5ZM15 7.5L12 10.5L9 7.5L12 4.5L15 7.5ZM1.41406 7.5L3 9.08594L4.58594 7.5L3 5.91406L1.41406 7.5ZM10.4141 7.5L12 9.08594L13.5859 7.5L12 5.91406L10.4141 7.5Z" fill="black"/>
+</g>
+</g>
+</svg>

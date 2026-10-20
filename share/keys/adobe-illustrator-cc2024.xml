@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+<keys name="Adobe Illustrator CC" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <!-- inherit -->
+    <xi:include href="inkscape.xml" />
+
+    <!--
+    This file contains Inkscape keyboard shortcuts that mimic Illustrator CC 2024.
+    
+    ========== Actions ==========
+    
+    - The "keys" attribute contains a comma separated list of shortcuts which can include the
+      modifiers <primary>, <shift>, and/or <alt>. As this is an XML file, '<' and '>' must be
+      replaced by &lt; and &gt;, respectively. The first entry will be listed in menus.
+    
+    - The "gaction" attribute contains the full action name, including the map name (typically
+      'app' or 'win').
+    
+    =========== Notes ===========
+    
+    In case of conflict, those bindings that come later override those before them. This
+    file resides in the share/keys directory of your Inkscape installation, but you may also
+    have a default.xml in your personal Inkscape profile directory (e.g. ~/.config/inkscape
+    on Unix). The bindings in that personal file are added to (or, if there's a conflict,
+    override) the bindings in the main default.xml.
+    -->
+    <!-- MODIFIERS -->
+    <modifier action="canvas-pan-x" modifiers="Ctrl"/>
+    <modifier action="canvas-zoom" modifiers="Alt"/>
+
+    <modifier action="select-add-to" modifiers="Shift"/>
+    <modifier action="select-in-groups" modifiers="Ctrl"/>
+    <modifier action="select-touch-path" modifiers="Alt"/>
+    <modifier action="select-always-box" modifiers="Shift"/>
+    <modifier action="select-remove-from" modifiers="Ctrl"/>
+    <modifier action="select-force-drag" modifiers="Alt"/>
+    <modifier action="select-cycle" modifiers="Ctrl,Alt"/> <!-- Changed because of conflict with canvas-zoom-->
+
+    <modifier action="move-confine" modifiers="Shift" />
+    <modifier action="move-snapping" modifiers="Ctrl" />
+    
+    <modifier action="trans-confine" modifiers="Shift"/>
+    <modifier action="trans-increment" disabled="true" /> <!-- Disabled because of conflict with trans-off-center -->
+    <modifier action="trans-off-center" modifiers="Alt"/>
+    <modifier action="trans-snapping" modifiers="Ctrl"/>
+  
+    <!-- TOOL SHORTCUTS -->
+    <bind gaction="tool.all.quick-zoom" keys="q" /> <!-- Doesn't work -->
+    <bind gaction="tool.all.quick-pan" keys="space" />
+
+    <bind gaction="tool.pen.to-line" keys="&lt;Shift&gt;l" />
+    <bind gaction="tool.pen.to-curve" keys="&lt;Shift&gt;u" />
+    <bind gaction="tool.pen.to-guides" keys="&lt;Shift&gt;g" />
+
+    <!-- ACTIONS -->
+
+    <!-- Base -->
+
+    <!-- Dialog -->
+    <bind gaction="win.dialog-open('AlignDistribute')"     keys="&lt;Shift&gt;F7" />
+    <bind gaction="win.dialog-open('DocumentProperties')"  keys="&lt;Primary&gt;&lt;Alt&gt;p" />
+    <bind gaction="win.dialog-open('Export')" 		   keys="&lt;Primary&gt;&lt;Alt&gt;e, " />
+    <bind gaction="win.dialog-open('FillStroke')"          keys="F6, &lt;Primary&gt;F10, &lt;Primary&gt;F9" />
+    <bind gaction="win.dialog-open('ObjectProperties')"    keys="&lt;Primary&gt;F11" />
+    <bind gaction="win.dialog-open('Objects')"             keys="F7" />
+    <bind gaction="app.preferences"                        keys="&lt;Primary&gt;k" />
+    <bind gaction="win.dialog-open('Spellcheck')"          keys="&lt;Primary&gt;i" />
+    <bind gaction="win.dialog-open('Symbols')" 		   keys="&lt;Primary&gt;&lt;Shift&gt;F11" />
+    <bind gaction="win.dialog-open('Text')"                keys="&lt;Primary&gt;t, &lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;t" />
+    <bind gaction="win.dialog-open('Transform')"           keys="&lt;Shift&gt;F8"  />
+    <!--<bind gaction="win.dialog-toggle"                      keys="&lt;Shift&gt;Tab" />  Disabled as it doesn't work as intended. -->
+
+    <!-- Tools -->
+    <bind gaction="win.tool-switch('Select')"              keys="v" />
+    <bind gaction="win.tool-toggle('Select')" 		   keys="&lt;Primary&gt;dead_grave, &lt;Primary&gt;grave" /> 
+    <bind gaction="win.tool-switch('Node')"                keys="a" />
+    <bind gaction="win.tool-switch('Booleans')"            keys="&lt;Shift&gt;m" />
+
+    <bind gaction="win.tool-switch('Rect')"                keys="m" />
+    <bind gaction="win.tool-switch('Arc')"                 keys="l" />
+
+    <bind gaction="win.tool-switch('Pencil')"              keys="n"/>
+    <bind gaction="win.tool-switch('Pen')"                 keys="p"/>
+    <bind gaction="win.tool-switch('Calligraphic')"        keys="b, &lt;Shift&gt;b"/>
+    <bind gaction="win.tool-switch('Text')"                keys="t"/>
+
+    <bind gaction="win.tool-switch('Gradient')"            keys="g"/>
+    <bind gaction="win.tool-switch('Mesh')"                keys="u"/>
+    <bind gaction="win.tool-switch('Dropper')"             keys="i"/>
+    <bind gaction="win.tool-switch('PaintBucket')"         keys="k"/> 
+
+    <bind gaction="win.tool-switch('Tweak')"               keys="&lt;Shift&gt;r"/>
+    <bind gaction="win.tool-switch('Spray')"               keys="&lt;Shift&gt;s"/>
+    <bind gaction="win.tool-switch('Eraser')"              keys="&lt;Shift&gt;e"/>
+
+    <bind gaction="win.tool-switch('Zoom')"                keys="z"/>
+    <bind gaction="win.tool-switch('Pages')"               keys="&lt;Shift&gt;o"/>
+
+    <!-- Snapping -->
+    <bind gaction="win.snap-global-toggle"                 keys="&lt;Primary&gt;u"/>
+    <bind gaction="win.snap-grid"		           keys="&lt;Primary&gt;&lt;Shift&gt;apostrophe" />
+    <bind gaction="win.snap-node-category"		   keys="&lt;Primary&gt;&lt;Alt&gt;apostrophe" />
+
+    <!-- ROUGHLY IN MENU ORDER -->
+
+    <!-- File -->
+    <bind gaction="win.document-new"                       keys="&lt;Primary&gt;n" />
+    <bind gaction="win.document-dialog-templates"          keys="&lt;Primary&gt;&lt;Shift&gt;n" />
+    <bind gaction="win.document-open"                      keys="&lt;Primary&gt;o" />
+    <bind gaction="win.document-revert" 			 keys="F12"/>
+    <bind gaction="win.document-save"                      keys="&lt;Primary&gt;s" />
+    <bind gaction="win.document-save-as"                   keys="&lt;Primary&gt;&lt;Shift&gt;s" />
+    <bind gaction="win.document-save-copy"                 keys="&lt;Primary&gt;&lt;Alt&gt;s" />
+    <bind gaction="win.document-import"                    keys="&lt;Primary&gt;&lt;Shift&gt;p" />
+    <bind gaction="win.document-print"                     keys="&lt;Primary&gt;p" />
+    <bind gaction="win.document-close"                     keys="&lt;Primary&gt;w" />
+    <bind gaction="app.quit"                               keys="&lt;Primary&gt;q" />
+
+    <!-- Edit -->
+    <bind gaction="doc.undo"                               keys="&lt;Primary&gt;z" />
+    <bind gaction="doc.redo"                               keys="&lt;Primary&gt;&lt;Shift&gt;z" />
+    <bind gaction="app.cut"                                keys="&lt;Primary&gt;x, F2" />
+    <bind gaction="app.copy"                               keys="&lt;Primary&gt;c, F3"/>
+    <bind gaction="win.paste"                              keys="&lt;Primary&gt;v, F4"/>
+    <bind gaction="app.paste-style"                        keys="&lt;Primary&gt;&lt;Alt&gt;v" />
+    <bind gaction="win.paste-in-place"                     keys="&lt;Primary&gt;&lt;Shift&gt;v"/>
+    <bind gaction="app.duplicate-transform"                keys="&lt;Primary&gt;d" />
+    <bind gaction="app.delete"                             keys="Delete, KP_Delete, BackSpace" />
+
+    <bind gaction="app.swap-fill-and-stroke"               keys="&lt;Shift&gt;x" />
+
+    <!-- Select -->
+    <bind gaction="win.select-all-layers"                  keys="&lt;Primary&gt;a" />
+    <bind gaction="win.select-none"                        keys="Escape, &lt;Primary&gt;&lt;Shift&gt;a"/>
+
+    <!-- View -->
+    <!-- Canvas Transform -->
+    <bind gaction="win.canvas-zoom-in"                     keys="&lt;Primary&gt;equal, &lt;Primary&gt;KP_Equal"      />
+    <bind gaction="win.canvas-zoom-out"                    keys="&lt;Primary&gt;minus, &lt;Primary&gt;KP_Subtract" />
+    <bind gaction="win.canvas-zoom-1-1"                    keys="&lt;Primary&gt;1, &lt;Primary&gt;KP_1"/>
+    <bind gaction="win.canvas-zoom-drawing"                keys="&lt;Primary&gt;&lt;Alt&gt;0, &lt;Primary&gt;&lt;Alt&gt;KP_0"/>
+    <bind gaction="win.canvas-zoom-page"                   keys="&lt;Primary&gt;0, &lt;Primary&gt;KP_0"/>
+    <bind gaction="win.canvas-rotate-reset"                keys="&lt;Primary&gt;&lt;Shift&gt;1, &lt;Primary&gt;&lt;Shift&gt;KP_1" />
+
+    <!-- Canvas Mode -->
+    <bind gaction="win.canvas-display-mode-cycle"          keys="&lt;Primary&gt;y"/>
+
+    <!-- View - Other -->
+    <bind gaction="doc.show-grids"                         keys="&lt;Primary&gt;apostrophe" /> 
+    <bind gaction="doc.show-all-guides"                    keys="&lt;Primary&gt;semicolon" /> 
+    <bind gaction="doc.lock-all-guides"			   keys="&lt;Primary&gt;&lt;Alt&gt;semicolon" />
+
+    <bind gaction="win.canvas-rulers"                      keys="&lt;Primary&gt;r" />
+    <bind gaction="win.window-previous"                    keys="&lt;ctrl&gt;&lt;Shift&gt;F6" />
+    <bind gaction="win.window-next"                        keys="&lt;ctrl&gt;F6" />
+    <bind gaction="win.view-fullscreen"                    keys="F11" />
+    <bind gaction="win.view-focus-toggle"                  keys="f" />
+
+    <!-- Layers -->
+    <bind gaction="win.layer-new"                          keys="&lt;Primary&gt;&lt;Alt&gt;l" />
+    <bind gaction="win.layer-new-above"                    keys="&lt;Primary&gt;l" />
+
+    <!-- Object -->
+    <bind gaction="app.selection-group"                    keys="&lt;Primary&gt;g" />
+    <bind gaction="app.selection-ungroup"                  keys="&lt;Primary&gt;&lt;Shift&gt;g" />
+
+    <bind gaction="app.selection-lock"			   keys="&lt;Primary&gt;2, &lt;Primary&gt;KP_2" />
+    <bind gaction="app.unlock-all" 			   keys="&lt;Primary&gt;&lt;Alt&gt;2, &lt;Primary&gt;&lt;Alt&gt;KP_2" />
+
+    <bind gaction="app.selection-hide"			   keys="&lt;Primary&gt;3, &lt;Primary&gt;KP_3" />
+    <bind gaction="app.unhide-all"			   keys="&lt;Primary&gt;&lt;Alt&gt;3, &lt;Primary&gt;&lt;Alt&gt;KP_3" />
+
+    <bind gaction="app.object-set-clip"                    keys="&lt;Primary&gt;7, &lt;Primary&gt;KP_7" /> 
+    <bind gaction="app.object-set-inverse-clip"            keys="&lt;Alt&gt;7, &lt;Alt&gt;KP_7" /> 
+    <bind gaction="app.object-release-clip"                keys="&lt;Primary&gt;&lt;Alt&gt;7, &lt;Primary&gt;&lt;Alt&gt;KP_7" /> 
+
+    <bind gaction="app.object-to-guides"                   keys="&lt;Primary&gt;5, &lt;Primary&gt;KP_5" />
+
+    <bind gaction="app.selection-top"                      keys="&lt;Primary&gt;&lt;Shift&gt;bracketright" />
+    <bind gaction="app.selection-raise"                    keys="&lt;Primary&gt;bracketright" />
+    <bind gaction="app.selection-lower"                    keys="&lt;Primary&gt;bracketleft" />
+    <bind gaction="app.selection-bottom"                   keys="&lt;Primary&gt;&lt;Shift&gt;bracketleft" />
+
+    <!-- Object Transform -->
+    <bind gaction="app.transform-reapply"                  keys="&lt;Primary&gt;d" />
+    <bind gaction="app.transform-scale(2.0)"               keys="&lt;primary&gt;period, &lt;primary&gt;greater" />
+    <bind gaction="app.transform-grow-step(1.0)"           keys="period, 		      greater" /> <!-- uses preference step value -->
+    <bind gaction="app.transform-grow-screen(2.0)"         keys="&lt;alt&gt;period, &lt;alt&gt;greater" />
+    <bind gaction="app.transform-scale(0.5)"               keys="&lt;primary&gt;comma, &lt;primary&gt;less" />
+    <bind gaction="app.transform-grow-step(-1.0)"          keys="comma, less" />  <!-- shrink -->
+    <bind gaction="app.transform-grow-screen(-2.0)"        keys="&lt;alt&gt;comma, &lt;alt&gt;less" />  <!-- shrink -->
+
+    <!-- Path -->
+    <bind gaction="app.object-to-path"                     keys="&lt;Primary&gt;&lt;Shift&gt;o" />
+    <bind gaction="app.path-combine"                       keys="&lt;Primary&gt;8, &lt;Primary&gt;KP_8" />
+    <bind gaction="app.path-break-apart"                   keys="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;8, &lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;KP_8" />
+    <bind gaction="app.path-flatten"                       keys="&lt;Shift&gt;f" />
+
+    <!-- Text -->
+    <bind gaction="app.text-unkern" 			   keys="&lt;Primary&gt;&lt;Alt&gt;q" />
+
+    <!-- Extensions: Mostly these are unbound references to extensions used in other keys -->
+
+    <!-- Effects -->
+    <bind gaction="app.last-effect"                        keys="&lt;Primary&gt;&lt;Shift&gt;e" /> <!-- doubtful -->
+    <bind gaction="app.last-effect-pref"                   keys="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;e" /> <!-- doubtful -->
+
+    <!-- Help -->
+    <bind gaction="win.help-url-manual" 		   keys="F1" />
+
+</keys>

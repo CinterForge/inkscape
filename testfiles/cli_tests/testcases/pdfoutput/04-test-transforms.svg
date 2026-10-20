@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100mm"
+   height="100mm"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.5-dev (1fb94ef460, 2025-04-06)"
+   sodipodi:docname="04-test-transforms.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1"
+     inkscape:cx="724.5"
+     inkscape:cy="147"
+     inkscape:window-width="1505"
+     inkscape:window-height="896"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1"
+     showgrid="false" />
+  <defs
+     id="defs1">
+    <view
+       viewBox="0 0 100 100"
+       id="page1"
+       inkscape:label="Basics"
+       inkscape:margin="10"
+       inkscape:bleed="0" />
+    <view
+       viewBox="110 0 100 100"
+       id="page2"
+       inkscape:label="Group"
+       inkscape:margin="10"
+       inkscape:bleed="0" />
+    <view
+       viewBox="220 0 100 100"
+       id="page3"
+       inkscape:label="Double"
+       inkscape:margin="10"
+       inkscape:bleed="0" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       id="rect1-6"
+       width="10"
+       height="10"
+       x="8.8817842e-16"
+       y="0"
+       style="fill:#ff0000;stroke-width:0.5" />
+    <rect
+       id="rect1-6-6"
+       width="10"
+       height="9.9999971"
+       x="8.8817842e-16"
+       y="90"
+       style="fill:#00ff00;stroke-width:0.5" />
+    <rect
+       id="rect1-6-6-1"
+       width="9.999999"
+       height="10"
+       x="90"
+       y="-2.6645353e-15"
+       style="fill:#ff00ff;stroke-width:0.5" />
+    <rect
+       id="rect1-6-6-1-8"
+       width="9.9999981"
+       height="9.9999981"
+       x="90"
+       y="90"
+       style="fill:#0000ff;stroke-width:0.5" />
+    <rect
+       id="rect1-6-5"
+       width="10"
+       height="10"
+       x="109.99999"
+       y="0"
+       style="fill:#ff0000;stroke-width:0.5" />
+    <rect
+       id="rect1-6-6-3"
+       width="10"
+       height="9.9999971"
+       x="109.99999"
+       y="90"
+       style="fill:#00ff00;stroke-width:0.5" />
+    <rect
+       id="rect1-6-6-1-5"
+       width="9.999999"
+       height="10"
+       x="200"
+       y="0"
+       style="fill:#ff00ff;stroke-width:0.5" />
+    <rect
+       id="rect1-6-6-1-8-6"
+       width="9.9999981"
+       height="9.9999981"
+       x="200"
+       y="90"
+       style="fill:#0000ff;stroke-width:0.5" />
+    <g
+       id="g2"
+       transform="matrix(0.98858032,0,0,0.94117648,4.2090306,0.58823521)">
+      <rect
+         id="rect1"
+         width="20"
+         height="20"
+         x="0"
+         y="0"
+         transform="translate(10,10)" />
+      <rect
+         id="rect1-7"
+         width="20"
+         height="20"
+         transform="matrix(1.5,0,0,1.5,30,65)"
+         x="0"
+         y="0" />
+      <rect
+         id="rect1-2"
+         width="20"
+         height="20"
+         x="0"
+         y="0"
+         transform="matrix(1,0.83909963,0,1,60,40)" />
+      <rect
+         id="rect1-5"
+         width="20"
+         height="20"
+         x="0"
+         y="0"
+         transform="rotate(45,-38.284271,44.142136)" />
+      <rect
+         id="rect2"
+         width="20"
+         height="20"
+         x="0"
+         y="0"
+         transform="matrix(1,0,0.83909963,1,50,10)" />
+    </g>
+    <g
+       id="g2-0"
+       transform="matrix(0.87931794,0.31486652,-0.36624618,0.75596087,134.67842,-0.70827381)">
+      <rect
+         id="rect1-23"
+         width="20"
+         height="20"
+         x="0"
+         y="0"
+         transform="translate(10,10)" />
+      <rect
+         id="rect1-7-7"
+         width="20"
+         height="20"
+         transform="matrix(1.5,0,0,1.5,30,65)"
+         x="0"
+         y="0" />
+      <rect
+         id="rect1-2-5"
+         width="20"
+         height="20"
+         x="0"
+         y="0"
+         transform="matrix(1,0.83909963,0,1,60,40)" />
+      <rect
+         id="rect1-5-9"
+         width="20"
+         height="20"
+         x="0"
+         y="0"
+         transform="rotate(45,-38.284271,44.142136)" />
+      <rect
+         id="rect2-2"
+         width="20"
+         height="20"
+         x="0"
+         y="0"
+         transform="matrix(1,0,0.83909963,1,50,10)" />
+    </g>
+    <g
+       id="g8"
+       transform="matrix(-0.21225159,-0.5201954,0.5201954,-0.21225159,256.14395,123.38915)">
+      <g
+         id="g7"
+         transform="matrix(0.78443831,0.32672771,-0.32672771,0.78443831,139.57162,-2.5536364)">
+        <rect
+           id="rect3"
+           width="20"
+           height="20"
+           x="0"
+           y="0"
+           transform="translate(10,10)" />
+        <rect
+           id="rect4"
+           width="20"
+           height="20"
+           transform="matrix(1.5,0,0,1.5,30,65)"
+           x="0"
+           y="0" />
+        <rect
+           id="rect5"
+           width="20"
+           height="20"
+           x="0"
+           y="0"
+           transform="matrix(1,0.83909963,0,1,60,40)" />
+        <rect
+           id="rect6"
+           width="20"
+           height="20"
+           x="0"
+           y="0"
+           transform="rotate(45,-38.284271,44.142136)" />
+        <rect
+           id="rect7"
+           width="20"
+           height="20"
+           x="0"
+           y="0"
+           transform="matrix(1,0,0.83909963,1,50,10)" />
+      </g>
+    </g>
+    <g
+       id="g13"
+       transform="matrix(0.21225159,-0.5201954,-0.5201954,-0.21225159,283.85605,164.67156)">
+      <g
+         id="g12"
+         transform="matrix(0.78443831,0.32672771,-0.32672771,0.78443831,139.57162,-2.5536364)">
+        <rect
+           id="rect8"
+           width="20"
+           height="20"
+           x="0"
+           y="0"
+           transform="translate(10,10)" />
+        <rect
+           id="rect9"
+           width="20"
+           height="20"
+           transform="matrix(1.5,0,0,1.5,30,65)"
+           x="0"
+           y="0" />
+        <rect
+           id="rect10"
+           width="20"
+           height="20"
+           x="0"
+           y="0"
+           transform="matrix(1,0.83909963,0,1,60,40)" />
+        <rect
+           id="rect11"
+           width="20"
+           height="20"
+           x="0"
+           y="0"
+           transform="rotate(45,-38.284271,44.142136)" />
+        <rect
+           id="rect12"
+           width="20"
+           height="20"
+           x="0"
+           y="0"
+           transform="matrix(1,0,0.83909963,1,50,10)" />
+      </g>
+    </g>
+  </g>
+</svg>

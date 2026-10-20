@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkAdjustment" id="_h_adj">
+    <property name="lower">-1000000</property>
+    <property name="upper">1000000</property>
+    <property name="step-increment">0.10</property>
+    <property name="page-increment">5</property>
+  </object>
+  <object class="GtkAdjustment" id="_w_adj">
+    <property name="lower">-1000000</property>
+    <property name="upper">1000000</property>
+    <property name="step-increment">0.10</property>
+    <property name="page-increment">5</property>
+  </object>
+  <object class="GtkAdjustment" id="_x_adj">
+    <property name="lower">-1000000</property>
+    <property name="upper">1000000</property>
+    <property name="step-increment">0.10</property>
+    <property name="page-increment">5</property>
+  </object>
+  <object class="GtkAdjustment" id="_y_adj">
+    <property name="lower">-1000000</property>
+    <property name="upper">1000000</property>
+    <property name="step-increment">0.10</property>
+    <property name="page-increment">5</property>
+  </object>
+  <object class="GtkBox" id="select-toolbar">
+    <property name="halign">start</property>
+    <property name="valign">center</property>
+    <property name="hexpand">True</property>
+    <child>
+      <object class="GtkButton">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Select all objects</property>
+        <property name="action-name">win.select-all</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">edit-select-all</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Select all in all layers</property>
+        <property name="action-name">win.select-all-layers</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">edit-select-all-layers</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="deselect_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Deselect any selected objects</property>
+        <property name="action-name">win.select-none</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">edit-select-none</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_select_touch_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Toggle selection box to select all touched objects</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">selection-touch</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="rotate_left_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="action-name">app.transform-rotate</property>
+        <property name="action-target">-90.0</property>
+        <property name="has-frame">False</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <property name="icon-name">object-rotate-left</property>
+        <style>
+          <class name="context_item"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="rotate_right_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="action-name">app.transform-rotate</property>
+        <property name="action-target">90.0</property>
+        <property name="has-frame">False</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <property name="icon-name">object-rotate-right</property>
+        <style>
+          <class name="context_item"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="flip_horizontal_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="action-name">app.object-flip-horizontal</property>
+        <property name="has-frame">False</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <property name="icon-name">object-flip-horizontal</property>
+        <style>
+          <class name="context_item"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="flip_vertical_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="action-name">app.object-flip-vertical</property>
+        <property name="has-frame">False</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+        <property name="icon-name">object-flip-vertical</property>
+        <style>
+          <class name="context_item"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="raise_to_top_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Raise selection to top</property>
+        <property name="action-name">app.selection-top</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">selection-top</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="raise_one_step_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Bring selection up one step</property>
+        <property name="action-name">app.selection-raise</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">selection-raise</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="lower_one_step_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Bring selection down one step</property>
+        <property name="action-name">app.selection-lower</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">selection-lower</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="lower_to_bottom_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Lower selection to bottom</property>
+        <property name="action-name">app.selection-bottom</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">selection-bottom</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_transform_stroke_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">When scaling objects, scale the stroke width by the same proportion</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">transform-affect-stroke</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_transform_corners_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">When scaling rectangles, scale the radii of rounded corners</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">transform-affect-rounded-corners</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_transform_gradient_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Move gradients (in fill or stroke) along with the objects</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">transform-affect-gradient</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_transform_pattern_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Move patterns (in fill or stroke) along with the objects</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">transform-affect-pattern</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="x_box">
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_x_item">
+            <property name="label" translatable="yes">X</property>
+            <property name="focusable">True</property>
+            <property name="tooltip-text" translatable="yes">Horizontal coordinate of selection</property>
+            <property name="adjustment">_x_adj</property>
+            <property name="climb-rate">1.0</property>
+            <property name="digits">3</property>
+          </object>
+        </child>
+        <style>
+          <class name="context_item"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="y_box">
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_y_item">
+            <property name="label" translatable="yes">Y</property>
+            <property name="focusable">True</property>
+            <property name="tooltip-text" translatable="yes">Vertical coordinate of selection</property>
+            <property name="adjustment">_y_adj</property>
+            <property name="climb-rate">1.0</property>
+            <property name="digits">3</property>
+          </object>
+        </child>
+        <style>
+          <class name="context_item"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="w_box">
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_w_item">
+            <property name="label" translatable="yes" context="Abbreviation of Width">W</property>
+            <property name="focusable">True</property>
+            <property name="tooltip-text" translatable="yes">Width of selection</property>
+            <property name="adjustment">_w_adj</property>
+            <property name="climb-rate">1.0</property>
+            <property name="digits">3</property>
+          </object>
+        </child>
+        <style>
+          <class name="context_item"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="h_box">
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_h_item">
+            <property name="label" translatable="yes" context="Abbreviation of Height">H</property>
+            <property name="focusable">True</property>
+            <property name="tooltip-text" translatable="yes">Height of selection</property>
+            <property name="adjustment">_h_adj</property>
+            <property name="climb-rate">1.0</property>
+            <property name="digits">3</property>
+          </object>
+        </child>
+        <style>
+          <class name="context_item"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="_lock_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">When locked, change width and height by the same proportion</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">object-unlocked</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="unit_menu_box">
+      </object>
+    </child>
+    <style>
+      <class name="inkscape-toolbar"/>
+    </style>
+  </object>
+</interface>

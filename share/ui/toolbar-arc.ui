@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkAdjustment" id="_end_adj">
+    <property name="lower">-360</property>
+    <property name="upper">360</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="_cx_adj">
+    <property name="lower">-1000000</property>
+    <property name="upper">1000000</property>
+    <property name="step-increment">0.10</property>
+    <property name="page-increment">5</property>
+  </object>
+  <object class="GtkAdjustment" id="_cy_adj">
+    <property name="lower">-1000000</property>
+    <property name="upper">1000000</property>
+    <property name="step-increment">0.10</property>
+    <property name="page-increment">5</property>
+  </object>
+  <object class="GtkAdjustment" id="_rx_adj">
+    <property name="upper">1000000</property>
+    <property name="step-increment">0.10</property>
+    <property name="page-increment">5</property>
+  </object>
+  <object class="GtkAdjustment" id="_ry_adj">
+    <property name="upper">1000000</property>
+    <property name="step-increment">0.10</property>
+    <property name="page-increment">5</property>
+  </object>
+  <object class="GtkAdjustment" id="_start_adj">
+    <property name="lower">-360</property>
+    <property name="upper">360</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkBox" id="arc-toolbar">
+    <property name="halign">start</property>
+    <property name="valign">center</property>
+    <property name="hexpand">True</property>
+    <child>
+      <object class="GtkLabel" id="_mode_item">
+        <property name="label" translatable="yes">&lt;b&gt;New:&lt;/b&gt;</property>
+        <property name="use-markup">True</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="cx_box">
+        <property name="tooltip-text" translatable="yes">Horizontal center of the circle, ellipse, or arc</property>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_cx_item">
+            <property name="label" translatable="yes">Cx</property>
+            <property name="focusable">True</property>
+            <property name="adjustment">_cx_adj</property>
+            <property name="climb-rate">0.10</property>
+            <property name="digits">3</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="cy_box">
+        <property name="tooltip-text" translatable="yes">Vertical center of the circle, ellipse, or arc</property>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_cy_item">
+            <property name="label" translatable="yes">Cy</property>
+            <property name="focusable">True</property>
+            <property name="adjustment">_cy_adj</property>
+            <property name="climb-rate">0.10</property>
+            <property name="digits">3</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="rx_box">
+        <property name="tooltip-text" translatable="yes">Horizontal radius of the circle, ellipse, or arc</property>
+<!--        <child>-->
+<!--          <object class="GtkLabel">-->
+<!--            <property name="margin-start">5</property>-->
+<!--            <property name="label" translatable="yes">Rx</property>-->
+<!--          </object>-->
+<!--        </child>-->
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_rx_item">
+            <property name="label" translatable="yes">Rx</property>
+            <property name="focusable">True</property>
+            <property name="adjustment">_rx_adj</property>
+            <property name="climb-rate">0.10</property>
+            <property name="digits">3</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="ry_box">
+        <property name="tooltip-text" translatable="yes">Vertical radius of the circle, ellipse, or arc</property>
+<!--        <child>-->
+<!--          <object class="GtkLabel">-->
+<!--            <property name="margin-start">5</property>-->
+<!--            <property name="label" translatable="yes">Ry</property>-->
+<!--          </object>-->
+<!--        </child>-->
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_ry_item">
+            <property name="label" translatable="yes">Ry</property>
+            <property name="focusable">True</property>
+            <property name="adjustment">_ry_adj</property>
+            <property name="climb-rate">0.10</property>
+            <property name="digits">3</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="unit_menu_box">
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="start_box">
+        <property name="tooltip-text" translatable="yes">The angle (in degrees) from the horizontal to the arc's start point</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">Start</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_start_item">
+            <property name="icon" translatable="no">ellipse-start-angle</property>
+            <property name="suffix" translatable="no">°</property>
+            <property name="focusable">True</property>
+            <property name="adjustment">_start_adj</property>
+            <property name="climb-rate">0.10</property>
+            <property name="digits">3</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="end_box">
+        <property name="tooltip-text" translatable="yes">The angle (in degrees) from the horizontal to the arc's end point</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-start">5</property>
+            <property name="label" translatable="yes">End</property>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="_end_item">
+            <property name="icon" translatable="no">ellipse-end-angle</property>
+            <property name="suffix" translatable="no">°</property>
+            <property name="focusable">True</property>
+            <property name="adjustment">_end_adj</property>
+            <property name="climb-rate">0.10</property>
+            <property name="digits">3</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="slice_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Switch to slice (closed shape with two radii)</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">draw-ellipse-segment</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="arc_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Switch to arc (unclosed shape)</property>
+        <property name="has-frame">False</property>
+        <property name="group">slice_btn</property>
+        <property name="icon-name">draw-ellipse-arc</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkToggleButton" id="chord_btn">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="tooltip-text" translatable="yes">Switch to chord (closed shape)</property>
+        <property name="has-frame">False</property>
+        <property name="group">slice_btn</property>
+        <property name="icon-name">draw-ellipse-chord</property>
+        <style>
+            <class name="priority1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="_make_whole">
+        <property name="valign">center</property>
+        <property name="focusable">True</property>
+        <property name="focus-on-click">False</property>
+        <property name="receives-default">True</property>
+        <property name="tooltip-text" translatable="yes">Make the shape a whole ellipse, not arc or segment</property>
+        <property name="has-frame">False</property>
+        <property name="icon-name">draw-ellipse-whole</property>
+      </object>
+    </child>
+    <style>
+      <class name="inkscape-toolbar"/>
+    </style>
+  </object>
+</interface>

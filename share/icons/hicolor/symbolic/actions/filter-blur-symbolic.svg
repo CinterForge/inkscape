@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg width="16" height="16" viewBox="0 0 16 16" version="1.1" id="svg1" inkscape:version="1.5-dev (6a01648af5, 2025-01-17, custom)" sodipodi:docname="filter-blur-symbolic.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview id="namedview1" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#e6e6e6" inkscape:document-units="px" inkscape:zoom="4.1367404" showgrid="true" inkscape:cx="-2.5382303" inkscape:cy="-17.646744" inkscape:current-layer="layer1">
+    <inkscape:grid type="xygrid" id="grid1" units="px" originx="0" originy="0" spacingx="1" spacingy="1" empcolor="#0099e5" empopacity="0.30196078" color="#0099e5" opacity="0.14901961" empspacing="5" enabled="true" visible="true" />
+  </sodipodi:namedview>
+  <defs id="defs1" />
+  <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
+    <circle style="opacity:0.1;fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-linejoin:round" id="circle6" cx="8" cy="8" r="7" />
+    <circle style="opacity:0.15;fill:#000000;fill-rule:evenodd;stroke:none;stroke-linejoin:round" id="path1" cx="8" cy="8" r="6" />
+    <circle style="opacity:0.15;fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-linejoin:round" id="circle1" cx="8" cy="8" r="5" />
+    <circle style="opacity:0.15;fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-linejoin:round" id="circle2" cx="8" cy="8" r="4" />
+    <circle style="opacity:0.15;fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:0.999997;stroke-linejoin:round" id="circle3" cx="8" cy="8" r="3" />
+    <circle style="opacity:0.15;fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-linejoin:round" id="circle4" cx="8" cy="8" r="2" />
+    <circle style="opacity:0.15;fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-linejoin:round" id="circle5" cx="8" cy="8" r="1" />
+  </g>
+</svg>

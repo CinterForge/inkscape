@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   viewBox="0 0 16 16"
+   fill="none"
+   version="1.1"
+   id="svg291"
+   sodipodi:docname="Dash-Inkscape-Icons16-mikesbuild.svg"
+   inkscape:export-batch-name=""
+   inkscape:export-batch-path="/Users/hperticarati/Desktop"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <style
+     id="style219">.Inter { font-family: 'Inter', sans-serif; }
+.bbox { fill: none; fill-opacity: 0; opacity: 0; stroke: none; }
+.error {  }
+.success { fill: url(#linearGradient953); }
+.warning { fill: url(#linearGradient3); }
+</style>
+  <sodipodi:namedview
+     id="namedview291"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="false"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="false"
+     inkscape:deskcolor="#000000"
+     showgrid="true"
+     inkscape:zoom="7.7458631"
+     inkscape:cx="3837.5969"
+     inkscape:cy="580.63252"
+     inkscape:window-width="1512"
+     inkscape:window-height="916"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Misc"
+     labelstyle="below"
+     showguides="true"
+     inkscape:clip-to-page="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid302"
+       units="px"
+       originx="-1900"
+       originy="-2108"
+       spacingx="1"
+       spacingy="1"
+       empcolor="#919191"
+       empopacity="0.10196078"
+       color="#919191"
+       opacity="0.05"
+       empspacing="4"
+       enabled="true"
+       visible="true" />
+    <inkscape:grid
+       type="xygrid"
+       id="grid389"
+       units="px"
+       originx="-1899.5"
+       originy="-2107.5"
+       spacingx="1"
+       spacingy="1"
+       empcolor="#c0c0c0"
+       empopacity="0.17012266"
+       color="#0099e5"
+       opacity="0.00499998"
+       empspacing="0"
+       enabled="true"
+       visible="false"
+       dotted="true"
+       snapvisiblegridlinesonly="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs291">
+    <linearGradient
+       id="swatch313"
+       inkscape:swatch="solid"
+       inkscape:label="dark-grey"
+       gradientTransform="translate(-1345.3414,267.61969)">
+      <stop
+         style="stop-color:#353841;stop-opacity:1;"
+         offset="0"
+         id="stop313" />
+    </linearGradient>
+    <linearGradient
+       id="swatch387"
+       inkscape:swatch="solid"
+       inkscape:label="white"
+       gradientTransform="matrix(1.2173562,0,0,1.3893574,-3317.4132,1744.6209)">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop387" />
+    </linearGradient>
+    <linearGradient
+       id="swatch5"
+       inkscape:swatch="solid"
+       inkscape:label="success"
+       gradientTransform="translate(5123.2617,290.90662)">
+      <stop
+         style="stop-color:#04c8a5;stop-opacity:1;"
+         offset="0"
+         id="stop5" />
+    </linearGradient>
+    <linearGradient
+       id="swatch6"
+       inkscape:swatch="solid"
+       inkscape:label="warning"
+       gradientTransform="translate(5106,656.85076)">
+      <stop
+         style="stop-color:#0a8bff;stop-opacity:1;"
+         offset="0"
+         id="stop6" />
+    </linearGradient>
+    <linearGradient
+       id="swatch7"
+       inkscape:swatch="solid"
+       inkscape:label="error"
+       gradientTransform="matrix(0.85714286,0,0,0.85714184,4681.8571,1175.7304)">
+      <stop
+         style="stop-color:#f73664;stop-opacity:1;"
+         offset="0"
+         id="stop7" />
+    </linearGradient>
+    <linearGradient
+       id="swatch127"
+       inkscape:swatch="solid"
+       inkscape:label="black"
+       gradientTransform="matrix(0.01804371,0,0,0.04718476,-706.42367,5445.3248)">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop128" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#swatch7"
+       id="linearGradient19"
+       gradientUnits="userSpaceOnUse"
+       x1="545"
+       y1="4379"
+       x2="548"
+       y2="4379" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#swatch7"
+       id="linearGradient22"
+       gradientUnits="userSpaceOnUse"
+       x1="545"
+       y1="4379"
+       x2="548"
+       y2="4379" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#swatch7"
+       id="linearGradient23"
+       gradientUnits="userSpaceOnUse"
+       x1="545"
+       y1="4379"
+       x2="548"
+       y2="4379" />
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="Dialos"
+     inkscape:label="Icons - Dialogs"
+     inkscape:highlight-color="#309184"
+     style="display:inline"
+     transform="translate(-1900,-2108)">
+    <g
+       id="path-mask-edit"
+       transform="translate(706.948,-2263)"
+       style="display:inline"
+       inkscape:label="snap-mask-symbolic">
+      <rect
+         style="display:inline"
+         id="rect5731"
+         width="16"
+         height="16"
+         x="2612"
+         y="2540"
+         inkscape:label="bbox"
+         inkscape:tile-x0="1856"
+         inkscape:tile-y0="308"
+         transform="translate(-1418.948,1831)"
+         class="bbox " />
+      <path
+         id="rect375"
+         style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.999999"
+         d="m 1197.052,4375 0.012,11.0002 h 10.9884 v -11 z m 5.5,1.462 c 2.228,0 4.0222,1.8153 4.0222,4.038 0,2.2229 -1.7942,4.038 -4.0222,4.038 -2.228,0 -4.0222,-1.8151 -4.0222,-4.038 0,-2.2227 1.7942,-4.038 4.0222,-4.038 z"
+         sodipodi:nodetypes="cccccsssss" />
+      <circle
+         id="error_38-0"
+         cx="1195.552"
+         cy="4373.5"
+         r="1.5"
+         class="error "
+         style="fill:url(#linearGradient19)" />
+      <rect
+         id="rect376"
+         width="12.999997"
+         height="1"
+         x="1195.052"
+         y="4373"
+         class="error"
+         style="fill:url(#linearGradient22)" />
+      <rect
+         id="rect378"
+         width="0.95004206"
+         height="13"
+         x="1195.0525"
+         y="4373"
+         class="error"
+         style="fill:url(#linearGradient23)" />
+    </g>
+  </g>
+  <style
+     id="style219-9">
+.bbox { 
+    fill:none;
+    fill-opacity:0;
+    opacity:0;
+    stroke:none;
+}
+.error { fill: url(#linearGradient885); }
+.success { fill: url(#linearGradient953); }
+.warning { fill: url(#linearGradient3); }
+</style>
+</svg>

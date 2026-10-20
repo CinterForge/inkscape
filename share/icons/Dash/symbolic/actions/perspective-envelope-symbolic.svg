@@ -1,0 +1,13 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="perspective-envelope">
+<g id=".transform-perspective" clip-path="url(#clip0_3684_42560)">
+<path id="shape" opacity="0.4" d="M8 4L9 6.5L12.5 7.5L9.6 8.21053L10.5 11L8 9.47368L4 12.5L6 7.78947L4 5.68421L6.8 6.10526L8 4Z" fill="black"/>
+<path id="Subtract" d="M4.64551 2.14551L11.6123 3.88672L13.5 2L16 4.5L14 6.5V9.5L16 11.5L13.5 14L11.6123 12.1123L4.64551 13.8535L2.5 16L0 13.5L2 11.5V4.5L0 2.5L2.5 0L4.64551 2.14551ZM1.41406 13.5L2.5 14.5859L3.58594 13.5L2.5 12.4141L1.41406 13.5ZM3 4.5V11.5L4.38672 12.8867L11.3535 11.1455L13 9.5V6.5L11.3535 4.85352L4.38672 3.1123L3 4.5ZM12.4141 11.5L13.5 12.5859L14.5859 11.5L13.5 10.4141L12.4141 11.5ZM12.4141 4.5L13.5 5.58594L14.5859 4.5L13.5 3.41406L12.4141 4.5ZM1.41406 2.5L2.5 3.58594L3.58594 2.5L2.5 1.41406L1.41406 2.5Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42560">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

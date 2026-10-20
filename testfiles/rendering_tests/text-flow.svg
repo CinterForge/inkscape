@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="3300" height="1280" viewBox="0 0 330 128" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<style type="text/css">
+    text {
+      line-height: 1.2;
+      font-family: Noto Sans;
+      font-size: 3.8px;
+      fill: white;
+      stroke: none;
+      shape-padding: 5px;
+      shape-subtract:url(#bullseye) url(#target1) url(#target2) url(#target3) url(#target4);
+      text-align: justify;
+    }
+    .outside {
+        fill: red;
+    }
+    .inside {
+        fill: white;
+        shape-margin: 5px;
+        stroke-width: 10px;
+        stroke: red;
+        paint-order: stroke markers fill;
+    }
+    .check_padding {
+        fill: green;
+    }
+</style>
+    <circle class="outside" id="shape1" cx="64" cy="64" r="64" />
+    <circle class="check_padding" cx="64" cy="64" r="59" />
+    <circle class="inside" id="bullseye" cx="64" cy="64" r="20" />
+
+    <rect class="outside" id="column1" width="42" height="128" x="136" y="0" />
+    <rect class="outside" id="column2" width="42" height="128" x="186" y="0" />
+    <rect class="check_padding" width="32" height="118" x="141" y="5" />
+    <rect class="check_padding" width="32" height="118" x="191" y="5" />
+
+    <path class="outside" id="combined" d="M 236,0 v 128 h 42 v -128 Z M 286,0 v 128 h 42 v -128 Z" />
+    <rect class="check_padding" width="32" height="118" x="241" y="5" />
+    <rect class="check_padding" width="32" height="118" x="291" y="5" />
+
+    <circle class="inside" id="target1" cx="140" cy="20" r="10" />
+    <circle class="inside" id="target2" cx="196" cy="60" r="5" />
+    <circle class="inside" id="target3" cx="250" cy="40" r="5" />
+    <circle class="inside" id="target4" cx="250" cy="80" r="5" />
+
+    <text style="shape-inside:url(#shape1);">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Why do we use it?It is a long established fact that a reader will be distracted by the readable....</text>
+
+    <text style="shape-inside:url(#column1) url(#column2);">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Why do we use it?It is a long established fact that a reader will be distracted by the readable....</text>
+
+    <text style="shape-inside:url(#combined);">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Why do we use it?It is a long established fact that a reader will be distracted by the readable....</text>
+</svg>

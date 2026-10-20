@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <placeholder width="304" height="225"></placeholder>
+  <requires lib="gtk" version="4.0"></requires>
+  <object class="GtkBox" id="main">
+    <property name="spacing">8</property>
+    <property name="margin-bottom">8</property>
+    <property name="margin-top">4</property>
+    <property name="margin-end">0</property>
+    <property name="margin-start">0</property>
+    <property name="orientation">vertical</property>
+    <child>
+      <object class="GtkLabel">
+        <property name="margin-bottom">0</property>
+        <property name="margin-top">0</property>
+        <property name="label" translatable="yes">Derive paint from</property>
+        <property name="halign">start</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="margin-end">0</property>
+        <property name="margin-start">8</property>
+        <property name="spacing">0</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkCheckButton" id="paint-unset">
+            <property name="label" translatable="yes">Ancestor</property>
+            <property name="tooltip-markup" translatable="yes">Inherit paint from element higher up in hierarchy.</property>
+            <property name="halign">start</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="margin-bottom">0</property>
+            <property name="margin-top">6</property>
+            <property name="margin-end">0</property>
+            <property name="margin-start">6</property>
+            <property name="halign">start</property>
+            <property name="use-markup">true</property>
+            <property name="label" translatable="yes">&lt;small&gt;For markers and clones&lt;/small&gt;</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="paint-inherit">
+            <property name="visible">false</property>
+            <property name="group">paint-unset</property>
+            <property name="label" translatable="yes">From parent (&lt;span alpha=&quot;60%&quot;&gt;&lt;b&gt;&lt;tt&gt;inherit&lt;/tt&gt;&lt;/b&gt;&lt;/span&gt;)</property>
+            <property name="halign">start</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="paint-context-fill">
+            <property name="group">paint-unset</property>
+            <property name="tooltip-markup" translatable="yes">Inherit paint from fill of context element (&lt;b&gt;&lt;tt&gt;context-fill&lt;/tt&gt;&lt;/b&gt;).
+Useful for marker and clone elements.</property>
+            <property name="label" translatable="yes">Fill paint</property>
+            <property name="halign">start</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="paint-context-stroke">
+            <property name="group">paint-unset</property>
+            <property name="tooltip-markup" translatable="yes">Inherit paint from stroke of context element (&lt;b&gt;&lt;tt&gt;context-stroke&lt;/tt&gt;&lt;/b&gt;).
+Useful for marker and clone elements.</property>
+            <property name="label" translatable="yes">Stroke paint</property>
+            <property name="halign">start</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="use-markup">true</property>
+            <property name="margin-bottom">0</property>
+            <property name="margin-top">6</property>
+            <property name="margin-end">0</property>
+            <property name="margin-start">6</property>
+            <property name="halign">start</property>
+            <property name="label" translatable="yes">&lt;small&gt;Advanced&lt;/small&gt;</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="paint-current-color">
+            <property name="group">paint-unset</property>
+            <property name="tooltip-markup" translatable="yes">Use value of the &lt;b&gt;&lt;tt&gt;color&lt;/tt&gt;&lt;/b&gt; property from element higher up in hierarchy (&lt;b&gt;&lt;tt&gt;currentColor&lt;/tt&gt;&lt;/b&gt;).</property>
+            <property name="label" translatable="yes">Color property</property>
+            <property name="halign">start</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

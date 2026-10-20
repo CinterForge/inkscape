@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <placeholder width="349" height="23"></placeholder>
+  <requires lib="gtk" version="4.0"></requires>
+  <object class="GtkGrid" id="stroke-attributes">
+    <property name="row-spacing">4</property>
+    <property name="column-spacing">4</property>
+    <!--dim: 5, 3-->
+    <child>
+      <object class="GtkLabel">
+        <property name="label" translatable="yes">Stroke width</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="gtkmm__CustomObject_InkSpinButton" id="stroke-width">
+        <property name="icon">stroke-widths</property>
+        <property name="digits">5</property>
+        <property name="max-value">1000000.000000</property>
+        <property name="step-value">0.100000</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="GtkDropDown" id="stroke-unit">
+        <layout>
+          <property name="column">3</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="GtkLabel">
+        <property name="label" translatable="yes">Stroke style</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="row">1</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="stroke-dash-selector">
+        <layout>
+          <property name="column">2</property>
+          <property name="row">1</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuButton" id="stroke-presets">
+        <property name="popover">stroke-popup</property>
+        <property name="always-show-arrow">true</property>
+        <property name="tooltip-text" translatable="yes">Stroke options</property>
+        <layout>
+          <property name="column">3</property>
+          <property name="row">1</property>
+        </layout>
+        <child>
+          <object class="GtkBox" id="stroke-icons">
+            <child>
+              <object class="GtkImage" id="stroke-join">
+                <property name="hexpand">true</property>
+                <property name="hexpand-set">true</property>
+                <property name="halign">center</property>
+                <property name="icon-name">empty-icon</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkImage" id="stroke-cap">
+                <property name="hexpand">true</property>
+                <property name="hexpand-set">true</property>
+                <property name="halign">center</property>
+                <property name="icon-name">empty-icon</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkImage" id="stroke-paint-order">
+                <property name="hexpand">true</property>
+                <property name="hexpand-set">true</property>
+                <property name="halign">center</property>
+                <property name="icon-name">empty-icon</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkLabel">
+        <property name="label" translatable="yes">Markers</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="row">2</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="stroke-markers">
+        <property name="overflow">hidden</property>
+        <style>
+          <class name="linked"></class>
+        </style>
+        <layout>
+          <property name="column">2</property>
+          <property name="row">2</property>
+          <property name="column-span">2</property>
+        </layout>
+      </object>
+    </child>
+  </object>
+  <object class="GtkPopover" id="stroke-popup"></object>
+  <object class="GtkGrid" id="filter-box">
+    <property name="row-spacing">0</property>
+    <property name="column-spacing">4</property>
+    <!--dim: 5, 1-->
+    <child>
+      <object class="GtkLabel">
+        <property name="halign">start</property>
+        <property name="label" translatable="yes">Filter</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="GtkEntry" id="filter-primitive">
+        <property name="max-width-chars">8</property>
+        <property name="editable">false</property>
+        <property name="focus-on-click">false</property>
+        <property name="focusable">false</property>
+        <property name="can-focus">false</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <layout>
+          <property name="column">3</property>
+          <property name="row">0</property>
+        </layout>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="filter-blur">
+            <property name="suffix" translatable="yes">%</property>
+            <property name="hexpand">true</property>
+            <property name="hexpand-set">true</property>
+            <property name="tooltip-text" translatable="yes">Blur filter</property>
+            <property name="scaling-factor">100.000000</property>
+            <property name="digits">0</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="edit-filter">
+            <property name="valign">center</property>
+            <property name="tooltip-text" translatable="yes">Edit filter</property>
+            <property name="halign">start</property>
+            <property name="has-frame">false</property>
+            <property name="icon-name">edit</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="valign">center</property>
+        <layout>
+          <property name="column">4</property>
+          <property name="row">0</property>
+        </layout>
+        <child>
+          <object class="GtkButton" id="clear-filters">
+            <property name="tooltip-text" translatable="yes">Remove filter</property>
+            <property name="has-frame">false</property>
+            <property name="icon-name">minus</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="add-blur">
+            <property name="visible">true</property>
+            <property name="tooltip-text" translatable="yes">Add blur filter</property>
+            <property name="has-frame">false</property>
+            <property name="icon-name">plus</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkGrid" id="opacity-box">    <!--dim: 5, 1-->
+
+    <child>
+      <object class="GtkLabel">
+        <property name="halign">start</property>
+        <property name="label" translatable="yes">Opacity</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <style>
+          <class name="linked"></class>
+        </style>
+        <layout>
+          <property name="column">2</property>
+          <property name="row">0</property>
+          <property name="column-span">2</property>
+        </layout>
+        <child>
+          <object class="GtkBox" id="obj-opacity">
+            <property name="hexpand">true</property>
+            <property name="hexpand-set">true</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="visible-btn">
+        <property name="tooltip-text" translatable="yes">Show/hide object</property>
+        <property name="valign">center</property>
+        <property name="has-frame">false</property>
+        <property name="icon-name">object-visible</property>
+        <layout>
+          <property name="column">4</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <!--    <child>-->
+    <!--      <object class="GtkButton" id="reset-opacity">-->
+    <!--        <property name="valign">center</property>-->
+    <!--        <property name="tooltip-text" translatable="yes">Make the object fully opaque</property>-->
+    <!--        <property name="has-frame">false</property>-->
+    <!--        <property name="icon-name">reset-settings</property>-->
+    <!--        <layout>-->
+    <!--          <property name="column">4</property>-->
+    <!--          <property name="row">0</property>-->
+    <!--        </layout>-->
+    <!--      </object>-->
+    <!--    </child>-->
+  </object>
+  <object class="GtkGrid" id="blend-box">    <!--dim: 5, 1-->
+
+    <child>
+      <object class="GtkLabel">
+        <property name="halign">start</property>
+        <property name="label" translatable="yes">Blend mode</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="blend-mode">
+        <property name="hexpand">true</property>
+        <property name="hexpand-set">true</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="row">0</property>
+          <property name="column-span">2</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="reset-blend-mode">
+        <property name="valign">center</property>
+        <property name="tooltip-text" translatable="yes">Normal blend mode</property>
+        <property name="icon-name">reset-settings</property>
+        <property name="has-frame">false</property>
+        <layout>
+          <property name="column">4</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+  </object>
+  <object class="GtkGrid" id="lpe-box">
+    <property name="row-spacing">0</property>
+    <property name="column-spacing">4</property>
+    <!--dim: 5, 1-->
+    <child>
+      <object class="GtkLabel">
+        <property name="label" translatable="yes">Path effects</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="GtkEntry" id="applied-lpe">
+        <property name="focus-on-click">false</property>
+        <property name="focusable">false</property>
+        <property name="can-focus">false</property>
+        <property name="editable">false</property>
+        <property name="hexpand">true</property>
+        <property name="hexpand-set">true</property>
+        <property name="max-width-chars">8</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="row">0</property>
+          <property name="column-span">2</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="edit-lpe">
+        <property name="valign">center</property>
+        <property name="has-frame">false</property>
+        <property name="tooltip-text" translatable="yes">Edit path effects</property>
+        <property name="icon-name">edit</property>
+        <layout>
+          <property name="column">4</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+  </object>
+</interface>

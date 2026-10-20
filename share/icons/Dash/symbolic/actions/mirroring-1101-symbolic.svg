@@ -1,0 +1,11 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="mirroring-1101">
+<g id="Vector" opacity="0.4">
+<path d="M7 0L0 7H7V0Z" fill="black"/>
+<path d="M0 16L7 9H0V16Z" fill="black"/>
+<path d="M16 7L9 0H16V7Z" fill="black"/>
+<path d="M9 9L16 16H9V9Z" fill="black"/>
+</g>
+<path id="Vector_2" d="M7 0L0 7H7V0Z" fill="black"/>
+</g>
+</svg>

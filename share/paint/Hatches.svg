@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    width="475"
+    height="475"
+    id="InkscapeHatches"
+    inkscape:version="1.0alpha2">
+  <title>Hatches</title>
+  <defs>
+    <hatch inkscape:collect="always" id="hatch1" hatchUnits="userSpaceOnUse" pitch="15" rotate="45" style="stroke:#000000; stroke-width:2;">
+     <hatchpath offset="0" />
+    </hatch>
+    <hatch inkscape:collect="always" id="hatch2" hatchUnits="userSpaceOnUse" pitch="15" rotate="45" style="stroke:#000000; stroke-width:1;" >
+      <hatchpath offset="0" />
+    </hatch>
+    <hatch inkscape:collect="always" id="hatch3" hatchUnits="userSpaceOnUse" pitch="15" rotate="0" style="stroke:#000000; stroke-width:1;" >
+      <hatchpath offset="0" />
+    </hatch>
+    <hatch inkscape:collect="always" id="hatch4" hatchUnits="userSpaceOnUse" pitch="15" rotate="90" style="stroke:#000000; stroke-width:1;" >
+     <hatchpath offset="0" />
+    </hatch>
+    <hatch inkscape:collect="always" id="hatch5" hatchUnits="userSpaceOnUse" pitch="10" x="0" y="0" style="stroke:#000000; stroke-width:1;">
+      <hatchpath offset="0" d="M 0,0 0,10 M 0,10 10,10" />
+    </hatch>
+    <hatch inkscape:collect="always" id="hatch6" hatchUnits="userSpaceOnUse" pitch="10" rotate="45" x="0" y="0" style="stroke:#000000; stroke-width:1;">
+      <hatchpath offset="0" d="M 0,0 0,10 M 0,10 10,10" />
+    </hatch>
+
+    <hatch inkscape:collect="always" id="hatch7" hatchUnits="userSpaceOnUse" pitch="15" rotate="45" style="stroke:#000000; stroke-width:1;" >
+      <hatchpath offset="0" stroke-dasharray="12 8" />
+    </hatch>
+    <hatch inkscape:collect="always" id="hatch8" hatchUnits="userSpaceOnUse" pitch="15" style="stroke:#000000; stroke-width:1;">
+      <hatchpath offset="0" d="M 0,0 5,10 M 5,20" />
+    </hatch>
+    <hatch inkscape:collect="always" id="hatch9" hatchUnits="userSpaceOnUse" pitch="15" style="stroke:#ff0000; stroke-width:1;">
+     <hatchpath offset="0" d="M 0,0 5,10" />
+    </hatch>
+    <hatch inkscape:collect="always" id="hatch10" hatchUnits="userSpaceOnUse" pitch="15" style="stroke:#006143; stroke-width:1;">
+     <hatchpath offset="0" d="M 0,0 5,10 10,5" />
+    </hatch>
+
+    <hatch inkscape:collect="always" id="hatch11" hatchUnits="userSpaceOnUse" pitch="15" style="stroke:#000000; stroke-width:1;">
+      <hatchpath offset="0" />
+      <hatchpath offset="5" stroke-dasharray="10 4 2 4" />
+      <hatchpath offset="10" />
+    </hatch>
+    <hatch inkscape:collect="always" id="hatch12" hatchUnits="userSpaceOnUse" pitch="15" style="stroke:#000000; stroke-width:1;">
+      <hatchpath offset="0" />
+      <hatchpath offset="5" d="M 0,0 5,10" />
+    </hatch>
+
+    <hatch inkscape:collect="always" id="hatch13" hatchUnits="userSpaceOnUse" pitch="15" rotate="30" style="stroke:#000000; stroke-width:1;">
+     <hatchpath offset="0" d="5,10 0,20" />
+    </hatch>
+    <hatch inkscape:collect="always" id="hatch14" hatchUnits="userSpaceOnUse" pitch="15" rotate="30" overflow="visible" style="stroke:#000000; stroke-width:1;">
+     <hatchpath offset="0" d="10,10 0,20" />
+    </hatch>
+    <hatch inkscape:collect="always" id="hatch15" hatchUnits="userSpaceOnUse" pitch="15" style="stroke-width:1;">
+     <hatchpath stroke="#000000" offset="0" />
+     <hatchpath stroke="#a080ff" offset="5" />
+    </hatch>
+    <hatch inkscape:collect="always" id="hatch16" hatchUnits="userSpaceOnUse" pitch="15" style="stroke:#000000; stroke-width:1;">
+     <hatchpath offset="0" d="M 0,0 5,17" />
+     <hatchpath offset="5" d="M 0,0 5,10" />
+    </hatch>
+    <hatch inkscape:collect="always" id="hatch17" hatchUnits="userSpaceOnUse" pitch="15" style="stroke:#000000; stroke-width:5;">
+     <hatchpath offset="0" stroke-dasharray="10 4 2 4" />
+    </hatch>
+    <hatch inkscape:collect="always" id="hatch18" hatchUnits="userSpaceOnUse" pitch="15" style="stroke:#000000; stroke-width:2;">
+      <hatchpath offset="0" d="C 0,4 8,6 8,10 8,14 0,16 0,20" />
+    </hatch>
+    <hatch inkscape:collect="always" id="hatch19" hatchUnits="userSpaceOnUse" pitch="20" style="stroke:#000000; stroke-width:1;">
+     <hatchpath offset="0" d="M 0,0 M 10,5 A 5,5 0 0 1 5,10 5,5 0 0 1 0,5 5,5 0 0 1 5,0 5,5 0 0 1 10,5 M 0,20" />
+    </hatch>
+  </defs>
+
+  <g id="group1">
+    <rect fill="#FFFFFF" width="100" height="100" x="15" y="15" />
+    <rect class="preview" fill="url(#hatch1)" width="100" height="100" x="15" y="15" />
+  </g>
+  <g id="group2">
+    <rect fill="#FFFFFF" width="100" height="100" x="130" y="15" />
+    <rect class="preview" fill="url(#hatch2)" width="100" height="100" x="130" y="15" />
+  </g>
+  <g id="group3">
+    <rect fill="#FFFFFF" width="100" height="100" x="245" y="15" />
+    <rect class="preview" fill="url(#hatch3)" width="100" height="100" x="245" y="15" />
+  </g>
+  <g id="group4">
+    <rect fill="#FFFFFF" width="100" height="100" x="360" y="15" />
+    <rect class="preview" fill="url(#hatch4)" width="100" height="100" x="360" y="15" />
+  </g>
+  <g id="group5">
+    <rect fill="#FFFFFF" width="100" height="100" x="15" y="130" />
+    <rect class="preview" fill="url(#hatch5)" width="100" height="100" x="15" y="130" />
+  </g>
+  <g id="group6">
+    <rect fill="#FFFFFF" width="100" height="100" x="130" y="130" />
+    <rect class="preview" fill="url(#hatch6)" width="100" height="100" x="130" y="130" />
+  </g>
+  <g id="group7">
+    <rect fill="#FFFFFF" width="100" height="100" x="245" y="130" />
+    <rect class="preview" fill="url(#hatch7)" width="100" height="100" x="245" y="130" />
+  </g>
+  <g id="group8">
+    <rect fill="#FFFFFF" width="100" height="100" x="360" y="130" />
+    <rect class="preview" fill="url(#hatch8)" width="100" height="100" x="360" y="130" />
+  </g>
+  <g id="group9">
+    <rect fill="#FFFFFF" width="100" height="100" x="15" y="245" />
+    <rect class="preview" fill="url(#hatch9)" width="100" height="100" x="15" y="245" />
+  </g>
+  <g id="group10">
+    <rect fill="#FFFFFF" width="100" height="100" x="130" y="245" />
+    <rect class="preview" fill="url(#hatch10)" width="100" height="100" x="130" y="245" />
+  </g>
+  <g id="group11">
+    <rect fill="#FFFFFF" width="100" height="100" x="245" y="245" />
+    <rect class="preview" fill="url(#hatch11)" width="100" height="100" x="245" y="245" />
+  </g>
+  <g id="group12">
+    <rect fill="#FFFFFF" width="100" height="100" x="360" y="245" />
+    <rect class="preview" fill="url(#hatch12)" width="100" height="100" x="360" y="245" />
+  </g>
+  <g id="group13">
+    <rect fill="#FFFFFF" width="100" height="100" x="15" y="360" />
+    <rect class="preview" fill="url(#hatch13)" width="100" height="100" x="15" y="360" />
+  </g>
+  <g id="group14">
+    <rect fill="#FFFFFF" width="100" height="100" x="130" y="360" />
+    <rect class="preview" fill="url(#hatch14)" width="100" height="100" x="130" y="360" />
+  </g>
+  <g id="group15">
+    <rect fill="#FFFFFF" width="100" height="100" x="245" y="360" />
+    <rect class="preview" fill="url(#hatch15)" width="100" height="100" x="245" y="360" />
+  </g>
+  <g id="group16">
+    <rect fill="#FFFFFF" width="100" height="100" x="360" y="360" />
+    <rect class="preview" fill="url(#hatch16)" width="100" height="100" x="360" y="360" />
+  </g>
+
+  <script type="text/javascript" xlink:href="hatch.js"></script>
+</svg>

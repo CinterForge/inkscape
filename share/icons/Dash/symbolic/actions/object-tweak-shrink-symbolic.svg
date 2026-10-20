@@ -1,0 +1,13 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="object-tweak-shrink">
+<g id=".transform-scale-down" clip-path="url(#clip0_3684_42698)">
+<path id="Union" d="M4.99805 15H3.99805V12.709L0.853516 15.8535L0.146484 15.1465L3.29297 12H1V11H4.99805V15ZM15.002 12H12.707L15.8555 15.1465L15.1484 15.8535L12 12.7061V15H11V11H15.002V12ZM11 11H5V5H11V11ZM6 10H10V6H6V10ZM3.99805 3.29102V1H4.99805V5H1V4H3.29297L0.146484 0.853516L0.853516 0.146484L3.99805 3.29102ZM15.8555 0.853516L12.709 4H15.002V5H11V1H12V3.29492L15.1484 0.146484L15.8555 0.853516Z" fill="black"/>
+<rect id="Rectangle 823" opacity="0.2" x="6" y="6" width="4" height="4" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42698">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

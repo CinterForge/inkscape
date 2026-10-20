@@ -1,0 +1,119 @@
+// SPDX-License-Identifier: GPL-2.0-or-later
+/** @file
+ * TODO: insert short description here
+ *//*
+ * Authors: see git history
+ *
+ * Copyright (C) 2018 Authors
+ * Released under GNU GPL v2+, read the file 'COPYING' for more information.
+ */
+#ifndef SEEN_SP_ITEM_FLOWTEXT_H
+#define SEEN_SP_ITEM_FLOWTEXT_H
+
+/*
+ */
+
+#include <2geom/forward.h>
+
+#include "libnrtype/Layout-TNG.h"
+#include "libnrtype/style-attachments.h"
+#include "sp-item.h"
+#include "desktop.h"
+
+#include <memory>
+
+namespace Inkscape {
+
+class DrawingGroup;
+
+} // namespace Inkscape
+
+class SPFlowtext final : public SPItem {
+public:
+	SPFlowtext();
+	~SPFlowtext() override;
+    int tag() const override { return tag_of<decltype(*this)>; }
+
+    /** Completely recalculates the layout. */
+    void rebuildLayout();
+
+    /** Converts the flowroot in into a \<text\> tree, keeping all the formatting and positioning,
+    but losing the automatic wrapping ability. */
+    Inkscape::XML::Node *getAsText();
+
+    // TODO check if these should return SPRect instead of SPItem
+
+    SPItem *get_frame(SPItem const *after);
+
+    SPItem const *get_frame(SPItem const *after) const;
+
+    std::optional<Geom::Point> getBaselinePoint() const;
+
+    bool has_internal_frame() const;
+
+//semiprivate:  (need to be accessed by the C-style functions still)
+    Inkscape::Text::Layout layout;
+    std::unordered_map<unsigned, Inkscape::Text::StyleAttachments> view_style_attachments;
+
+    /** discards the drawing objects representing this text. */
+    void _clearFlow(Inkscape::DrawingGroup* in_arena);
+
+    double par_indent;
+
+    bool _optimizeScaledText;
+
+	/** Converts the text object to its component curves */
+    Geom::PathVector getNormalizedBpath() const;
+
+    /** Optimize scaled flow text on next set_transform. */
+    void optimizeScaledText() { _optimizeScaledText = true; }
+
+private:
+    /** Recursively walks the xml tree adding tags and their contents. */
+    void _buildLayoutInput(SPObject *root, std::unique_ptr<Shape> exclusion_shape,
+                           SPObject **pending_line_break_object);
+
+    /** calculates the union of all the \<flowregionexclude\> children
+    of this flowroot. */
+    std::unique_ptr<Shape> _buildExclusionShape() const;
+
+public:
+	void build(SPDocument* doc, Inkscape::XML::Node* repr) override;
+    void release() override;
+
+	void child_added(Inkscape::XML::Node* child, Inkscape::XML::Node* ref) override;
+	void remove_child(Inkscape::XML::Node* child) override;
+
+	void set(SPAttr key, const char* value) override;
+	Geom::Affine set_transform(Geom::Affine const& xform) override;
+
+	void update(SPCtx* ctx, unsigned int flags) override;
+	void modified(unsigned int flags) override;
+    void fix_overflow_flowregion(bool inverse);
+
+	Inkscape::XML::Node* write(Inkscape::XML::Document* doc, Inkscape::XML::Node* repr, unsigned int flags) override;
+
+	Geom::OptRect bbox(Geom::Affine const &transform, SPItem::BBoxType type) const override;
+	void print(SPPrintContext *ctx) override;
+        const char* typeName() const override;
+        const char* displayName() const override;
+	char* description() const override;
+	Inkscape::DrawingItem* show(Inkscape::Drawing &drawing, unsigned int key, unsigned int flags) override;
+	void hide(unsigned int key) override;
+    void snappoints(std::vector<Inkscape::SnapCandidatePoint> &p, Inkscape::SnapPreferences const *snapprefs) const override;
+};
+
+SPItem *create_flowtext_with_internal_frame (SPGroup *parent, SPCSSAttr *css, Geom::Rect rect_doc);
+
+#endif // SEEN_SP_ITEM_FLOWTEXT_H
+
+/*
+  Local Variables:
+  mode:c++
+  c-file-style:"stroustrup"
+  c-file-offsets:((innamespace . 0)(inline-open . 0)(case-label . +))
+  indent-tabs-mode:nil
+  fill-column:99
+  End:
+*/
+// vim: filetype=cpp:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:fileencoding=utf-8:textwidth=99 :

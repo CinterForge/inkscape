@@ -1,0 +1,46 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="gradient-library">
+<g id=".gradient-library">
+<path id="Union" d="M15 15H1V11H15V15ZM2 14H14V12H2V14ZM15 10H1V6H15V10ZM2 9H14V7H2V9ZM15 5H1V1H15V5ZM2 4H14V2H2V4Z" fill="black"/>
+<g class="warning">
+<rect id="warning_2" x="2" y="12" width="1" height="2" fill="#0A8BFF"/>
+<rect id="warning_3" opacity="0.95" x="3" y="12" width="1" height="2" fill="#0A8BFF"/>
+<rect id="warning_4" opacity="0.9" x="4" y="12" width="1" height="2" fill="#0A8BFF"/>
+<rect id="warning_5" opacity="0.8" x="5" y="12" width="1" height="2" fill="#0A8BFF"/>
+<rect id="warning_6" opacity="0.7" x="6" y="12" width="1" height="2" fill="#0A8BFF"/>
+<rect id="warning_7" opacity="0.6" x="7" y="12" width="1" height="2" fill="#0A8BFF"/>
+<rect id="warning_8" opacity="0.5" x="8" y="12" width="1" height="2" fill="#0A8BFF"/>
+<rect id="warning_9" opacity="0.4" x="9" y="12" width="1" height="2" fill="#0A8BFF"/>
+<rect id="warning_10" opacity="0.3" x="10" y="12" width="1" height="2" fill="#0A8BFF"/>
+<rect id="warning_11" opacity="0.2" x="11" y="12" width="1" height="2" fill="#0A8BFF"/>
+<rect id="warning_12" opacity="0.1" x="12" y="12" width="1" height="2" fill="#0A8BFF"/>
+</g>
+<g class="success">
+<rect id="success_2" x="2" y="7" width="1" height="2" fill="#04C8A5"/>
+<rect id="success_3" opacity="0.95" x="3" y="7" width="1" height="2" fill="#04C8A5"/>
+<rect id="success_4" opacity="0.9" x="4" y="7" width="1" height="2" fill="#04C8A5"/>
+<rect id="success_5" opacity="0.8" x="5" y="7" width="1" height="2" fill="#04C8A5"/>
+<rect id="success_6" opacity="0.7" x="6" y="7" width="1" height="2" fill="#04C8A5"/>
+<rect id="success_7" opacity="0.6" x="7" y="7" width="1" height="2" fill="#04C8A5"/>
+<rect id="success_8" opacity="0.5" x="8" y="7" width="1" height="2" fill="#04C8A5"/>
+<rect id="success_9" opacity="0.4" x="9" y="7" width="1" height="2" fill="#04C8A5"/>
+<rect id="success_10" opacity="0.3" x="10" y="7" width="1" height="2" fill="#04C8A5"/>
+<rect id="success_11" opacity="0.2" x="11" y="7" width="1" height="2" fill="#04C8A5"/>
+<rect id="success_12" opacity="0.1" x="12" y="7" width="1" height="2" fill="#04C8A5"/>
+</g>
+<g class="error">
+<rect id="error_2" x="2" y="2" width="1" height="2" fill="#F73664"/>
+<rect id="error_3" opacity="0.95" x="3" y="2" width="1" height="2" fill="#F73664"/>
+<rect id="error_4" opacity="0.9" x="4" y="2" width="1" height="2" fill="#F73664"/>
+<rect id="error_5" opacity="0.8" x="5" y="2" width="1" height="2" fill="#F73664"/>
+<rect id="error_6" opacity="0.7" x="6" y="2" width="1" height="2" fill="#F73664"/>
+<rect id="error_7" opacity="0.6" x="7" y="2" width="1" height="2" fill="#F73664"/>
+<rect id="error_8" opacity="0.5" x="8" y="2" width="1" height="2" fill="#F73664"/>
+<rect id="error_9" opacity="0.4" x="9" y="2" width="1" height="2" fill="#F73664"/>
+<rect id="error_10" opacity="0.3" x="10" y="2" width="1" height="2" fill="#F73664"/>
+<rect id="error_11" opacity="0.2" x="11" y="2" width="1" height="2" fill="#F73664"/>
+<rect id="error_12" opacity="0.1" x="12" y="2" width="1" height="2" fill="#F73664"/>
+</g>
+</g>
+</g>
+</svg>

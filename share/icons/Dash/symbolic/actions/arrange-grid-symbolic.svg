@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="arrange-grid">
+<g id=".arrange-distribute-grid">
+<path id="Union" opacity="0.3" d="M7 14H2V9H7V14ZM14 14H9V9H14V14ZM7 7H2V2H7V7ZM14 7H9V2H14V7Z" fill="black"/>
+<path id="Union_2" d="M7 14H2V9H7V14ZM14 14H9V9H14V14ZM3 13H6V10H3V13ZM10 13H13V10H10V13ZM7 7H2V2H7V7ZM14 7H9V2H14V7ZM3 6H6V3H3V6ZM10 6H13V3H10V6Z" fill="black"/>
+</g>
+</g>
+</svg>

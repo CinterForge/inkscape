@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0" />
+  <object class="GtkBox" id="recolor-art">
+    <property name="name">recolor-art</property>
+    <property name="orientation">vertical</property>
+    <property name="vexpand">true</property>
+    <property name="hexpand">true</property>
+    <child>
+      <object class="GtkNotebook" id="list-wheel-box">
+        <property name="name">list-wheel-box</property>
+        <property name="tab-pos">top</property>
+        <property name="show-border">false</property>
+        <property name="height-request">250</property>
+        <child>
+          <object class="GtkBox" id="original-recolor-colors-list-box">
+            <property name="name">original-recolor-colors-list-box</property>
+            <property name="orientation">vertical</property>
+            <property name="vexpand">true</property>
+            <property name="hexpand">true</property>
+            <child>
+              <object class="GtkFlowBox" id="original-reset-recolor">
+                <property name="name">original-reset-recolor</property>
+                <property name="max-children-per-line">3</property> 
+                <property name="selection-mode">none</property> 
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes">Original</property>
+                    <property name="halign">fill</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="reset">
+                    <property name="name">reset</property>
+                    <property name="visible">true</property>
+                    <property name="has-frame">false</property>
+                    <property name="hexpand">false</property>
+                    <property name="halign">center</property>
+                    <property name="margin-end">16</property>
+                    <property name="tooltip-text" translatable="yes">Reset to original colors</property>
+                    <child>
+                      <object class="GtkImage">
+                        <property name="icon-name">reset-settings</property>
+                        <property name="icon-size">normal</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes" >New</property>
+                    <property name="halign">center</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkScrolledWindow">
+                <property name="focusable">true</property>
+                <property name="hexpand">true</property>
+                <property name="vexpand">true</property>
+                <property name="hscrollbar-policy">never</property>
+                <property name="overlay-scrolling">false</property>
+                <property name="height-request">240</property>
+                <child>
+                  <object class="GtkBox" id="colors-list">
+                    <property name="name">colors-list</property>
+                    <property name="orientation">vertical</property>
+                    <property name="hexpand">true</property>
+                    <property name="halign">fill</property>
+                    <property name="valign">fill</property>
+                    <child>
+                      <object class="GtkListView" id="recolor-art-list">
+                        <property name="focusable">false</property>
+                        <property name="halign">fill</property>
+                        <property name="hexpand">true</property>
+                        <property name="valign">fill</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+
+            <child>
+              <object class="GtkBox" id="color-picker">
+                <property name="orientation">vertical</property>
+                <property name="visible">true</property>
+              </object>
+            </child>
+
+
+          </object>
+        </child>
+        <child type="tab">
+          <object class="GtkBox">
+            <property name="orientation">horizontal</property>
+            <property name="spacing">6</property>
+            <property name="halign">center</property>
+            <property name="hexpand">true</property>
+            <child>
+              <object class="GtkImage">
+                <property name="icon-name">hamburger-menu</property>
+                <property name="icon-size">normal</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">Color List</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkBox" id="color-wheel-page">
+            <property name="name">color-wheel-page</property>
+            <property name="orientation">vertical</property>
+            <property name="vexpand">true</property>
+            <property name="hexpand">true</property>
+          </object>
+        </child>
+
+        <child type="tab">
+          <object class="GtkBox">
+            <property name="orientation">horizontal</property>
+            <property name="spacing">6</property>
+            <property name="halign">center</property>
+            <property name="hexpand">true</property>
+            <child>
+              <object class="GtkImage">
+                <property name="icon-name">color-wheel-symbolic</property>
+                <property name="icon-size">normal</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">Color Wheel</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+      </object>
+    </child>
+
+
+    <child>
+      <object class="GtkBox" id="liveP-apply">
+        <property name="name">liveP-apply</property>
+        <property name="orientation">horizontal</property>
+        <property name="spacing">300</property>
+        <child>
+          <object class="GtkCheckButton" id="liveP">
+            <property name="name">liveP</property>
+            <property name="label" translatable="yes">Live Preview</property>
+            <property name="valign">end</property>
+            <property name="halign">start</property>
+          </object>
+        </child>
+        <!-- <child>
+          <object class="GtkButton" id="apply">
+            <property name="name">apply</property>
+            <property name="label">Apply</property>
+            <property name="valign">end</property>
+            <property name="halign">end</property>
+          </object>
+        </child> -->
+      </object>
+    </child>
+
+  </object>
+</interface>

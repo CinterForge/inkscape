@@ -1,0 +1,25 @@
+[submodule "share/extensions"]
+	path = share/extensions
+	url = https://gitlab.com/inkscape/extensions.git
+[submodule "src/3rdparty/2geom"]
+	path = src/3rdparty/2geom
+	url = https://gitlab.com/inkscape/lib2geom.git
+[submodule "share/themes"]
+	path = share/themes
+	url = https://gitlab.com/inkscape/themes.git
+[submodule "src/3rdparty/libcroco"]
+	path = src/3rdparty/libcroco
+	url = https://gitlab.com/inkscape/libcroco.git
+[submodule "po"]
+	path = po
+	url = https://gitlab.com/inkscape/translations.git
+	branch = master
+[submodule "src/3rdparty/libdepixelize"]
+	path = src/3rdparty/libdepixelize
+	url = https://gitlab.com/inkscape/devel/libdepixelize.git
+[submodule "src/3rdparty/libuemf"]
+	path = src/3rdparty/libuemf
+	url = https://gitlab.com/inkscape/devel/libuemf.git
+[submodule "src/3rdparty/capypdf"]
+	path = src/3rdparty/capypdf
+	url = https://github.com/jpakkane/capypdf

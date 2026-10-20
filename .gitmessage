@@ -1,0 +1,13 @@
+Put your meaningful title here, 50 characters max
+
+Your meaningful description follows after a blank line.
+Please follow the "seven rules of a great Git commit message":
+https://chris.beams.io/posts/git-commit/
+
+Activate this git commit message template like this:
+git config commit.template .gitmessage
+
+If you fix a bug with this commit, then mention it with the full URL and a
+GitLab recognized keyword, if applicable. Like this:
+
+Fixes https://gitlab.com/inkscape/inkscape/-/issues/1234

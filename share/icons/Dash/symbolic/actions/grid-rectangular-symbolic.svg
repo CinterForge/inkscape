@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="grid-rectangular">
+<g id=".layout-grid">
+<path id="Subtract" opacity="0.7" fill-rule="evenodd" clip-rule="evenodd" d="M12 6V11H15V12H12V15H11V12H6V11H11V6H12ZM12 3V0H11V3H12ZM3 11H0V12H3V11Z" fill="black"/>
+<path class="error" fill-rule="evenodd" clip-rule="evenodd" d="M5 4V0H4V4H0V5H4V15H5V5H15V4H5Z" fill="#F73664"/>
+</g>
+</g>
+</svg>

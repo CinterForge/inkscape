@@ -1,0 +1,9 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="distribute-vertical-gaps">
+<g id=".arrange-distribute-vertical-gaps">
+<rect id="rectangle" opacity="0.3" x="13" y="10" width="5" height="10" transform="rotate(90 13 10)" fill="black"/>
+<rect class="warning" opacity="0.5" x="16" y="7" width="1" height="16" transform="rotate(90 16 7)" fill="black"/>
+<path id="Union" d="M3 5L3 -4.37114e-07L13 0L13 5L3 5ZM3 15L3 10L13 10L13 15L3 15ZM4 1L4 4L12 4L12 1L4 1ZM4 11L4 14L12 14L12 11L4 11Z" fill="black"/>
+</g>
+</g>
+</svg>

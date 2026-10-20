@@ -1,0 +1,14 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="path-flatten">
+<g id=".boolean-flatten" clip-path="url(#clip0_3684_42822)">
+<path id="Subtract" opacity="0.3" d="M11 4.08423C13.8377 4.56033 16 7.02729 16 10.0002C16 13.314 13.3137 16.0002 10 16.0002C7.02714 16.0002 4.56114 13.8378 4.08496 11.0002H11V4.08423Z" fill="black"/>
+<path id="rectangle" opacity="0.3" d="M0 0H10V10H0V0Z" fill="black"/>
+<path id="Union" d="M11 4.08398C13.8376 4.56008 15.9999 7.02717 16 10C16 13.3137 13.3137 16 10 16C7.02714 16 4.56114 13.8376 4.08496 11H11V4.08398ZM12 12H5.41895C6.19026 13.7657 7.9508 15 10 15C12.7614 15 15 12.7614 15 10C14.9999 7.95065 13.7656 6.18939 12 5.41797V12ZM10 10H0V0H10V10ZM1 9H9V1H1V9Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42822">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

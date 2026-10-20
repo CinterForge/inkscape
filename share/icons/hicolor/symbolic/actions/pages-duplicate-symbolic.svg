@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) and export_objects.py -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="16"
+   height="16"
+   viewBox="0 0 16 16"
+   sodipodi:docname="pages-duplicate-symbolic.svg"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     id="namedview"
+     showgrid="true"
+     inkscape:zoom="1.7327186"
+     inkscape:cx="-213.82584"
+     inkscape:cy="-44.150274"
+     inkscape:window-width="2560"
+     inkscape:window-height="1403"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="snap-page-7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:snap-grids="true"
+     inkscape:snap-to-guides="false"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid"
+       spacingx="0.5"
+       spacingy="0.5"
+       empspacing="2"
+       originx="0.000000"
+       originy="0.000000"
+       units="px" />
+  </sodipodi:namedview>
+  <g
+     transform="translate(-979,-527.3622)"
+     inkscape:label="00334"
+     id="snap-page">
+    <g
+       id="snap-page-7"
+       inkscape:label="00334">
+      <path
+         opacity="0"
+         d="m 979,15 h 16 v 16 h -16 z"
+         id="rect16572-9"
+         inkscape:connector-curvature="0"
+         transform="translate(0,512.3622)" />
+      <path
+         id="path1"
+         style=""
+         d="M 982 531.3622 L 982 535.3622 L 984 535.3622 L 984 533.3622 L 986 533.3622 L 986 535.3622 L 988 535.3622 L 988 540.3622 L 987 540.3622 L 987 542.3622 L 988 542.3622 L 990 542.3622 L 990 533.3622 L 988 531.3622 L 982 531.3622 z " />
+      <path
+         id="path1-7"
+         style=""
+         d="m 986,528.3622 v 2 h 2 0.5 1.5 v 2 h 2 v 5 h -1 v 2 h 3 v -9 l -2,-2 z"
+         sodipodi:nodetypes="cccccccccccccc" />
+      <path
+         id="rect1"
+         style=""
+         d="m 982,536.3622 v 2 h -2 v 2 h 2 v 2 h 2 v -2 h 2 v -2 h -2 v -2 z" />
+    </g>
+    <path
+       inkscape:connector-curvature="0"
+       id="rect16572"
+       d="m 979,15 h 16 v 16 h -16 z"
+       opacity="0"
+       transform="translate(0,512.3622)" />
+  </g>
+  <style
+     id="s2"> 
+     @import '../../highlights.css'; 
+  </style>
+  <style
+     id="s0-6">
+   .success { fill: #009909; }
+   .warning { fill: #FF1990; }
+   .error   { fill: #00AAFF; }
+  </style>
+</svg>

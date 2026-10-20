@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unitdefs>
+<!--Ruler metrics for most scales-->
+<metric name="general" default="true">
+    <tic div="true">1</tic>
+    <tic>2</tic>
+    <tic div="true">5</tic>
+    <tic div="true">10</tic>
+    <tic>25</tic>
+    <tic div="true">50</tic>
+    <tic div="true">100</tic>
+    <tic>250</tic>
+    <tic>500</tic>
+    <tic>1000</tic>
+    <tic>2500</tic>
+</metric>
+<unit type="DIMENSIONLESS" pri="y">
+    <name>%</name>
+    <plural>%</plural>
+    <abbr>%</abbr>
+    <factor>1.00</factor>
+    <description>Percentage</description>
+</unit>
+<unit type="LINEAR" pri="n">
+    <name>point</name>
+    <plural>points</plural>
+    <abbr>pt</abbr>
+    <factor>1.333333333333333</factor>
+    <description>PostScript points (72/inch)</description>
+</unit>
+<unit type="RADIAL" pri="y">
+    <name>degree</name>
+    <plural>degrees</plural>
+    <abbr>°</abbr>
+    <factor>1.00</factor>
+    <description>Degrees</description>
+</unit>
+</unitdefs>

@@ -1,0 +1,9 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="text-flow-subtract-frame">
+<g id=".text-frame-out">
+<path id="Union" d="M13 3H12V2H2V14H12V13H13V15H1V1H13V3ZM12 4C14.2091 4 16 5.79086 16 8C16 10.2091 14.2091 12 12 12C9.79086 12 8 10.2091 8 8C8 5.79086 9.79086 4 12 4ZM12 5C10.3431 5 9 6.34315 9 8C9 9.65685 10.3431 11 12 11C13.6569 11 15 9.65685 15 8C15 6.34315 13.6569 5 12 5Z" fill="black"/>
+<path id="Union_2" opacity="0.5" d="M7 12H3V10H7V12ZM6 9H3V7H6V9ZM8 6H3V4H8V6Z" fill="black"/>
+<rect id="neutral" opacity="0.3" x="8" y="4" width="8" height="8" rx="4" fill="black"/>
+</g>
+</g>
+</svg>

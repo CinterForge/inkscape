@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   id="glyph3"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   sodipodi:docname="c.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <path
+     style="fill:none;stroke:#1a1a1a;stroke-width:47.228"
+     d="M 330.89646,-412.9369 217.40718,-560.6097 64.265015,-432.07967 38.285541,-149.04014 147.6728,0 324.05975,-142.20344"
+     id="path1" />
+  <path
+     style="fill:none;stroke:#1a1a1a;stroke-width:47.228"
+     d="M 217.40718,-560.6097 216.57572,-901 H 1717.1361 l 3.8674,92.70846"
+     id="path2" />
+  <path
+     style="fill:none;stroke:#1a1a1a;stroke-width:47.228"
+     d="M 216.57572,-901 H -1245.3104 l 3.8674,123.64785"
+     id="path3" />
+</svg>

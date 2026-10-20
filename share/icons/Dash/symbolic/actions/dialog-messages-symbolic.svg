@@ -1,0 +1,12 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="dialog-messages">
+<g id=".chat-balloon" clip-path="url(#clip0_3684_42754)">
+<path id="Subtract" d="M12 16.1133L11.8721 16H12V16.1133ZM15 12H12V15H10.7471L7.37207 12H1V1H15V12ZM2 11H7.75293L7.89453 11.126L11 13.8857V11H14V2H2V11Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42754">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

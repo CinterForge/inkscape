@@ -1,0 +1,25 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="transform-affect-gradient">
+<g id=".transform-property-gradient" clip-path="url(#clip0_3684_42543)">
+<path id="Union" d="M11 5.5V16H10V6H0V5H10.5L11 5.5Z" fill="black"/>
+<path id="neutral" opacity="0.5" d="M16 4H15V1.70703L12 4.70703L11.293 4L14.293 1H12V0H16V4Z" fill="black"/>
+<g id="Group 286">
+<path id="rectangle" opacity="0.25" d="M10 11.625L5.625 16H3.75L10 9.75V11.625Z" fill="black"/>
+<path id="rectangle_2" opacity="0.2" d="M10 13.5L7.5 16H5.625L10 11.625V13.5Z" fill="black"/>
+<path id="rectangle_3" opacity="0.3" d="M10 9.75L3.75 16H1.875L10 7.875V9.75Z" fill="black"/>
+<path id="rectangle_4" opacity="0.4" d="M10 7.875L1.875 16H0L10 6V7.875Z" fill="black"/>
+<path id="rectangle_5" opacity="0.5" d="M10 6L0 16V14.125L8.125 6H10Z" fill="black"/>
+<path id="rectangle_6" opacity="0.6" d="M8.125 6L0 14.125V12.25L6.25 6H8.125Z" fill="black"/>
+<path id="rectangle_7" opacity="0.7" d="M6.25 6L0 12.25V10.375L4.375 6H6.25Z" fill="black"/>
+<path id="rectangle_8" opacity="0.8" d="M4.375 6L0 10.375V8.5L2.5 6H4.375Z" fill="black"/>
+<path id="rectangle_9" opacity="0.9" d="M2.5 6L2.10734e-07 8.5L0 6L2.5 6Z" fill="black"/>
+<path id="rectangle_10" opacity="0.15" d="M7.5 16L10 13.5L10 16L7.5 16Z" fill="black"/>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42543">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

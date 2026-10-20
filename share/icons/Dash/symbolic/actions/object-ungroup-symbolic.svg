@@ -1,0 +1,15 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="object-ungroup">
+<g id=".group-false" clip-path="url(#clip0_3684_42539)">
+<g id=".bounding-box">
+<path id="Union" d="M2 16H0V14H2V16ZM16 16H14V14H16V16ZM7 15H4V14H7V15ZM12 15H9V14H12V15ZM2 12H1V9H2V12ZM15 12H14V9H15V12ZM2 7H1V4H2V7ZM15 7H14V4H15V7ZM2 2H0V0H2V2ZM7 2H4V1H7V2ZM12 2H9V1H12V2ZM16 2H14V0H16V2Z" fill="black"/>
+</g>
+<path id="Union_2" d="M9 7H12V12H7V9H4V4H9V7ZM5 8H7V7H8V5H5V8Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42539">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

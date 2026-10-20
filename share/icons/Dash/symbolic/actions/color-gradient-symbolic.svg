@@ -1,0 +1,23 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="color-gradient">
+<g id=".gradient" clip-path="url(#clip0_3684_42847)">
+<g id="neutral">
+<path id="neutral_2" opacity="0.7" d="M4.5 4.5L2 7V4.5H4.5V2H7L4.5 4.5Z" fill="black"/>
+<path id="neutral_3" opacity="0.6" d="M9 2L2 9V7L7 2H9Z" fill="black"/>
+<path id="neutral_4" opacity="0.5" d="M11 2L2 11V9L9 2H11Z" fill="black"/>
+<path id="neutral_5" opacity="0.4" d="M13 2L2 13V11L11 2H13Z" fill="black"/>
+<path id="neutral_6" opacity="0.35" d="M14 3L3 14H2V13L13 2H14V3Z" fill="black"/>
+<path id="neutral_7" opacity="0.3" d="M14 5L5 14H3L14 3V4V5Z" fill="black"/>
+<path id="neutral_8" opacity="0.25" d="M14 7L7 14H5L14 5V6V7Z" fill="black"/>
+<path id="neutral_9" opacity="0.2" d="M14 9L9 14H7L14 7V8V9Z" fill="black"/>
+<path id="neutral_10" opacity="0.15" d="M11.5 11.5L14 9V11.5H11.5V14H9L11.5 11.5Z" fill="black"/>
+</g>
+<path id="Subtract" d="M5 2H14V11H16V16H11V14H2V5H0V0H5V2ZM12 12V15H15V12H12ZM3 13H11V11.707L4.29297 5H3V13ZM5 4.29297L11.707 11H13V3H5V4.29297ZM1 4H4V1H1V4Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42847">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

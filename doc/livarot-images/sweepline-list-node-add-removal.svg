@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1000"
+   height="1000"
+   viewBox="0 0 1000 1000"
+   version="1.1"
+   id="svg6"
+   inkscape:version="1.1-dev (037b845d7b, 2020-08-19, custom)"
+   sodipodi:docname="sweepline-list-node-add-removal.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible;"
+       id="marker1675"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1673" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="marker1603"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1601" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="marker1501"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1499" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="marker1491"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1489" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="marker1481"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1479" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="marker1471"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1469" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1461"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1459" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1451"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1449" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1235"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1233" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="marker1219"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1217" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="marker1195"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1193" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lstart"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path913" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="marker875"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path873" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="marker1121"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1119" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.64995572"
+     inkscape:cx="361.56309"
+     inkscape:cy="626.96579"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     width="1000px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g1847">
+      <rect
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect829"
+         width="144.05873"
+         height="72.029366"
+         x="227.12935"
+         y="113.07404" />
+      <rect
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect833"
+         width="144.05873"
+         height="72.029366"
+         x="614.05084"
+         y="113.07404" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1121)"
+         d="M 398.25309,147.95307 H 580.47504"
+         id="path835" />
+      <text
+         xml:space="preserve"
+         style="font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+         x="248.59921"
+         y="158.92729"
+         id="text851"><tspan
+           sodipodi:role="line"
+           id="tspan849"
+           x="248.59921"
+           y="158.92729">Node A</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+         x="638.16888"
+         y="158.95834"
+         id="text855"><tspan
+           sodipodi:role="line"
+           id="tspan853"
+           x="638.16888"
+           y="158.95834">Node C</tspan></text>
+      <rect
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect857"
+         width="144.05873"
+         height="72.029366"
+         x="416.0134"
+         y="289.00961" />
+      <text
+         xml:space="preserve"
+         style="font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+         x="162.1252"
+         y="150.03897"
+         id="text861"><tspan
+           sodipodi:role="line"
+           id="tspan859"
+           x="162.1252"
+           y="150.03897">...</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+         x="799.82977"
+         y="150.34343"
+         id="text865"><tspan
+           sodipodi:role="line"
+           id="tspan863"
+           x="799.82977"
+           y="150.34343">...</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+         x="438.8143"
+         y="334.28433"
+         id="text869"><tspan
+           sodipodi:role="line"
+           id="tspan867"
+           x="438.8143"
+           y="334.28433">Node B</tspan></text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker875)"
+         d="m 479.34323,276.90051 c 0,0 -7.47623,-74.55159 0.49492,-110.25811"
+         id="path871" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+         x="482.88586"
+         y="214.18095"
+         id="text891"><tspan
+           sodipodi:role="line"
+           id="tspan889"
+           x="482.88586"
+           y="214.18095"
+           style="font-size:16px">Node B should</tspan><tspan
+           sodipodi:role="line"
+           x="482.88586"
+           y="234.18095"
+           id="tspan893"
+           style="font-size:16px">go here!</tspan></text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow1Lstart);marker-end:url(#marker1195)"
+         d="m 289.35549,204.02359 c 0,0 -14.54869,110.6081 100.03454,119.46346"
+         id="path911" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#marker1235);marker-end:url(#marker1219)"
+         d="m 687.26266,201.72696 c 0,0 18.23666,80.13707 -87.49543,121.9944"
+         id="path1215" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+         x="136.2262"
+         y="336.39407"
+         id="text1281"><tspan
+           sodipodi:role="line"
+           x="136.2262"
+           y="336.39407"
+           id="tspan1279"
+           style="font-size:16px">Test intersection of Node A</tspan><tspan
+           sodipodi:role="line"
+           x="136.2262"
+           y="356.39407"
+           style="font-size:16px"
+           id="tspan1285">and Node B</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:16px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+         x="650.39099"
+         y="326.96677"
+         id="text1291"><tspan
+           sodipodi:role="line"
+           x="650.39099"
+           y="326.96677"
+           style="font-size:16px"
+           id="tspan1295">Test interesction of Node B</tspan><tspan
+           sodipodi:role="line"
+           x="650.39099"
+           y="346.96677"
+           style="font-size:16px"
+           id="tspan1299">and Node C</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+         x="406.17383"
+         y="83.143784"
+         id="text1355"><tspan
+           sodipodi:role="line"
+           id="tspan1353"
+           x="406.17383"
+           y="83.143784">Node Insertion</tspan></text>
+    </g>
+    <g
+       id="g1993">
+      <rect
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect1393"
+         width="144.05873"
+         height="72.029366"
+         x="163.45003"
+         y="593.651" />
+      <rect
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect1395"
+         width="144.05873"
+         height="72.029366"
+         x="664.37152"
+         y="593.651" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1501)"
+         d="m 321.20528,628.87828 h 64.22195"
+         id="path1397"
+         sodipodi:nodetypes="cc" />
+      <text
+         xml:space="preserve"
+         style="font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+         x="186.91988"
+         y="639.50427"
+         id="text1401"><tspan
+           sodipodi:role="line"
+           id="tspan1399"
+           x="186.91988"
+           y="639.50427">Node A</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+         x="688.48956"
+         y="639.53534"
+         id="text1405"><tspan
+           sodipodi:role="line"
+           id="tspan1403"
+           x="688.48956"
+           y="639.53534">Node C</tspan></text>
+      <rect
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect1407"
+         width="144.05873"
+         height="72.029366"
+         x="408.97522"
+         y="593.33228" />
+      <text
+         xml:space="preserve"
+         style="font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+         x="106.44588"
+         y="630.61597"
+         id="text1411"><tspan
+           sodipodi:role="line"
+           id="tspan1409"
+           x="106.44588"
+           y="630.61597">...</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+         x="868.15045"
+         y="630.92041"
+         id="text1415"><tspan
+           sodipodi:role="line"
+           id="tspan1413"
+           x="868.15045"
+           y="630.92041">...</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+         x="431.77612"
+         y="638.60706"
+         id="text1419"><tspan
+           sodipodi:role="line"
+           id="tspan1417"
+           x="431.77612"
+           y="638.60706">Node B</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:16px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+         x="396.54059"
+         y="708.59326"
+         id="text1443"><tspan
+           sodipodi:role="line"
+           x="396.54059"
+           y="708.59326"
+           style="font-size:16px"
+           id="tspan1441">Node B is to removed!</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:26.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+         x="390.60059"
+         y="554.08777"
+         id="text1447"><tspan
+           sodipodi:role="line"
+           id="tspan1445"
+           x="390.60059"
+           y="554.08777">Node Removal</tspan></text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1603)"
+         d="m 575.83993,628.89852 h 64.22195"
+         id="path1599"
+         sodipodi:nodetypes="cc" />
+      <text
+         xml:space="preserve"
+         style="font-size:200px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+         x="421.59924"
+         y="689.41443"
+         id="text1657"><tspan
+           sodipodi:role="line"
+           id="tspan1655"
+           x="421.59924"
+           y="689.41443"
+           style="font-size:200px;fill:#ff0000">x</tspan></text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#marker1461);marker-end:url(#marker1675)"
+         d="m 235.19859,678.95928 c 0,0 261.58614,386.40472 501.64177,-0.73691"
+         id="path1659" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+         x="334.86252"
+         y="879.20044"
+         id="text1697"><tspan
+           sodipodi:role="line"
+           id="tspan1695"
+           x="334.86252"
+           y="879.20044"
+           style="font-size:16px">Test intersection of Node A and Node C</tspan></text>
+    </g>
+  </g>
+</svg>

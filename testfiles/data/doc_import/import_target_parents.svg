@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="180mm"
+   height="267mm"
+   viewBox="0 0 36 53.4"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     inkscape:document-units="mm"
+     y-axis-down="false"
+     inkscape:current-layer="layer1" />
+  <g id="parent1"
+     transform="translate(0,-5)">
+  </g>
+  <g id="parent2_a"
+     transform="translate(10,0)">
+    <g id="parent2_b" transform="matrix(2, 2, -2, 2, 5, 32)">
+    </g>
+  </g>
+</svg>

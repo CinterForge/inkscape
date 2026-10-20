@@ -1,0 +1,15 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="selection-touch">
+<g id=".select-area-touch" clip-path="url(#clip0_3684_42658)">
+<rect id="Rectangle 784" opacity="0.2" width="5" height="5" fill="black"/>
+<path id="Union" d="M5 5H0V0H5V5ZM1 4H4V1H1V4Z" fill="black"/>
+<path id="Union_2" opacity="0.5" d="M3 12H5V13H2V10H3V12ZM8 13H6V12H8V13ZM3 9H2V6H3V9ZM13 8H12V6H13V8ZM13 5H12V3H10V2H13V5ZM9 3H6V2H9V3Z" fill="black"/>
+<path id="Union_3" d="M9 14.8286L9.00006 6.14627L15.2461 12.1778L11.9994 11.8007L13.3844 15.0636L12.3696 15.4943L10.9843 12.2309L9 14.8286Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42658">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

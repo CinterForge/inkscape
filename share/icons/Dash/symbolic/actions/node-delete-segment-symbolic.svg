@@ -1,0 +1,14 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="node-delete-segment">
+<g id=".node-operation-delete-segment" clip-path="url(#clip0_3684_42650)">
+<path id="Union" d="M14 2H16V3H14L12 5L10 3H6L4 5L2 3H0V2H2L4 0L6 2H10L12 0L14 2ZM2.91406 2.5L4 3.58594L5.08594 2.5L4 1.41406L2.91406 2.5ZM10.9141 2.5L12 3.58594L13.0859 2.5L12 1.41406L10.9141 2.5Z" fill="black"/>
+<path id="neutral" d="M9.5 12.5L12 10L14 12L16 12L16 13L14 13L12 15L9.5 12.5ZM2 13L1.74846e-07 13L2.62268e-07 12L2 12L4 10L6.5 12.5L4 15L2 13Z" fill="black"/>
+<path id="Subtract" opacity="0.6" d="M8 9L6 7H7L8 8L9 7H10L8 9Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3684_42650">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

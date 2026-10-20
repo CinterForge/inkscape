@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="stroke-cap-round">
+<g id=".stroke-cap-round">
+<path id="Rectangle 736" opacity="0.3" d="M1 8C1 4.13401 4.13401 1 8 1H16V15H8C4.13401 15 1 11.866 1 8Z" fill="black"/>
+<path id="Union" d="M16 1H8C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15H16V16H8C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0H16V1ZM10 7H16V9H10L8 11L5 8L8 5L10 7Z" fill="black"/>
+</g>
+</g>
+</svg>

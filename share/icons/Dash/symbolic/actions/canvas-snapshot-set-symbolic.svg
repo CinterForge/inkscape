@@ -1,0 +1,14 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="canvas-snapshot-set">
+<g id=".frame-capture" clip-path="url(#clip0_3944_22749)">
+<path id="Subtract" opacity="0.5" d="M1 15H3.5V16H0V12.5H1V15ZM3.5 1H1V3.5H0V0H3.5V1ZM16 3.5H15V1H12.5V0H16V3.5Z" fill="black"/>
+<path id="Vector 909" d="M12.2927 9L13.7927 10.5H15.4998V15.5H6.49976V10.5H8.20679L9.70679 9H12.2927Z" stroke="black"/>
+<circle id="Ellipse 377" cx="11" cy="12.5" r="1.5" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3944_22749">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

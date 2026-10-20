@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>  <!--css: style.css-->
+
+  <placeholder width="204" height="108"></placeholder>
+  <requires lib="gtk" version="4.0"></requires>
+  <object class="GtkGrid" id="main-grid">
+    <property name="vexpand">true</property>
+    <property name="vexpand-set">true</property>
+    <property name="hexpand">true</property>
+    <property name="hexpand-set">true</property>
+    <property name="height-request">290</property>
+    <property name="width-request">460</property>
+    <property name="row-spacing">4</property>
+    <property name="column-spacing">4</property>
+    <child>
+      <object class="GtkBox">
+        <style>
+          <class name="active-background"></class>
+          <class name="standard-frame"></class>
+        </style>
+        <layout>
+          <property name="column">0</property>
+          <property name="row">1</property>
+        </layout>
+        <child>
+          <object class="GtkBox" id="cmap-glyphs">
+            <property name="vexpand">true</property>
+            <property name="vexpand-set">true</property>
+            <property name="hexpand">true</property>
+            <property name="hexpand-set">true</property>
+            <style></style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="info-box">
+            <property name="orientation">vertical</property>
+            <property name="vexpand">true</property>
+            <property name="vexpand-set">true</property>
+            <style></style>
+            <child>
+              <object class="GtkDrawingArea" id="glyph-image">
+                <property name="margin-bottom">5</property>
+                <property name="margin-top">5</property>
+                <property name="margin-end">5</property>
+                <property name="margin-start">5</property>
+                <property name="height-request">120</property>
+                <property name="width-request">120</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="char-name">
+                <property name="margin-end">4</property>
+                <property name="margin-start">4</property>
+                <property name="margin-bottom">0</property>
+                <property name="margin-top">0</property>
+                <property name="justify">center</property>
+                <property name="wrap-mode">word</property>
+                <property name="halign">center</property>
+                <property name="height-request">-1</property>
+                <property name="width-request">-1</property>
+                <property name="width-chars">-1</property>
+                <property name="label" translatable="yes">NAME</property>
+                <property name="max-width-chars">2</property>
+                <property name="ellipsize">none</property>
+                <property name="wrap">true</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <!--dim: 1, 2-->
+    <child>
+      <object class="GtkBox">
+        <layout>
+          <property name="column">0</property>
+          <property name="row">-1</property>
+        </layout>
+        <child>
+          <object class="GtkDropDown" id="ranges">
+            <property name="enable-search">true</property>
+            <property name="height-request">-1</property>
+            <property name="width-request">85</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkMenuButton">
+            <property name="popover">options</property>
+            <property name="has-frame">false</property>
+            <property name="margin-end">0</property>
+            <property name="margin-start">4</property>
+            <property name="icon-name">gear</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel" id="font-name">
+            <property name="max-width-chars">25</property>
+            <property name="halign">center</property>
+            <property name="margin-end">3</property>
+            <property name="margin-start">3</property>
+            <property name="hexpand">true</property>
+            <property name="hexpand-set">true</property>
+            <property name="ellipsize">end</property>
+            <style>
+              <class name="dialog-heading"></class>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkSearchEntry" id="search-entry">
+            <property name="max-width-chars">6</property>
+            <property name="halign">end</property>
+            <property name="hexpand">true</property>
+            <property name="hexpand-set">false</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkPopover" id="options">
+    <property name="child">
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <property name="hexpand">true</property>
+        <property name="hexpand-set">true</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="halign">start</property>
+            <property name="label" translatable="yes">Character size</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkScale" id="char-size-scale">
+            <property name="show-fill-level">true</property>
+            <property name="value-pos">top</property>
+            <property name="height-request">-1</property>
+            <property name="width-request">180</property>
+            <property name="adjustment">char-size</property>
+            <property name="digits">0</property>
+            <property name="draw-value">true</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="margin-bottom">0</property>
+            <property name="margin-top">5</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">Small</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="halign">end</property>
+                <property name="hexpand">true</property>
+                <property name="hexpand-set">true</property>
+                <property name="label" translatable="yes">Big</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </property>
+  </object>
+  <object class="GtkAdjustment" id="char-size">
+    <property name="page-increment">1.000000</property>
+    <property name="upper">6.000000</property>
+  </object>
+</interface>

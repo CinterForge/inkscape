@@ -1,0 +1,9 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="swatches">
+<g id=".swatches">
+<path id="Subtract" opacity="0.3" d="M15 6.5L8.00098 13.499V3.49805L10 1.5L15 6.5Z" fill="black"/>
+<path id="Subtract_2" d="M15.001 15H7.5L14.5 8H15.001V15Z" fill="black"/>
+<path id="Union" d="M8 15H1V1H8V15ZM2 14H7V2H2V14ZM15 6.5L8.00098 13.499V12.085L13.5859 6.5L10 2.91406L8.00098 4.91211V3.49805L10 1.5L15 6.5ZM4.5 10.5C5.05228 10.5 5.5 10.9477 5.5 11.5C5.5 12.0523 5.05228 12.5 4.5 12.5C3.94772 12.5 3.5 12.0523 3.5 11.5C3.5 10.9477 3.94772 10.5 4.5 10.5Z" fill="black"/>
+</g>
+</g>
+</svg>

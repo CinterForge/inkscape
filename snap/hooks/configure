@@ -1,0 +1,15 @@
+#!/bin/sh -e
+# Small hook to build a system font cache in the Snap's system directory
+# SPDX-License-Identifier: GPL-2.0-or-later
+
+mkdir -p $SNAP_DATA/fontconfig
+
+echo "<fontconfig>" > ${SNAP_DATA}/fontconfig/fonts.conf
+echo "<cachedir>${SNAP_DATA}/fontconfig</cachedir>" >> ${SNAP_DATA}/fontconfig/fonts.conf
+echo "<include ignore_missing=\"yes\">/etc/fonts/fonts.conf</include>" >> ${SNAP_DATA}/fontconfig/fonts.conf
+echo "</fontconfig>" >> ${SNAP_DATA}/fontconfig/fonts.conf
+
+export FONTCONFIG_FILE=${SNAP_DATA}/fontconfig/fonts.conf
+
+# FIXME - errors:
+# exec ${SNAP}/snap/command-chain/snapcraft-runner ${SNAP}/usr/bin/fc-cache --force --system-only --verbose

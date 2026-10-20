@@ -1,0 +1,909 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkAdjustment" id="adj-page-height">
+    <property name="lower">0.001</property>
+    <property name="upper">10000000</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="adj-page-width">
+    <property name="lower">0.001</property>
+    <property name="upper">10000000</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="adj-scale-x">
+    <property name="lower">1.0e-08</property>
+    <property name="upper">1000000</property>
+    <property name="value">1</property>
+    <property name="step-increment">0.10</property>
+    <property name="page-increment">1</property>
+  </object>
+  <object class="GtkAdjustment" id="adj-viewbox-height">
+    <property name="lower">0.001</property>
+    <property name="upper">10000000</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="adj-viewbox-width">
+    <property name="lower">0.001</property>
+    <property name="upper">10000000</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="adj-viewbox-x">
+    <property name="lower">-10000000</property>
+    <property name="upper">10000000</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="adj-viewbox-y">
+    <property name="lower">-10000000</property>
+    <property name="upper">10000000</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkPopoverMenu" id="templates-popover"/>
+  <object class="GtkGrid" id="main-grid">
+    <property name="halign">start</property>
+    <property name="valign">start</property>
+    <property name="column-spacing">8</property>
+    <child>
+      <object class="GtkGrid" id="left-grid">
+        <property name="halign">start</property>
+        <property name="valign">start</property>
+        <property name="row-spacing">4</property>
+        <property name="column-spacing">4</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="halign">start</property>
+            <property name="label" translatable="yes">Front page</property>
+            <style>
+              <class name="heading"/>
+              <class name="top"/>
+            </style>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">0</property>
+              <property name="column-span">3</property>
+            </layout>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkLabel">
+            <property name="halign">start</property>
+            <property name="valign">center</property>
+            <property name="label" translatable="yes">Format</property>
+            <property name="tooltip-text" translatable="yes">Predefined paper sizes to choose from</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkMenuButton" id="page-menu-btn">
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="hexpand">True</property>
+            <property name="direction">none</property>
+            <property name="popover">templates-popover</property>
+            <child>
+              <object class="GtkBox">
+                <property name="spacing">2</property>
+                <child>
+                  <object class="GtkLabel" id="page-template-name">
+                    <property name="xalign">0.0</property>
+                    <property name="hexpand">True</property>
+                    <property name="ellipsize">end</property>
+                    <property name="single-line-mode">True</property>
+                    <property name="width-chars">10</property>
+                    <property name="max-width-chars">10</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkImage">
+                    <property name="icon-name">pan-down-symbolic</property>
+                    <style>
+                      <class name="arrow"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkDropDown" id="page-units">
+            <property name="tooltip-text" translatable="yes">Document's units used to specify document size only</property>
+            <!-- stop dropdown from fluctuating in width when units change -->
+            <property name="width-request">52</property>
+            <layout>
+              <property name="column">2</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkLabel">
+            <property name="halign">start</property>
+            <property name="valign">center</property>
+            <property name="label" translatable="yes">Width</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="page-width">
+            <property name="focusable">True</property>
+            <property name="tooltip-text" translatable="yes">Width of front page</property>
+            <property name="width-chars">9</property>
+            <property name="adjustment">adj-page-width</property>
+            <property name="digits">3</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">2</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkButton" id="link-width-height">
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="halign">start</property>
+            <!--            <property name="margin-start">2</property>-->
+            <property name="margin-top">5</property>
+            <property name="margin-bottom">5</property>
+            <property name="has-frame">False</property>
+            <style>
+              <class name="link-edit-button"/>
+            </style>
+            <layout>
+              <property name="column">3</property>
+              <property name="row">2</property>
+              <property name="row-span">2</property>
+            </layout>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkLabel">
+            <property name="halign">start</property>
+            <property name="valign">center</property>
+            <property name="label" translatable="yes">Height</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">3</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="page-height">
+            <property name="focusable">True</property>
+            <property name="tooltip-text" translatable="yes">Height of front page</property>
+            <property name="width-chars">9</property>
+            <property name="adjustment">adj-page-height</property>
+            <property name="digits">3</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">3</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkLabel" id="unsupported">
+            <property name="halign">start</property>
+            <property name="label" translatable="yes">Unsupported percentage size!</property>
+            <attributes>
+              <attribute name="style" value="italic"></attribute>
+            </attributes>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">4</property>
+              <property name="column-span">3</property>
+            </layout>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkBox">
+            <property name="margin-top">3</property>
+            <property name="margin-bottom">3</property>
+            <property name="hexpand">True</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="halign">start</property>
+                <property name="valign">center</property>
+                <property name="label" translatable="yes">Orientation</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="page-landscape">
+                <property name="halign">end</property>
+                <property name="hexpand">True</property>
+                <property name="focusable">True</property>
+                <property name="margin-end">10</property>
+                <property name="active">False</property>
+                <property name="group">page-portrait</property>
+                <property name="child">
+                  <object class="GtkImage" id="image2">
+                    <property name="icon-name">page-landscape-symbolic</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="page-portrait">
+                <property name="focusable">True</property>
+                <property name="margin-end">0</property>
+                <property name="active">True</property>
+                <property name="child">
+                  <object class="GtkImage" id="image1">
+                    <property name="icon-name">page-portrait-symbolic</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">5</property>
+              <property name="column-span">3</property>
+            </layout>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkLabel">
+            <property name="halign">start</property>
+            <property name="valign">center</property>
+            <property name="label" translatable="yes">Resize to content</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">6</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="page-resize">
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Fit the page to the current selection or the drawing if there's no selection.</property>
+            <property name="halign">end</property>
+            <property name="icon-name">pages-resize-symbolic</property>
+            <layout>
+              <property name="column">2</property>
+              <property name="row">6</property>
+            </layout>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkBox">
+            <property name="height-request">4</property>
+            <property name="width-request">1</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">7</property>
+            </layout>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkLabel">
+            <property name="halign">start</property>
+            <property name="label" translatable="yes">Coordinate system</property>
+            <style>
+              <class name="heading"/>
+<!--              <class name="top"/>-->
+            </style>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">8</property>
+              <property name="column-span">3</property>
+            </layout>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkBox">
+            <property name="margin-top">3</property>
+            <property name="margin-bottom">3</property>
+            <property name="hexpand">True</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="halign">start</property>
+                <property name="valign">center</property>
+                <property name="label" translatable="yes">Origin</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="y-axis-down">
+                <property name="halign">end</property>
+                <property name="hexpand">True</property>
+                <property name="focusable">True</property>
+                <property name="margin-end">10</property>
+                <property name="active">False</property>
+                <property name="group">y-axis-up</property>
+                <property name="tooltip-text" translatable="yes">Coordinate system origin at the top of the page with Y axis pointing down.</property>
+                <property name="child">
+                  <object class="GtkImage">
+                    <property name="icon-name">y-axis-down</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="y-axis-up">
+                <property name="focusable">True</property>
+                <property name="margin-end">0</property>
+                <property name="active">True</property>
+                <property name="tooltip-text" translatable="yes">Coordinate system origin at the bottom of the page with Y axis pointing up.</property>
+                <property name="child">
+                  <object class="GtkImage">
+                    <property name="icon-name">y-axis-up</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">9</property>
+              <property name="column-span">3</property>
+            </layout>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkCheckButton" id="origin-page">
+            <property name="label" translatable="yes">Follow current page</property>
+            <property name="focusable">True</property>
+            <property name="tooltip-text" translatable="yes">Rulers and tools will display position information relative to the current page, instead of the position on the canvas (corresponding to the first page's position).</property>
+            <property name="halign">end</property>
+            <property name="valign">center</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="column-span">3</property>
+              <property name="row">10</property>
+            </layout>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkBox">
+            <property name="height-request">4</property>
+            <property name="width-request">1</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">11</property>
+            </layout>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkLabel" id="scale-x-label">
+            <property name="halign">start</property>
+            <property name="valign">center</property>
+            <property name="label" translatable="yes">Scale</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">12</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="scale-x">
+            <property name="valign">center</property>
+            <property name="focusable">True</property>
+            <property name="tooltip-text" translatable="yes">Document scale establishes size of user units.
+SVG element positions are expressed in user units.</property>
+            <property name="width-chars">9</property>
+            <property name="adjustment">adj-scale-x</property>
+            <property name="digits">10</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">12</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="halign">start</property>
+            <property name="valign">center</property>
+            <property name="label" translatable="yes">X</property>
+            <style>
+              <class name="viewbox"/>
+            </style>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">16</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="halign">start</property>
+            <property name="valign">center</property>
+            <property name="label" translatable="yes">Y</property>
+            <style>
+              <class name="viewbox"/>
+            </style>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">17</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="halign">start</property>
+            <property name="valign">center</property>
+            <property name="label" translatable="yes">Width</property>
+            <style>
+              <class name="viewbox"/>
+            </style>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">18</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="halign">start</property>
+            <property name="valign">center</property>
+            <property name="label" translatable="yes">Height</property>
+            <style>
+              <class name="viewbox"/>
+            </style>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">19</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="viewbox-x">
+            <property name="focusable">True</property>
+            <property name="width-chars">9</property>
+            <property name="adjustment">adj-viewbox-x</property>
+            <property name="digits">3</property>
+            <style>
+              <class name="viewbox"/>
+            </style>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">16</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="viewbox-y">
+            <property name="focusable">True</property>
+            <property name="width-chars">9</property>
+            <property name="adjustment">adj-viewbox-y</property>
+            <property name="digits">3</property>
+            <style>
+              <class name="viewbox"/>
+            </style>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">17</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="viewbox-width">
+            <property name="focusable">True</property>
+            <property name="width-chars">9</property>
+            <property name="adjustment">adj-viewbox-width</property>
+            <property name="digits">3</property>
+            <style>
+              <class name="viewbox"/>
+            </style>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">18</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="gtkmm__CustomObject_InkSpinButton" id="viewbox-height">
+            <property name="focusable">True</property>
+            <property name="width-chars">9</property>
+            <property name="adjustment">adj-viewbox-height</property>
+            <property name="digits">3</property>
+            <style>
+              <class name="viewbox"/>
+            </style>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">19</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkExpander" id="viewbox-expander">
+            <property name="focusable">True</property>
+            <property name="margin-top">6</property>
+            <property name="margin-bottom">4</property>
+            <child type="label">
+              <object class="GtkLabel">
+                <property name="tooltip-text" translatable="yes">Advanced viewbox scaling options</property>
+                <property name="label" translatable="yes">Viewbox</property>
+              </object>
+            </child>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">15</property>
+              <property name="column-span">4</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkImage" id="linked-scale-img">
+            <property name="halign">center</property>
+            <property name="valign">center</property>
+<!--            <property name="margin-start">2</property>-->
+            <property name="icon-name">image-missing</property>
+            <style>
+              <class name="viewbox"/>
+            </style>
+            <layout>
+              <property name="column">3</property>
+              <property name="row">18</property>
+              <property name="row-span">2</property>
+            </layout>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkBox">
+            <child>
+              <object class="GtkLabel" id="nonuniform-scale">
+                <property name="name">non-uniform-scale</property>
+                <property name="halign">start</property>
+                <property name="label" translatable="yes">Non-uniform scale!</property>
+                <attributes>
+                  <attribute name="style" value="italic"></attribute>
+                </attributes>
+              </object>
+            </child>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">14</property>
+              <property name="column-span">3</property>
+            </layout>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkBox">
+            <child>
+              <object class="GtkLabel" id="user-units">
+                <property name="label">xx</property>
+                <style>
+                  <class name="small-font"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="margin-start">4</property>
+                <property name="label" translatable="yes">per user unit</property>
+                <style>
+                  <class name="small-font"/>
+                </style>
+              </object>
+            </child>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">13</property>
+              <property name="column-span">3</property>
+            </layout>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkButton" id="link-scale-content">
+            <property name="focusable">True</property>
+            <property name="focus-on-click">False</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">Link the scale of the viewbox to the scale of the content in the document.</property>
+            <property name="halign">start</property>
+            <property name="has-frame">False</property>
+            <style>
+              <class name="link-edit-button"/>
+            </style>
+            <layout>
+              <property name="column">3</property>
+              <property name="row">12</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <layout>
+          <property name="column">0</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="GtkGrid">
+        <property name="halign">start</property>
+        <property name="valign">start</property>
+        <property name="row-spacing">4</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="halign">start</property>
+            <property name="label" translatable="yes">Display</property>
+            <style>
+              <class name="heading"/>
+              <class name="top"/>
+            </style>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">0</property>
+              <property name="column-span">4</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="halign">start</property>
+            <property name="valign">center</property>
+            <property name="label" translatable="yes">Display units</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">1</property>
+              <property name="column-span">3</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkDropDown" id="display-units">
+            <property name="tooltip-text" translatable="yes">Units used throughout the user interface</property>
+            <property name="halign">end</property>
+            <layout>
+              <property name="column">3</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="preview-box">
+            <property name="height-request">132</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">2</property>
+              <property name="column-span">4</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkGrid">
+            <property name="halign">center</property>
+            <property name="margin-bottom">6</property>
+            <property name="row-spacing">2</property>
+            <property name="column-spacing">4</property>
+            <property name="column-homogeneous">True</property>
+            <child>
+              <object class="GtkMenuButton" id="background-color">
+                <property name="focusable">True</property>
+                <property name="receives-default">True</property>
+                <property name="tooltip-text" translatable="yes">Page background color used during editing and exporting</property>
+                <property name="halign">center</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuButton" id="border-color">
+                <property name="focusable">True</property>
+                <property name="receives-default">True</property>
+                <property name="tooltip-text" translatable="yes">Page border color</property>
+                <property name="halign">center</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuButton" id="desk-color">
+                <property name="focusable">True</property>
+                <property name="receives-default">True</property>
+                <property name="tooltip-text" translatable="yes">Desk background color surrounding pages</property>
+                <property name="halign">center</property>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="halign">center</property>
+                <property name="label" translatable="yes">Border</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">1</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="halign">center</property>
+                <property name="label" translatable="yes">Page</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">1</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="halign">center</property>
+                <property name="label" translatable="yes">Desk</property>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="row">1</property>
+                </layout>
+              </object>
+            </child>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">3</property>
+              <property name="column-span">4</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkCheckButton" id="checkerboard">
+                <property name="label" translatable="yes">Checkerboard</property>
+                <property name="focusable">True</property>
+                <property name="tooltip-text" translatable="yes">If set, use a colored checkerboard for the desk background.</property>
+                <property name="halign">start</property>
+                <property name="valign">center</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="border">
+                <property name="label" translatable="yes">Border</property>
+                <property name="focusable">True</property>
+                <property name="tooltip-text" translatable="yes">If set, a rectangular page border is shown.</property>
+                <property name="halign">start</property>
+                <property name="valign">center</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="border-top">
+                <property name="label" translatable="yes">Always on top</property>
+                <property name="focusable">True</property>
+                <property name="tooltip-text" translatable="yes">If set, the page border is always on top of the drawing.</property>
+                <property name="halign">start</property>
+                <property name="valign">center</property>
+                <style>
+                  <class name="indent"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="shadow">
+                <property name="label" translatable="yes">Show shadow</property>
+                <property name="focusable">True</property>
+                <property name="tooltip-text" translatable="yes">If set, the page border shows a shadow on its right and lower side.</property>
+                <property name="halign">start</property>
+                <property name="valign">center</property>
+                <style>
+                  <class name="indent"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="page-label-style">
+                <property name="label" translatable="yes">Show big page labels</property>
+                <property name="focusable">True</property>
+                <property name="tooltip-text" translatable="yes">Show the big page labels below the page border.</property>
+                <property name="halign">start</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="halign">start</property>
+                <property name="label" translatable="yes">Render</property>
+                <style>
+                  <class name="heading"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="clip-to-page">
+                <property name="label" translatable="yes">Clip to page</property>
+                <property name="focusable">True</property>
+                <property name="tooltip-text" translatable="yes">Anything that is not on a page will not be displayed</property>
+                <property name="halign">start</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="use-antialias">
+                <property name="label" translatable="yes">Use antialiasing</property>
+                <property name="focusable">True</property>
+                <property name="tooltip-text" translatable="yes">If unset, no antialiasing will be done on the drawing.</property>
+                <property name="halign">start</property>
+                <property name="valign">center</property>
+              </object>
+            </child>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">4</property>
+              <property name="column-span">4</property>
+            </layout>
+          </object>
+        </child>
+        <layout>
+          <property name="column">2</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="GtkLabel">
+        <layout>
+          <property name="column">1</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+  </object>
+</interface>
